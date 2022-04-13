@@ -1,0 +1,165 @@
+
+<div class="row mt" style="padding-top: 5%">
+    
+    
+
+    <div class="col-lg-6 col-md-6 col-sm-12" >
+      <!--  BASIC BUTTONS -->
+      <div class="showback">
+        <h4><i class="fa fa-angle-right"></i> Civility</h4>
+        <form [formGroup]="candidatForm" (ngSubmit)="createCandidat()" class="form-horizontal style-form" style="margin-top: 5px;">
+        <div class="form-group">
+            <label class="col-sm-2 col-sm-2 control-label">First name
+            </label>
+            <div class="col-sm-10">
+              <input type="text"  class="form-control" name="prenom"  placeholder="Entrez votre prénom"
+              formControlName="prenom" 
+              [ngClass]="{'is-invalid':candidatForm.get('prenom')!.touched && !candidatForm.get('prenom')!.valid}"
+               >
+
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-sm-2 control-label">Last name
+
+            </label>
+            <div class="col-sm-10">
+              <input type="text"  class="form-control" name="nom"  placeholder="Entrez votre nom"
+              formControlName="nom" 
+              [ngClass]="{'is-invalid':candidatForm.get('nom')!.touched && !candidatForm.get('nom')!.valid}"
+              >
+              
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-sm-2 control-label">Date of birth</label>
+            <div class="col-sm-10">
+              <input type="date"  class="form-control" name="dateOfBirth" placeholder=""
+              formControlName="dateOfBirth" 
+              [ngClass]="{'is-invalid':candidatForm.get('dateOfBirth')!.touched && !candidatForm.get('dateOfBirth')!.valid}"
+          >
+         
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="text" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,10}$" class="form-control" name="email"  placeholder="Entrez votre Email"
+              formControlName="email"
+              [ngClass]="{'is-invalid':candidatForm.get('email')!.touched && !candidatForm.get('email')!.valid}">
+              
+            
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-sm-2 control-label">Phone</label>
+            <div class="col-sm-10">
+              <input type="text" pattern="[0-9]{8}" class="form-control" name="phone" placeholder="Entrez votre Numéro"
+              formControlName="phone"
+                         [ngClass]="{'is-invalid':candidatForm.get('phone')!.touched && !candidatForm.get('phone')!.valid}"
+              >
+          
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 col-sm-2 control-label">CV</label>
+            <div class="col-sm-10">
+                
+                    <div style="margin-top:3px">
+                   <input type="file" id="customFile" class="form-control" style="height:100%"
+                   formControlName="pathCv"
+                   [ngClass]="{'is-invalid':candidatForm.get('pathCv')!.touched && !candidatForm.get('pathCv')!.valid}">
+                    </div>
+            
+            </div>
+          </div> 
+
+         <div class="form-group">
+            <label class="col-sm-2 col-sm-2 control-label">Cover letter</label>
+            <div class="col-sm-10">
+                <div style="margin-top:3px">
+                    <input type="file" class="form-control" id="customFile"  style="height:100%" 
+                    formControlName="pathMotivationLetter"
+                    [ngClass]="{'is-invalid':candidatForm.get('pathMotivationLetter')!.touched && !candidatForm.get('pathMotivationLetter')!.valid}">
+                     </div>
+                   
+            </div>
+          </div>
+
+        </form>
+        
+      </div>
+      
+    </div>
+    <!-- /col-lg-6 -->
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <!--  BUTTONS SIZES -->
+      <div class="showback">
+        <h4><i class="fa fa-angle-right"></i> Study level </h4>
+        <form  [formGroup]="candidatForm" (ngSubmit)="createCandidat()" class="form-horizontal style-form" style="margin-top: 10px;">
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Level</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" name="niveauEtud"  placeholder="Entrez votre niveau d'étude"
+                  formControlName="niveauEtud"
+                    [ngClass]="{'is-invalid':candidatForm.get('niveauEtud')!.touched && !candidatForm.get('niveauEtud')!.valid}">
+                  
+               
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Diploma title </label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" name="titreDiplome"  placeholder="Entrez votre Titre de diplome "
+                  formControlName="titreDiplome"
+                    [ngClass]="{'is-invalid':candidatForm.get('titreDiplome')!.touched && !candidatForm.get('titreDiplome')!.valid}">
+                  
+                
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Engineering school</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" name="university" placeholder="Entrez votre établissement scolaire"
+                  formControlName="university"
+                    [ngClass]="{'is-invalid':candidatForm.get('university')!.touched && !candidatForm.get('university')!.valid}">
+                
+
+                </div>
+            </div>
+        </form>
+      </div>
+      <!-- /showback -->
+      <!-- BUTTON BLOCK -->
+      <div class="showback">
+        <h4><i class="fa fa-angle-right"></i> Experience</h4>
+        <form class="form-horizontal style-form" style="margin-top: 10px;">
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Years experience</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" name="niveauExp"  placeholder="Entrez votre Expérience"
+                  formControlName="niveauExp"
+                    [ngClass]="{'is-invalid':candidatForm.get('niveauExp')!.touched && !candidatForm.get('niveauExp')!.valid}">
+                  
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Your experiences</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control"  name="experience" id="experience" placeholder="" rows="4" data-rule="required" data-msg="Please write something for us"></textarea>
+                </div>
+            </div>
+,
+        </form>
+        
+      </div>
+      
+      
+        <button type="button" class="btn-save" style="margin-left: 200px"  [disabled]=!candidatForm.valid>Save</button>
+        
+       
+      
+    </div>
+   
+  </div>

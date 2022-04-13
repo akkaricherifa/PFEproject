@@ -1,0 +1,74 @@
+
+
+<div class="col-md-6 offset-md-3"> 
+    <h2 > Modifier adhérent </h2>
+    <hr class="underline">
+    <form  >
+    
+        <div  class="form-group">
+            <label style="font-family: Georgia, serif;">Nom : </label>
+            <input type="text" class ="form-control" id = "nom" formControlName="nom"
+            required=""
+                >
+        </div>
+        <br>
+        <div class="form-group">
+            <label style="font-family: Georgia, serif;"> Prénom :</label>
+            <input type="text" class ="form-control" id = "prenom"
+            formControlName="prenom"
+            required="">
+        </div>
+        <br>
+        <div class="form-group">
+            <label style="font-family: Georgia, serif;"> Email :</label>
+            <input type="text" class ="form-control" id = "email"
+            formControlName="prenom"
+            required="">
+        </div>
+        <br>
+        <div class="form-group">
+            <label style="font-family: Georgia, serif;"> profession : </label>
+            <input type="text" class ="form-control" id = "profession"
+            formControlName="prenom"
+            required="">
+        </div>
+        <br>
+        <div class="form-group">
+            <label style="font-family: Georgia, serif; color: rgb(7, 7, 7);"> niveau : </label>
+            <input type="text" class ="form-control" id = "niveau"
+            formControlName="prenom"
+            required="">
+        </div>
+        <br>
+        <div class="form-row">
+            <label style="font-family: Georgia, serif;"> cycle  : </label>
+            <input type="text" class ="form-control" id = "cycle"
+            formControlName="cycle"
+            required="">
+        </div>
+        <div class="form-row">
+            <label style="font-family: Georgia, serif;"> telephone  : </label>
+            <input type="text" class ="form-control" id = "telephone"
+            formControlName="telephone"
+            required="">
+        </div>
+        <div class="form-row">
+            <label style="font-family: Georgia, serif;"> etablissement  : </label>
+            <input type="text" class ="form-control" id = "etablissement"
+            formControlName="etablissement"
+            required="">
+        </div>
+   
+   
+
+        <input
+            type="submit"
+            (click)="updateAdherent(id)"
+            [disabled]="adherentForm.invalid"
+            class="btn btn-info"
+            value="Save"
+          />
+        
+   
+    </form>
+    </div> 

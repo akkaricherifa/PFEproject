@@ -1,0 +1,205 @@
+<!-- 
+  <html lang="en" style="height: auto;"><head>
+    <meta charset="utf-8">
+<title>
+    ARSII - Espace membre</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<link href="https://arsii.org/adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://arsii.org/adminlte/css/AdminLTE.min.css" rel="stylesheet">
+<link href="https://arsii.org/adminlte/css/custom.css" rel="stylesheet">
+<link href="https://arsii.org/adminlte/css/skins/skin-green.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css">
+<link rel="stylesheet" href="//cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
+
+<link href="https://arsii.org/adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+</head> -->
+<!-- 
+
+<body class="skin-green sidebar-mini" style="height: auto;">
+
+<div id="wrapper">
+
+<header class="main-header">
+    
+    <a href="" class="logo" style="font-size: 16px;">
+       
+        <span class="logo-mini">
+           ARSII - Espace membre</span>
+        
+        <span class="logo-lg">
+       
+           <img style="width: 220px;height: auto;margin-top: 8px;" class="logo" src="https://arsii.org/theme_assets/img/arsii-white.png" alt="logo">
+    </span></a>
+  
+    <nav class="navbar navbar-static-top">
+     
+    </nav>
+</header>
+
+<aside class="main-sidebar">
+
+    <section class="sidebar" style="height: auto;">
+        <ul class="sidebar-menu">
+
+          
+             <li class="">
+                <a href="#acceuil">
+                    <i class="fa fa-globe"></i>
+                    <span class="title">Retourner au site</span>
+                </a>
+            </li>
+              
+            <li class="active">
+                <a>
+                    <i class="fa fa-wrench"></i>
+                    <span class="title">Tableau de bord</span>
+                </a>
+            </li>
+   
+            <li class="treeview active">
+                <a href="">
+                    <i class="fa fa-slideshare"></i>
+                    <span>Espace Admin</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                  
+                    <li>
+                        <a href="">
+                            <i class="fa fa-cogs"></i>
+                            <span>Compétence</span>
+                        </a>
+                    </li>
+
+                    
+                    <li>
+                        <a href="">
+                            <i class="fa fa-book"></i>
+                            <span>Formations</span>
+                        </a>
+                    </li>
+                   
+
+                    <li>
+                        <a href="">
+                            <i class="fa fa-user"></i>
+                            <span>Gérer profil</span>
+                        </a>
+                    </li>
+                    
+                 
+                </ul>
+            </li>
+                        
+
+            <li class="">
+                <a href="#update">
+                    <i class="fa fa-key"></i>
+                    <span class="title">Changer mot de passe</span>
+                </a>
+            </li>
+                        <li>
+                <a  (click)="logout()" >
+                    <i class="fa fa-arrow-left"></i>
+                    <span class="title">Se déconnecter</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    
+</aside> -->
+    <!-- <div class="content-wrapper" style="min-height: 575px;">
+        <section class="content">
+            
+            <div class="row">
+                <div class="col-md-12">
+
+                                        
+                        <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Bienvenue, Admin <strong>{{Admin.prenom}} {{Admin.nom}} </strong> dans votre espace interne.</div> -->
+
+                <div class="panel-body" >
+                  <!--Tableauuuuuuuu des adhérents-->
+                  
+                  <h3><i class="fa fa-angle-right"></i> Liste des Adhérents</h3>
+    
+                  <div style="width: 1350px;">
+                    
+                        <div >
+                          <input type="text" class="form-control" placeholder="Search" > 
+                        </div>
+                      
+                  <table class="table table-striped"   >
+                
+                    <thead class="thead-inverse">
+                    <tr>
+                      <th>Photo</th>
+                      <th>first name</th>
+                      <th>last name</th>
+                      <th>Post</th>
+                      <th>civilite</th>
+                      <th>email</th>
+                      <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let Adherents of Adherent  | paginate : {itemsPerPage: 5, currentPage: p}" >
+                          <td><img src="http://localhost:8080/avatar/" alt="user" width="70" class="img-circle"></td>
+                            <td>{{Adherents.prenom}}</td>
+                            <td>{{Adherents.nom}}</td>
+                            <td>{{Adherents.profession}}</td>
+                            <td>{{Adherents.civilite}}</td>
+                            <td>{{Adherents.email}}</td>
+                           
+                             
+                            <td>
+                              <div class="container">
+                              <button mat-raised-button class="action-button btn-success" [routerLink]="['/profil-adherent']">
+                                <span class="fa fa-info"></span>
+                
+                              </button>
+                              <button mat-raised-button class="action-button btn-primary" (click)="update(id)"> <span class="fa fa-edit"></span></button> 
+                              <button mat-raised-button class="action-button btn-danger" (click)="delete(Adherents.id)"><span class="fa fa-trash"></span></button>
+                      <!-- <button  mat-raised-button mwlConfirmationPopover
+                      [popoverTitle]="popoverTitle"
+                      [popoverMessage]="popoverMessage"
+                      placement="left"
+                      (confirm)="delete(Adherents.id)"
+                      (cancel)="cancelClicked = true" class = "btn btn-danger" style="margin-left: 10px"> 
+                      <span class="fa fa-trash"></span>
+                    </button> -->
+                            </div>
+                            </td>
+                
+                           
+                        </tr>
+                    </tbody>
+                    
+                  </table>
+                  <div class="pagination">
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+                </div>
+              
+                </div>
+            <!-- </div>
+        </div>
+    </div>
+                </div>
+            </div>
+        </section>
+    </div> -->
+<!-- </div>
+
+</body> -->
+<!-- </html> -->
+

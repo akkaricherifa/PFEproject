@@ -1,0 +1,135 @@
+<div class="wrapper">
+    <div class="left"> 
+      <img src="http://localhost:8080/avatar/{{Adherent.id}}" alt="user" width="150" class="img-circle" >
+      <br>
+      <br>
+      <h4>{{Adherent.prenom}} {{Adherent.nom}} </h4>
+      <h2>{{Adherent.profession}}</h2>
+  
+    </div>
+          
+    <div class="right">
+  
+      <div class="info">
+            <h3> Contact information</h3>
+        <div class="info_data">
+              <div class="data">
+                <h4>Date of birth</h4>
+                <p> {{Adherent.cycle}}</p>
+            </div>
+            <div class="data">
+              <h4>Phone</h4>
+              <p> {{Adherent.niveau}}</p>
+          </div>
+          <div class="data">
+            <h4>Email</h4>
+            <p> {{Adherent.email}}</p>
+          </div>
+          
+  
+      </div>
+  
+      <div class="info_data">
+  
+        <div class="data">
+          <h4>Address</h4>
+          <p> {{Adherent.etablissement}}</p>
+        </div>
+  
+        <div class="data">
+          <h4>CIN</h4>
+          <p> {{Adherent.specialite}}</p>
+      </div>
+  
+      <div class="data">
+        <h4>CNSS</h4>
+        <p> {{Adherent.telephone}}</p>
+    </div>
+  
+      </div>
+    </div>
+            
+    <div class="projects">
+  
+        <h3> Post</h3>
+        <div class="info_data">
+          <div class="data">
+            <h4>Department</h4>
+            <p> {{Adherent.departement}}</p>
+          </div>
+          <div class="data">
+            <h4>Fonction</h4>
+            <p> {{Adherent.fonction}}</p>
+          </div>
+          <div class="data">
+            <h4>Type of Contract</h4>
+            <p> {{Adherent.typeContrat}}</p>
+          </div>
+          
+  
+        </div>
+          
+        <div class="info_data">
+          <div class="data">
+            <h4>Entry date </h4>
+            <p> {{Adherent.dateEntree}}</p>
+          </div>
+          <div class="data">
+            <h4>Salary</h4>
+            <p> {{Adherent.salary}}</p>
+          </div>
+          <div class="data">
+            
+          </div>
+  
+        </div>
+          
+      </div>
+      <!-- <a class="btn" (click)="generateReport()" >Export informations to PDF</a> -->
+      
+    </div>
+  
+    
+  
+  </div>
+        <!-- /col-lg-6 -->
+        <!--<div class="col-lg-8 ">-->
+          <!--  BUTTONS SIZES -->
+          <!--<div class="showback">
+            <h4><i class="fa fa-angle-right"></i> Congés</h4>
+            
+            <table class="table table-striped table-advance table-hover" class="content-table">
+  
+              <thead>
+              <tr>
+                <th>Début</th>
+                <th>Fin</th>
+                <th>Jour(s) pris</th>
+                <th>Etat</th>
+      
+              </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let Adherent of Adherentes">
+                      <td>{{conge.debutCong}}</td>
+                      <td>{{conge.finCong}}</td>
+                      <td>{{conge.duree}}</td>
+                      <td>{{conge.statusOfDemand}}</td>
+                  
+                  </tr>
+              </tbody>
+            </table>
+          
+           
+          </div>-->
+          
+  
+          <!-- /showback -->
+          <!-- BUTTON BLOCK -->
+          
+             
+  
+              
+  
+          
+  

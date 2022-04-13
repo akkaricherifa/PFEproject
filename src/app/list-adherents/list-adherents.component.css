@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
+*{
+ margin:0;
+ padding: 0;
+ outline: 0;
+}
+
+table{
+ border-collapse: collapse;
+ border-spacing: 0;
+ box-shadow: 0 2px 10px rgba(64,64,64,.7);
+ border-radius: 12px 12px 0 0;
+ overflow: hidden;
+ margin-top: 3rem;
+
+
+}
+td , th{
+ padding: 15px 20px;
+ text-align: center;
+ font-size: 16.5px;
+ 
+
+}
+th{
+ background-color: #06746c;
+ color: #fafafa;
+ font-family: 'Open Sans',Sans-serif;
+ font-weight: 200;
+ text-transform: uppercase;
+ width: 20px;
+
+}
+
+td{
+    margin-top: 10%;
+}
+tr{
+ width: 100%;
+ background-color: #fafafa;
+ font-family: 'Montserrat', sans-serif;
+}
+tr:nth-child(even){
+ background-color: #eeeeee;
+}
+
+button{
+    width: 20px;
+    height: 20px;
+    margin : 2px;
+    font-size: 13px;
+    margin-top: 7%;
+    
+}
+
+h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    font-size: 15px;
+}
+.container{
+    text-align: center;
+}
+
+.pagination{
+    
+    margin-left: 60%;
+    margin-top: 1%;
+    background-color: white;
+    position:absolute
+}
+
+.form-group{
+    margin-top: 3%;
+    margin-left: 6%;
+}
+
+label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+}
+.table>tbody>tr>td:last-child {
+    width: 14px;
+}
+.form-control {
+    display: block;
+    width: 30%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    margin-top: 3%;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;}

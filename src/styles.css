@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+
+#main-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex:1 0 auto;
+        flex: 1 0 auto;
+    max-width: 100%;
+    padding-top: 50px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Modify Angular material component CSS*/
+.sidebar .mat-expansion-panel {
+    background: transparent;
+    color: inherit;
+    box-shadow: none;
+}
+
+.sidebar .mat-expansion-panel-header-title {
+    color: #aeb2b7;
+    text-decoration: none;
+    padding: 15px 0 15px 10px;
+    font-size: 12px;
+    outline: none;
+}
+.sidebar .mat-expansion-indicator::after, .sidebar .mat-expansion-panel-header-description {
+    color: #aeb2b7;
+}
+
+button.action-button {
+    width: 35px;
+    height: 35px;
+    min-height: 35px;
+    min-width: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+p {
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    line-height: 1.7;
+    color: black;
+    margin: 0px;
+}
