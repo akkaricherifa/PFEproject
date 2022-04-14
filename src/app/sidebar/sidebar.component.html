@@ -1,0 +1,96 @@
+<div>
+  <section id="container">
+
+
+<aside >
+  
+  <div id="sidebar" class="nav-collapse nicescroll-rails" tabindex="5000" style="overflow-y: scroll;  
+  outline: none; margin-left: 0px;
+  z-index: 1;
+  /* overflow-x: hidden; */
+  
+  " > 
+    
+    <!-- sidebar menu start-->
+    <ul class="sidebar-menu" id="nav-accordion">
+      <p class="centered"><a><img src="http://localhost:8080/avatar/" class="img-circle" width="80" routerLink ="/profil"></a>
+        <a><img src="../../../assets/img/avatar.jpg" class="img-circle" width="80" routerLink ="/profil" ></a></p>
+      <h5 class="centered"><h2></h2></h5>
+
+      <li class="mt">
+        <a routerLink ="/dashboard" >
+          <i class="fa fa-tachometer" aria-hidden="true"></i>
+          <span>Dashboard</span>
+          </a>
+      </li>
+
+     
+
+      <li class="sub-menu dcjq-parent-li" routerLinkActive = "active"  >
+        <a href="javascript:;">
+          <i class="fa fa-user"></i>
+          <span [routerLink] ="['/info-employe']">Employee profile</span>
+          <span class="dcjq-icon"></span></a>
+  
+      </li>
+
+      <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
+        <a href="javascript:;">
+          <i class="fa fa-cogs"></i>
+          <span routerLink ="/profil">Settings
+          </span>
+          <span class="dcjq-icon"></span></a>
+  
+      </li>
+      
+
+      <mat-accordion class="sidebar" routerLinkActive = "active"  >
+      
+          <div class="vacation-sub-menu">
+            <li><a style= "margin-bottom:-10px"routerLink ="/listEmployes"><i class="fa fa-book"></i> List of employees</a></li>
+            <li><a routerLink ="/archivedEmployes"><i class="fa fa-group"></i>Archived Employees</a></li>
+          </div>
+ 
+      </mat-accordion>
+
+
+      <mat-accordion class="sidebar" routerLinkActive = "active"  >
+      
+      
+          <div class="vacation-sub-menu">
+            <li><a style= "margin-bottom:-10px"routerLink ="/bilan-conges"><i class="fa fa-book"></i> Review of vacations</a></li>
+            <li><a routerLink ="/list-conges"><i class="fa fa-edit"></i>Requests for vacations</a></li>
+          </div>
+       
+      </mat-accordion>
+
+      
+
+     
+    
+
+      <mat-accordion class="sidebar" routerLinkActive = "active"  >
+        
+      </mat-accordion>
+
+      
+    </ul>
+    <!-- sidebar menu end-->
+  </div>
+</aside>
+<!--sidebar end-->
+
+<section id="main-content">
+  <section class="wrapper">
+
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+    </section>
+
+</section>
+
+</div>
+
+

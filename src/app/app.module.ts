@@ -27,11 +27,16 @@ import { InfoAdherentComponent } from './info-adherent/info-adherent.component';
 import { PlanFormationComponent } from './plan-formation/plan-formation.component';
 import { ChartComponent } from './chart/chart.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { HighchartsChartModule } from 'highcharts-angular';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ProfilAdherentComponent } from './profil-adherent/profil-adherent.component' ;
-
-
-
+import { ProfilAdherentComponent } from './profil-adherent/profil-adherent.component';
+import { LineComponent } from './widgets/line/line.component';
+import { PieComponent } from './widgets/pie/pie.component';
+import { Pie2Component } from './widgets/pie2/pie2.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 
@@ -56,6 +61,12 @@ import { ProfilAdherentComponent } from './profil-adherent/profil-adherent.compo
     PlanFormationComponent,
     ChartComponent,
     ProfilAdherentComponent,
+    LineComponent,
+    PieComponent,
+    Pie2Component,
+    QuizComponent,
+    SidebarComponent,
+
 
 
 
@@ -66,7 +77,10 @@ import { ProfilAdherentComponent } from './profil-adherent/profil-adherent.compo
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    HighchartsChartModule,
     MatSliderModule,
+    MatDividerModule,
+    MatCardModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
     ToastrModule.forRoot(),

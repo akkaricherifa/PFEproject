@@ -20,18 +20,13 @@ export class ProfilAdherentComponent implements OnInit {
     private adhServ: AdherentService ) { }
 
   ngOnInit(): void {
-   
-    // this. id =(localStorage.getItem('CurrentUser') || '');
-    // this.adhServ.getAdherent(this.id).subscribe( data => {
-    //   console.log(data);
-    //   this.Adherent = data; 
-    // })
-  //   this. id =(localStorage.getItem('' ) || '');
-  // this.adhServ.getAdherent(this.id).subscribe( data => {
-  //   console.log(data);  
-  //   this.Adherent = data;
-  // })
-  // }
+   this.id=this.route.snapshot.params['id'];
+    
+  this.adhServ.getAdherent(this.id).subscribe( data => {
+    console.log(data);  
+    this.Adherent = data;
+  })
+  }
 
-}
+
 }

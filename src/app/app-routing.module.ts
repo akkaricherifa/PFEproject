@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { CandidatAreaComponent } from './candidat-area/candidat-area.component';
+import { ChangerPwdComponent } from './changer-pwd/changer-pwd.component';
 import { ChartComponent } from './chart/chart.component';
 import { DashboardAdherentsComponent } from './dashboard-adherents/dashboard-adherents.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
@@ -15,6 +16,7 @@ import { PlanFormationComponent } from './plan-formation/plan-formation.componen
 import { ProfilAdherentComponent } from './profil-adherent/profil-adherent.component';
 import { PubliclayoutComponent } from './publiclayout/publiclayout.component';
 import { ReponseCandidatComponent } from './reponse-candidat/reponse-candidat.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { UpdateAdherentComponent } from './update-adherent/update-adherent.component';
 const routes: Routes = [
   {
@@ -29,6 +31,8 @@ const routes: Routes = [
       { path: 'reponse-candidat', component: ReponseCandidatComponent },
     ],
   },
+
+  
   { path: 'dashboard-adherents', component: DashboardAdherentsComponent },
   { path: 'dashboard-admin', component: DashboardAdminComponent },
   { path: 'update-adherent', component: UpdateAdherentComponent },
@@ -38,7 +42,9 @@ const routes: Routes = [
   { path: 'paln-formation', component: PlanFormationComponent },
   { path: 'update-adherent', component: UpdateAdherentComponent },
   { path: 'chart', component: ChartComponent },
-  { path: 'profil-adherent',component:ProfilAdherentComponent }
+  { path: 'profil-adherent/:id',component:ProfilAdherentComponent },
+  { path:'side-bar',component:SidebarComponent},
+  { path: 'changerPWD',component:ChangerPwdComponent}
 ];
 
 @NgModule({

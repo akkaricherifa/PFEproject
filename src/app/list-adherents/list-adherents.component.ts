@@ -12,6 +12,7 @@ export class ListAdherentsComponent implements OnInit {
   id:any;
   Adhérent!: any;
   Adherent:any;
+  filterAdherent:any;
   p : number=1;
   Admin!: any;
   public popoverTitle:string=' Alert De Confirmation';
@@ -25,7 +26,7 @@ export class ListAdherentsComponent implements OnInit {
     { }
 
   ngOnInit(): void {
-    this.affiche(),
+    this.affiche();
     this. id =(localStorage.getItem('CurrentUser') || '');
     this.adhServ.getAdherent(this.id).subscribe( data => {
       console.log(data);
@@ -35,8 +36,12 @@ export class ListAdherentsComponent implements OnInit {
  
   affiche(){
     this.adhServ.getAllAdherent().subscribe(
-      res=>{
-        this.Adherent=res
+      (res:any)=>{
+      //lena a7na res feha kol chay m5alta donc star hedha ya3mel filtration bel role 
+      this.Adherent=res.filter((item:any) => item.role=="Adherent")
+
+      console.log(this.filterAdherent);
+    
       },
     )
   }

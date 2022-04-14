@@ -23,24 +23,27 @@
 
 <div id="wrapper">
 
-<header class="main-header">
+<header class="main-header" style="margin-top: 0px;" >
     
-    <a href="" class="logo" style="font-size: 16px;">
+    <a href="" class="logo" style="font-size: 1px;" style="margin-top: 0px;" >
        
-        <span class="logo-mini">
+        <!-- <span class="logo-mini" >
            ARSII - Espace membre</span>
-        
-        <span class="logo-lg">
+         -->
+     
        
-           <img style="width: 220px;height: auto;margin-top: 8px;" class="logo" src="https://arsii.org/theme_assets/img/arsii-white.png" alt="logo">
-    </span></a>
+           <img style="width: 220px;height: auto;margin-top: 8px;" class="logo"
+           src="" alt=""
+            >
+    </a>
   
-    <nav class="navbar navbar-static-top">
+    <nav class="navbar navbar-static-top" >
      
     </nav>
 </header>
 
-<aside class="main-sidebar">
+
+<aside class="main-sidebar" >
 
     <section class="sidebar" style="height: auto;">
         <ul class="sidebar-menu">
@@ -71,7 +74,7 @@
                 <ul class="treeview-menu">
                     <li>
                         <a href="list-adherent">
-                            <i class="fa fa-cogs"></i>
+                            <i class="fa fa-list"></i>
                             <span>Liste des Adhérents</span>
                         </a>
                     </li>
@@ -86,7 +89,7 @@
                     
                     <li>
                         <a href="">
-                            <i class="fa fa-book"></i>
+                            <i class="fa fa-calendar"></i>
                             <span>Formations</span>
                         </a>
                     </li>
@@ -133,7 +136,12 @@
                 <div class="panel-heading">Bienvenue, <strong>{{Admin.prenom}} {{Admin.nom}} </strong> dans votre espace interne 'Admin'.</div>
 
                 <div class="panel-body">
-                    <app-chart></app-chart>
+                    
+                    <app-pie></app-pie>
+                
+                    <app-pie2></app-pie2> 
+               <app-line></app-line>
+               <app-chart></app-chart>
                 </div>
             </div>
         </div>

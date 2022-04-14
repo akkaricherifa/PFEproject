@@ -130,9 +130,9 @@
                 <div class="panel-body" >
                   <!--Tableauuuuuuuu des adhérents-->
                   
-                  <h3><i class="fa fa-angle-right"></i> Liste des Adhérents</h3>
+                  <h3 style="margin-left: 13px;"><i class="fa fa-angle-right"></i> Liste des Adhérents</h3>
     
-                  <div style="width: 1350px;">
+                  <div style="width: 1350px; margin-left: 13px;" >
                     
                         <div >
                           <input type="text" class="form-control" placeholder="Search" > 
@@ -143,9 +143,9 @@
                     <thead class="thead-inverse">
                     <tr>
                       <th>Photo</th>
-                      <th>first name</th>
-                      <th>last name</th>
-                      <th>Post</th>
+                      <th>Nom</th>
+                      <th>Prénom</th>
+                      <th>Profession</th>
                       <th>civilite</th>
                       <th>email</th>
                       <th>Action</th>
@@ -154,8 +154,8 @@
                     <tbody>
                         <tr *ngFor="let Adherents of Adherent  | paginate : {itemsPerPage: 5, currentPage: p}" >
                           <td><img src="http://localhost:8080/avatar/" alt="user" width="70" class="img-circle"></td>
-                            <td>{{Adherents.prenom}}</td>
                             <td>{{Adherents.nom}}</td>
+                            <td>{{Adherents.prenom}}</td>
                             <td>{{Adherents.profession}}</td>
                             <td>{{Adherents.civilite}}</td>
                             <td>{{Adherents.email}}</td>
@@ -163,20 +163,20 @@
                              
                             <td>
                               <div class="container">
-                              <button mat-raised-button class="action-button btn-success" [routerLink]="['/profil-adherent']">
+                              <button mat-raised-button class="action-button btn-success" [routerLink]="['/profil-adherent',Adherents.id]">
                                 <span class="fa fa-info"></span>
                 
                               </button>
                               <button mat-raised-button class="action-button btn-primary" (click)="update(id)"> <span class="fa fa-edit"></span></button> 
-                              <button mat-raised-button class="action-button btn-danger" (click)="delete(Adherents.id)"><span class="fa fa-trash"></span></button>
-                      <!-- <button  mat-raised-button mwlConfirmationPopover
+                              <!-- <button mat-raised-button class="action-button btn-danger" (click)="delete(Adherents.id)"><span class="fa fa-trash"></span></button> -->
+                      <button  mat-raised-button  mwlConfirmationPopover
                       [popoverTitle]="popoverTitle"
                       [popoverMessage]="popoverMessage"
                       placement="left"
                       (confirm)="delete(Adherents.id)"
-                      (cancel)="cancelClicked = true" class = "btn btn-danger" style="margin-left: 10px"> 
+                      (cancel)="cancelClicked = true" class="action-button btn-danger" > 
                       <span class="fa fa-trash"></span>
-                    </button> -->
+                    </button>
                             </div>
                             </td>
                 

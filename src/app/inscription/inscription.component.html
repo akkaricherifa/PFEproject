@@ -59,7 +59,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Civilité (*) </label>
 
-                                    <select name="civilite" id="Civilite" class="form-control col-md-12" formControlName="Civilite" 
+                                    <select name="civilite" id="Civilite" class="form-control col-md-12" style="height: 35px;" formControlName="Civilite" 
                                     >
                                         <option value="Mr">M.</option>
                                         <option value="Mlle">Mlle</option>
@@ -153,10 +153,10 @@
                                 <div class="form-group">
                                     <label class="control-label">Situation Professionnelle</label>
 
-                                    <select required="" name="profession" id="profession" class="form-control col-md-12"  formControlName="profession"
+                                    <select required="" name="profession" id="profession" class="form-control col-md-12" style="height: 35px;" formControlName="profession"
                                     >
-                                        <option value="student">Etudiant</option>
-                                        <option value="pro">Salarié</option>
+                                        <option value="Etudiant">Etudiant</option>
+                                        <option value="Ingenieur">Ingenieur</option>
                                     </select>
                                 </div>
 
@@ -208,12 +208,30 @@
                                     <div class="form-group">
                                         <label class="control-label">Etablissement</label>
 
-                                        <input id="etablissement" name="etablissement" type="text" class="form-control" placeholder=""
-                                        formControlName="etablissement" 
-                                        [ngClass]="{'is-invalid':adherentForm.get('etablissement')!.touched && !adherentForm.get('etablissement')!.valid}">
+                                        <select required="" name="etablissement" id="etablissement" class="form-control col-md-12" style="height: 35px;" formControlName="etablissement"
+                                       placeholder="Choisir Votre Etablissement" >
+                                        <option value="ISITCOM">IsitCom</option>
+                                        <option value="ISSAT">Issat</option>
+                                        <option value="ENISO">Eniso</option>
+                                        <option value="ISET">Iset</option>
+                                        <option value="ESSTHS">Essths</option>
+                                        <option value="EPI">Epi</option>
+                                        <option value="POLYTECHNIQUE">Polytechnique</option>
+                                        
+                                    </select>
+                                        
                                     </div>
 
                                 </div>
+                                <!-- <div class="form-group">
+                                    <label class="control-label">Situation Professionnelle</label>
+
+                                    <select required="" name="profession" id="profession" class="form-control col-md-6"  formControlName="profession"
+                                    >
+                                        <option value="student">Etudiant</option>
+                                        <option value="pro">Salarié</option>
+                                    </select>
+                                </div> -->
                             </div>
 
                         </div>

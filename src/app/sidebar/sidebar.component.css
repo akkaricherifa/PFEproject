@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
+/* width */
+::-webkit-scrollbar {
+    width: 3px; z-index: auto; background: rgb(64, 64, 64); cursor: default; position: fixed; top: 0px; left: 207px; height: 657px; opacity: 0;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #4ECDC4; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+}
+
+p{
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+li ul li a {
+  diplay:block;
+
+}
+
+li ul li {
+margin-left:15px;
+margin-bottom: -15px;
+margin-top: -15px;
+
+}
+li ul {
+  margin-top: 5px;;
+}
+
+[id^=btn] :checked + ul {
+  display:block;
+}
+
+div ul li {
+
+}
+
+
+.fas fa-caret-down{
+  float:right;
+}
+
+.p{
+  margin-left: 20%;
+}
+
+
+
+
+
+
+
+
+  
+      

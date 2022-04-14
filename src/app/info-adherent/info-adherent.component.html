@@ -25,7 +25,7 @@
   
   <header class="main-header">
     
-    <a href="" class="logo" style="font-size: 16px;">
+    <a href="" class="logo" style="font-size: 16px;" style="margin-top: 0px;">
        
         <span class="logo-mini">
            ARSII - Espace membre</span>
@@ -48,10 +48,10 @@
     <section class="sidebar" style="height: auto;">
         <ul class="sidebar-menu">
   
-          <!-- <span class="d-flex flex-column align-items-center text-center">
+          <span class="d-flex flex-column align-items-center text-center">
        
             <img style="width: 120px;height: auto;margin-top: 0px;" class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="logo">
-      </span> -->
+      </span>
           
              <li class="">
                 <a href="#acceuil">
@@ -92,6 +92,12 @@
                             <span>Mon profil</span>
                         </a>
                     </li>
+                    <li>
+                      <a href="update-adherent">
+                          <i class="fa fa-edit"></i>
+                          <span>Modifier profil</span>
+                      </a>
+                  </li>
                    
                     
                  
@@ -100,7 +106,7 @@
                         
   
             <li class="">
-                <a href="#update">
+                <a href="changerPWD">
                     <i class="fa fa-key"></i>
                     <span class="title">Changer mot de passe</span>
                 </a>
@@ -127,8 +133,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Bienvenue,  <strong> {{Adherent.nom}} {{Adherent.prenom}}</strong> dans votre espace interne.</div>
   
-                <div class="panel-body">
-                   
+                <div class="panel-body" style="width: 1000px;">
+                
+
+
+
+                  
                 </div>
   
                 
@@ -138,82 +148,84 @@
     </div>
                 </div>
             </div>
-        </section>
-    </div>
-  </div>
-  
-  <div class="wrapper">
-    <div class="left"> 
-      <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Adherent" width="120" class="rounded-circle">
-      <br>
-      <br>
-      <h4>{{Adherent.nom}} {{Adherent.prenom}} </h4>
-      <h2>{{Adherent.profession}}</h2>
-  
-    </div>
-          
-    <div class="right">
-  
-      <div class="info">
-            <h3> informations</h3>
-        <div class="info_data">
-              <div class="data">
-                <h4>Email</h4>
-                <p> {{Adherent.email}}</p>
-            </div>
-            <div class="data">
-              <h4>Phone</h4>
-              <p> {{Adherent.telephone}}</p>
-          </div>
-          <!-- <div class="data">
-            <h4>Email</h4>
-            <p> {{Adherent.email}}</p>
-          </div> -->
-          <div class="data">
-            <h4>Niveau</h4>
-            <p> {{Adherent.niveau}}</p>
-          </div>
-  
-      </div>
-    </div>
             
-    <div class="projects">
-  
-        <h3> Post</h3>
-        <div class="info_data">
-          <div class="data">
-            <h4>University</h4>
-            <p> {{Adherent.etablissement}}</p>
+        </section>
+        <div class="wrapper">
+          <div class="left"> 
+            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Adherent" width="120" class="rounded-circle">
+            <br>
+            <br>
+            <h4>{{Adherent.nom}} {{Adherent.prenom}} </h4>
+            <h2>{{Adherent.profession}}</h2>
+        
           </div>
-          <div class="data">
-            <h4>cycle</h4>
-            <p> {{Adherent.cycle}}</p>
+                
+          <div class="right">
+        
+            <div class="info">
+                  <h3> informations</h3>
+              <div class="info_data">
+                    <div class="data">
+                      <h4>Email</h4>
+                      <p> {{Adherent.email}}</p>
+                  </div>
+                  <div class="data">
+                    <h4>Phone</h4>
+                    <p> {{Adherent.telephone}}</p>
+                </div>
+                <!-- <div class="data">
+                  <h4>Email</h4>
+                  <p> {{Adherent.email}}</p>
+                </div> -->
+                <div class="data">
+                  <h4>Niveau</h4>
+                  <p> {{Adherent.niveau}}</p>
+                </div>
+        
+            </div>
           </div>
-          <div class="data">
-            <h4>specialite</h4>
-            <p> {{Adherent.specialite}}</p>
+                  
+          <div class="projects">
+        
+              <h3> Post</h3>
+              <div class="info_data">
+                <div class="data">
+                  <h4>University</h4>
+                  <p> {{Adherent.etablissement}}</p>
+                </div>
+                <div class="data">
+                  <h4>cycle</h4>
+                  <p> {{Adherent.cycle}}</p>
+                </div>
+                <div class="data">
+                  <h4>specialite</h4>
+                  <p> {{Adherent.specialite}}</p>
+                </div>
+                <div class="data">
+                  <h4>niveau </h4>
+                  <p> {{Adherent.niveau}}</p>
+                </div>
+                <!-- <div class="data">
+                  <h4>Salary</h4>
+                  <p> {{Adherent.specialite}</p>
+                </div> -->
+                
+        
+              </div>
+                
+                
+            </div>
+            
+        
+            
           </div>
-          <div class="data">
-            <h4>niveau </h4>
-            <p> {{Adherent.niveau}}</p>
-          </div>
-          <!-- <div class="data">
-            <h4>Salary</h4>
-            <p> {{Adherent.specialite}</p>
-          </div> -->
+        
           
-  
+        
         </div>
-          
-          
-      </div>
-      
-  
-      
     </div>
-  
-    
-  
   </div>
+  
+ 
   </body>
   </html>

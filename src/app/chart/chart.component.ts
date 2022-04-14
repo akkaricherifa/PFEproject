@@ -16,39 +16,54 @@ export class ChartComponent implements OnInit {
     const filieres = [
       {
         id: 1,
-        UnitEnseignement: 'Psychologique',
-        nomFiliere: 'PolyTechnique',
+        UnitEnseignement: 'Competence',
+        nomFiliere: 'Angular',
         population: '220',
         group: 'groupe P1',
       },
       {
         id: 2,
-        UnitEnseignement: 'Psychologique',
-        nomFiliere: 'Architecture',
+        UnitEnseignement: 'Competence',
+        nomFiliere: 'Flutter',
         population: '250',
         group: 'groupe A1',
       },
       {
         id: 3,
-        UnitEnseignement: 'Psychologique',
-        nomFiliere: 'Mécanique',
+        UnitEnseignement: 'Competence',
+        nomFiliere: 'Spring-Boot',
         population: '140',
         group: 'groupe M2',
       },
       {
         id: 4,
-        UnitEnseignement: 'psychologique',
-        nomFiliere: 'Electro-magnitique',
+        UnitEnseignement: 'Competence',
+        nomFiliere: 'React',
         population: '170',
         group: 'groupe E1',
       },
       {
         id: 5,
-        UnitEnseignement: 'Physique',
-        nomFiliere: 'Préparatoire',
-        population: '500',
+        UnitEnseignement: 'Competence',
+        nomFiliere: 'Intelligence Artificielle',
+        population: '400',
         group: ' groupe C1',
       },
+      {
+      id: 6,
+        UnitEnseignement: 'Competence',
+        nomFiliere: 'Laravel',
+        population: '360',
+        group: ' groupe C1',
+      },
+      {
+        id: 7,
+          UnitEnseignement: 'Competence',
+          nomFiliere: 'NodeJs',
+          population: '300',
+          group: ' groupe C1',
+          
+        },
     ];
 
     this.result = filieres;
@@ -65,24 +80,35 @@ export class ChartComponent implements OnInit {
         labels: this.name,
         datasets: [
           {
-            label: '# of Votes',
+            label: '# of Competences',
 
             data: this.population,
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
+              // 'rgba(255, 99, 132, 0.2)',
+              // 'rgba(54, 162, 235, 0.2)',
+              // 'rgba(255, 206, 86, 0.2)',
+              // 'rgba(75, 192, 192, 0.2)',
+              // 'rgba(153, 102, 255, 0.2)',
+              // 'rgba(255, 159, 64, 0.2)',
+              '#483D8B',
+              '#FFB6C1',
+              '#6495ED',
+              '#F5DEB3',
+              '#008B8B',
+              '#D87093',
+              '#20B2AA',
+              
+              
+
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)',
+              // 'rgba(255, 99, 132, 1)',
+              // 'rgba(54, 162, 235, 1)',
+              // 'rgba(255, 206, 86, 1)',
+              // 'rgba(75, 192, 192, 1)',
+              // 'rgba(153, 102, 255, 1)',
+              // 'rgba(255, 159, 64, 1)',
+             
             ],
             borderWidth: 1,
           },
@@ -98,7 +124,7 @@ export class ChartComponent implements OnInit {
         labels: this.name,
         datasets: [
           {
-            label: '# of Votes',
+            label: '# of Competences',
 
             data: this.population,
             backgroundColor: [
