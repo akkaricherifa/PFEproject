@@ -38,6 +38,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { NavbarSuppComponent } from './navbar-supp/navbar-supp.component';
 
 
 @NgModule({
@@ -66,6 +68,7 @@ import {MatDividerModule} from '@angular/material/divider';
     Pie2Component,
     QuizComponent,
     SidebarComponent,
+    NavbarSuppComponent,
 
 
 
@@ -81,6 +84,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatSliderModule,
     MatDividerModule,
     MatCardModule,
+    FullCalendarModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
     ToastrModule.forRoot(),

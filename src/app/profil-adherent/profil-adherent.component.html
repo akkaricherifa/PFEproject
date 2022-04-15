@@ -1,25 +1,29 @@
+<app-navbar-supp></app-navbar-supp>
+
+<app-sidebar></app-sidebar>
+
 <div class="wrapper">
     <div class="left"> 
       <img src="http://localhost:8080/avatar/{{Adherent.id}}" alt="user" width="150" class="img-circle" >
       <br>
       <br>
       <h4>{{Adherent.prenom}} {{Adherent.nom}} </h4>
-      <h2>{{Adherent.profession}}</h2>
+     
   
     </div>
           
     <div class="right">
   
       <div class="info">
-            <h3> Contact information</h3>
+            <h3> Informations de Contact</h3>
         <div class="info_data">
               <div class="data">
-                <h4>Date of birth</h4>
-                <p> {{Adherent.cycle}}</p>
+                <h4>Nom</h4>
+                <p> {{Adherent.prenom}}</p>
             </div>
             <div class="data">
-              <h4>Phone</h4>
-              <p> {{Adherent.niveau}}</p>
+              <h4>Prénom</h4>
+              <p> {{Adherent.nom}}</p>
           </div>
           <div class="data">
             <h4>Email</h4>
@@ -32,51 +36,47 @@
       <div class="info_data">
   
         <div class="data">
-          <h4>Address</h4>
-          <p> {{Adherent.etablissement}}</p>
+          <h4>Civilité</h4>
+          <p> {{Adherent.civilite}}</p>
         </div>
   
         <div class="data">
-          <h4>CIN</h4>
-          <p> {{Adherent.specialite}}</p>
+          <h4>Numéro Téléphone</h4>
+          <p> {{Adherent.telephone}}</p>
       </div>
-  
-      <div class="data">
-        <h4>CNSS</h4>
-        <p> {{Adherent.telephone}}</p>
-    </div>
+      
   
       </div>
     </div>
             
     <div class="projects">
   
-        <h3> Post</h3>
-        <!-- <div class="info_data">
+        <h3> Informations Professionnels</h3>
+        <div class="info_data">
           <div class="data">
-            <h4>Department</h4>
-            <p> {{Adherent.departement}}</p>
+            <h4>Situation Professionelle</h4>
+            <p> {{Adherent.profession}}</p>
           </div>
           <div class="data">
-            <h4>Fonction</h4>
-            <p> {{Adherent.fonction}}</p>
+            <h4>Université </h4>
+            <p> {{Adherent.etablissement}}</p>
           </div>
           <div class="data">
-            <h4>Type of Contract</h4>
-            <p> {{Adherent.typeContrat}}</p>
+            <h4>Cycle</h4>
+            <p> {{Adherent.cycle}}</p>
           </div>
           
   
-        </div> -->
+        </div> 
           
-        <!-- <div class="info_data">
+         <div class="info_data">
           <div class="data">
-            <h4>Entry date </h4>
-            <p> {{Adherent.dateEntree}}</p>
+            <h4>Niveau </h4>
+            <p> {{Adherent.niveau}}</p>
           </div>
           <div class="data">
-            <h4>Salary</h4>
-            <p> {{Adherent.salary}}</p>
+            <h4>Spécialité</h4>
+            <p> {{Adherent.specialite}}</p>
           </div>
           <div class="data">
             
@@ -84,7 +84,7 @@
   
         </div>
           
-      </div> -->
+      </div>
       <!-- <a class="btn" (click)="generateReport()" >Export informations to PDF</a> -->
       
     </div>
