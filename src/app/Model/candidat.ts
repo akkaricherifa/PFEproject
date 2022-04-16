@@ -13,5 +13,5 @@ export interface Candidat {
     university:string;
     niveauExp:string;
     experience:string;
-    archived:boolean;
+    
 }

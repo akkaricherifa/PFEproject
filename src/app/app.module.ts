@@ -40,6 +40,8 @@ import {MatDividerModule} from '@angular/material/divider';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { NavbarSuppComponent } from './navbar-supp/navbar-supp.component';
+import { ListCandidatComponent } from './list-candidat/list-candidat.component';
+import { ProfilCandidatComponent } from './profil-candidat/profil-candidat.component';
 
 
 @NgModule({
@@ -69,6 +71,8 @@ import { NavbarSuppComponent } from './navbar-supp/navbar-supp.component';
     QuizComponent,
     SidebarComponent,
     NavbarSuppComponent,
+    ListCandidatComponent,
+    ProfilCandidatComponent,
 
 
 

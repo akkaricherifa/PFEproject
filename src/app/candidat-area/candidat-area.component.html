@@ -9,24 +9,24 @@
         <h4><i class="fa fa-angle-right"></i> Civility</h4>
         <form [formGroup]="candidatForm" (ngSubmit)="createCandidat()" class="form-horizontal style-form" style="margin-top: 5px;">
         <div class="form-group">
-            <label class="col-sm-2 col-sm-2 control-label">First name
+            <label class="col-sm-2 col-sm-2 control-label">Nom
             </label>
             <div class="col-sm-10">
-              <input type="text"  class="form-control" name="prenom"  placeholder="Entrez votre prénom"
-              formControlName="prenom" 
-              [ngClass]="{'is-invalid':candidatForm.get('prenom')!.touched && !candidatForm.get('prenom')!.valid}"
+              <input type="text"  class="form-control"  placeholder="Entrez votre nom"
+              formControlName="nomCan" 
+              [ngClass]="{'is-invalid':candidatForm.get('nomCan')!.touched && !candidatForm.get('nomCan')!.valid}"
                >
 
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 col-sm-2 control-label">Last name
+            <label class="col-sm-2 col-sm-2 control-label">Prénom
 
             </label>
             <div class="col-sm-10">
-              <input type="text"  class="form-control" name="nom"  placeholder="Entrez votre nom"
-              formControlName="nom" 
-              [ngClass]="{'is-invalid':candidatForm.get('nom')!.touched && !candidatForm.get('nom')!.valid}"
+              <input type="text"  class="form-control"   placeholder="Entrez votre nom"
+              formControlName="prenomCan" 
+              [ngClass]="{'is-invalid':candidatForm.get('prenomCan')!.touched && !candidatForm.get('prenomCan')!.valid}"
               >
               
             </div>
@@ -44,9 +44,9 @@
           <div class="form-group">
             <label class="col-sm-2 col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-              <input type="text" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,10}$" class="form-control" name="email"  placeholder="Entrez votre Email"
-              formControlName="email"
-              [ngClass]="{'is-invalid':candidatForm.get('email')!.touched && !candidatForm.get('email')!.valid}">
+              <input type="text" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,10}$" class="form-control" name="emailCan"  placeholder="Entrez votre Email"
+              formControlName="emailCan"
+              [ngClass]="{'is-invalid':candidatForm.get('emailCan')!.touched && !candidatForm.get('emailCan')!.valid}">
               
             
             </div>
@@ -54,9 +54,19 @@
           <div class="form-group">
             <label class="col-sm-2 col-sm-2 control-label">Phone</label>
             <div class="col-sm-10">
-              <input type="text" pattern="[0-9]{8}" class="form-control" name="phone" placeholder="Entrez votre Numéro"
-              formControlName="phone"
-                         [ngClass]="{'is-invalid':candidatForm.get('phone')!.touched && !candidatForm.get('phone')!.valid}"
+              <input type="text" pattern="[0-9]{8}" class="form-control" name="phoneCan" placeholder="Entrez votre Numéro"
+              formControlName="phoneCan"
+                         [ngClass]="{'is-invalid':candidatForm.get('phoneCan')!.touched && !candidatForm.get('phoneCan')!.valid}"
+              >
+          
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-sm-2 control-label">Ville</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="ville" placeholder="Entrez votre Numéro"
+              formControlName="ville"
+                         [ngClass]="{'is-invalid':candidatForm.get('ville')!.touched && !candidatForm.get('ville')!.valid}"
               >
           
             </div>
@@ -119,7 +129,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label">Engineering school</label>
+                <label class="col-sm-2 col-sm-2 control-label">University</label>
                 <div class="col-sm-10">
                   <input type="text"  class="form-control" name="university" placeholder="Entrez votre établissement scolaire"
                   formControlName="university"
@@ -147,7 +157,9 @@
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label">Your experiences</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control"  name="experience" id="experience" placeholder="" rows="4" data-rule="required" data-msg="Please write something for us"></textarea>
+                  <input type="text" class="form-control"  placeholder="" rows="4"  data-msg="Please write something for us"
+                  formControlName="experience"
+                    [ngClass]="{'is-invalid':candidatForm.get('experience')!.touched && !candidatForm.get('experience')!.valid}">
                 </div>
             </div>
 ,
@@ -155,8 +167,11 @@
         
       </div>
       
-      
-        <button type="button" class="btn-save" style="margin-left: 200px"  [disabled]=!candidatForm.valid>Save</button>
+     <div>
+      <button  class="btn btn-primary" style="margin-left: 200px"  (click)="createCandidat()" >
+        Envoyer
+    </button>
+  </div> 
         
        
       

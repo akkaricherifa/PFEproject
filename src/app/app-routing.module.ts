@@ -10,11 +10,13 @@ import { EspaceRHComponent } from './espace-rh/espace-rh.component';
 import { InfoAdherentComponent } from './info-adherent/info-adherent.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ListAdherentsComponent } from './list-adherents/list-adherents.component';
+import { ListCandidatComponent } from './list-candidat/list-candidat.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarSuppComponent } from './navbar-supp/navbar-supp.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PlanFormationComponent } from './plan-formation/plan-formation.component';
 import { ProfilAdherentComponent } from './profil-adherent/profil-adherent.component';
+import { ProfilCandidatComponent } from './profil-candidat/profil-candidat.component';
 import { PubliclayoutComponent } from './publiclayout/publiclayout.component';
 import { ReponseCandidatComponent } from './reponse-candidat/reponse-candidat.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -47,6 +49,8 @@ const routes: Routes = [
   { path:'side-bar',component:SidebarComponent},
   { path: 'changerPWD',component:ChangerPwdComponent},
   { path :'navbar-supp',component:NavbarSuppComponent},
+  { path:'list-candidat',component:ListCandidatComponent},
+  { path:'profil-candidat',component:ProfilCandidatComponent}
 ];
 
 @NgModule({

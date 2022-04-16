@@ -10,23 +10,17 @@ export class CandidatService {
   
 constructor(private http: HttpClient) { }
 createCandidat(data:any) {
-  return this.http.post(this.path+"/addEmploye",{
-    prenom:data.prenom,
-    nom:data.nom,
-    dateOfBirth:data.dateOfBirth,
-    phone:data.phone,
-    email:data.email,
-    adresse:data.adresse,
-    ville:data.ville,
-    pathCv:data.pathCv,
-    pathMotivationLetter:data.pathMotivationLetter,
-    niveauEtud:data.niveauEtud,
-    titreDiplome:data.titreDiplome,
-    university:data.university,
-    niveauExp:data.niveauExp,
-    experience:data.experience,
-    archived:data.archived
+  return this.http.post(this.path+"/",data) 
 
-  });
+}
+
+deleteCandidat(id:any) {
+  return this.http.delete(this.path+"/"+ id);
+}
+getCandidat(id: number) {
+  return this.http.get(this.path+"/"+ id);
+}
+getAllCandidat(){
+  return this.http.get(this.path+"/");
 }
 }

@@ -25,12 +25,11 @@ candidatForm!: FormGroup
   ngOnInit(): void {
     this.candidatForm= this.fb.group(
       {
-        prenom:['',[Validators.required,Validators.minLength(3)]],
-        nom:['',[Validators.required,Validators.minLength(3)]],
-        dateOfBirth:['',[Validators.required,Validators.minLength(3)]],
-        phone:['',Validators.required],
-        email:['',Validators.required],
-        adresse:['',[Validators.required,Validators.minLength(3)]],
+        nomCan:['',[Validators.required,Validators.minLength(3)]],
+        prenomCan:['',[Validators.required,Validators.minLength(3)]],
+        dateOfBirth:['',Validators.required],
+        phoneCan:['',Validators.required],
+        emailCan:['',Validators.required],
         ville:['',Validators.required],
         pathCv:['',Validators.required],
         pathMotivationLetter:['',Validators.required],
@@ -38,8 +37,7 @@ candidatForm!: FormGroup
         titreDiplome:['',Validators.required],
         university:['',Validators.required],
         niveauExp:['',Validators.required],
-        experience:['',Validators.required],
-        archived:['',Validators.required]
+        experience:['',Validators.required]
 
 
       }
