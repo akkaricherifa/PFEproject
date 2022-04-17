@@ -6,7 +6,7 @@
 <div _ngcontent-roy-c3="" class="card-body bg-light">
    
    
-    <table class="table table-striped" style="margin-top: 3%;">
+    <table class="table table-striped" style="margin-top: 5%;">
   
       <thead class="thead-inverse">
       <tr>
@@ -18,7 +18,7 @@
       </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let candidate of Candidat | paginate: {itemsPerPage: 5, currentPage: p}" >
+          <tr *ngFor="let candidate of Candidat | paginate: {itemsPerPage: 4, currentPage: p}" >
               <td>{{candidate.prenomCan}}</td>
               <td>{{candidate.nomCan}}</td>
               <td>{{candidate.emailCan}}</td>
@@ -28,7 +28,7 @@
 
               </td>
               <td>
-                <button mat-raised-button class="action-button btn-primary" [routerLink]="['/profil-candidat']">
+                <button mat-raised-button class="action-button btn-primary" [routerLink]="['/profil-candidat',candidate.id]">
                     <span class="fa fa-eye"></span>
     
                   </button>

@@ -30,22 +30,7 @@ export class UpdateAdherentComponent implements OnInit {
   ngOnInit(): void {
     this.id= this.route.snapshot.params['id'];
     this.adhServ.getAdherent(this.id).subscribe(data => {
-      this.adherent = data;
-
-        // this.adherentForm.patchValue({
-        //   nom : this.adherent.nom,
-        //   prenom : this.adherent.prenom ,
-        //   telephone : this.adherent.telephone,
-        //   profession:this.adherent.profession,
-        //   email:this.adherent.email,
-        //   cycle:this.adherent.cycle,
-        //   niveau:this.adherent.niveau,
-        //   etablissement: this.adherent.etablissement,
-        //   specialite:this.adherent.specialite,
-          
-        // }) 
-      
-        
+      this.adherent = data;   
       },
       err=>{
         console.log(err);
@@ -72,11 +57,11 @@ export class UpdateAdherentComponent implements OnInit {
     this.authServ.logout()
   }
   
-  EditForm(){
+  update(id:any){
       
-    this.adhServ.updateAdherent(this.id,this.adherent).subscribe((data)=>{
-      this.router.navigate(['/info-adherent']);
-      this.toastr.success('Adhérent modifié avec succès');
+    this.adhServ.updateAdherent(this.id,this.Adherent).subscribe( data => {
+      this.toastr.success("Adhérent modifié avec succès")
+     this.router.navigate(['/info-adherent']);
     },(error)=>{
       console.log(error);
     });

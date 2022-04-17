@@ -19,7 +19,11 @@ export class ListCandidatComponent implements OnInit {
     private toastr: ToastrService,) { }
 
   ngOnInit(): void {
-    this.affiche()
+    this.affiche();
+    this.candidatServ.getCandidat(this.id).subscribe( data => {
+      console.log(data);
+      this.Candidat = data;
+    }) 
   }
 
 

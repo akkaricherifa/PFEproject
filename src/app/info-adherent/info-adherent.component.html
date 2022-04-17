@@ -94,7 +94,7 @@
                 </a>
             </li>
                         <li>
-                <a   >
+                <a (click)="logout()"  >
                     <i class="fa fa-arrow-left"></i>
                     <span class="title">Se déconnecter</span>
                 </a>
@@ -155,14 +155,11 @@
                     <h4>Phone</h4>
                     <p> {{Adherent.telephone}}</p>
                 </div>
+                
                 <!-- <div class="data">
-                  <h4>Email</h4>
-                  <p> {{Adherent.email}}</p>
-                </div> -->
-                <div class="data">
                   <h4>Niveau</h4>
                   <p> {{Adherent.niveau}}</p>
-                </div>
+                </div> -->
         
             </div>
           </div>

@@ -50,7 +50,7 @@ const routes: Routes = [
   { path: 'changerPWD',component:ChangerPwdComponent},
   { path :'navbar-supp',component:NavbarSuppComponent},
   { path:'list-candidat',component:ListCandidatComponent},
-  { path:'profil-candidat',component:ProfilCandidatComponent}
+  { path:'profil-candidat/:id',component:ProfilCandidatComponent}
 ];
 
 @NgModule({

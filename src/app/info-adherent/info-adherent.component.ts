@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AdherentService } from '../shared/adherent.service';
 import { FormGroup } from '@angular/forms';
 import { AdminService } from '../shared/admin.service';
+import { AuthService } from '../shared/authService';
 
 @Component({
   selector: 'app-info-adherent',
@@ -17,7 +18,8 @@ export class InfoAdherentComponent implements OnInit {
   id:any;
 
   constructor( private route : ActivatedRoute,
-    private adhServ: AdherentService ) { }
+    private adhServ: AdherentService ,
+    private authServ: AuthService) { }
 
   ngOnInit(): void {
     this. id =(localStorage.getItem('CurrentUser') || '');
@@ -27,7 +29,9 @@ export class InfoAdherentComponent implements OnInit {
     })
   }
 
-  
+  logout(){
+    this.authServ.logout()
+  }
  
 }
 
