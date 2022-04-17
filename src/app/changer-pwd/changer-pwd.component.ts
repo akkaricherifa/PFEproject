@@ -14,6 +14,12 @@ export class ChangerPwdComponent implements OnInit {
   adherent!: Adhérent;
   Adherent!: any;
   id:any;
+  // password: String;
+  // email : String ;
+  newPassword: any;
+  oldPassword:any;
+
+
    constructor(private router:Router, 
      private fb: FormBuilder,
      private adminServ: AdminService,
@@ -27,6 +33,17 @@ export class ChangerPwdComponent implements OnInit {
        this.Adherent = data;
      })
    }
+  //  updatePassword(){
+  //   this.adhServ.updatePassword(this.email,this.oldPassword,this.newPassword).subscribe( 
+  //      data => {
+  //     this.adhServ.toastMessage('Password changed successfully');
+  //   }
+  //   ,(error)=>{
+  //     this.adhServ.toastMessage('Failed action')
+  //    } ); 
+    
+  //   }
+
  logout(){
    this.authServ.logout()
  }

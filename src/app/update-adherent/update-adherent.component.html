@@ -57,7 +57,7 @@
                         <li>
                             <a href="">
                                 <i class="fa fa-line-chart" aria-hidden="true"></i>
-                                <span>Compétence</span>
+                                <span> Mes Compétences</span>
                             </a>
                         </li>
                         
@@ -81,7 +81,7 @@
                         <li>
                             <a href="update-adherent">
                                 <i class="fa fa-edit"></i>
-                                <span>Modifier profil</span>
+                                <span>Modifier Mon profil</span>
                             </a>
                         </li>
                       
@@ -162,17 +162,29 @@
                         </div>
       
                         <div class="col-lg-6">
-                            <label for="fname">Profession</label>
-                            <input type="text" name="profession" class="form-control"  id="profession" 
-                            [(ngModel)] ="Adherent.profession">
+                            <label class="control-label">Situation Professionnelle</label>
+                                  <select  [(ngModel)] ="Adherent.profession" name="profession" id="profession" class="form-control col-md-12" style="height: 35px;" 
+                                 >
+                                        <option value="Etudiant">Etudiant</option>
+                                        <option value="Ingenieur">Ingenieur</option>
+                        </select>
+                           
                         </div>
                     </div>
       
                     <div class="row">
                         <div class="col-lg-6">
                             <label for="fname">Etablissement</label>
-                            <input type="text" name="etablissement" class="form-control" id="etablissement" 
-                            [(ngModel)] ="Adherent.etablissement">
+                            <select  [(ngModel)] ="Adherent.etablissement" name="etablissement" class="form-control" id="etablissement" style="height: 35px;">
+                         
+                                <option value="ISITCOM">IsitCom</option>
+                                <option value="ISSAT">Issat</option>
+                                <option value="ENISO">Eniso</option>
+                                <option value="ISET">Iset</option>
+                                <option value="ESSTHS">Essths</option>
+                                <option value="EPI">Epi</option>
+                                <option value="POLYTECHNIQUE">Polytechnique</option>
+                            </select>
                         </div>
       
                         <div class="col-lg-6">
@@ -196,6 +208,7 @@
                     </div>
   <br>
   <button (click)="update(id)" class = "btn btn-secondary" type ="submit" >Enregistrer</button>
+  
                 </form>
                 </div>
       
