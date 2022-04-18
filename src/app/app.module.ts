@@ -42,6 +42,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { NavbarSuppComponent } from './navbar-supp/navbar-supp.component';
 import { ListCandidatComponent } from './list-candidat/list-candidat.component';
 import { ProfilCandidatComponent } from './profil-candidat/profil-candidat.component';
+import { EntrepriseAreaComponent } from './entreprise-area/entreprise-area.component';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { ProfilCandidatComponent } from './profil-candidat/profil-candidat.compo
     NavbarSuppComponent,
     ListCandidatComponent,
     ProfilCandidatComponent,
+    EntrepriseAreaComponent,
 
 
 

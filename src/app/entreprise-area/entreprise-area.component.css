@@ -1,0 +1,55 @@
+.btn-theme {
+    color: #fff;
+    background-color: #4ECDC4;
+    border-color: #48bcb4;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.checkbox, .radio {
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+input {
+    font-size: 16px;
+}
+
+body {
+    color: #797979;
+    background: #eaeaea;
+    font-family: 'Ruda', sans-serif;
+    padding: 0px !important;
+    margin-top: 0px !important;
+    font-size: 13px;
+}
+
+.card {
+    height: 400px;
+    width: 490px;
+    margin-left: -50px;
+    margin-top: 250px;
+
+}
+
+.btn{
+   
+    font-size: 16px;
+}
+
+.success{
+    margin-top: 130px;
+    margin-left: 55px;
+    font-family: 'Ruda', sans-serif;
+    font-size: 25px;
+}
+

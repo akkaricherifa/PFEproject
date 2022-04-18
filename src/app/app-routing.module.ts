@@ -6,6 +6,7 @@ import { ChangerPwdComponent } from './changer-pwd/changer-pwd.component';
 import { ChartComponent } from './chart/chart.component';
 import { DashboardAdherentsComponent } from './dashboard-adherents/dashboard-adherents.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
+import { EntrepriseAreaComponent } from './entreprise-area/entreprise-area.component';
 import { EspaceRHComponent } from './espace-rh/espace-rh.component';
 import { InfoAdherentComponent } from './info-adherent/info-adherent.component';
 import { InscriptionComponent } from './inscription/inscription.component';
@@ -50,7 +51,8 @@ const routes: Routes = [
   { path: 'changerPWD',component:ChangerPwdComponent},
   { path :'navbar-supp',component:NavbarSuppComponent},
   { path:'list-candidat',component:ListCandidatComponent},
-  { path:'profil-candidat/:id',component:ProfilCandidatComponent}
+  { path:'profil-candidat/:id',component:ProfilCandidatComponent},
+  { path:'entrepriseArea',component:EntrepriseAreaComponent}
 ];
 
 @NgModule({
