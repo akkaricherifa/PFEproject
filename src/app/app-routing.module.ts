@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AcceuilComponent } from './acceuil/acceuil.component';
+import { AdherentArchivesComponent } from './adherent-archives/adherent-archives.component';
 import { CandidatAreaComponent } from './candidat-area/candidat-area.component';
 import { ChangerPwdComponent } from './changer-pwd/changer-pwd.component';
 import { ChartComponent } from './chart/chart.component';
@@ -52,7 +53,8 @@ const routes: Routes = [
   { path :'navbar-supp',component:NavbarSuppComponent},
   { path:'list-candidat',component:ListCandidatComponent},
   { path:'profil-candidat/:id',component:ProfilCandidatComponent},
-  { path:'entrepriseArea',component:EntrepriseAreaComponent}
+  { path:'entrepriseArea',component:EntrepriseAreaComponent},
+  { path:'list-archive', component:AdherentArchivesComponent}
 ];
 
 @NgModule({

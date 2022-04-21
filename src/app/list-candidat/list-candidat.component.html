@@ -23,8 +23,11 @@
               <td>{{candidate.nomCan}}</td>
               <td>{{candidate.emailCan}}</td>
               <td>{{candidate.pathCv}}
-                <a href=""
-                class="cv"> <i class="fa fa-download"></i></a>
+            
+                <button type="submit"  class="btn"  (click)="getfile()">
+                  <span class="fa fa-download"></span>
+                </button>
+              
 
               </td>
               <td>

@@ -14,12 +14,12 @@ body{
 
 .wrapper{
     position: relative;
-    top: 51%;
+    top: 45%;
     left: 56%;
     
     transform: translate(-50%,-50%);
     width: 1050px;
-    height: 510px;
+    height: 500px;
     
     display: flex;
     box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);

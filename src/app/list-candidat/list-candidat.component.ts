@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CandidatService } from '../shared/candidat.service';
 import { ToastrService } from 'ngx-toastr';
+import { saveAs } from 'file-saver';
 @Component({
   selector: 'app-list-candidat',
   templateUrl: './list-candidat.component.html',
@@ -38,11 +39,21 @@ export class ListCandidatComponent implements OnInit {
   delete(id:any){
     this.candidatServ.deleteCandidat(id).subscribe( data => {    
     this.affiche()
-     this.toastr.success("Adhérent supprimé avec succes")
-    this.router.navigate(['/list-adherents']);  
+     this.toastr.success("candidat supprimé avec succes")
+    this.router.navigate(['/list-candidat']);  
     },
     )
   }
+
+
+  getfile(){
+    this.candidatServ.getFile().subscribe(data=>{
+    let downloadURL = window.URL.createObjectURL(data);
+    saveAs(downloadURL);
+    })
+    }
+  
   }
+  
 
 

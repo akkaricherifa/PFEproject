@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -19,7 +20,8 @@ candidatForm!: FormGroup
     private candidatServ: CandidatService,
     private router: Router,
     private fb: FormBuilder,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private http:HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -53,4 +55,5 @@ candidatForm!: FormGroup
     console.log(this.candidatForm.value)
   }
  
+
 }

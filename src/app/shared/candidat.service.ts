@@ -9,7 +9,11 @@ export class CandidatService {
   path="http://localhost:3000/candidat";
   
 constructor(private http: HttpClient) { }
-createCandidat(data:any) {
+createCandidat(data:any,) {
+//  const data:FormData= new FormData();
+//     data.append('candidate',JSON.stringify(candidate));
+//     data.append('cv_file',fileCV);
+//     data.append('motiv_letter_file',fileLettre);
   return this.http.post(this.path+"/",data) 
 
 }
@@ -22,5 +26,8 @@ getCandidat(id: number) {
 }
 getAllCandidat(){
   return this.http.get(this.path+"/");
+}
+getFile(){
+  return this.http.get("/getFile",{responseType:'blob'});
 }
 }

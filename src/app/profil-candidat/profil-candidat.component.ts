@@ -23,5 +23,27 @@ export class ProfilCandidatComponent implements OnInit {
      })
      }
   
+    //  sendConfirmMsg(id) {
+    //   this.candidateService.sendConfirmMessage(id).subscribe(  (candidate) => {
+    //     this.userService.toastMessage("Email sent successffully")
+    //   },(error) =>{
+    //     this.userService.toastMessage("Email sent successffully")
+    //   }
+    //   );
+      
+    // };
+
+    
+    // sendDenyMsg(id) {
+    //   this.candidateService.sendDenyMessage(id)
+    //   .subscribe( (candidate) =>{
+    //     this.userService.toastMessage("Email sent successffully")
+    //   },(error) =>{
+    //     this.userService.toastMessage("Email sent successffully")
+    //   }
+    //   );
+     
+    // };
+  
     }
 

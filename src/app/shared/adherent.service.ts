@@ -32,6 +32,10 @@ export class AdherentService {
   getAdherent(id: number) {
     return this.http.get(this.path+"/"+ id);
   }
+
+  generateReport(id: number){
+    return this.http.get(this.path+"/"+ id);
+  }
 }
 
 

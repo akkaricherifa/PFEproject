@@ -29,7 +29,7 @@ export class ProfilAdherentComponent implements OnInit {
   }
   // generateReport(){
   //   this.adhServ.generateReport(this.id).subscribe(
-  //     (employe) => {
+  //     (adherent) => {
   //       this.adhServ.toastMessage("Informations are successfully exported")
   //       },(error) => {
   //         this.adhServ.toastMessage("Informations are successfully exported")

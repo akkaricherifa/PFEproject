@@ -43,8 +43,8 @@ import { NavbarSuppComponent } from './navbar-supp/navbar-supp.component';
 import { ListCandidatComponent } from './list-candidat/list-candidat.component';
 import { ProfilCandidatComponent } from './profil-candidat/profil-candidat.component';
 import { EntrepriseAreaComponent } from './entreprise-area/entreprise-area.component';
-
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AdherentArchivesComponent } from './adherent-archives/adherent-archives.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +75,7 @@ import { EntrepriseAreaComponent } from './entreprise-area/entreprise-area.compo
     ListCandidatComponent,
     ProfilCandidatComponent,
     EntrepriseAreaComponent,
+    AdherentArchivesComponent,
 
 
 
@@ -86,11 +87,13 @@ import { EntrepriseAreaComponent } from './entreprise-area/entreprise-area.compo
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    Ng2SearchPipeModule,
     HighchartsChartModule,
     MatSliderModule,
     MatDividerModule,
     MatCardModule,
     FullCalendarModule,
+    
     BrowserAnimationsModule,
     NgxPaginationModule,
     ToastrModule.forRoot(),

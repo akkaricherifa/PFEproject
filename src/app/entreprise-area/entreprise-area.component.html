@@ -4,7 +4,7 @@
  
   <div class="card card-container">
     <h2 class="form-login-heading">Inscription</h2>
-    <form
+    <form [formGroup]="entrepriseForm" (ngSubmit)="createEntreprise()"
       *ngIf="!isSuccessful"
       name="form"
       
@@ -17,42 +17,20 @@
        
       <div class="col-6">
         <label for="fname">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          name="email"
-          [(ngModel)]="form.email"
-          placeholder="Email"
-          required
-          email
-          #email="ngModel"
-          
-          [class.is-invalid]="email.invalid && email.touched"
-        />
+        <input type="text" class="form-control" name="emailEnt"  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,10}$"
+                                    formControlName="emailEnt" 
+                                   [ngClass]="{'is-invalid':entrepriseForm.get('emailEnt')!.touched && !entrepriseForm.get('emailEnt')!.valid}">
         
-        <div *ngIf="email.errors && (email.invalid || email.touched)">
-          <small class="text-danger" *ngIf="email.errors.required" [class.d-none]=" email.untouched" style="font-size: 11px;"> Email is required</small>
-          <small class="text-danger" *ngIf="email.errors.email" [class.d-none]=" email.untouched" style="font-size: 11px;"> Email must be a valid email address</small>
-        </div>
+   
       </div>
       <br>
 
       <div class="col-6">
         <label for="fname">Nom de l'entreprise</label>
-        <input
-          type="text"
-          class="form-control"
-          name="dateOfBirth"
-          [(ngModel)]="form.dateOfBirth"
-          placeholder="Date of Birth"
-          required
-          minlength="6"
-          #dateOfBirth="ngModel"
-          
-          [class.is-invalid]="dateOfBirth.invalid && dateOfBirth.touched"
-          
-        />
-        <small class="text-danger" [class.d-none]="dateOfBirth.valid || dateOfBirth.untouched" style="font-size: 11px;">Date of birth is required</small>
+        <input type="text" class="form-control" name="nomEnt"  
+                                    formControlName="nomEnt" 
+                                   [ngClass]="{'is-invalid':entrepriseForm.get('nomEnt')!.touched && !entrepriseForm.get('nomEnt')!.valid}">
+   
         
       </div>
 
@@ -60,49 +38,21 @@
       <br>
       <div class="form-row">
       <div class="col-6">
-    <label for="fname">N° Téléphone</label>
-        <input
-          type="tel"
-          class="form-control"
-          name="phone"
-          placeholder="phone"
-          [(ngModel)]="form.phone"
-          required
-          minlength="8"
-          #phone="ngModel"
-          
-          
-          [class.is-invalid]="phone.invalid && phone.touched"
-          
-        />
-        <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
-          <small class="text-danger" *ngIf="phone.errors.required" [class.d-none]=" phone.untouched" style="font-size: 11px;"> Phone number is required</small>
-          <small class="text-danger" *ngIf="phone.errors.minlength" [class.d-none]=" phone.untouched" style="font-size: 11px;"> Phone number must be composed of 8 numbers</small>
-          
-        </div>
+    <label for="fname">N° TélételEnt</label>
+    <input type="text" class="form-control" name="telEnt"  pattern="[0-9]{8}"
+    formControlName="telEnt" 
+   [ngClass]="{'is-invalid':entrepriseForm.get('telEnt')!.touched && !entrepriseForm.get('telEnt')!.valid}">
+        
         
       </div>
       <br>
       <div class="col-6">
         <label for="fname">Nom de Responsable</label>
-        <input
-          type="text"
-          class="form-control"
-          name="username"
-          [(ngModel)]="form.username"
-          required
-          minlength="3"
-          maxlength="20"
-          #username="ngModel"
-          placeholder="username" autofocus=""
-          [class.is-invalid]="username.invalid && username.touched"
-        />
-
-        <div *ngIf="username.errors && (username.invalid || username.touched)">
-          <small class="text-danger" *ngIf="username.errors.required" [class.d-none]=" username.untouched" style="font-size: 11px;"> Username is required</small>
-          <small class="text-danger" *ngIf="username.errors.minlength" [class.d-none]=" username.untouched" style="font-size: 11px;"> Username must be at least 3 characters</small>
-          <small class="text-danger" *ngIf="username.errors.maxlength" [class.d-none]=" username.untouched" style="font-size: 11px;"> Username must be at most 20 characters</small>
-        </div>
+        <input type="text" class="form-control" name="nomResp"  
+        formControlName="nomResp" 
+       [ngClass]="{'is-invalid':entrepriseForm.get('nomResp')!.touched && !entrepriseForm.get('nomResp')!.valid}">
+            
+     
 
       </div>
     </div>
@@ -110,30 +60,18 @@
       <div class="form-row">
       <div class="col-6">
         <label for="fname">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          name="password"
-          [(ngModel)]="form.password"
-          required
-          minlength="6"
-          #password="ngModel"
-          placeholder="password"
-          [class.is-invalid]="password.invalid && password.touched"
-          
-        />
+        <input type="text" class="form-control" name="password"  
+        formControlName="password"
+       [ngClass]="{'is-invalid':entrepriseForm.get('password')!.touched && !entrepriseForm.get('password')!.valid}">
+            
 
 
-        <div *ngIf="password.errors && (password.invalid || password.touched)">
-          <small class="text-danger" *ngIf="password.errors.required" [class.d-none]=" password.untouched" style="font-size: 11px;"> Password is required</small>
-          <small class="text-danger" *ngIf="password.errors.minlength" [class.d-none]=" password.untouched" style="font-size: 11px;"> Password must be at least 6 characters</small>
-        </div>
 
       </div>
       <br>
       <div class="col-6">
         <label for="fname">Confirm Password</label>
-        <input
+        <!-- <input
           type="password"
           class="form-control"
           name="repassword"
@@ -144,37 +82,33 @@
           placeholder="password"
           [class.is-invalid]="repassword.invalid && repassword.touched"
           
-        />
+        /> -->
 
 
-        <div *ngIf="repassword.errors && (repassword.invalid || repassword.touched)">
+        <!-- <div *ngIf="repassword.errors && (repassword.invalid || repassword.touched)">
           <small class="text-danger" *ngIf="repassword.errors.required" [class.d-none]=" repassword.untouched" style="font-size: 11px;"> Password is required</small>
           <small class="text-danger" *ngIf="repassword.errors.minlength" [class.d-none]=" repassword.untouched" style="font-size: 11px;"> Password must be at least 6 characters</small>
         </div>
         <div *ngIf="repassword.valid && repassword.value != password.value" class="text-danger">
           The passwords entered do not match
-      </div>
+      </div> -->
 
       </div>
       </div>
 
       <br>
       <div>
-        <button class="btn btn-theme btn-block"  type="button">
+        <button class="btn btn-theme btn-block"  type="button"  (click)="createEntreprise()">
           <i class="fa fa-lock"></i> Sign Up</button>
       </div>
 
-      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-        Signup failed!<br />{{ errorMessage }}
-      </div>
+      
     </div>
     </form>
 
-    <div class="success" *ngIf="isSuccessful">
-        you have successfully registered
-    </div>
 
   </div>
+  
   
 
 </form>
