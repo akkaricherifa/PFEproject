@@ -124,7 +124,7 @@ export class ChartComponent implements OnInit {
         labels: this.name,
         datasets: [
           {
-            label: '# of Competences',
+            label: 'Courbe de mes Compétences',
 
             data: this.population,
             backgroundColor: [

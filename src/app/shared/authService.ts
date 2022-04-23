@@ -36,6 +36,7 @@ logout() {
   localStorage.removeItem('token');
   localStorage.removeItem('ROLE');
   localStorage.removeItem('admin');
+  localStorage.removeItem('entreprise');
   localStorage.removeItem("STATE");
   localStorage.removeItem('CurrentUser');
         

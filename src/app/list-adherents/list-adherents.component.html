@@ -1,7 +1,7 @@
 
              
          <app-navbar-supp></app-navbar-supp>
-         <app-sidebar></app-sidebar>       
+ <app-sidebar-admin></app-sidebar-admin>     
 
 
  <!--Tableauuuuuuuu des adhérents-->
@@ -38,7 +38,7 @@
                                 <span class="fa fa-info"></span>
                 
                               </button>
-                              <!-- <button mat-raised-button class="action-button btn-primary" [routerLink]="['/update-adherent',Adherents.id]"> <span class="fa fa-edit"></span></button>  -->
+                              <button mat-raised-button class="action-button btn-secondary" [routerLink]="['/update-adherent',Adherent.id]"> <span class="fa fa-edit"></span></button> 
                              
                       <button  mat-raised-button  mwlConfirmationPopover
                       [popoverTitle]="popoverTitle"

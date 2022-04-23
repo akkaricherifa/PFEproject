@@ -7,6 +7,7 @@ import { ChangerPwdComponent } from './changer-pwd/changer-pwd.component';
 import { ChartComponent } from './chart/chart.component';
 import { DashboardAdherentsComponent } from './dashboard-adherents/dashboard-adherents.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
+import { DashboardEntrepriseComponent } from './dashboard-entreprise/dashboard-entreprise.component';
 import { EntrepriseAreaComponent } from './entreprise-area/entreprise-area.component';
 import { EspaceRHComponent } from './espace-rh/espace-rh.component';
 import { InfoAdherentComponent } from './info-adherent/info-adherent.component';
@@ -18,11 +19,15 @@ import { NavbarSuppComponent } from './navbar-supp/navbar-supp.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PlanFormationComponent } from './plan-formation/plan-formation.component';
 import { ProfilAdherentComponent } from './profil-adherent/profil-adherent.component';
+import { ProfilAdminComponent } from './profil-admin/profil-admin.component';
 import { ProfilCandidatComponent } from './profil-candidat/profil-candidat.component';
 import { PubliclayoutComponent } from './publiclayout/publiclayout.component';
 import { ReponseCandidatComponent } from './reponse-candidat/reponse-candidat.component';
+import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UpdateAdherentComponent } from './update-adherent/update-adherent.component';
+ 
+
 const routes: Routes = [
   {
     path: '',
@@ -44,7 +49,7 @@ const routes: Routes = [
   { path: 'list-adherent', component: ListAdherentsComponent },
   { path: 'info-adherent', component: InfoAdherentComponent },
   { path: 'espace-rh', component: EspaceRHComponent },
-  { path: 'paln-formation', component: PlanFormationComponent },
+  { path: 'plan-formation', component: PlanFormationComponent },
   { path: 'update-adherent', component: UpdateAdherentComponent },
   { path: 'chart', component: ChartComponent },
   { path: 'profil-adherent/:id',component:ProfilAdherentComponent },
@@ -54,7 +59,11 @@ const routes: Routes = [
   { path:'list-candidat',component:ListCandidatComponent},
   { path:'profil-candidat/:id',component:ProfilCandidatComponent},
   { path:'entrepriseArea',component:EntrepriseAreaComponent},
-  { path:'list-archive', component:AdherentArchivesComponent}
+  { path:'list-archive', component:AdherentArchivesComponent},
+  { path:'dashboard-entreprise',component:DashboardEntrepriseComponent},
+  { path:'sidebar-admin',component:SidebarAdminComponent},
+  { path:'profil-admin',component:ProfilAdminComponent}
+
 ];
 
 @NgModule({

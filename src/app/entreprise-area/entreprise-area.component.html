@@ -1,5 +1,6 @@
 
 
+
 <form class="form-login" style="margin-top: -150px;">
  
   <div class="card card-container">
@@ -70,35 +71,20 @@
       </div>
       <br>
       <div class="col-6">
-        <label for="fname">Confirm Password</label>
-        <!-- <input
-          type="password"
-          class="form-control"
-          name="repassword"
-          [(ngModel)]="form.repassword"
-          required
-          minlength="6"
-          #repassword="ngModel"
-          placeholder="password"
-          [class.is-invalid]="repassword.invalid && repassword.touched"
-          
-        /> -->
+        <label for="fname">confirm Password</label>
+        <input type="text" class="form-control" name="password"  
+        formControlName="password"
+       [ngClass]="{'is-invalid':entrepriseForm.get('password')!.touched && !entrepriseForm.get('password')!.valid}">
+            
 
 
-        <!-- <div *ngIf="repassword.errors && (repassword.invalid || repassword.touched)">
-          <small class="text-danger" *ngIf="repassword.errors.required" [class.d-none]=" repassword.untouched" style="font-size: 11px;"> Password is required</small>
-          <small class="text-danger" *ngIf="repassword.errors.minlength" [class.d-none]=" repassword.untouched" style="font-size: 11px;"> Password must be at least 6 characters</small>
-        </div>
-        <div *ngIf="repassword.valid && repassword.value != password.value" class="text-danger">
-          The passwords entered do not match
-      </div> -->
 
       </div>
       </div>
 
       <br>
       <div>
-        <button class="btn btn-theme btn-block"  type="button"  (click)="createEntreprise()">
+        <button class="btn btn-theme btn-block" [disabled]=!entrepriseForm.valid (click)="createEntreprise()">
           <i class="fa fa-lock"></i> Sign Up</button>
       </div>
 

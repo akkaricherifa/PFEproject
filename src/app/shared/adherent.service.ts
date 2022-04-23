@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { identifierModuleUrl } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Adhérent } from '../Model/adhérent';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Injectable({
   providedIn: 'root'
 })
 export class AdherentService {
 
   path="http://localhost:3000/adherent";
+  private _snackbar: any;
 
   constructor(private http: HttpClient) { }
   login(data:any){
@@ -36,6 +37,7 @@ export class AdherentService {
   generateReport(id: number){
     return this.http.get(this.path+"/"+ id);
   }
+ 
 }
 
 

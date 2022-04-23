@@ -12,7 +12,7 @@ import { CandidatService } from '../shared/candidat.service';
 })
 export class CandidatAreaComponent implements OnInit {
 
-candidatForm!: FormGroup
+candidatForm!: FormGroup;
 
 
 
@@ -25,6 +25,7 @@ candidatForm!: FormGroup
   ) { }
 
   ngOnInit(): void {
+
     this.candidatForm= this.fb.group(
       {
         nomCan:['',[Validators.required,Validators.minLength(3)]],
@@ -52,7 +53,7 @@ candidatForm!: FormGroup
       this.router.navigate(['/reponse-candidat']);
       this.toastr.success('Candidat ajouté avec succès');
     });
-    console.log(this.candidatForm.value)
+    console.log(this.candidatForm.value);
   }
  
 

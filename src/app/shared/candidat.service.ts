@@ -30,4 +30,9 @@ getAllCandidat(){
 getFile(){
   return this.http.get("/getFile",{responseType:'blob'});
 }
+
+//  sendConfirmMessage(){
+//   return this.http.get("http://localhost:3000/admin/sendMail/");
+// }
+
 }

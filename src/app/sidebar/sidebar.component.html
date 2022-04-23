@@ -13,23 +13,21 @@
     
     <!-- sidebar menu start-->
     <ul class="sidebar-menu" id="nav-accordion">
-      <p class="centered"><a><img src="" class="img-circle" width="80" routerLink ="/profil"></a>
+      <p class="centered"><a><img src="assets/img/ui-danro.jpg" class="img-circle" width="80" routerLink ="/profil"></a>
         <a><img src="" class="img-circle" width="80" routerLink ="/profil" ></a></p>
-      <h5 class="centered"><h2></h2></h5>
+      <h5 class="centered"><h3>{{Adherent.nom}} {{Adherent.prenom}} </h3></h5>
 
-      <li class="mt">
-        <a routerLink ="/list-adherent" >
+       <li class="mt">
+        <a routerLink ="/acceuil" >
           <i class="fa fa-globe"></i>
-          <span>Retourner</span>
+          <span>Retourner au site</span>
           </a>
-      </li>
-
-     
+      </li> 
 
       <li class="sub-menu dcjq-parent-li" routerLinkActive = "active"  >
         <a href="javascript:;">
           <i class="fa fa-user"></i>
-          <span [routerLink] ="['/info-employe']">Employee profile</span>
+          <span [routerLink] ="['/info-adherent']"> Mon Profil </span>
           <span class="dcjq-icon"></span></a>
   
       </li>
@@ -37,7 +35,7 @@
       <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
         <a href="javascript:;">
           <i class="fa fa-list"></i>
-          <span routerLink ="/profil">Plan de Formations
+          <span routerLink ="/plan-formation">Plan de Formations
           </span>
           <span class="dcjq-icon"></span></a>
   
@@ -46,19 +44,30 @@
       <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
         <a href="javascript:;">
           <i class="fa fa-pie-chart" aria-hidden="true"></i>
-          <span routerLink ="/profil">Compétences
+          <span routerLink ="/chart"> Mes Compétences
           </span>
           <span class="dcjq-icon"></span></a>
   
       </li>
       <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
         <a href="javascript:;">
-          <i class="fa fa-cogs"></i>
-          <span routerLink ="/profil">Settings
+          <i class="fa fa-edit"></i>
+          <span routerLink ="/update-adherent">Moodifier Profile
           </span>
           <span class="dcjq-icon"></span></a>
   
       </li>
+      
+    
+
+      <li class="sub-menu dcjq-parent-li">
+        <a  (click)="logout()" >
+            <i class="fa fa-arrow-left"></i>
+            <span class="title">Se Déconnecter</span></a>
+  
+      </li> 
+    
+      
       
       <mat-accordion class="sidebar" routerLinkActive = "active"  >
       

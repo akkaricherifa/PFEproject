@@ -6,9 +6,16 @@ import { Injectable } from '@angular/core';
 })
 export class AdminService {
   path="http://localhost:3000/admin";
+  private _snackbar: any;
 
   constructor(private http: HttpClient) { }
   login(data:any){
     return this.http.post(this.path+"/login",data)
   }
+
+  // sendConfirmMail(mail:any) {
+  //   console.log(mail);
+  //   return this.http.post(this.path+"/", mail);
+  // }
+  
 }

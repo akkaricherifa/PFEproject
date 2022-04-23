@@ -4,13 +4,12 @@ import { AdherentService } from '../shared/adherent.service';
 import { AuthService } from '../shared/authService';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  selector: 'app-profil-admin',
+  templateUrl: './profil-admin.component.html',
+  styleUrls: ['./profil-admin.component.css']
 })
-export class SidebarComponent implements OnInit {
-  
-  Adherent!: any;
+export class ProfilAdminComponent implements OnInit {
+  Admin!: any;
   id:any;
 
   constructor( private route : ActivatedRoute,
@@ -21,7 +20,7 @@ export class SidebarComponent implements OnInit {
     this. id =(localStorage.getItem('CurrentUser') || '');
     this.adhServ.getAdherent(this.id).subscribe( data => {
       console.log(data);
-      this.Adherent = data;
+      this.Admin = data;
     })
   }
 
@@ -30,5 +29,3 @@ export class SidebarComponent implements OnInit {
   }
  
 }
-  
-  

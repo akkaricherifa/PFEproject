@@ -45,6 +45,10 @@ import { ProfilCandidatComponent } from './profil-candidat/profil-candidat.compo
 import { EntrepriseAreaComponent } from './entreprise-area/entreprise-area.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AdherentArchivesComponent } from './adherent-archives/adherent-archives.component';
+import { DashboardEntrepriseComponent } from './dashboard-entreprise/dashboard-entreprise.component';
+import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
+import { ProfilAdminComponent } from './profil-admin/profil-admin.component';
+import {MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +80,9 @@ import { AdherentArchivesComponent } from './adherent-archives/adherent-archives
     ProfilCandidatComponent,
     EntrepriseAreaComponent,
     AdherentArchivesComponent,
+    DashboardEntrepriseComponent,
+    SidebarAdminComponent,
+    ProfilAdminComponent,
 
 
 
@@ -90,9 +97,11 @@ import { AdherentArchivesComponent } from './adherent-archives/adherent-archives
     Ng2SearchPipeModule,
     HighchartsChartModule,
     MatSliderModule,
+    MatSnackBarModule,
     MatDividerModule,
     MatCardModule,
     FullCalendarModule,
+
     
     BrowserAnimationsModule,
     NgxPaginationModule,

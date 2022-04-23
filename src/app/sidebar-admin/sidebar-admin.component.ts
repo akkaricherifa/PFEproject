@@ -6,13 +6,13 @@ import { AdminService } from '../shared/admin.service';
 import { AuthService } from '../shared/authService';
 
 @Component({
-  selector: 'app-espace-rh',
-  templateUrl: './espace-rh.component.html',
-  styleUrls: ['./espace-rh.component.css']
+  selector: 'app-sidebar-admin',
+  templateUrl: './sidebar-admin.component.html',
+  styleUrls: ['./sidebar-admin.component.css']
 })
-export class EspaceRHComponent implements OnInit {
+export class SidebarAdminComponent implements OnInit {
   id:any;
-  RH!: any;
+  Admin!: any;
   constructor(
     private router:Router, 
     private fb: FormBuilder,
@@ -22,14 +22,12 @@ export class EspaceRHComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this. id =(localStorage.getItem('CurrentUser') || '');
     this.adhServ.getAdherent(this.id).subscribe( data => {
       console.log(data);
-      this.RH = data;
+      this.Admin = data;
     })
   }
   logout(){
     this.authServ.logout()
-  }
-}
+  } }

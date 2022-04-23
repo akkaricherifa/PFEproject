@@ -9,7 +9,7 @@ export class EntrepriseService {
 
 
   constructor(private http: HttpClient) { }
-
+  
   createEntreprise(data:any) {
     return this.http.post(this.path+"/",data) 
   
@@ -21,7 +21,9 @@ export class EntrepriseService {
     return this.http.get(this.path+"/") 
   
   }
-
+  login(data:any){
+    return this.http.post(this.path+"/login",data)
+  }
 
 
 }

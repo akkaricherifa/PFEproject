@@ -26,7 +26,8 @@ export class ListAdherentsComponent implements OnInit {
   p : number=1;
   term!: string;
   searchTerm!: string;
-  Adherent!: Adhérent[];
+  // Adherent!: Adhérent[];
+  Adherent!: any;
   Admin!: any;
   public popoverTitle:string=' Alert De Confirmation';
   public popoverMessage:string='Voulez Vous vraiment Supprimer cet Adhérent ?';
@@ -82,7 +83,7 @@ export class ListAdherentsComponent implements OnInit {
   //  },
   //   )
   // }
-
+ 
   logout(){
     this.authServ.logout()
   }

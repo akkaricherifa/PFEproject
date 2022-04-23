@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 *{
@@ -11,17 +10,16 @@
 
 body{
     background: #f3f3f3;
-    padding: 100px;
 }
 
 .wrapper{
     position: absolute;
     top: 50%;
-    left: 48%;
+    left: 58%;
     
     transform: translate(-50%,-50%);
-    width: 620px;
-    height: 320px;
+    width: 1100px;
+    height: 420px;
     
     display: flex;
     box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
@@ -78,7 +76,7 @@ body{
     margin-bottom: 15px;
     padding-bottom: 5px;
     border-bottom: 1px solid #e0e0e0;
-    color: #161b29;
+    color: #353c4e;
   text-transform: uppercase;
   letter-spacing: 5px;
 }
@@ -115,24 +113,23 @@ body{
     width: 30px;
 }
 .wrapper .right .btn {
-    width: 130px;
+    width: 300px;
     height: 30px;
     font-family: 'Montserrat', sans-serif;
     font-size:17px;
     color:white;
-    margin : 30px 220px;
+    margin : 30px 200px;
+    background: #4ECDC4;
     
 }
 
 h2{
-  font-size: 10px;
+  font-size: 17px;
   color:black;
 }
 h4{
-  font-size: 10px;
+  font-size: 18px;
   
 }
-
-
 
 

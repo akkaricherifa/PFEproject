@@ -59,8 +59,9 @@
                                 <div class="form-group">
                                     <label class="control-label">Civilité (*) </label>
 
-                                    <select name="civilite" id="Civilite" class="form-control col-md-12" style="height: 35px;" formControlName="Civilite" 
-                                    >
+                                    <select name="civilite" id="Civilite" class="form-control col-md-12" style="height: 35px;"
+                                    formControlName="civilite" 
+                                    [ngClass]="{'is-invalid':adherentForm.get('civilite')!.touched && !adherentForm.get('civilite')!.valid}">
                                         <option value="Mr">M.</option>
                                         <option value="Mlle">Mlle</option>
                                         <option value="Mme">Mme</option>
@@ -153,8 +154,11 @@
                                 <div class="form-group">
                                     <label class="control-label">Situation Professionnelle</label>
 
-                                    <select required="" name="profession" id="profession" class="form-control col-md-12" style="height: 35px;" formControlName="profession"
-                                    >
+                                    <select required="" name="profession" id="profession" class="form-control col-md-12" style="height: 35px;" 
+                                    formControlName="profession" 
+                                    [ngClass]="{'is-invalid':adherentForm.get('profession')!.touched && !adherentForm.get('profession')!.valid}">
+                                    
+                                    
                                         <option value="Etudiant">Etudiant</option>
                                         <option value="Ingenieur">Ingenieur</option>
                                     </select>
@@ -208,8 +212,9 @@
                                     <div class="form-group">
                                         <label class="control-label">Etablissement</label>
 
-                                        <select required="" name="etablissement" id="etablissement" class="form-control col-md-12" style="height: 35px;" formControlName="etablissement"
-                                       placeholder="Choisir Votre Etablissement" >
+                                        <select  name="etablissement" id="etablissement" class="form-control col-md-12" style="height: 35px;" formControlName="etablissement"
+                                       placeholder="Choisir Votre Etablissement" 
+                                       [ngClass]="{'is-invalid':adherentForm.get('etablissement')!.touched && !adherentForm.get('etablissement')!.valid}">
                                         <option value="ISITCOM">IsitCom</option>
                                         <option value="ISSAT">Issat</option>
                                         <option value="ENISO">Eniso</option>
@@ -249,9 +254,7 @@
                         </div>
                          <div style="margin-top:60px;" class="form-group row mb-0">
                             <div class="col-md-6 offset-md-5">
-                                <button  class="btn btn-primary">
-                                    Envoyer
-                                </button>
+                                <button class="btn btn-secondary"  [disabled]=!adherentForm.valid (click)="createAdherent()">Ajouter</button>
 
                             </div>
                         </div>

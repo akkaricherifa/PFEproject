@@ -26,6 +26,7 @@
     "@fullcalendar/list": "^5.11.0",
     "@fullcalendar/resource-timeline": "^5.11.0",
     "@fullcalendar/timegrid": "^5.11.0",
+    "@material/snackbar": "^13.0.0",
     "angular-confirmation-popover": "^6.0.0",
     "angular-material-expansion-panel": "^0.7.2",
     "bootstrap": "^5.1.3",
@@ -43,6 +44,7 @@
     "pdfkit": "^0.13.0",
     "rxjs": "~6.6.0",
     "save": "^2.5.0",
+    "toast": "^0.3.47",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

@@ -29,11 +29,13 @@
 
     <section class="sidebar" style="height: auto;">
         <ul class="sidebar-menu">
-
+            
             <span class="d-flex flex-column align-items-center text-center">
      
-                <img style="width: 100px;height: auto;margin-top: 0px; margin-left: -32px;" class="rounded-circle" src="assets/img/admin.jpg" alt="logo">
+                <img style="width: 90px;height: auto;margin-top: 0px; margin-left: -22px;" class="rounded-circle" src="assets/img/admin.jpg" alt="logo">
+                
           </span>
+        
              <li class="">
                 <a href="#acceuil">
                     <i class="fa fa-globe"></i>
@@ -42,7 +44,7 @@
             </li>
               
             <li class="active">
-                <a>
+                <a  href="dashboard-admin.component.html">
                     <i class="fa fa-wrench"></i>
                     <span class="title">Tableau de bord</span>
                 </a>
@@ -65,13 +67,13 @@
                     </li>
                     <li>
                         <a href="list-archive">
-                            <i class="fa fa-list"></i>
+                            <i class="fa fa-list-ol" aria-hidden="true"></i>
                             <span>Liste des Adhérents Archivés</span>
                         </a>
                     </li>
                    
                     <li>
-                        <a href="">
+                        <a href="chart">
                             <i class="fa fa-line-chart" aria-hidden="true"></i>
                             <span>Compétence</span>
                         </a>
@@ -79,9 +81,9 @@
 
                     
                     <li>
-                        <a href="">
+                        <a href="plan-formation">
                             <i class="fa fa-calendar"></i>
-                            <span>Formations</span>
+                            <span> Plan des Formations</span>
                         </a>
                     </li>
                     <li>
@@ -92,7 +94,7 @@
                     </li>
 
                     <li>
-                        <a href="">
+                        <a href="profil-admin">
                             <i class="fa fa-user"></i>
                             <span>Gérer profil</span>
                         </a>
@@ -102,13 +104,13 @@
                 </ul>
             </li>
                         
-
+<!-- 
             <li class="">
                 <a href="#update">
                     <i class="fa fa-key"></i>
                     <span class="title">Changer mot de passe</span>
                 </a>
-            </li>
+            </li> -->
                         <li>
                 <a  (click)="logout()" >
                     <i class="fa fa-arrow-left"></i>
@@ -137,7 +139,7 @@
                 
                     <app-pie2></app-pie2> 
                <app-line></app-line>
-               <app-chart></app-chart>
+           
                 </div>
             </div>
         </div>

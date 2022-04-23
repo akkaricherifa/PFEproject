@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CandidatService } from '../shared/candidat.service';
 import { ActivatedRoute } from '@angular/router';
+import { AdminService } from '../shared/admin.service';
 @Component({
   selector: 'app-profil-candidat',
   templateUrl: './profil-candidat.component.html',
@@ -11,7 +12,8 @@ export class ProfilCandidatComponent implements OnInit {
   id:any;
 
   constructor(private candidatServ: CandidatService,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute,
+    private adminServ: AdminService) { }
 
     
     ngOnInit(): void {
@@ -23,27 +25,16 @@ export class ProfilCandidatComponent implements OnInit {
      })
      }
   
-    //  sendConfirmMsg(id) {
-    //   this.candidateService.sendConfirmMessage(id).subscribe(  (candidate) => {
-    //     this.userService.toastMessage("Email sent successffully")
+    //  sendConfirmMail(mail:any) {
+    //   this.adminServ.sendConfirmMail(mail).subscribe(  (candidate) => {
+    //     this.adminServ.toastrMessage("Email sent successffully")
     //   },(error) =>{
-    //     this.userService.toastMessage("Email sent successffully")
+      
     //   }
     //   );
       
     // };
 
-    
-    // sendDenyMsg(id) {
-    //   this.candidateService.sendDenyMessage(id)
-    //   .subscribe( (candidate) =>{
-    //     this.userService.toastMessage("Email sent successffully")
-    //   },(error) =>{
-    //     this.userService.toastMessage("Email sent successffully")
-    //   }
-    //   );
-     
-    // };
   
     }
 

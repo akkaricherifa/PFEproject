@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from '../shared/admin.service';
 import { AuthService } from '../shared/authService';
+import { EntrepriseService } from '../shared/entreprise.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router, 
     private fb: FormBuilder,
     private adminServ: AdminService,
-    private authServ: AuthService) { 
+    private authServ: AuthService,
+    private entrepriseServ:EntrepriseService) { 
 this.loginForm = this.fb.group({
         email: [
           "",
@@ -67,7 +69,7 @@ login() {
 
     this.authServ.Login(res.admin.role,res.token);
     localStorage.setItem('CurrentUser', res.admin._id)
-
+    
     //if (res.admin.role=="RH")
     //this.router.navigate(["/acceuil"]);
 
