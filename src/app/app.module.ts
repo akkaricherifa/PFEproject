@@ -37,7 +37,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
-
+import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { NavbarSuppComponent } from './navbar-supp/navbar-supp.component';
 import { ListCandidatComponent } from './list-candidat/list-candidat.component';
@@ -49,6 +49,15 @@ import { DashboardEntrepriseComponent } from './dashboard-entreprise/dashboard-e
 import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
 import { ProfilAdminComponent } from './profil-admin/profil-admin.component';
 import {MatSnackBarModule } from '@angular/material/snack-bar';
+// import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import interactionPlugin from '@fullcalendar/interaction';
+
+import dayGridPlugin from '@fullcalendar/daygrid'; 
+FullCalendarModule.registerPlugins([ 
+  dayGridPlugin,
+  interactionPlugin
+]);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,7 +110,11 @@ import {MatSnackBarModule } from '@angular/material/snack-bar';
     MatDividerModule,
     MatCardModule,
     FullCalendarModule,
-
+    // CalendarModule.forRoot({
+    //   provide: DateAdapter,
+    //   useFactory: adapterFactory
+    // }),
+    
     
     BrowserAnimationsModule,
     NgxPaginationModule,

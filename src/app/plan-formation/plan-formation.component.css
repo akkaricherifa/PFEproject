@@ -1,0 +1,4 @@
+.fc-view-container *, .fc-view-container *:before, .fc-view-container *:after {
+    box-sizing: content-box;
+    font-size: 16px;
+}
