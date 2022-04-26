@@ -37,6 +37,11 @@ export class AdherentService {
   generateReport(id: number){
     return this.http.get(this.path+"/"+ id);
   }
+
+
+  get(){
+    return this.http.get("http://localhost:3000/competence");
+  }
  
 }
 

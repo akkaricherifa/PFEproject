@@ -49,6 +49,8 @@ this.loginForm = this.fb.group({
 login() {
   this.adminServ.login(this.loginForm.value).subscribe((res:any)=> {
     console.log("hello",res);
+    this.router.navigate(["/dashboard-entreprise"]);
+
   
     console.log(res.admin.role);
     //////admin
@@ -63,6 +65,7 @@ login() {
 
     this.authServ.Login(res.admin.role,res.token);
     localStorage.setItem('CurrentUser', res.admin._id)
+     
    ////// RH
     if (res.admin.role=="RH")
     this.router.navigate(["/espace-rh"]);

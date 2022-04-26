@@ -13,9 +13,8 @@ export class AdminService {
     return this.http.post(this.path+"/login",data)
   }
 
-  // sendConfirmMail(mail:any) {
-  //   console.log(mail);
-  //   return this.http.post(this.path+"/", mail);
-  // }
+  sendMail(data:any) {
+    return this.http.post(this.path+"/mail",data) 
   
+  }
 }

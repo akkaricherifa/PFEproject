@@ -45,14 +45,15 @@ import { ProfilCandidatComponent } from './profil-candidat/profil-candidat.compo
 import { EntrepriseAreaComponent } from './entreprise-area/entreprise-area.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AdherentArchivesComponent } from './adherent-archives/adherent-archives.component';
-import { DashboardEntrepriseComponent } from './dashboard-entreprise/dashboard-entreprise.component';
 import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
 import { ProfilAdminComponent } from './profil-admin/profil-admin.component';
 import {MatSnackBarModule } from '@angular/material/snack-bar';
 // import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import interactionPlugin from '@fullcalendar/interaction';
-
-import dayGridPlugin from '@fullcalendar/daygrid'; 
+import dayGridPlugin from '@fullcalendar/daygrid';
+import { SidebarEntrepriseComponent } from './sidebar-entreprise/sidebar-entreprise.component';
+import { DashboardEntrepriseComponent } from './dashboard-entreprise/dashboard-entreprise.component';
+import { ProfilEntrepriseComponent } from './profil-entreprise/profil-entreprise.component'; 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -89,9 +90,11 @@ FullCalendarModule.registerPlugins([
     ProfilCandidatComponent,
     EntrepriseAreaComponent,
     AdherentArchivesComponent,
-    DashboardEntrepriseComponent,
     SidebarAdminComponent,
     ProfilAdminComponent,
+    SidebarEntrepriseComponent,
+    DashboardEntrepriseComponent,
+    ProfilEntrepriseComponent,
 
 
 

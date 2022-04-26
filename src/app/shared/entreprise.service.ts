@@ -14,6 +14,7 @@ export class EntrepriseService {
     return this.http.post(this.path+"/",data) 
   
   }
+  
   getEntreprise(id: number) {
     return this.http.get(this.path+"/"+ id);
   }
@@ -24,6 +25,6 @@ export class EntrepriseService {
   login(data:any){
     return this.http.post(this.path+"/login",data)
   }
-
+  
 
 }

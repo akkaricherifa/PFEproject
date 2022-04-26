@@ -21,9 +21,11 @@ import { PlanFormationComponent } from './plan-formation/plan-formation.componen
 import { ProfilAdherentComponent } from './profil-adherent/profil-adherent.component';
 import { ProfilAdminComponent } from './profil-admin/profil-admin.component';
 import { ProfilCandidatComponent } from './profil-candidat/profil-candidat.component';
+import { ProfilEntrepriseComponent } from './profil-entreprise/profil-entreprise.component';
 import { PubliclayoutComponent } from './publiclayout/publiclayout.component';
 import { ReponseCandidatComponent } from './reponse-candidat/reponse-candidat.component';
 import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
+import { SidebarEntrepriseComponent } from './sidebar-entreprise/sidebar-entreprise.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UpdateAdherentComponent } from './update-adherent/update-adherent.component';
  
@@ -60,9 +62,11 @@ const routes: Routes = [
   { path:'profil-candidat/:id',component:ProfilCandidatComponent},
   { path:'entrepriseArea',component:EntrepriseAreaComponent},
   { path:'list-archive', component:AdherentArchivesComponent},
-  { path:'dashboard-entreprise',component:DashboardEntrepriseComponent},
   { path:'sidebar-admin',component:SidebarAdminComponent},
-  { path:'profil-admin',component:ProfilAdminComponent}
+  { path:'profil-admin',component:ProfilAdminComponent},
+  { path:'sidebar-entreprise',component:SidebarEntrepriseComponent},
+  { path:'dashboard-entreprise',component:DashboardEntrepriseComponent},
+  { path:'profil-entreprise/:id',component:ProfilEntrepriseComponent}
 
 ];
 

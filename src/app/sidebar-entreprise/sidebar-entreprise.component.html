@@ -1,0 +1,106 @@
+
+
+<div>
+    <section id="container">
+  
+  
+  <aside >
+    
+    <div id="sidebar" class="nav-collapse nicescroll-rails" tabindex="5000" style="overflow-y: scroll;  
+    outline: none; margin-left: 0px;
+    z-index: 1;
+    /* overflow-x: hidden; */
+    
+    " > 
+      
+      <!-- sidebar menu start-->
+      <ul class="sidebar-menu" id="nav-accordion">
+        <p class="centered"><a><img src="" class="img-circle" width="80" routerLink ="/profil"></a>
+          <a><img src="" class="img-circle" width="80" routerLink ="/profil" ></a></p>
+        <h5 class="centered"><h3>{{Entreprise.nomEnt}}</h3></h5>
+  
+         <li class="mt">
+          <a routerLink ="/acceuil" >
+            <i class="fa fa-globe"></i>
+            <span>Retourner au site</span>
+            </a>
+        </li> 
+        <li class="active">
+            <a  href="dashboard-entreprise.component.html">
+                <i class="fa fa-wrench"></i>
+                <span class="title">Tableau de bord</span>
+            </a>
+        </li>
+  
+  
+        <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
+          <a href="javascript:;">
+            <i class="fa fa-list"></i>
+            <span routerLink ="/list-adherents">Liste des Adhérents
+            </span>
+            <span class="dcjq-icon"></span></a>
+    
+        </li>
+        
+        
+          <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
+            <a href="javascript:;">
+              <i class="fa fa-user"></i>
+              <span [routerLink]="['/profil-entreprise']">Gérer le Profil
+              </span>
+              <span class="dcjq-icon"></span></a>
+      
+          </li> 
+        
+          <li class="sub-menu dcjq-parent-li">
+            <a  (click)="logout()" >
+                <i class="fa fa-arrow-left"></i>
+                <span class="title">Se déconnecter</span></a>
+      
+          </li> 
+        
+      
+        
+        <mat-accordion class="sidebar" routerLinkActive = "active"  >
+        
+           
+   
+        </mat-accordion>
+  
+  
+        <mat-accordion class="sidebar" routerLinkActive = "active"  >
+        
+         
+        </mat-accordion>
+  
+        
+  
+       
+      
+  
+        <mat-accordion class="sidebar" routerLinkActive = "active"  >
+          
+        </mat-accordion>
+  
+        
+      </ul>
+      <!-- sidebar menu end-->
+    </div>
+  </aside>
+  <!--sidebar end-->
+  
+  <section id="main-content">
+    <section class="wrapper">
+  
+        <div class="container-fluid">
+          <router-outlet></router-outlet>
+        </div>
+      </section>
+      </section>
+  
+  </section>
+  
+  </div>
+  
+  
+  
