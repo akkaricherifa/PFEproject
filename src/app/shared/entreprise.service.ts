@@ -5,25 +5,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EntrepriseService {
 
-  path="http://localhost:3000/entreprise";
+  path="http://localhost:3000/entreprise/";
 
 
   constructor(private http: HttpClient) { }
   
   createEntreprise(data:any) {
-    return this.http.post(this.path+"/",data) 
+    return this.http.post(this.path,data) 
   
   }
   
   getEntreprise(id: number) {
-    return this.http.get(this.path+"/"+ id);
+    return this.http.get(this.path+ id);
   }
   getAllEntreprise() {
-    return this.http.get(this.path+"/") 
+    return this.http.get(this.path) 
   
   }
   login(data:any){
-    return this.http.post(this.path+"/login",data)
+    return this.http.post(this.path+"login",data)
   }
   
 

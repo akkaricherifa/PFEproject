@@ -25,10 +25,12 @@ Entreprise!:any;
 
   ngOnInit(): void  {
      
-    this.id=this.route.snapshot.params['id'];
+    this.id =(localStorage.getItem('CurrentUser') || '');
+    console.log("id entreprise ",this.id);
+    
     
     this.entrepriseServ.getEntreprise(this.id).subscribe( data => {
-      console.log(data);  
+      // console.log(data);  
       this.Entreprise = data;
     })}
   logout(){

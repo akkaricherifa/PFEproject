@@ -49,29 +49,39 @@ this.loginForm = this.fb.group({
 login() {
   this.adminServ.login(this.loginForm.value).subscribe((res:any)=> {
     console.log("hello",res);
+    if(res.admin.role=="entreprise"){
+      this.authServ.Login(res.admin,res.token);
+    localStorage.setItem('CurrentUser', res.admin._id)
     this.router.navigate(["/dashboard-entreprise"]);
 
+    }
+    
+   
+
   
-    console.log(res.admin.role);
+    
     //////admin
-    if (res.admin.role=="Admin")
+    if (res.admin.role=="Admin"){
     this.router.navigate(["/dashboard-admin"]);
 
     this.authServ.Login(res.admin.role,res.token);
-    localStorage.setItem('CurrentUser', res.admin._id)
+    localStorage.setItem('CurrentUser', res.admin._id)}
     /////adherent
-    if (res.admin.role=="Adherent")
+    else if (res.admin.role=="Adherent"){
     this.router.navigate(["/dashboard-adherents"]);
 
     this.authServ.Login(res.admin.role,res.token);
-    localStorage.setItem('CurrentUser', res.admin._id)
+    localStorage.setItem('CurrentUser', res.admin._id)}
      
    ////// RH
-    if (res.admin.role=="RH")
+    else if (res.admin.role=="RH"){
     this.router.navigate(["/espace-rh"]);
 
     this.authServ.Login(res.admin.role,res.token);
-    localStorage.setItem('CurrentUser', res.admin._id)
+    localStorage.setItem('CurrentUser', res.admin._id)}
+    else { this.router.navigate(["/dashboard-entreprise"]);
+    this.authServ.Login(res.admin,res.token);
+    localStorage.setItem('CurrentUser', res.admin._id)}
     
     //if (res.admin.role=="RH")
     //this.router.navigate(["/acceuil"]);
