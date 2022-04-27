@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AcceuilComponent } from './acceuil/acceuil.component';
+import { AddCompetenceComponent } from './add-competence/add-competence.component';
 import { AdherentArchivesComponent } from './adherent-archives/adherent-archives.component';
 import { CandidatAreaComponent } from './candidat-area/candidat-area.component';
 import { ChangerPwdComponent } from './changer-pwd/changer-pwd.component';
@@ -66,7 +67,8 @@ const routes: Routes = [
   { path:'profil-admin',component:ProfilAdminComponent},
   { path:'sidebar-entreprise',component:SidebarEntrepriseComponent},
   { path:'dashboard-entreprise',component:DashboardEntrepriseComponent},
-  { path:'profil-entreprise/:id',component:ProfilEntrepriseComponent}
+  { path:'profil-entreprise/:id',component:ProfilEntrepriseComponent},
+  { path:'add-competence',component:AddCompetenceComponent}
 
 ];
 

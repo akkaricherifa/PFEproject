@@ -53,7 +53,9 @@ import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { SidebarEntrepriseComponent } from './sidebar-entreprise/sidebar-entreprise.component';
 import { DashboardEntrepriseComponent } from './dashboard-entreprise/dashboard-entreprise.component';
-import { ProfilEntrepriseComponent } from './profil-entreprise/profil-entreprise.component'; 
+import { ProfilEntrepriseComponent } from './profil-entreprise/profil-entreprise.component';
+import { AddCompetenceComponent } from './add-competence/add-competence.component';
+import { DynamicComponent } from './dynamic/dynamic.component'; 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -95,6 +97,8 @@ FullCalendarModule.registerPlugins([
     SidebarEntrepriseComponent,
     DashboardEntrepriseComponent,
     ProfilEntrepriseComponent,
+    AddCompetenceComponent,
+    DynamicComponent,
 
 
 
