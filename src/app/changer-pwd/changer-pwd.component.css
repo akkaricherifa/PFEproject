@@ -6,10 +6,28 @@
     margin-top: 50px;
     box-shadow: 0 2px 10px rgba(64,64,64,.7);
     border-radius: 12px 12px 12px 12px;
-    height: 300px;
+    height: 260px;
+    margin-left: 10px;
+    width: 390px;
+}
+#ui1{
+    background-color: #0e5e58;
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 0 2px 10px rgba(64,64,64,.7);
+    border-radius: 12px 12px 12px 12px;
+    height: 260px;
+    margin-left: 30px;
+    width: 510px;
+}
+strong{
+    font-size: 14px;
+}
+.panel-heading{
+    font-size: 13px;
 }
 
-#ui label{
+#ui,#ui1 label{
     color : #fff;
     font-family: 'Jost', sans-serif;
     font-size: 16px;

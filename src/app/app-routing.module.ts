@@ -11,6 +11,7 @@ import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.compo
 import { DashboardEntrepriseComponent } from './dashboard-entreprise/dashboard-entreprise.component';
 import { EntrepriseAreaComponent } from './entreprise-area/entreprise-area.component';
 import { EspaceRHComponent } from './espace-rh/espace-rh.component';
+import { FormationAdherentComponent } from './formation-adherent/formation-adherent.component';
 import { InfoAdherentComponent } from './info-adherent/info-adherent.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ListAdherentsComponent } from './list-adherents/list-adherents.component';
@@ -68,7 +69,8 @@ const routes: Routes = [
   { path:'sidebar-entreprise',component:SidebarEntrepriseComponent},
   { path:'dashboard-entreprise',component:DashboardEntrepriseComponent},
   { path:'profil-entreprise/:id',component:ProfilEntrepriseComponent},
-  { path:'add-competence',component:AddCompetenceComponent}
+  { path:'add-competence',component:AddCompetenceComponent},
+  { path:'formation-adherent',component:FormationAdherentComponent}
 
 ];
 

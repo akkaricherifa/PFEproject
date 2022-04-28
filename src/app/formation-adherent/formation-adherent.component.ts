@@ -1,21 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
 import {  CalendarOptions } from '@fullcalendar/angular';
-
-import dayGridView from '@fullcalendar/daygrid';
-import interactionPlugin from "@fullcalendar/interaction";
-import { Formation } from '../Model/formation';
-
+import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
 @Component({
-  selector: 'app-plan-formation',
-  templateUrl: './plan-formation.component.html',
-  styleUrls: ['./plan-formation.component.css']
+  selector: 'app-formation-adherent',
+  templateUrl: './formation-adherent.component.html',
+  styleUrls: ['./formation-adherent.component.css']
 })
-export class PlanFormationComponent implements OnInit {
+export class FormationAdherentComponent implements OnInit {
 
-  // CalendarOptions!:any;
-   
-  constructor(private router:Router ) { }
+  constructor(private router:Router) { }
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
     // dateClick: this.handleDateClick.bind(this), 
@@ -27,7 +20,6 @@ export class PlanFormationComponent implements OnInit {
       { title: 'event 2', date: '2022-04-20' }
     ]
   };
-  
   handleDateClick(arg:any) {
     console.log(arg);
     
@@ -39,13 +31,11 @@ export class PlanFormationComponent implements OnInit {
     console.log(model.event._def.extendedProps.formateur2);
     console.log(model.event._def.extendedProps.dateFin);
     }
-    
-    //this.router.navigate(['/acceuil']);
-  
-  ngOnInit(): void {
+
+    ngOnInit(): void {
    
+    }
+    
   }
-  
-}
-  
+    
 

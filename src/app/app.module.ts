@@ -55,7 +55,8 @@ import { SidebarEntrepriseComponent } from './sidebar-entreprise/sidebar-entrepr
 import { DashboardEntrepriseComponent } from './dashboard-entreprise/dashboard-entreprise.component';
 import { ProfilEntrepriseComponent } from './profil-entreprise/profil-entreprise.component';
 import { AddCompetenceComponent } from './add-competence/add-competence.component';
-import { DynamicComponent } from './dynamic/dynamic.component'; 
+import { DynamicComponent } from './dynamic/dynamic.component';
+import { FormationAdherentComponent } from './formation-adherent/formation-adherent.component'; 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -99,6 +100,7 @@ FullCalendarModule.registerPlugins([
     ProfilEntrepriseComponent,
     AddCompetenceComponent,
     DynamicComponent,
+    FormationAdherentComponent,
 
 
 

@@ -27,20 +27,18 @@
       <li class="sub-menu dcjq-parent-li" routerLinkActive = "active"  >
         <a href="javascript:;">
           <i class="fa fa-user"></i>
-          <span [routerLink] ="['/info-adherent']"> Mon Profil </span>
+          <span routerLink ="/info-adherent"> Mon Profil </span>
           <span class="dcjq-icon"></span></a>
   
       </li>
-
       <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
         <a href="javascript:;">
-          <i class="fa fa-list"></i>
-          <span routerLink ="/plan-formation">Plan de Formations
+          <i class="fa fa-edit"></i>
+          <span routerLink ="/update-adherent">Moodifier Profil
           </span>
           <span class="dcjq-icon"></span></a>
   
       </li>
-      
       <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
         <a href="javascript:;">
           <i class="fa fa-pie-chart" aria-hidden="true"></i>
@@ -49,16 +47,25 @@
           <span class="dcjq-icon"></span></a>
   
       </li>
+
       <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
         <a href="javascript:;">
-          <i class="fa fa-edit"></i>
-          <span routerLink ="/update-adherent">Moodifier Profile
+          <i class="fa fa-list"></i>
+          <span routerLink ="/formation-adherent">Plan de Formations
           </span>
           <span class="dcjq-icon"></span></a>
   
       </li>
       
+     
     
+      
+      <li class="">
+        <a href="changerPWD">
+            <i class="fa fa-key"></i>
+            <span class="title">Changer mot de passe</span>
+        </a>
+    </li>
 
       <li class="sub-menu dcjq-parent-li">
         <a  (click)="logout()" >

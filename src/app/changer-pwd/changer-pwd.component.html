@@ -1,192 +1,72 @@
-<html lang="en" style="height: auto;"><head>
-  <meta charset="utf-8">
-<title>
-  ARSII - Espace membre</title>
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<link href="https://arsii.org/adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://arsii.org/adminlte/css/AdminLTE.min.css" rel="stylesheet">
-<link href="https://arsii.org/adminlte/css/custom.css" rel="stylesheet">
-<link href="https://arsii.org/adminlte/css/skins/skin-green.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css">
-<link rel="stylesheet" href="//cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
-
-<link href="https://arsii.org/adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
-</head>
-
-
-<body class="skin-green sidebar-mini" style="height: auto;">
-
-<div id="wrapper">
-
 <app-navbar-supp></app-navbar-supp>
+<app-sidebar></app-sidebar>
 
-<aside class="main-sidebar">
+<div class="row">
+    <div class="col-md-12" style="margin-top: 7px; margin-left: 220px; width: 1150px;" >
+        <div class="panel panel-default">
+            <div class="panel-heading">Bienvenue,  <strong>{{Adherent.nom}} {{Adherent.prenom}} </strong> dans votre espace interne.</div>
 
-  <section class="sidebar" style="height: auto;">
-      <ul class="sidebar-menu">
-
-      
-           <li class="">
-              <a href="#acceuil">
-                  <i class="fa fa-globe"></i>
-                  <span class="title">Retourner au site</span>
-              </a>
-          </li>
-          
- 
-          <li class="treeview active">
-              <a href="">
-                  <i class="fa fa-slideshare"></i>
-                  <span>Espace Membre</span>
-                  <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-              </a>
-              <ul class="treeview-menu">
-                 
-                  <li>
-                      <a href="">
-                          <i class="fa fa-cogs"></i>
-                          <span> Mes Compétence</span>
-                      </a>
-                  </li>
-                  
-                  <li>
-                      <a href="plan-formation">
-                          <i class="fa fa-book"></i>
-                          <span>Formations</span>
-                      </a>
-                  </li>
-             
-                  <li>
-                      <a href="info-adherent">
-                          <i class="fa fa-user"></i>
-                          <span>Mon profil</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="update-adherent">
-                          <i class="fa fa-edit"></i>
-                          <span>Modifier Mon profil</span>
-                      </a>
-                  </li>
+            <div class="panel-body">
+                <div class="col-lg-5" >
+                    <div id="ui">
                 
-              </ul>
-          </li>
+                      <form >
+                      <h3><i class="fa fa-angle-right"></i> Modifier votre photo de profil</h3>
+                      <img src="http://localhost:8080/avatar/" alt="user" width="150" class="img-circle">
                       
-
-          <li class="">
-              <a href="changerPWD">
-                  <i class="fa fa-key"></i>
-                  <span class="title">Changer mot de passe</span>
-              </a>
-          </li>
-                      <li>
-              <a  (click)="logout()" >
-                  <i class="fa fa-arrow-left"></i>
-                  <span class="title">Se déconnecter</span>
-              </a>
-          </li>
-      </ul>
-  </section>
-  
-</aside>
-  <div class="content-wrapper" style="min-height: 575px;">
-      <section class="content">
-          
-          <div class="row">
-              <div class="col-md-12">
-
-                                      
-                      <div class="row">
-      <div class="col-md-12"  style="margin-top: 70px;">
-          <div class="panel panel-default">
-              <div class="panel-heading">Bienvenue,  <strong>{{Adherent.nom}} {{Adherent.prenom}} </strong> dans votre espace interne.</div>
-
-              <div class="panel-body">
-                
-
-
-        
-    <div class="row">
-  
-        
-        <div class="col-lg-5" >
-        <div id="ui">
-
-          <form >
-          <h3><i class="fa fa-angle-right"></i> Edit your profile picture</h3>
-          <img src="http://localhost:8080/avatar/" alt="user" width="150" class="img-circle">
-          
-            
-            <br>
-            <input class="select" type="file" accept="image/*">
-        
-            <br>
-            <br>
-           
-            <button type="submit" value="save" class="btn-photo" > Save </button>
-        </form>
-
-        </div>
-      </div>
-         <div class="col-lg-7">
-            <div id="ui">
-                <form >
-                <h3><i class="fa fa-angle-right"></i> Edit your password
-                </h3>
-                <br>
-                
-  
-
-                <label for="fname">Old password</label>
-              <input type="password" name="oldPassword" class="form-control">
-
-                <label for="fname">New password</label>
-              <input type="password" name="newPassword" class="form-control" >
                         
-                      
+                        <br>
+                        <input class="select" type="file" accept="image/*">
                     
-                  
+                        <br>
+                        <br>
+                       
+                        <button type="submit" value="save" class="btn-photo" > Enregistrer </button>
+                    </form>
+                
+                    </div>
+                  </div>
+                     <div class="col-lg-7">
+                        <div id="ui1">
+                            <form >
+                            <h3><i class="fa fa-angle-right"></i> Changer votre mot de passe
+                            </h3>
+                            <br>
+                     
+                            <label for="fname">Votre Mot de passe</label>
+                          <input type="password" name="oldPassword" class="form-control">
+                
+                            <label for="fname">Nouveau Mot de passe</label>
+                          <input type="password" name="newPassword" class="form-control" >
+                                    
+                                  
+                                
+                              
+                        
+                            <br>
+                            <br>
+                            <button type="submit" value="save" class="btn btn-secondary" >Enregistrer </button>
+                
+                        </form>
+                        </div>
+                
+                    
+                
+                </div> 
+                
+                <div class="col-lg-1"></div>
+                
+                </div>
+                
+                    
+                
+                
             
-                <br>
-                <br>
-                <button type="submit" value="save" class="btn btn-secondary" >Save </button>
-  
-            </form>
             </div>
-  
-        
-  
-    </div> 
 
-    <div class="col-lg-1"></div>
-  
+            
+        </div>
+
     </div>
-    
         
     
-  </div>
-
-
-               
-              </div>
-          </div>
-      </div>
-  </div>
-              </div>
-         
-      </section>
-  </div>
-</div>
-
-</body>
-</html>
-
-
-
