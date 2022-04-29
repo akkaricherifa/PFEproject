@@ -7,24 +7,25 @@ import { DynamicComponent } from '../dynamic/dynamic.component';
   styleUrls: ['./add-competence.component.css']
 })
 export class AddCompetenceComponent implements OnInit {
-  @ViewChild('container', { read: ViewContainerRef })
-  container!: ViewContainerRef;
+  name = 'Angular ' + VERSION.major;
+  dynamicArray : any[] = [];
+  newDynamic:any;
+  index:any;
 
-  private _counter = 1;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
-
-  add(): void {
-
-    // create the component factory
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(DynamicComponent);
-
-    // add the component to the view
-    const componentRef = this.container.createComponent(componentFactory);
-
-    // pass some data to the component
-    //componentRef.instance.index = this._counter++;
+  constructor() { }
+  addRow() {
+    this.dynamicArray.push({ nomCompetence: '', Niveau: '' });
+    console.log('New row added successfully', 'New Row');
   }
+  deleteRow(index:any) {
+    this.dynamicArray.splice(index, 1);
+  }
+  getValues() {
+    console.log(this.dynamicArray);
+  }
+  
+ 
 
 
   ngOnInit(): void {

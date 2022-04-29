@@ -21,8 +21,9 @@ export class InscriptionComponent implements OnInit {
       {
         email:['',Validators.required],
         password:['',Validators.required],
+        CIN:['',Validators.required],
         nom:['',Validators.required],
-        prenom:['',Validators.required],
+        prenom:['',Validators.required],  
         civilite:['',Validators.required],
         niveau:['',Validators.required],
         profession:['',Validators.required],

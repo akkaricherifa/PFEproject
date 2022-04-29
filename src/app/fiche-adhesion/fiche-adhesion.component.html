@@ -18,10 +18,7 @@
     div.cls_002{font-family:"Gill Sans MT",serif;font-size:10.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
     
     </style>
- 
-   
-    
-    <link href="https://arsii.org/adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  
     </head>
     
     
@@ -29,20 +26,13 @@
     
     <div id="wrapper" class="menu-open" style="display: block;">
     
-   
+    <app-navbar-supp></app-navbar-supp>
     
-    
-    
-    <!-- Left side column. contains the sidebar -->
-    <aside class="main-sidebar menu-open" style="display: block;">
-    
-            
-   
-        
-    </aside>
 
-        <div class="content-wrapper" style="min-height: 1035px;">
+    <app-sidebar></app-sidebar>
     
+        <div class="content-wrapper" style="min-height: 1035px;  margin-left: 140px;">
+          
             <section class="content">
                 
                 <div class="row">
@@ -50,29 +40,33 @@
     
                                             
                             <div style="width:100%;height:55px;background:#fcfcfc;">
-            <a style="margin-top:10px;float:right;margin-right:10px;" onclick="window.print();" href="#" class="btn btn-success">
-                <i class="fa fa-download"></i>  Télécharger 
-            </a>
+            <button style="margin-top:5px;float:right;margin-right:50px; width: 110px; font-size:14px; height: 30px;" onclick="window.print();" href="#" class="btn btn-success">
+                <i class="fa fa-download" style="font-size:14px;"></i>  Télécharger 
+            </button>
         </div>
-        <div style="    min-height: 950px;">
-                <div style="position:absolute;left:50%;margin-left:-297px;top:80px;width:595px;height:842px;border-style:outset;overflow:hidden">
+        <div style=" min-height: 950px;">
+                <div style="position:absolute;left:50%;margin-left:-297px;top:50px;width:595px;height:842px;border-style:outset;overflow:hidden">
                 <div style="position:absolute;left:0px;top:0px">
-                <img src="https://arsii.org/public/arsii/background1.jpg" width="595" height="842"></div>
-                <div style="position:absolute;left:248.60px;top:183.05px" class="cls_004"><span class="cls_004">JORT59/2016 - </span><span class="cls_005">ARSII.ORG</span></div>
+                <img src="assets/img/hrdata2.png" width="400" height="90" style="margin-top: 70px; margin-left: 100px;" ></div>
+            
                 <div style="position:absolute;left:171.08px;top:204.58px" class="cls_006"><span class="cls_006">ATTESTATION D’ADHESION</span></div>
-                <div style="position:absolute;left:288.38px;top:234.08px" class="cls_008"><span class="cls_008"><b>2022</b></span></div>
-                <div style="position:absolute;left:57.53px;top:311.60px" class="cls_009"><span class="cls_009">Je soussigné,  <b>Dr. Ahmed MAALEL</b>  président de l’<b>Association de Recherche</b></span></div>
+
+                <div style="position:absolute;left:57.53px;top:311.60px" class="cls_009"><span class="cls_009">Je soussigné,  <b>Dr. Ahmed MAALEL</b>  Président de l’<b>Association de Recherche</b></span></div>
                 <div style="position:absolute;left:57.53px;top:329.10px" class="cls_009"><span class="cls_009"><b>Scientifique et Innovation en Informatique - ARSII</b>,</span></div>
-                <div style="position:absolute;left:57.53px;top:364.10px" class="cls_009"><span class="cls_009">Certifie que </span><span class="cls_010">:  (M./Mme/Mlle)  cherifa akkari</span></div>
-                <div style="position:absolute;left:57.53px;top:381.62px" class="cls_009"><span class="cls_009">N° CIN/Passeport :  </span><span class="cls_010">12858383</span></div>
-                <div style="position:absolute;left:57.53px;top:399.12px" class="cls_009"><span class="cls_009">Est membre de l’association pour l’année <b>2022</b> conformément aux statuts et le</span></div>
-                <div style="position:absolute;left:57.53px;top:416.62px" class="cls_009"><span class="cls_009">règlement interne de l’association.</span></div>
-                <div style="position:absolute;left:93.05px;top:572.18px" class="cls_012"><span class="cls_012"> </span><a href="mailto:contact@arsii.og">contact@arsii.og</a> </div>
-                <div style="position:absolute;left:93.05px;top:625.42px" class="cls_002"><span class="cls_002">TEL: +216 98 684 033</span></div>
-                <div style="position:absolute;left:93.05px;top:643.45px" class="cls_002"><span class="cls_002">FAX : +216 73 382 658</span></div>
+                <div style="position:absolute;left:57.53px;top:364.10px" class="cls_009"><span class="cls_009">Certifie que </span><span class="cls_010">:  (M./Mme/Mlle)  {{Adherent.nom}} {{Adherent.prenom}}</span></div>
+                <div style="position:absolute;left:57.53px;top:381.62px" class="cls_009"><span class="cls_009">N° CIN :  </span><span class="cls_010">{{Adherent.CIN}}</span></div>
+                <div style="position:absolute;left:57.53px;top:399.12px" class="cls_009"><span class="cls_009">Est avoir perçu sa cotisation de même que l'ensemble <b></b> des informations demandées aux </span></div>
+                <div style="position:absolute;left:57.53px;top:416.62px" class="cls_009"><span class="cls_009">futurs adhérents. L'adhésion du Membre susnommé est donc Validée.</span></div>
+                <div style="position:absolute;left:57.53px;top:440.12px" class="cls_009"><span class="cls_009">Ce reçu prouve le statut de membre du postulant <b></b> et lui permet de participer de </span></div>
+                <div style="position:absolute;left:57.53px;top:460.62px" class="cls_009"><span class="cls_009">plein droit à l'assemblée générale de l'association.</span></div>
+                <div style="position:absolute;left:360.05px;top:500.18px" class="cls_02">  <img src="assets/img/signature.jpg" width="170" height="100"></div>
+                <div style="position:absolute;left:93.05px;top:600.18px" class="cls_012"><span class="cls_012"><i class="fa fa-envelope" aria-hidden="true"> </i>     association.arsii@gmail.com</span> </div>
+                <div style="position:absolute;left:93.05px;top:625.42px" class="cls_002"><span class="cls_002"> <i class="fa fa-phone" aria-hidden="true"></i>   TEL: +216 98 684 033</span></div>
+                <div style="position:absolute;left:93.05px;top:643.45px" class="cls_002"><span class="cls_002"> <i class="fa fa-fax" aria-hidden="true"></i>    FAX : +216 73 382 658</span></div>
                 <div style="position:absolute;left:93.05px;top:662.45px" class="cls_005"><span class="cls_005">ADRESSE : INSTITUT SUPERIEUR DES SCIENCES APPLIQUEES ET DE TECHNOLOGIE DE SOUSSE</span></div>
-                <div style="position:absolute;left:93.05px;top:672.95px" class="cls_005"><span class="cls_005">CITE TAFFALA ( IBN KHALDOUN ), 4003 SOUSSE TUNISIE</span></div>
-                </div>
+                <div style="position:absolute;left:93.05px;top:675.95px" class="cls_005"><span class="cls_005">CITE TAFFALA ( IBN KHALDOUN ), 4003 SOUSSE TUNISIE</span></div>
+                <div style="position:absolute;left:93.05px;top:690.95px" class="cls_005"><span class="cls_005">IMM. LOUZIR ( RUE PALESTINE ), SAHLOUL 2, SOUSSE TUNISIE</span></div>
+            </div>
     
         </div>
             
@@ -83,14 +77,6 @@
             </section>
         </div>
     </div>
-  
-    
-  
-    
-
-     
-    
-    
     
     
     </body></html>

@@ -1,7 +1,70 @@
 <app-navbar-supp></app-navbar-supp>
-<button (click)="add()">Dynamically Add Component</button>
 
-<!-- This is where we will insert the dynamic components -->
-<div #container></div>
 <app-sidebar></app-sidebar>
 
+
+
+<table class="table table-striped"  >
+    <thead class="thead-inverse">
+    <tr>
+      <td ><label>Action</label></td>
+      <td><label>Nom Compétence</label></td>
+      <td ><label>Taux de Connaissance</label></td>
+      <td ><label>Autre</label></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let dynamic of dynamicArray; let i = index;">
+      <td>
+        <button type="button" class="fa fa-trash-o" aria-hidden="true" (click)="deleteRow(i)">Delete</button>
+        
+      </td>
+      <td>
+        <select  style="width:180px"  name="{{dynamic.nomCompetence}}" [(ngModel)]="dynamic.nomCompetence"  type="text" 
+        
+        >
+            <option value="Angular">Angular</option>
+            <option value="React">React</option>
+            <option value="Spring-Boot">Spring-Boot</option>
+            <option value="Laravel">Laravel</option>
+            <option value="Flutter">Flutter</option>
+            <option value="UI-UX Design">UI-UX Design</option>
+            <option value="Node-JS">Node-JS</option>
+            <option value="Intelligence Artificielle">Intelligence Artificielle</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Git-Gitlab">Git/Gitlab</option>
+            <option value="Docker">Docker</option>
+            <option value="Android Native">Android Native</option>
+            <option value="HTML-CSS">HTML-CSS</option>
+            <option value="PHP">PHP</option>
+            <option value="UML">UML</option>
+
+        </select>
+      </td>
+      <td>
+        <select style="width:180px" name="{{dynamic.Niveau}}" [(ngModel)]="dynamic.Niveau"  type="text"
+        >
+            <option value="Angular">Notions</option>
+            <option value="React">Intermédiare</option>
+            <option value="Spring-Boot">Avancé</option>
+            <option value="Laravel">Expert</option>
+           
+           
+
+        </select>
+      </td>
+      <td>
+        <input  style="width:250px" name="{{dynamic.emailAddress}}" [(ngModel)]="dynamic.emailAddress"  type="email"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="fa fa-plus " (click)="addRow()">Add</button>
+      </td>
+      <td>
+        <button class="fa fa-plus " (click)="getValues()">Get data</button>
+      </td>
+    </tr>
+    </tbody>
+    </table>
+    <div>{{dynamicArray | json}}</div>

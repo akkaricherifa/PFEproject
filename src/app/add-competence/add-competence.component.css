@@ -1,3 +1,102 @@
 p {
     font-family: Lato;
   }
+  
+
+  @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
+  *{
+   margin:0;
+   padding: 0;
+   outline: 0;
+  }
+  
+  table{
+   position: absolute;
+   z-index: 2;
+   left: 58%;
+   top: 55%;
+   transform: translate(-50%,-50%);
+   width: 75%; 
+   border-collapse: collapse;
+   border-spacing: 0;
+   box-shadow: 0 2px 10px rgba(64,64,64,.7);
+   border-radius: 12px 12px 0 0;
+   overflow: hidden;
+  
+  }
+  td , th{
+   padding: 15px 20px;
+   text-align: center;
+   font-size: 16.5px;
+   
+  
+  }
+  th{
+   background-color: #0e5e58;
+   color: #fafafa;
+   font-family: 'Open Sans',Sans-serif;
+   font-weight: 200;
+   text-transform: uppercase;
+   width: 100px;
+  
+  }
+  tr{
+   width: 100%;
+   background-color: #fafafa;
+   font-family: 'Montserrat', sans-serif;
+  }
+  tr:nth-child(even){
+   background-color: #eeeeee;
+  }
+  
+  button{
+      width: 26px;
+      height: 26px;
+      margin : 2px;
+      font-size: 13px;
+      
+  }
+  
+  h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      line-height: 1.1;
+      color: inherit;
+      font-size: 24px;
+  }
+  .container{
+      text-align: center;
+  }
+  
+  .cv{
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+      font-size: 13px;
+      background-color: #fff;
+  }
+  
+  .pagination{
+      
+      margin-left: 70%;
+      margin-top: 35%;
+      background-color: white;
+  }
+  .form-control {
+      display: block;
+      width: 30%;
+      height: calc(1.5em + .75rem + 2px);
+      padding: .375rem .75rem;
+      margin-top: 3%;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; 
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;}

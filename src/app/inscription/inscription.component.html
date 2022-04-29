@@ -54,7 +54,7 @@
                         <input type="hidden" name="_token" >
                         <div class="row">
 
-                            <div style="margin-top:15px;" class="col-md-10">
+                            <div style="margin-top:15px;" class="col-md-6">
 
                                 <div class="form-group">
                                     <label class="control-label">Civilité (*) </label>
@@ -67,7 +67,24 @@
                                         <option value="Mme">Mme</option>
 
                                     </select>
+                                   
                                 </div>
+                                
+
+                            </div>
+                            <div  style="margin-top:15px;"class="col-md-6">
+
+                                <div class="form-group">
+                                    <label class="control-label">CIN </label>
+
+                                    <input type="text" pattern="[0-9]{8}" name="CIN" id="CIN" class="form-control col-md-12" style="height: 35px;" 
+                                    formControlName="CIN" 
+                                    [ngClass]="{'is-invalid':adherentForm.get('CIN')!.touched && !adherentForm.get('CIN')!.valid}">
+                                    
+                                    
+                                
+                                </div>
+                                
 
                             </div>
                             <div style="margin-top:15px;" class="col-md-6">
@@ -149,7 +166,7 @@
                         </div>
 
                         <div style="margin-top:15px;" class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-10">
 
                                 <div class="form-group">
                                     <label class="control-label">Situation Professionnelle</label>
@@ -164,7 +181,9 @@
                                     </select>
                                 </div>
 
+
                             </div>
+                            
                         </div>
                         <div style="margin-top:15px;" class="studentsection">
 
@@ -228,15 +247,7 @@
                                     </div>
 
                                 </div>
-                                <!-- <div class="form-group">
-                                    <label class="control-label">Situation Professionnelle</label>
-
-                                    <select required="" name="profession" id="profession" class="form-control col-md-6"  formControlName="profession"
-                                    >
-                                        <option value="student">Etudiant</option>
-                                        <option value="pro">Salarié</option>
-                                    </select>
-                                </div> -->
+                           
                             </div>
 
                         </div>
