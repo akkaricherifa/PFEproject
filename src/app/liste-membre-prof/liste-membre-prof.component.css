@@ -127,7 +127,8 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-size:17px;
     color:white;
-    margin : 2px 200px;
+    /* margin : 2px 200px; */
+    margin-left: 500px;
     background: #82918f;
     
 }

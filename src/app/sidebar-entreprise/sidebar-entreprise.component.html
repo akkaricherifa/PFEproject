@@ -19,14 +19,14 @@
           <a><img src="" class="img-circle" width="80" routerLink ="/profil" ></a></p>
         <h5 class="centered"><h3>{{Entreprise.nomEnt}}</h3></h5>
   
-         <li class="mt">
+         <li class="title">
           <a routerLink ="/acceuil" >
             <i class="fa fa-globe"></i>
             <span>Retourner au site</span>
             </a>
         </li> 
         <li class="active">
-            <a  href="dashboard-entreprise.component.html">
+            <a  href="dashboard-entreprise">
                 <i class="fa fa-wrench"></i>
                 <span class="title">Tableau de bord</span>
             </a>
@@ -35,7 +35,7 @@
   
         <li class="active">
           <a  href="liste">
-              <i class="fa fa-wrench"></i>
+              <i class="fa fa-list"></i>
               <span class="title">liste des Adhérents</span>
           </a>
       </li>
@@ -46,14 +46,14 @@
               <i class="fa fa-user"></i>
               <span [routerLink]="['/profil-entreprise',id]">Gérer le Profil
               </span>
-              <span class="dcjq-icon"></span></a>
+              <span class="title"></span></a>
       
           </li> 
         
-          <li class="sub-menu dcjq-parent-li">
+          <li class="">
             <a  (click)="logout()" >
                 <i class="fa fa-arrow-left"></i>
-                <span class="title">Se déconnecter</span></a>
+                <span class="title">Se Déconnecter</span></a>
       
           </li> 
         
