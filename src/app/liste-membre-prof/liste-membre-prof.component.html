@@ -1,0 +1,109 @@
+<app-navbar-supp></app-navbar-supp>
+
+<app-sidebar-entreprise></app-sidebar-entreprise>
+
+<div class="wrapper">
+    <div class="left"> 
+      <img src="assets/img/ui-sam.jpg" alt="user" width="150" class="img-circle" >
+      <br>
+      <br>
+      <h4>{{Adherent.prenom}} {{Adherent.nom}} </h4>
+     
+  
+    </div>
+          
+    <div class="right">
+  
+      <div class="info">
+            <h3> Informations de Contact</h3>
+        <div class="info_data">
+          <div class="data">
+            <h4>CIN</h4>
+            <p> {{Adherent.CIN}}</p>
+          </div>
+              <div class="data">
+                <h4>Nom</h4>
+                <p> {{Adherent.prenom}}</p>
+            </div>
+            <div class="data">
+              <h4>Prénom</h4>
+              <p> {{Adherent.nom}}</p>
+          </div>
+         
+          
+  
+      </div>
+  
+      <div class="info_data">
+        <div class="data">
+          <h4>Email</h4>
+          <p> {{Adherent.email}}</p>
+        </div>
+        <div class="data">
+          <h4>Civilité</h4>
+          <p> {{Adherent.civilite}}</p>
+        </div>
+  
+        <div class="data">
+          <h4>Numéro Téléphone</h4>
+          <p> {{Adherent.telephone}}</p>
+      </div>
+      
+  
+      </div>
+    </div>
+            
+    <div class="projects">
+  
+        <h3> Informations Professionnels</h3>
+        <div class="info_data">
+          <div class="data">
+            <h4>Situation Professionelle</h4>
+            <p> {{Adherent.profession}}</p>
+          </div>
+          <div class="data">
+            <h4>Université </h4>
+            <p> {{Adherent.etablissement}}</p>
+          </div>
+          <div class="data">
+            <h4>Cycle</h4>
+            <p> {{Adherent.cycle}}</p>
+          </div>
+          
+  
+        </div> 
+          
+         <div class="info_data">
+          <div class="data">
+            <h4>Niveau </h4>
+            <p> {{Adherent.niveau}}</p>
+          </div>
+          <div class="data">
+            <h4>Spécialité</h4>
+            <p> {{Adherent.specialite}}</p>
+          </div>
+          <div class="data">
+            
+          </div>
+  
+        </div>
+          
+      </div>
+      <a class="btn"  >Export informations to PDF</a>
+      
+    </div>
+  
+    
+     
+      
+  
+  </div>
+       
+          
+             
+    
+  
+              
+  
+          
+  

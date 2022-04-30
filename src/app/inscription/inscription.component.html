@@ -171,7 +171,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Situation Professionnelle</label>
 
-                                    <select required="" name="profession" id="profession" class="form-control col-md-12" style="height: 35px;" 
+                                    <select  name="profession" id="profession" class="form-control col-md-12" style="height: 35px;" 
                                     formControlName="profession" 
                                     [ngClass]="{'is-invalid':adherentForm.get('profession')!.touched && !adherentForm.get('profession')!.valid}">
                                     
@@ -193,10 +193,15 @@
                                     <div class="form-group">
                                         <label class="control-label">Cycle</label>
 
-                                        <input id="cycle" name="cycle" type="text" class="form-control" placeholder=""
+                                        <select id="cycle" name="cycle" type="text" class="form-control col-md-12" placeholder=""  style="height: 39px"
                                         formControlName="cycle" 
                                     [ngClass]="{'is-invalid':adherentForm.get('cycle')!.touched && !adherentForm.get('cycle')!.valid}">
-                                    </div>
+                                    <option value="Licence">Licence</option>
+                                    <option value="Mastére">Mastére</option>
+                                    <option value="Ingénierie">Ingénierie</option>
+                                    <option value="Préparatoire">Préparatoire</option>
+                                        </select>
+                                </div>
 
                                 </div>
 
@@ -205,10 +210,17 @@
                                     <div class="form-group">
                                         <label class="control-label">Niveau</label>
 
-                                        <input id="niveau" name="niveau" type="text" class="form-control" placeholder=""
+                                        <select id="niveau" name="niveau" type="text" class="form-control" placeholder="" style="height: 39px;"
                                         formControlName="niveau" 
                                     [ngClass]="{'is-invalid':adherentForm.get('niveau')!.touched && !adherentForm.get('niveau')!.valid}">
-                                    </div>
+                                    <option value="1er Année ">1ér Année</option>
+                                    <option value="2éme Année">2éme Année</option>
+                                    <option value="3éme Année">3éme Année</option>
+                                    <option value="4éme Année">4éme Année</option>
+                                    <option value="5éme Année">5éme Année</option>
+                                
+                                </select>
+                                </div>
 
                                 </div>
                             </div>
@@ -231,7 +243,7 @@
                                     <div class="form-group">
                                         <label class="control-label">Etablissement</label>
 
-                                        <select  name="etablissement" id="etablissement" class="form-control col-md-12" style="height: 35px;" formControlName="etablissement"
+                                        <select  name="etablissement" id="etablissement" class="form-control col-md-12" style="height: 39px;" formControlName="etablissement"
                                        placeholder="Choisir Votre Etablissement" 
                                        [ngClass]="{'is-invalid':adherentForm.get('etablissement')!.touched && !adherentForm.get('etablissement')!.valid}">
                                         <option value="ISITCOM">IsitCom</option>

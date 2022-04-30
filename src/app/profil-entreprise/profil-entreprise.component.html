@@ -1,13 +1,22 @@
 <app-navbar-supp></app-navbar-supp>
 
 <app-sidebar-entreprise></app-sidebar-entreprise>
+<div class="row">
+  <div class="col-md-12" style="margin-top: 10px; margin-left: 230px; width: 1100px; height: 200px;" >
+      <div class="panel panel-default">
+          <div class="panel-heading" style="height: 36px; "> Bienvenue,  <strong>{{Entreprise.nomEnt}}  </strong> dans votre Espace Interne.</div>
+          
+      
+        </div>
+  </div>
+</div>
 
-<div class="wrapper">
+          <div class="wrapper" style="margin-top: 60px; margin-left: -10px;"  >
     <div class="left"> 
       <!-- <img src="assets/img/ui-sam.jpg" alt="user" width="150" class="img-circle" > -->
       <br>
       <br>
-      <h4>{{Entreprise.nomEnt}} {{Entreprise.nomResp}} </h4>
+      <h4>{{Entreprise.nomEnt}} </h4>
      
   
     </div>
@@ -18,23 +27,27 @@
             <h3> Informations de Contact</h3>
         <div class="info_data">
               <div class="data">
-                <h4>Nom</h4>
+                <h4>Nom De l'entreprise</h4>
                 <p> {{Entreprise.nomEnt}}</p>
             </div>
             <div class="data">
-              <h4>Prénom</h4>
-              <p> {{Entreprise.telEnt}}</p>
+              <h4>Nom du Responsable</h4>
+              <p> {{Entreprise.nomResp}}</p>
           </div>
           <div class="data">
             <h4>Email</h4>
             <p> {{Entreprise.emailEnt}}</p>
           </div>
           
-  
+         
       </div>
   
       <div class="info_data">
   
+        <div class="data">
+          <h4>Adresse</h4>
+          <p> {{Entreprise.adresse}}</p>
+        </div>
         
   
       
@@ -42,14 +55,6 @@
       </div>
     </div>
             
-    <div class="projects">
-  
-        <h3> Informations Professionnels</h3>
-       
-          
-         
-          
-      </div>
       <!-- <a class="btn"  >Export informations to PDF</a>
        -->
     </div>

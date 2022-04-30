@@ -5,7 +5,7 @@
     padding:0;
     box-sizing: border-box;
     list-style: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 body{
@@ -29,6 +29,7 @@ body{
 
 .wrapper .left{
         width: 30%;
+        height: 455px;
         
         background: rgb(199, 204, 204);
          padding: 30px 25px;
@@ -45,10 +46,12 @@ body{
 .wrapper .left h4{
     margin-bottom: 10px;
     font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
   }
 
 .wrapper .left p{
     font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .wrapper .right .info p{
@@ -67,6 +70,7 @@ body{
 .wrapper .right .projects,
 .wrapper.right.exp {
   margin-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper .right .info h3,
@@ -77,6 +81,7 @@ body{
     padding-bottom: 5px;
     border-bottom: 1px solid #e0e0e0;
     color: #353c4e;
+    font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 5px;
 }
@@ -99,17 +104,21 @@ body{
 .wrapper .right .exp_data .data h4{
     color: #353c4e;
     margin-bottom: 5px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper .right .info_data .data p,
 .wrapper .right .projects_data .data p,
 .wrapper .right .exp_data .data p{
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 10px;
   color: #919aa3;
+  
 }
 .wrapper .right .exp_data .data p a {
     font-size:20px;
+    
     width: 30px;
 }
 .wrapper .right .btn {
@@ -118,23 +127,19 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-size:17px;
     color:white;
-    margin : 30px 200px;
+    margin : 2px 200px;
+    background: #82918f;
     
-    
+}
+
+p{
+  font-size: 17px;
 }
 
 h2{
   font-size: 17px;
   color:black;
+  font-family: 'Montserrat', sans-serif;
 }
-h4{
-  font-size: 18px;
-  
-}
-h3{
-  font-size: 17px;
-  color: black;
-}
-
 
 

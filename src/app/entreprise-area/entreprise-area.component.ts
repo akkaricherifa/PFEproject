@@ -37,7 +37,7 @@ export class EntrepriseAreaComponent implements OnInit {
         emailEnt:['',Validators.required],
         telEnt:['',Validators.required],
         password:['',Validators.required],
-      
+        adresse:['',Validators.required],
 
 
       }

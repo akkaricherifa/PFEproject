@@ -18,6 +18,8 @@ import { InfoAdherentComponent } from './info-adherent/info-adherent.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ListAdherentsComponent } from './list-adherents/list-adherents.component';
 import { ListCandidatComponent } from './list-candidat/list-candidat.component';
+import { ListeMembreProfComponent } from './liste-membre-prof/liste-membre-prof.component';
+import { ListeMembreComponent } from './liste-membre/liste-membre.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarSuppComponent } from './navbar-supp/navbar-supp.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -31,6 +33,7 @@ import { ReponseCandidatComponent } from './reponse-candidat/reponse-candidat.co
 import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
 import { SidebarEntrepriseComponent } from './sidebar-entreprise/sidebar-entreprise.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { UpdateAdherentComponent } from './update-adherent/update-adherent.component';
  
 
@@ -74,7 +77,10 @@ const routes: Routes = [
   { path:'add-competence',component:AddCompetenceComponent},
   { path:'formation-adherent',component:FormationAdherentComponent},
   { path:'fiche-adhesion',component:FicheAdhesionComponent},
-  { path:'footer',component:FooterComponent}
+  { path:'footer',component:FooterComponent},
+  { path:'suggestions',component:SuggestionsComponent},
+  { path: 'liste',component:ListeMembreComponent},
+  { path: 'profil/:id',component:ListeMembreProfComponent}
 
 ];
 

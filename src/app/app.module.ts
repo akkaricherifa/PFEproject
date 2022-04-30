@@ -57,7 +57,10 @@ import { ProfilEntrepriseComponent } from './profil-entreprise/profil-entreprise
 import { AddCompetenceComponent } from './add-competence/add-competence.component';
 import { DynamicComponent } from './dynamic/dynamic.component';
 import { FormationAdherentComponent } from './formation-adherent/formation-adherent.component';
-import { FicheAdhesionComponent } from './fiche-adhesion/fiche-adhesion.component'; 
+import { FicheAdhesionComponent } from './fiche-adhesion/fiche-adhesion.component';
+import { SuggestionsComponent } from './suggestions/suggestions.component';
+import { ListeMembreComponent } from './liste-membre/liste-membre.component';
+import { ListeMembreProfComponent } from './liste-membre-prof/liste-membre-prof.component'; 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -103,6 +106,9 @@ FullCalendarModule.registerPlugins([
     DynamicComponent,
     FormationAdherentComponent,
     FicheAdhesionComponent,
+    SuggestionsComponent,
+    ListeMembreComponent,
+    ListeMembreProfComponent,
 
 
 

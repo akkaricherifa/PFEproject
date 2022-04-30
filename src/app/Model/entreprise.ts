@@ -5,4 +5,5 @@ export interface Entreprise {
     emailEnt:string;
     password:string;
     telEnt:string;
+    adresse:string;
 }

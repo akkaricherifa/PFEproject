@@ -1,0 +1,57 @@
+<app-navbar-supp></app-navbar-supp>
+<app-sidebar-entreprise></app-sidebar-entreprise>
+
+
+<!--Tableauuuuuuuu des adhérents-->
+    
+<h3><i class="fa fa-angle-right" style="margin-left: 280px; margin-top: -2px;"></i> Liste des Adhérents</h3>
+<div _ngcontent-roy-c3="" class="card-body bg-light">
+        <div >
+             <input type="text" class="form-control"  [(ngModel)]="term"   placeholder="Search"  style="height: 30px; width: 400px; margin-left: 280px; margin-top: 5px;" > 
+               </div>
+                     
+          <table class="table table-striped" style="margin-top: 8%;" >
+               
+                   <thead class="thead-inverse">
+                   <tr>
+                     <th>Photo</th>
+                     <th>Nom</th>
+                     <th>Prénom</th>
+                     <th>email</th>
+                     <th>Action</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                       <tr *ngFor="let Adherents of Adherent | paginate : {itemsPerPage: 4, currentPage: p} | filter:term" >
+                         <td><img src="assets/img/ui-danro.jpg" alt="user" width="70" class="img-circle"></td>
+                           <td>{{Adherents.nom }} </td>
+                           <td>{{Adherents.prenom}}</td>
+                           
+                           <td>{{Adherents.email}}</td>
+                          
+                            
+                           <td>
+                             <div class="container">
+                             <button mat-raised-button class="action-button btn-success" [routerLink]="['/profil',Adherents.id]">
+                               <span class="fa fa-info"></span>
+               
+                             </button>
+                             <button mat-raised-button class="action-button btn-secondary" [routerLink]="['/chart',Adherent.id]"> <span class="fa fa-line-chart"></span></button> 
+                            
+
+                           </div>
+                           
+                           </td>
+               
+                          
+                       </tr>
+                   </tbody>
+                   
+                 </table>
+                 <div class="pagination">
+                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
+               </div>
+               </div>
+             
+               
+

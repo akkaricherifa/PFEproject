@@ -27,9 +27,9 @@ h3 {
 .btn{
 
    
-    margin-left: 35%;
+    margin-left: 39%;
     top:80%;
-    width: 200px;
+    width: 140px;
     height: 30px;
     border-radius: 5px 5px;
     color:white;
@@ -42,3 +42,13 @@ input{
     font-family: 'Jost', sans-serif;
     font-size: 16px;
 }
+option{
+    font-size: 16px;
+}
+strong{
+    font-size: 14px;
+}
+.panel-heading{
+    font-size: 13px;
+}
+

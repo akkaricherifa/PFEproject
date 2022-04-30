@@ -1,121 +1,13 @@
 
-
-      <html lang="en" style="height: auto;"><head>
-        <meta charset="utf-8">
-    <title>
-        ARSII - Espace membre</title>
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <link href="https://arsii.org/adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://arsii.org/adminlte/css/AdminLTE.min.css" rel="stylesheet">
-    <link href="https://arsii.org/adminlte/css/custom.css" rel="stylesheet">
-    <link href="https://arsii.org/adminlte/css/skins/skin-green.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
-    
-    <link href="https://arsii.org/adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
-    </head>
-    
-    
-    <body class="skin-green sidebar-mini" style="height: auto;">
-    
-    <div id="wrapper">
-    
     <app-navbar-supp></app-navbar-supp>
+    <app-sidebar></app-sidebar>
+ 
+     
     
-    <aside class="main-sidebar">
-    
-        <section class="sidebar" style="height: auto;">
-            <ul class="sidebar-menu">
-    
-                <!-- <span class="d-flex flex-column align-items-center text-center">
-         
-                    <img style="width: 120px;height: auto;margin-top: 0px;" class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="logo">
-              </span> -->
-                 <li class="">
-                    <a href="#acceuil">
-                        <i class="fa fa-globe"></i>
-                        <span class="title">Retourner au site</span>
-                    </a>
-                </li>
-                
-       
-                <li class="treeview active">
-                    <a href="">
-                        <i class="fa fa-slideshare"></i>
-                        <span>Espace Membre</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                       
-                        <li>
-                            <a href="chart">
-                                <i class="fa fa-line-chart" aria-hidden="true"></i>
-                                <span> Mes Compétences</span>
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="formation-adherent">
-                                <i class="fa fa-list"></i>
-                                <span>Plan Formations</span>
-                            </a>
-                        </li>
-                        
-    
-    
-                        
-    
-                        <li>
-                            <a href="info-adherent">
-                                <i class="fa fa-user"></i>
-                                <span>Mon profil</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="update-adherent">
-                                <i class="fa fa-edit"></i>
-                                <span>Modifier profil</span>
-                            </a>
-                        </li>
-                      
-                    </ul>
-                </li>
-                            
-    
-                <li class="">
-                    <a href="changerPWD">
-                        <i class="fa fa-key"></i>
-                        <span class="title">Changer mot de passe</span>
-                    </a>
-                </li>
-                            <li>
-                    <a  (click)="logout()" >
-                        <i class="fa fa-arrow-left"></i>
-                        <span class="title">Se déconnecter</span>
-                    </a>
-                </li>
-            </ul>
-        </section>
-        
-    </aside>
-        <div class="content-wrapper" style="min-height: 575px;">
-            <section class="content">
-                
-                <div class="row">
-                    <div class="col-md-12">
-    
-                                            
-                            <div class="row">
-            <div class="col-md-12" style="margin-top: 63px;">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Bienvenue,  <strong>{{Adherent.nom}} {{Adherent.prenom}} </strong> dans votre espace interne.</div>
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 7px; margin-left: 220px; width: 1150px;" >
+            <div class="panel panel-default">
+                <div class="panel-heading">Bienvenue,  <strong>{{Adherent.nom}} {{Adherent.prenom}} </strong> dans votre espace interne.</div>
     
                     <div class="panel-body">
                  
@@ -163,7 +55,7 @@
       
                         <div class="col-lg-6">
                             <label class="control-label">Situation Professionnelle</label>
-                                  <select  [(ngModel)] ="Adherent.profession" name="profession" id="profession" class="form-control col-md-12" style="height: 35px;" 
+                                  <select  [(ngModel)] ="Adherent.profession" name="profession" id="profession" class="form-control col-md-12" style="height: 35px;font-size:16px"
                                  >
                                         <option value="Etudiant">Etudiant</option>
                                         <option value="Ingenieur">Ingenieur</option>
@@ -175,7 +67,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <label for="fname">Etablissement</label>
-                            <select  [(ngModel)] ="Adherent.etablissement" name="etablissement" class="form-control" id="etablissement" style="height: 35px;">
+                            <select  [(ngModel)] ="Adherent.etablissement" name="etablissement" class="form-control" id="etablissement" style="height: 35px; font-size:16px">
                          
                                 <option value="ISITCOM">IsitCom</option>
                                 <option value="ISSAT">Issat</option>
@@ -189,15 +81,26 @@
       
                         <div class="col-lg-6">
                             <label for="fname">Cycle</label>
-                            <input type="text" name="cycle" class="form-control" id="cycle" 
-                            [(ngModel)] ="Adherent.cycle" >
+                            <select  [(ngModel)] ="Adherent.cycle" name="cycle" class="form-control"  id="cycle" style="height: 35px; font-size:16px">
+                           
+                            <option value="Licence">Licence</option>
+                            <option value="Mastére">Mastére</option>
+                            <option value="Ingénierie">Ingénierie</option>
+                            <option value="Préparatoire">Préparatoire</option>
+                        </select>
                         </div>
                     </div>
                     <div class="row">
                     <div class="col-lg-6">
                         <label for="fname">Niveau</label>
-                        <input type="text" name="niveau" class="form-control"  id="niveau" 
+                        <select type="text" name="niveau" class="form-control"  id="niveau" style="height: 35px; font-size:16px"
                         [(ngModel)] ="Adherent.niveau">
+                        <option value="1ere Année ">1ére Année</option>
+                        <option value="2éme Année">2éme Année</option>
+                        <option value="3éme Année">3éme Année</option>
+                        <option value="4éme Année">4éme Année</option>
+                        <option value="5éme Année">5éme Année</option>
+                    </select>
                     </div>
 
                     <div class="col-lg-6">
@@ -230,17 +133,8 @@
     
             </div>
         </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
     
     
-        
-      
-      
-    </body>
-    </html>
+  
     
     
