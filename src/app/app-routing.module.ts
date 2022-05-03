@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { AddCompetenceComponent } from './add-competence/add-competence.component';
 import { AdherentArchivesComponent } from './adherent-archives/adherent-archives.component';
+import { AllCompetenceComponent } from './all-competence/all-competence.component';
 import { CandidatAreaComponent } from './candidat-area/candidat-area.component';
 import { ChangerPwdComponent } from './changer-pwd/changer-pwd.component';
 import { ChartComponent } from './chart/chart.component';
@@ -80,7 +81,8 @@ const routes: Routes = [
   { path:'footer',component:FooterComponent},
   { path:'suggestions',component:SuggestionsComponent},
   { path: 'liste',component:ListeMembreComponent},
-  { path: 'profil/:id',component:ListeMembreProfComponent}
+  { path: 'profil/:id',component:ListeMembreProfComponent},
+  { path: 'all-competence',component:AllCompetenceComponent}
 
 ];
 

@@ -60,7 +60,8 @@ import { FormationAdherentComponent } from './formation-adherent/formation-adher
 import { FicheAdhesionComponent } from './fiche-adhesion/fiche-adhesion.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { ListeMembreComponent } from './liste-membre/liste-membre.component';
-import { ListeMembreProfComponent } from './liste-membre-prof/liste-membre-prof.component'; 
+import { ListeMembreProfComponent } from './liste-membre-prof/liste-membre-prof.component';
+import { AllCompetenceComponent } from './all-competence/all-competence.component'; 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -109,6 +110,7 @@ FullCalendarModule.registerPlugins([
     SuggestionsComponent,
     ListeMembreComponent,
     ListeMembreProfComponent,
+    AllCompetenceComponent,
 
 
 
