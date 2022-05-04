@@ -38,13 +38,3 @@ button {
     margin: 100px;
     font-size: 15px;
 }
-.toolbar{
-    background-color:  #4B0082;
-    border-radius: 5px;
-    color: white;
-
-}
-
-.toolbar-spacer{
-    flex: 1 1 auto;
-}
