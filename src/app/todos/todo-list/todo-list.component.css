@@ -186,8 +186,8 @@ h2 {
  
 }
 .list-group-item{
-  background-color: #4ECDC4;
-  left:35%;
+  background-color: #556665;
+  left:40%;
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   color: white;
@@ -197,13 +197,14 @@ h2 {
 }
 
 .btn-tache{
-  left: 35%;
+  left: 60%;
   width: 30%;
-  background-color: rgba(110, 152, 187, 0.959);
+  background-color: #6a7e7c;
   border-radius: 9px 9px ;
   box-shadow: 0 2px 2px rgba(64,64,64,.7);
   height:30px;
   font-size: 16px;
+  color: #ffffff;
   font-family: 'Montserrat', sans-serif;
 
 }

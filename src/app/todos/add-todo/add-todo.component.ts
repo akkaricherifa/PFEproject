@@ -22,21 +22,13 @@ export class AddTodoComponent implements OnInit {
     }
   }
 
-  onSubmit(){
-  
-  this.onCreateTodo();
+ 
 
-  }
-
-  onCreateTodo():void {
-    
-    this.todoService.createTodo(this.todo)
-    .subscribe(  data => {
-      this.onClose(this.todo);
+  createTodo(todo:any) {
+    this.todoService.createTodo(this.todo).subscribe((res) => {
     });
-  
-  
-  };
+    console.log(this.todo);
+  }
 
 
   onClose(value:any){

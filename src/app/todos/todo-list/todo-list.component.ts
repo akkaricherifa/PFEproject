@@ -10,18 +10,20 @@ import { TodoService } from 'src/app/shared/todo.service';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  todos!:any;
+  
   isPopupOpened = false;
   todo : Todo = new Todo();
   editing: boolean = false;
-  editingTodo!: Todo ;
+  editingTodo: Todo = new Todo();
+  todos!:any;
+
   
   constructor(private dialog: MatDialog,
     private todoService:TodoService,
     private router:Router) { }
 
   ngOnInit(): void {
-
+    this.affiche();
   }
 
   onAddTodo() {
@@ -33,10 +35,10 @@ export class TodoListComponent implements OnInit {
     const dialogRef = this.dialog.open(AddTodoComponent,{
       disableClose : true,
       autoFocus : true ,
-      width : "1500%",
+      width : "1000%",
       height: '100%',
       data : data,
-      panelClass: 'full-screen-modal'
+      
     });
     
     dialogRef.afterClosed().subscribe(result =>{
@@ -45,25 +47,27 @@ export class TodoListComponent implements OnInit {
       }}
    ); 
   }
-  getAllTodo(){
-    this.todoService.getAllTodo().subscribe( 
-      response => { 
-        this.todos =response;}
-      
-    );
+ 
+
+  affiche(){
+    this.todoService.getAllTodo().subscribe(
+      res=>{
+        this.todos=res
+      },
+    )
   }
   
-  deleteTodo(todo:Todo): void {
-    this.todoService.deleteTodo(todo.id)
-      .subscribe( data => {
-        this.todos = this.todos.filter((u: Todo) => u !== todo);
-      })
-    
+  deleteTodo(id:any){
+    this.todoService.deleteTodo(id).subscribe( data => {    
+    this.affiche()
+    this.router.navigate(['/todo-list']);  
+    },
+    )
   }
-  // toggleCompleted(todoData: Todo): void {
-  //   todoData.completed = !todoData.completed;
-  //   this.todoService.comletedTodo(todoData.id:);
-  // }
+  toggleCompleted(todoData: Todo): void {
+    todoData.completed = !todoData.completed;
+    this.todoService.comletedTodo(todoData.id);
+  }
   
   completedTodo (id:number){
     this.todoService.comletedTodo(id);

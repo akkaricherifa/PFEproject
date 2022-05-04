@@ -1,33 +1,29 @@
 
 
-<form class="form-horizontal style-form" style="margin-left: 400px; margin-top: -1px; color: rgb(0, 0, 0);">
+<form class="form-horizontal style-form" style="margin-left: 420px; margin-top: -1px; color: rgb(0, 0, 0);">
   
   <div class="form-group">
     <label class="col-sm-2 col-sm-2 control-label" >Task to do</label>
     <div class="col-sm-10">
-      <textarea type="text"  
+      <textarea type="text" formControlName="description"
       name="description" id="description" placeholder="Task" rows="5" data-rule="required">
       </textarea>
       
     </div>
   </div>
 
-
-
-
       <div class="click">
         <button _ngcontent-roy-c3="" 
               class="btn my-2 my-sm-0" 
               type="submit" 
-              (click)="onSubmit()">Save</button>
+              (click)="createTodo(todo)">Save</button>
         <button _ngcontent-roy-c3="" 
               class="btn  my-2 my-sm-0" 
               type="submit" 
-              >Cancel</button>
+               >Cancel</button>
       
       </div>
 
-  
     </form>
 
 

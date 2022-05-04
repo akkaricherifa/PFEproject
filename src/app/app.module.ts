@@ -64,7 +64,7 @@ import { ListeMembreComponent } from './liste-membre/liste-membre.component';
 import { ListeMembreProfComponent } from './liste-membre-prof/liste-membre-prof.component';
 import { AllCompetenceComponent } from './all-competence/all-competence.component';
 import { AddTodoComponent } from './todos/add-todo/add-todo.component';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {    MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -152,6 +152,6 @@ FullCalendarModule.registerPlugins([
   providers: [{ provide: MAT_DIALOG_DATA, useValue: {} },
     { provide: MatDialogRef, useValue: {} }],
   bootstrap: [AppComponent],
-  
+  entryComponents:[AddTodoComponent]
 })
 export class AppModule { }

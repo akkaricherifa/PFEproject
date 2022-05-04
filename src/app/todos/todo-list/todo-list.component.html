@@ -1,7 +1,7 @@
 
   <app-navbar-supp></app-navbar-supp>
   <app-sidebar-admin></app-sidebar-admin>
-  <h3><i class="fa fa-angle-right" style="margin-left: 250px;"></i> Todo List </h3>
+  <h3><i class="fa fa-angle-right" style="margin-left: 250px;"></i> Todo List : </h3>
 
   <div _ngcontent-roy-c3="" >
         
@@ -9,9 +9,9 @@
     
     <button 
             class="btn-tache"
-            style="margin-left: 35%; width: 30%;"
+            style="margin-left: 40%; width: 25%;"
              type="submit"
-            (click)="onAddTodo()">Add a task</button>
+            (click)=" onAddTodo()">Add a task</button>
     <br><br><br>
 
     <div style="margin:5px 0px" class="container">
@@ -19,20 +19,20 @@
             
             <li class="list-group-item" *ngFor="let todo of todos" [class.completed]="todo.completed === true" >
                 <div class="todo-row" *ngIf="!editing || editingTodo.id != todo.id">
-                    <a class="todo-completed" >
+                    <a class="todo-completed"(click)="toggleCompleted(todo)" >
                       <i class="material-icons toggle-completed-checkbox"></i> 
                     </a> 
                     <span class="todo-title">
-                       {{todo.description}}
+                       {{todo.title}}
                     </span>
                     
                     <span class="todo-actions pull-right">
                         <a (click)="updateTodo(todo)">
                           <i class="material-icons edit">edit</i>
                         </a>
-                        <a (click)="deleteTodo(todo)">
+                        <button (click)="deleteTodo(todo)">
                           <i class="material-icons delete">clear</i>
-                        </a>
+                        </button>
                     </span>
                 </div>
                 <div class="todo-edit" *ngIf="editing && editingTodo.id === todo.id">
