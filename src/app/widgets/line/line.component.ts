@@ -22,14 +22,14 @@ export class LineComponent implements OnInit {
      },
 
      title: {
-      text: "Nombre des adhérents par An"
+      text: "Nombre des Adhérents par An"
    },
 
      xAxis:{
       title:{
         text:"Ans"
      } ,
-      categories:["2017", "2018", "2019", "2020","2021"]
+      categories:["2018", "2019", "2020", "2021","2022"]
    },
 
    yAxis: {          

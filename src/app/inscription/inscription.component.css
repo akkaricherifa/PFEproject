@@ -10,11 +10,7 @@
     body{
         background: #fcfcfc ;
     }
-    .card-header{
-        background-color: #1cbcb0;
-        border-bottom: 1px solid #1cbcb0;
-        color:#fff;
-    }
+  
     .basiccontent{
         
         min-height:100vh;
@@ -28,6 +24,8 @@
     label{
         font-weight:normal;
         font-size:14px;
+        color: black;
+        
     }
     .h4{
         font-family: Georgia, serif;
