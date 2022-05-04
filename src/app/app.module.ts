@@ -61,7 +61,10 @@ import { FicheAdhesionComponent } from './fiche-adhesion/fiche-adhesion.componen
 import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { ListeMembreComponent } from './liste-membre/liste-membre.component';
 import { ListeMembreProfComponent } from './liste-membre-prof/liste-membre-prof.component';
-import { AllCompetenceComponent } from './all-competence/all-competence.component'; 
+import { AllCompetenceComponent } from './all-competence/all-competence.component';
+import { AddTodoComponent } from './todos/add-todo/add-todo.component';
+import { TodoListComponent } from './todos/todo-list/todo-list.component';
+ 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -111,6 +114,8 @@ FullCalendarModule.registerPlugins([
     ListeMembreComponent,
     ListeMembreProfComponent,
     AllCompetenceComponent,
+    AddTodoComponent,
+    TodoListComponent,
 
 
 

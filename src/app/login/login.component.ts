@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from '../shared/admin.service';
 import { AuthService } from '../shared/authService';
 import { EntrepriseService } from '../shared/entreprise.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -14,31 +15,53 @@ import { EntrepriseService } from '../shared/entreprise.service';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   token:any;
-  z!:boolean;
   
-
+  loginResponse = '';
+  
+  public showPassword!: boolean;
+  public showPasswordOnPress!: boolean;
   constructor(private router:Router, 
     private fb: FormBuilder,
     private adminServ: AdminService,
     private authServ: AuthService,
-    private entrepriseServ:EntrepriseService) { 
-this.loginForm = this.fb.group({
-        email: [
-          "",
-          Validators.compose([
-            Validators.pattern(
-              "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]{0,10})*@[A-Za-z0-9]+(\\.[A-Za-z0-9]{0,10})*(\\.[A-Za-z]{0,5})$"
-            ),
-            Validators.required,
-          ]),
-        ],
-        password: ["", Validators.required],
+    private entrepriseServ:EntrepriseService,
+    private toastr: ToastrService,) { 
+// this.loginForm = this.fb.group({
+//         email: [
+//           "",
+//           Validators.compose([
+//             Validators.pattern(
+//               "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]{0,10})*@[A-Za-z0-9]+(\\.[A-Za-z0-9]{0,10})*(\\.[A-Za-z]{0,5})$"
+//             ),
+//             Validators.required,
+//           ]),
+//         ],
+//         password: ["", Validators.required],
        
-      });
-  }
+//       });
+let formControls = {
+  email: new FormControl('', [
+    Validators.required,
+    Validators.email,
+    Validators.pattern(
+                  "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]{0,10})*@[A-Za-z0-9]+(\\.[A-Za-z0-9]{0,10})*(\\.[A-Za-z]{0,5})$"
+                ),
+  ]),
+  password: new FormControl('', [
+    Validators.required,
+    Validators.minLength(6)
+  ])
+}
+
+this.loginForm = this.fb.group(formControls)
+}
+
+get email() { return this.loginForm.get('email') }
+get password() { return this.loginForm.get('password') }
+  
 
   ngOnInit(): void {
-    this.z=true;
+   
 
   }
   test(){
@@ -55,10 +78,6 @@ login() {
     this.router.navigate(["/dashboard-entreprise"]);
 
     }
-    
-   
-
-  
     
     //////admin
     if (res.admin.role=="Admin"){
@@ -90,7 +109,7 @@ login() {
     //localStorage.setItem('CurrentUser', res.admin._id)
   }, err=> {
     console.log("Invalid password or Email");
-    this.z=false;
+    this.loginResponse="*Invalid Password or Email";
   })
   
 }

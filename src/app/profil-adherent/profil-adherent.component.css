@@ -121,25 +121,20 @@ body{
     
     width: 30px;
 }
-.wrapper .right .btn {
-    width: 300px;
+.wrapper .right .btn  {
+    width: 250px;
     height: 30px;
     font-family: 'Montserrat', sans-serif;
     font-size:17px;
     color:white;
-    margin : 2px 200px;
-    background: #82918f;
-    
+    margin : 2px 500px;
+    background: #82918f;  
 }
-
 p{
   font-size: 17px;
 }
-
 h2{
   font-size: 17px;
   color:black;
   font-family: 'Montserrat', sans-serif;
 }
-
-

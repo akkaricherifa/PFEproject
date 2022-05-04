@@ -26,11 +26,13 @@ body {
     padding: 0px !important;
     margin: 0px !important;
     font-size: 13px;
+    width: 380px;
 }
 
 .card {
-    height: 360px;
+    height: 380px;
     width: 380px;
+    
 }
 
 .btn{
@@ -48,3 +50,19 @@ label{
     font-size: 12px;
 
 }
+
+
+
+.message{
+    
+    flex-basis: 80%;
+    padding-left: 130px;
+    
+   
+}
+@media screen and (max-width: 767px) {
+     .big-container{
+         display:flex;
+         flex-direction:column-reverse;
+     }
+  }
