@@ -37,6 +37,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { NavbarSuppComponent } from './navbar-supp/navbar-supp.component';
@@ -63,8 +64,8 @@ import { ListeMembreComponent } from './liste-membre/liste-membre.component';
 import { ListeMembreProfComponent } from './liste-membre-prof/liste-membre-prof.component';
 import { AllCompetenceComponent } from './all-competence/all-competence.component';
 import { AddTodoComponent } from './todos/add-todo/add-todo.component';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
- 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -114,7 +115,6 @@ FullCalendarModule.registerPlugins([
     ListeMembreComponent,
     ListeMembreProfComponent,
     AllCompetenceComponent,
-    AddTodoComponent,
     TodoListComponent,
 
 
@@ -133,13 +133,14 @@ FullCalendarModule.registerPlugins([
     MatSnackBarModule,
     MatDividerModule,
     MatCardModule,
+    MatDialogModule,
     FullCalendarModule,
     // CalendarModule.forRoot({
     //   provide: DateAdapter,
     //   useFactory: adapterFactory
     // }),
     
-    
+    MatDialogModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
     ToastrModule.forRoot(),
@@ -148,7 +149,9 @@ FullCalendarModule.registerPlugins([
     }),
   
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{ provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }],
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

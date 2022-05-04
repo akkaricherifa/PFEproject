@@ -35,7 +35,7 @@ import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
 import { SidebarEntrepriseComponent } from './sidebar-entreprise/sidebar-entreprise.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
-import { AddTodoComponent } from './todos/add-todo/add-todo.component';
+
 import { UpdateAdherentComponent } from './update-adherent/update-adherent.component';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
  
@@ -85,7 +85,6 @@ const routes: Routes = [
   { path: 'liste',component:ListeMembreComponent},
   { path: 'profil/:id',component:ListeMembreProfComponent},
   { path: 'all-competence',component:AllCompetenceComponent},
-  { path: 'add-todo',component:AddTodoComponent},
   { path: 'todo-list',component:TodoListComponent}
 
 ];

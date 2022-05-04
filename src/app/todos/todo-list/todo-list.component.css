@@ -6,7 +6,7 @@ body {
     background: #d53369;
     background: -webkit-linear-gradient(to left, #cbad6d, #d53369);
     background: linear-gradient(to left, #cbad6d, #d53369); 
-    color: white;
+    color: rgb(255, 255, 255);
   }
   
   h1 {

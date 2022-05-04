@@ -1,7 +1,8 @@
-export interface Todo {
-    id: number;
-    title: string;
-    description: string;
-    time: Date;
-    completed: boolean;
-}
+export class Todo {
+ id: number | undefined;
+    title: string| undefined;
+    description: string| undefined;
+    time: Date| undefined;
+    completed: boolean| undefined;
+    
+  }

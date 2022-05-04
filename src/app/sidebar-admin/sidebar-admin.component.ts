@@ -13,6 +13,10 @@ import { AuthService } from '../shared/authService';
 export class SidebarAdminComponent implements OnInit {
   id:any;
   Admin!: any;
+  public popoverTitle:string=' Alert De Confirmation';
+  public popoverMessage:string='Voulez Vous vraiment Se Déconnecter ?';
+  public confirmClicked:boolean=false;
+  public cancelClicked:boolean=false;
   constructor(
     private router:Router, 
     private fb: FormBuilder,
