@@ -1,22 +1,16 @@
 
+         <app-navbar ></app-navbar>
+<div class="row mt" style="padding-top: 5%" style="margin-top:0px">
+<form class="form-login" style="margin-top: 130px;" >
 
-   
-
-<form class="form-login" >
-
-  <div class="card card-container" style="margin-top: -1px;">
-    <h2 class="form-login-heading" >Inscription</h2>
-    <form [formGroup]="entrepriseForm" (ngSubmit)="createEntreprise()" 
-      
-      name="form"
-      
-      #f="ngForm"
-      novalidate
-    >
-    <div class="login-wrap">
-      <div class="form-row">
+  <div class="card card-container" >
+    <h2 class="form-login-heading"style="background-color:  #0f6d67 " >Inscription</h2>
+    <form [formGroup]="entrepriseForm" (ngSubmit)="createEntreprise()" name="form" >
+  
+    <div class="login-wrap" >
+      <div class="form-row" >
        
-      <div class="col-6">
+      <div class="col-6" >
         <label for="fname">Email</label>
         <input type="text" class="form-control" name="emailEnt"  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,10}$"
                                     formControlName="emailEnt" 
@@ -25,7 +19,7 @@
    
       </div>
       <br>
-
+    
       <div class="col-6">
         <label for="fname">Nom de l'entreprise</label>
         <input type="text" class="form-control" name="nomEnt"  
@@ -39,7 +33,7 @@
       <br>
       <div class="form-row">
       <div class="col-6">
-    <label for="fname">N° TélételEnt</label>
+    <label for="fname">N° Télèphone</label>
     <input type="text" class="form-control" name="telEnt"  pattern="[0-9]{8}"
     formControlName="telEnt" 
    [ngClass]="{'is-invalid':entrepriseForm.get('telEnt')!.touched && !entrepriseForm.get('telEnt')!.valid}">
@@ -84,6 +78,7 @@
 
       <br>
       <div>
+
         <button class="btn btn-theme btn-block" [disabled]=!entrepriseForm.valid (click)="createEntreprise()">
           <i class="fa fa-lock"></i> Sign Up</button>
       </div>

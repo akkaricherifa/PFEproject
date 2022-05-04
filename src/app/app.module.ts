@@ -72,6 +72,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {  MatToolbarModule } from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { TodoService } from './shared/todo.service';
+
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -123,6 +124,7 @@ FullCalendarModule.registerPlugins([
     ListeMembreProfComponent,
     AllCompetenceComponent,
     TodoListComponent,
+
 
 
 

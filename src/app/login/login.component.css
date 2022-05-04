@@ -1,7 +1,7 @@
 .btn-theme {
     color: #fff;
-    background-color: #4ECDC4;
-    border-color: #48bcb4;
+    background-color: #0f6d67;
+    border-color: #0f6d67;
 }
 .btn-block {
     display: block;
@@ -25,7 +25,7 @@ body {
     font-family: 'Ruda', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
-    font-size: 13px;
+    font-size: 19px;
     width: 380px;
 }
 
@@ -45,24 +45,23 @@ input {
 
 h3{
     font-size: 12px;
+    color: #020707;
 }
+
 label{ 
     font-size: 12px;
 
 }
 
-
-
 .message{
     
     flex-basis: 80%;
     padding-left: 130px;
-    
-   
+     
 }
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
      .big-container{
          display:flex;
          flex-direction:column-reverse;
      }
-  }
+  } */

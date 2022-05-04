@@ -1,25 +1,19 @@
 .btn-theme {
     color: #fff;
-    background-color: #4ECDC4;
-    border-color: #48bcb4;
+    background-color: #0f6d67;
+    border-color: #0f6d67;
 }
 .btn-block {
     display: block;
     width: 100%;
 }
-/* .checkbox, .radio {
-    position: relative;
-    display: block;
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-} */
-
 label {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
+    color: black;
+    font-family: 'Gill Sans';
+    
 }
-
 input {
     font-size: 16px;
 }
@@ -28,16 +22,14 @@ body {
     color: #797979;
     background: #eaeaea;
     font-family: 'Ruda', sans-serif;
-    padding: 0px !important;
-    margin-top: -150px !important;
     font-size: 13px;
 }
 
-.card {
+.card-container {
     height: 400px;
     width: 490px;
-    margin-left: -50px;
-    margin-top: 250px;
+    margin-left: 440px;
+
 
 }
 
