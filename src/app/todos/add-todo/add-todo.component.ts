@@ -2,18 +2,19 @@ import { Component, OnInit,Inject } from '@angular/core';
 import { Todo } from 'src/app/Model/todo';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TodoService } from 'src/app/shared/todo.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
   styleUrls: ['./add-todo.component.css']
 })
 export class AddTodoComponent implements OnInit {
-
   todos!:Todo[];
   public todo: Todo = new Todo();
 
   constructor(public dialogRef: MatDialogRef<AddTodoComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: Todo,
+    private _formBuilder: FormBuilder,
     private todoService:TodoService) { }
 
   ngOnInit() {
@@ -22,7 +23,7 @@ export class AddTodoComponent implements OnInit {
     }
   }
 
- 
+  
 
   createTodo(todo:any) {
     this.todoService.createTodo(this.todo).subscribe((res) => {

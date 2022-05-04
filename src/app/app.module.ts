@@ -66,6 +66,12 @@ import { AllCompetenceComponent } from './all-competence/all-competence.componen
 import { AddTodoComponent } from './todos/add-todo/add-todo.component';
 import {    MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {  MatToolbarModule } from '@angular/material/toolbar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { TodoService } from './shared/todo.service';
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -88,6 +94,7 @@ FullCalendarModule.registerPlugins([
     UpdateAdherentComponent,
     EspaceRHComponent,
     ChangerPwdComponent,
+   
     InfoAdherentComponent,
     PlanFormationComponent,
     ChartComponent,
@@ -127,12 +134,17 @@ FullCalendarModule.registerPlugins([
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
     Ng2SearchPipeModule,
     HighchartsChartModule,
     MatSliderModule,
+    MatInputModule,
     MatSnackBarModule,
     MatDividerModule,
     MatCardModule,
+    MatIconModule,
     MatDialogModule,
     FullCalendarModule,
     // CalendarModule.forRoot({
@@ -149,7 +161,7 @@ FullCalendarModule.registerPlugins([
     }),
   
   ],
-  providers: [{ provide: MAT_DIALOG_DATA, useValue: {} },
+  providers: [{ provide: MAT_DIALOG_DATA, useValue: {} }, TodoService,
     { provide: MatDialogRef, useValue: {} }],
   bootstrap: [AppComponent],
   entryComponents:[AddTodoComponent]

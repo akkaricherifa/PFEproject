@@ -1,7 +1,7 @@
-
+  
   <app-navbar-supp></app-navbar-supp>
-  <app-sidebar-admin></app-sidebar-admin>
-  <h3><i class="fa fa-angle-right" style="margin-left: 250px;"></i> Todo List : </h3>
+  <app-sidebar-admin></app-sidebar-admin> 
+   <h3><i class="fa fa-angle-right" style="margin-left: 250px;"></i> Todo List : </h3>
 
   <div _ngcontent-roy-c3="" >
         
@@ -27,7 +27,7 @@
                     </span>
                     
                     <span class="todo-actions pull-right">
-                        <a (click)="updateTodo(todo)">
+                        <a >
                           <i class="material-icons edit">edit</i>
                         </a>
                         <button (click)="deleteTodo(todo)">
@@ -39,7 +39,7 @@
                     <input class="form-control" type="text" 
                      [(ngModel)]="editingTodo.title" required>
                     <span class="edit-actions">
-                        <a (click)="updateTodo(editingTodo)">
+                        <a >
                           <i class="material-icons">done</i>
                         </a>
                         <a >
@@ -54,3 +54,5 @@
 </div>
 
 
+   
+       

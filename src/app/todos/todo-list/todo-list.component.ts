@@ -10,21 +10,24 @@ import { TodoService } from 'src/app/shared/todo.service';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  
   isPopupOpened = false;
   todo : Todo = new Todo();
   editing: boolean = false;
   editingTodo: Todo = new Todo();
-  todos!:any;
+  // todos!:Todo[];
+  u:any;
+  todos:any;
 
-  
   constructor(private dialog: MatDialog,
     private todoService:TodoService,
     private router:Router) { }
 
+    
+
   ngOnInit(): void {
     this.affiche();
   }
+
 
   onAddTodo() {
     this.openTodoDialog(null);
@@ -32,6 +35,7 @@ export class TodoListComponent implements OnInit {
   }
 
   openTodoDialog(data?:any){
+    
     const dialogRef = this.dialog.open(AddTodoComponent,{
       disableClose : true,
       autoFocus : true ,
@@ -40,13 +44,15 @@ export class TodoListComponent implements OnInit {
       data : data,
       
     });
-    
     dialogRef.afterClosed().subscribe(result =>{
       if (result && data == null){
         this.todos.push(result);
       }}
    ); 
-  }
+    }
+
+  
+
  
 
   affiche(){
@@ -57,13 +63,15 @@ export class TodoListComponent implements OnInit {
     )
   }
   
-  deleteTodo(id:any){
-    this.todoService.deleteTodo(id).subscribe( data => {    
-    this.affiche()
-    this.router.navigate(['/todo-list']);  
-    },
-    )
+  deleteTodo(todo:Todo): void {
+    this.todoService.deleteTodo(todo.id)
+      .subscribe( data => {
+        this.todos = this.todos.filter((u: Todo) => u !== todo);
+      })
+    
   }
+  
+  
   toggleCompleted(todoData: Todo): void {
     todoData.completed = !todoData.completed;
     this.todoService.comletedTodo(todoData.id);
@@ -73,26 +81,21 @@ export class TodoListComponent implements OnInit {
     this.todoService.comletedTodo(id);
     
   }
-  setter(todo:Todo){
-    this.todo= todo;
-  }
-  getter(){
-    return this.todo;
-  }
-  updateTodo(todo:any){  
-    this.openTodoDialog(todo);
-    //this.todoService.setter(todo);
-    //this.router.navigate(['/updateTodo']);
+  // setter(todo:Todo){
+  //   this.todo= todo;
+  // }
+  // getter(){
+  //   return this.todo;
+  // }
 
-  }
-
+}
   
 
 
 
 
 
-}
+
 
 
 
