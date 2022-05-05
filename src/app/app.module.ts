@@ -72,6 +72,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {  MatToolbarModule } from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { TodoService } from './shared/todo.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -95,7 +96,6 @@ FullCalendarModule.registerPlugins([
     UpdateAdherentComponent,
     EspaceRHComponent,
     ChangerPwdComponent,
-   
     InfoAdherentComponent,
     PlanFormationComponent,
     ChartComponent,
@@ -124,6 +124,7 @@ FullCalendarModule.registerPlugins([
     ListeMembreProfComponent,
     AllCompetenceComponent,
     TodoListComponent,
+    AddTodoComponent,
 
 
 
@@ -146,14 +147,10 @@ FullCalendarModule.registerPlugins([
     MatSnackBarModule,
     MatDividerModule,
     MatCardModule,
+    MatIconModule, 
     MatIconModule,
     MatDialogModule,
     FullCalendarModule,
-    // CalendarModule.forRoot({
-    //   provide: DateAdapter,
-    //   useFactory: adapterFactory
-    // }),
-    
     MatDialogModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
@@ -161,10 +158,10 @@ FullCalendarModule.registerPlugins([
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger', // set defaults here
     }),
+    NgbModule,
   
   ],
-  providers: [{ provide: MAT_DIALOG_DATA, useValue: {} }, TodoService,
-    { provide: MatDialogRef, useValue: {} }],
+  providers: [TodoService],
   bootstrap: [AppComponent],
   entryComponents:[AddTodoComponent]
 })

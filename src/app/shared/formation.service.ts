@@ -10,6 +10,18 @@ export class FormationService {
   
   createFormation(data:any) {
     return this.http.post(this.path+"/",data) 
-  
   }
+
+  getAllFormation(){
+    return this.http.get(this.path+"/");
+  }
+
+  deleteFormation(id:any) {
+    return this.http.delete(this.path+"/"+ id);
+  }
+  
+  getFormation(id: number) {
+    return this.http.get(this.path+"/"+ id);
+  }
+
 }

@@ -34,7 +34,7 @@ export class ProfilCandidatComponent implements OnInit {
      sendMail(){
       console.log(this.candidate.emailCan);
       
-      this.adminServ.sendMail(this.candidate.emailCan).subscribe( (data) => {
+      this.adminServ.sendMail({email:this.candidate.emailCan}).subscribe( (data) => {
         this.toastr.success("Email sent !!!!!!!!!!!!!")
        this.router.navigate(['/acceuil']);
       },(error)=>{

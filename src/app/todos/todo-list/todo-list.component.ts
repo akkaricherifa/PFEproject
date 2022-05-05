@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { MatDialog, } from '@angular/material/dialog';
 import { AddTodoComponent } from '../add-todo/add-todo.component';
 import { TodoService } from 'src/app/shared/todo.service';
+
+
+import {    MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',

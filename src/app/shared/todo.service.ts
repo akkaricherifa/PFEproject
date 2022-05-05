@@ -6,6 +6,7 @@ import { Todo } from '../Model/todo';
 })
 export class TodoService {
   path="http://localhost:3000/todo";
+  
   todo: Todo = new Todo();
   
   constructor(private http: HttpClient) { }
@@ -28,4 +29,10 @@ export class TodoService {
   comletedTodo(id:number) {
     return this.http.get(this.path+"/"+ id);
   }
+
+ 
+ 
+  
 }
+
+

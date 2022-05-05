@@ -22,8 +22,6 @@ export class FormationAdherentComponent implements OnInit {
   };
   handleDateClick(arg:any) {
     console.log(arg);
-    
-   
   }
   eeventClick(model:any){
     console.log(model.event._def.title);
