@@ -4,9 +4,11 @@ import { Router } from '@angular/router';
 import { MatDialog, } from '@angular/material/dialog';
 import { AddTodoComponent } from '../add-todo/add-todo.component';
 import { TodoService } from 'src/app/shared/todo.service';
-
-
+import {  CalendarOptions } from '@fullcalendar/angular';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 import {    MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -17,45 +19,58 @@ export class TodoListComponent implements OnInit {
   todo : Todo = new Todo();
   editing: boolean = false;
   editingTodo: Todo = new Todo();
-  // todos!:Todo[];
-  u:any;
   todos:any;
-
+  todoForm!: FormGroup
+  closeResult = '';
   constructor(private dialog: MatDialog,
     private todoService:TodoService,
-    private router:Router) { }
+    private router:Router,
+    private fb: FormBuilder,
+    private modalService: NgbModal,
+    private toastr: ToastrService) { }
 
-    
+    public popoverTitle:string=' Alert De Confirmation';
+  public popoverMessage:string='Voulez Vous vraiment Supprimer cette Tache?';
+  public confirmClicked:boolean=false;
+  public cancelClicked:boolean=false;
 
   ngOnInit(): void {
     this.affiche();
+    this.todoForm= this.fb.group ( 
+      {
+        title:['',Validators.required],
+        description:['',Validators.required],
+        completed:['',Validators.required],
+   
+      }
+
+    )
   }
 
-
-  onAddTodo() {
-    this.openTodoDialog(null);
-
-  }
-
-  openTodoDialog(data?:any){
-    
-    const dialogRef = this.dialog.open(AddTodoComponent,{
-      disableClose : true,
-      autoFocus : true ,
-      width : "1000%",
-      height: '100%',
-      data : data,
-      
+  open(content:any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
-    dialogRef.afterClosed().subscribe(result =>{
-      if (result && data == null){
-        this.todos.push(result);
-      }}
-   ); 
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
     }
-
-  
-
+  }
+  createTodo() {
+    this.todoService.createTodo(this.todoForm.value).subscribe((res) => {
+      this.router.navigate(['/list-todo']);
+      this.toastr.success('Task Ajouté avec succès');
+    });
+    console.log(this.todoForm.value);
+  }
  
 
   affiche(){
@@ -66,12 +81,13 @@ export class TodoListComponent implements OnInit {
     )
   }
   
-  deleteTodo(todo:Todo): void {
-    this.todoService.deleteTodo(todo.id)
-      .subscribe( data => {
-        this.todos = this.todos.filter((u: Todo) => u !== todo);
-      })
-    
+  delete(id:any){
+    this.todoService.deleteTodo(id).subscribe( data => {    
+    this.affiche()
+     this.toastr.success("Task supprimé avec succes")
+    this.router.navigate(['/todo-list']);  
+    },
+    )
   }
   
   
@@ -84,12 +100,6 @@ export class TodoListComponent implements OnInit {
     this.todoService.comletedTodo(id);
     
   }
-  // setter(todo:Todo){
-  //   this.todo= todo;
-  // }
-  // getter(){
-  //   return this.todo;
-  // }
 
 }
   

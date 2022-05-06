@@ -1,6 +1,53 @@
   
   <app-navbar-supp></app-navbar-supp>
   <app-sidebar-admin></app-sidebar-admin> 
+  <ng-template #content let-modal>
+    <div class="modal-header" style="background-color: darkgray;">
+      <h4 class="modal-title" id="modal-basic-title" style="margin-left: 180px;">Add a Task</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="todoForm" (ngSubmit)="createTodo()">
+        <div class="mb-6">
+          <label for="title">Title :</label>
+          <div class="input-group">
+            <input id="title" class="form-control" placeholder="Put titre " formControlName="title"   >
+           
+          </div>
+        </div>
+          <!-- <div class="mb-6">
+            <label for="description">Description</label>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Some Description" formControlName="description">
+         
+            </div>
+          </div> -->
+         
+        
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" style="margin-right: 210px; width: 60px;" (click)="createTodo();modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    <h3><i class="fa fa-angle-right" style="margin-left: 250px;"></i> Todo List : </h3>
 
   <div _ngcontent-roy-c3="" >
@@ -11,7 +58,7 @@
             class="btn-tache"
             style="margin-left: 40%; width: 25%;"
              type="submit"
-            (click)=" onAddTodo()">Add a task</button>
+            (click)=" open(content)">Add a task</button>
     <br><br><br>
 
     <div style="margin:5px 0px" class="container">
@@ -30,9 +77,19 @@
                         <a >
                           <i class="material-icons edit">edit</i>
                         </a>
-                        <button (click)="deleteTodo(todo)">
+                        <!-- <button (click)="deleteTodo(todo)">
                           <i class="material-icons delete">clear</i>
-                        </button>
+                        </button> -->
+                                
+          <button  mat-raised-button  mwlConfirmationPopover
+          [popoverTitle]="popoverTitle"
+          [popoverMessage]="popoverMessage"
+          placement="left"
+          (confirm)="delete(todo.id)"
+          (cancel)="cancelClicked = true" class="action-button" > 
+          <i class="fa fa-times" aria-hidden="true"></i>
+          
+        </button>
                     </span>
                 </div>
                 <div class="todo-edit" *ngIf="editing && editingTodo.id === todo.id">

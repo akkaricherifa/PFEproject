@@ -14,7 +14,7 @@ export class ProfilCandidatComponent implements OnInit {
   candidate!: any;
   id:any;
   email:any;
-
+  Color:any;
   constructor(private candidatServ: CandidatService,
     private route: ActivatedRoute,
     private adminServ: AdminService,
@@ -61,8 +61,8 @@ export class ProfilCandidatComponent implements OnInit {
 
   this.snackBar.open(message, action ,{
     duration:3000,
-    panelClass:'custom-style'
-  
+    panelClass:'custom-style',
+    
   });
 
 }
