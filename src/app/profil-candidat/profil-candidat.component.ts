@@ -41,6 +41,16 @@ export class ProfilCandidatComponent implements OnInit {
         console.log(error);
       });
    }
+   sendDenyMail(){
+    console.log(this.candidate.emailCan);
+    
+    this.adminServ.sendDenyMail({email:this.candidate.emailCan}).subscribe( (data) => {
+      this.toastr.success("Email sent !!!!!!!!!!!!!")
+     this.router.navigate(['/acceuil']);
+    },(error)=>{
+      console.log(error);
+    });
+ }
 
    
 

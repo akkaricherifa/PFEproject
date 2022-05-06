@@ -17,4 +17,9 @@ export class AdminService {
     return this.http.post(this.path+"/mail",data) 
   
   }
+  sendDenyMail(data:any) {
+    return this.http.post(this.path+"/denymail",data) 
+  
+  }
+
 }

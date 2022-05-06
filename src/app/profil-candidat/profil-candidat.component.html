@@ -18,8 +18,8 @@
                     <p>{{candidate.emailCan}}</p>
                 </div>
                 <div class="data">
-                    <h4>Phone</h4>
-                    <p>{{candidate.phoneCan}}</p>
+                    <h4 style="margin-left: 50px;">Phone</h4>
+                    <p style="margin-left: 50px;">{{candidate.phoneCan}}</p>
                 </div>
                 <div class="data">
                     <h4>Date of birth</h4>
@@ -37,8 +37,8 @@
                     <p>{{candidate.niveauEtud}}</p>
                 </div>
                 <div class="data">
-                    <h4>Diploma title</h4>
-                    <p>{{candidate.titreDiplome}}</p>
+                    <h4 style="margin-left: 30px;">Diploma title</h4>
+                    <p style="margin-left: 30px;">{{candidate.titreDiplome}}</p>
                 </div>
                 <div class="data">
                     <h4>Engineering school</h4>
@@ -95,6 +95,6 @@
 
     <div class="container">
     <button class="btn btn1" style="margin-top: -750px; margin-right: 60px;" (click)="sendMail()">Send an email of confirmation</button>
-    <button class="btn btn2" style="margin-top: -750px; margin-right: -550px;">Send an email of rejection</button>
+    <button class="btn btn2" style="margin-top: -750px; margin-right: -550px;" (click)="sendDenyMail()">Send an email of rejection</button>
     </div>
 

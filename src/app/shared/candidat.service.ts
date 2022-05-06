@@ -34,5 +34,8 @@ getFile(){
  sendMail(){
   return this.http.get("http://localhost:3000/admin/sendMail/");
 }
+sendDenyMail(){
+  return this.http.get("http://localhost:3000/admin/sendDenyMail/");
+}
 
 }
