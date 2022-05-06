@@ -2,50 +2,31 @@
   <app-navbar-supp></app-navbar-supp>
   <app-sidebar-admin></app-sidebar-admin> 
   <ng-template #content let-modal>
-    <div class="modal-header" style="background-color: darkgray;">
+    <div class="modal-header" style="background-color: #25857e;">
       <h4 class="modal-title" id="modal-basic-title" style="margin-left: 180px;">Add a Task</h4>
       <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
       <form [formGroup]="todoForm" (ngSubmit)="createTodo()">
         <div class="mb-6">
-          <label for="title">Title :</label>
+          <label for="title" style="font-size: 14px; font-family: bold;">Title :</label>
           <div class="input-group">
-            <input id="title" class="form-control" placeholder="Put titre " formControlName="title"   >
+            <input id="title" class="form-control" placeholder="" formControlName="title"  
+            [ngClass]="{'is-invalid':todoForm.get('title')!.touched && !todoForm.get('title')!.valid}" >
            
           </div>
         </div>
-          <!-- <div class="mb-6">
-            <label for="description">Description</label>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Some Description" formControlName="description">
-         
-            </div>
-          </div> -->
-         
-        
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" style="margin-right: 210px; width: 60px;" (click)="createTodo();modal.close('Save click')">Save</button>
+      <button type="button" class="btn btn-light" style="margin-right: 210px; width: 50px;" [disabled]=!todoForm.valid (click)="createTodo();modal.close('Save click')">Save</button>
     </div>
   </ng-template>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <!--- ------------------------------------------------------------------------------------ ------------------>
 
 
    <h3><i class="fa fa-angle-right" style="margin-left: 250px;"></i> Todo List : </h3>
@@ -74,34 +55,20 @@
                     </span>
                     
                     <span class="todo-actions pull-right">
-                        <a >
+                        <!-- <a >
                           <i class="material-icons edit">edit</i>
-                        </a>
-                        <!-- <button (click)="deleteTodo(todo)">
-                          <i class="material-icons delete">clear</i>
-                        </button> -->
-                                
-          <button  mat-raised-button  mwlConfirmationPopover
-          [popoverTitle]="popoverTitle"
-          [popoverMessage]="popoverMessage"
-          placement="left"
-          (confirm)="delete(todo.id)"
-          (cancel)="cancelClicked = true" class="action-button" > 
-          <i class="fa fa-times" aria-hidden="true"></i>
-          
-        </button>
+                        </a> -->
+                        <button (click)="delete(todo.id)">
+                          <i class="fa fa-times" aria-hidden="true"></i>
+                        </button>
+           
                     </span>
                 </div>
                 <div class="todo-edit" *ngIf="editing && editingTodo.id === todo.id">
                     <input class="form-control" type="text" 
                      [(ngModel)]="editingTodo.title" required>
                     <span class="edit-actions">
-                        <a >
-                          <i class="material-icons">done</i>
-                        </a>
-                        <a >
-                          <i class="material-icons">clear</i>
-                        </a>
+                   
                     </span>
                 </div>
               </li>

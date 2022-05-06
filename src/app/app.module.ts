@@ -63,8 +63,7 @@ import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { ListeMembreComponent } from './liste-membre/liste-membre.component';
 import { ListeMembreProfComponent } from './liste-membre-prof/liste-membre-prof.component';
 import { AllCompetenceComponent } from './all-competence/all-competence.component';
-import { AddTodoComponent } from './todos/add-todo/add-todo.component';
-import {    MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -123,7 +122,7 @@ FullCalendarModule.registerPlugins([
     ListeMembreProfComponent,
     AllCompetenceComponent,
     TodoListComponent,
-    AddTodoComponent,
+
 
 
 
@@ -163,6 +162,6 @@ FullCalendarModule.registerPlugins([
   ],
 
   bootstrap: [AppComponent],
-  entryComponents:[AddTodoComponent]
+
 })
 export class AppModule { }

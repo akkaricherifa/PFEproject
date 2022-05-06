@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Todo } from 'src/app/Model/todo';
 import { Router } from '@angular/router';
 import { MatDialog, } from '@angular/material/dialog';
-import { AddTodoComponent } from '../add-todo/add-todo.component';
 import { TodoService } from 'src/app/shared/todo.service';
 import {  CalendarOptions } from '@fullcalendar/angular';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
@@ -39,8 +38,7 @@ export class TodoListComponent implements OnInit {
     this.todoForm= this.fb.group ( 
       {
         title:['',Validators.required],
-        description:['',Validators.required],
-        completed:['',Validators.required],
+     
    
       }
 
