@@ -23,7 +23,6 @@ export class PlanFormationComponent implements OnInit {
    a:any=[]
    b:any=[]
    d:any
-
    month :any;
    year :any;
    day:any
@@ -31,7 +30,7 @@ export class PlanFormationComponent implements OnInit {
    t:any=[]
   event:any=[]
    CalendarOptions!:any;
-  closeResult = '';
+    closeResult = '';
    
   constructor(private router:Router , private modalService: NgbModal,
     private formationServ: FormationService,  private toastr: ToastrService, 
@@ -41,7 +40,7 @@ export class PlanFormationComponent implements OnInit {
       this.formationServ.getAllFormation().subscribe((res:any)=>{
         this.event=res
         this.event.forEach((element:any) => {
-          this.a.push(element.nomformation)
+          this.a.push(element.title)
           
         });
         this.event.forEach((element:any) => {
@@ -50,18 +49,15 @@ export class PlanFormationComponent implements OnInit {
         });
 
         this.CalendarOptions = {
-
-         
-
-          initialView: 'dayGridMonth',
+            initialView: 'dayGridMonth',
            dateClick: this.handleDateClick.bind(this), 
           eventClick: this.eeventClick.bind(this), 
-            // events:this.event.map((item:any)=>item.nomformation),
-            
-            events:this.event.array.forEach((element:any) => {
-              [{title:element.title,date:element.date_debut}]
+            // events:this.event.map((item:any)=>item.title),
+       ///////////////////////////// star hedha ki n5alih tetna7a el Modal 61 w 62//////////////////////////////////////////////////     
+            // events:this.event.array.forEach((element:any) => {
+            //   [{title:element.title,date:element.date_debut}]
               
-            })
+            // })
 
               
               // [
@@ -124,8 +120,7 @@ export class PlanFormationComponent implements OnInit {
 
       this.formationForm= this.fb.group(
         {
-          title:['',[Validators.required,Validators.minLength(3)]],
-          
+          title:['',[Validators.required,Validators.minLength(3)]], 
           date_fin:['',Validators.required],
           duree:['',Validators.required],
           formateur:['',Validators.required],
