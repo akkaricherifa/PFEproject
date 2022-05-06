@@ -2,7 +2,7 @@
       <app-navbar-supp></app-navbar-supp>
       <app-sidebar-admin></app-sidebar-admin>
 
-<div class="wrapper">
+ <div class="wrapper">
  
     <div class="left" style="margin-top: -30px;">
         <img src="assets/img/candidat.png" alt="user"  class="img-circle">
@@ -94,7 +94,9 @@
 </div>
 
     <div class="container">
-    <button class="btn btn1" style="margin-top: -750px; margin-right: 60px;" (click)="sendMail()">Send an email of confirmation</button>
-    <button class="btn btn2" style="margin-top: -750px; margin-right: -550px;" (click)="sendDenyMail()">Send an email of rejection</button>
-    </div>
+    <button class="btn btn1" style="margin-top: -800px; margin-right: 60px;" (click)="sendMail(); openSnackBar('Email Sent Successfully!!','Close')">Send an Email of Confirmation</button>
+    <button class="btn btn2" style="margin-top: -800px; margin-right: -550px;"  (click)="sendDenyMail(); openSnackBar('Email sent Successfully!!','Close')">Send an Email of Rejection</button> 
+   
+     </div> 
+
 

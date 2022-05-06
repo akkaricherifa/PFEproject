@@ -14,11 +14,11 @@ body{
 
 .wrapper{
     position: relative;
-    top: 45%;
+    top: 43%;
     left: 56%;
     
     transform: translate(-50%,-50%);
-    width: 1050px;
+    width: 1000px;
     height: 500px;
     
     display: flex;
@@ -29,6 +29,7 @@ body{
 
 .wrapper .left{
         width: 30%;
+        
         
         background: #dcecea;
          padding: 30px 25px;
@@ -176,6 +177,15 @@ h5{
 
 .cv{
   margin-left: 10px;
+}
+::ng-deep .custom-style{
+  background-color:black;
+  color:rgb(255, 255, 255);
+  font-size: 14px;
+  margin: 0 !important;
+  position: absolute;
+  right: 40px;
+  top: 700px;
 }
 
 

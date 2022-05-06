@@ -3,6 +3,8 @@ import { CandidatService } from '../shared/candidat.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from '../shared/admin.service';
 import { ToastrService } from 'ngx-toastr';
+import { MatSnackBar ,MatSnackBarConfig ,MatSnackBarRef, SimpleSnackBar,} from '@angular/material/snack-bar';
+import { style } from '@angular/animations';
 @Component({
   selector: 'app-profil-candidat',
   templateUrl: './profil-candidat.component.html',
@@ -17,9 +19,12 @@ export class ProfilCandidatComponent implements OnInit {
     private route: ActivatedRoute,
     private adminServ: AdminService,
     private toastr: ToastrService,
-    private router: Router) { }
+    private router: Router,
+    private snackBar: MatSnackBar
+) { }
 
-    
+
+
     ngOnInit(): void {
       
       
@@ -34,26 +39,34 @@ export class ProfilCandidatComponent implements OnInit {
      sendMail(){
       console.log(this.candidate.emailCan);
       
-      this.adminServ.sendMail({email:this.candidate.emailCan}).subscribe( (data) => {
-        this.toastr.success("Email sent !!!!!!!!!!!!!")
-       this.router.navigate(['/acceuil']);
+      this.adminServ.sendMail({email:this.candidate.emailCan}).subscribe( (res) => {
+   
+       
       },(error)=>{
-        console.log(error);
+
       });
    }
+
    sendDenyMail(){
     console.log(this.candidate.emailCan);
     
     this.adminServ.sendDenyMail({email:this.candidate.emailCan}).subscribe( (data) => {
-      this.toastr.success("Email sent !!!!!!!!!!!!!")
-     this.router.navigate(['/acceuil']);
+      
     },(error)=>{
-      console.log(error);
+
     });
  }
 
-   
+ openSnackBar(message:any, action:any){
+
+  this.snackBar.open(message, action ,{
+    duration:3000,
+    panelClass:'custom-style'
+  
+  });
+
+}
+
 
   
     }
-

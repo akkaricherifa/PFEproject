@@ -73,7 +73,6 @@ import {  MatToolbarModule } from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { TodoService } from './shared/todo.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -146,6 +145,7 @@ FullCalendarModule.registerPlugins([
     MatInputModule,
     MatSnackBarModule,
     MatDividerModule,
+    
     MatCardModule,
     MatIconModule, 
     MatIconModule,
@@ -161,7 +161,7 @@ FullCalendarModule.registerPlugins([
     NgbModule,
   
   ],
-  providers: [TodoService],
+
   bootstrap: [AppComponent],
   entryComponents:[AddTodoComponent]
 })
