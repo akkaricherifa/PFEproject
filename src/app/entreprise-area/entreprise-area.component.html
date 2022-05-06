@@ -11,7 +11,7 @@
       <div class="form-row" >
        
       <div class="col-6" >
-        <label for="fname">Email</label>
+        <label for="fname">Email (*) :</label>
         <input type="text" class="form-control" name="emailEnt"  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,10}$"
                                     formControlName="emailEnt" 
                                    [ngClass]="{'is-invalid':entrepriseForm.get('emailEnt')!.touched && !entrepriseForm.get('emailEnt')!.valid}">
@@ -21,7 +21,7 @@
       <br>
     
       <div class="col-6">
-        <label for="fname">Nom de l'entreprise</label>
+        <label for="fname">Nom de l'entreprise (*) :</label>
         <input type="text" class="form-control" name="nomEnt"  
                                     formControlName="nomEnt" 
                                    [ngClass]="{'is-invalid':entrepriseForm.get('nomEnt')!.touched && !entrepriseForm.get('nomEnt')!.valid}">
@@ -33,7 +33,7 @@
       <br>
       <div class="form-row">
       <div class="col-6">
-    <label for="fname">N° Télèphone</label>
+    <label for="fname">N° Télèphone (*) :</label>
     <input type="text" class="form-control" name="telEnt"  pattern="[0-9]{8}"
     formControlName="telEnt" 
    [ngClass]="{'is-invalid':entrepriseForm.get('telEnt')!.touched && !entrepriseForm.get('telEnt')!.valid}">
@@ -42,7 +42,7 @@
       </div>
       <br>
       <div class="col-6">
-        <label for="fname">Nom de Responsable</label>
+        <label for="fname">Nom de Responsable (*) :</label>
         <input type="text" class="form-control" name="nomResp"  
         formControlName="nomResp" 
        [ngClass]="{'is-invalid':entrepriseForm.get('nomResp')!.touched && !entrepriseForm.get('nomResp')!.valid}">
@@ -54,7 +54,7 @@
       <br>
       <div class="form-row">
       <div class="col-6">
-        <label for="fname">Password</label>
+        <label for="fname">Password (*) :</label>
         <input type="password" class="form-control" name="password"  
         formControlName="password"
        [ngClass]="{'is-invalid':entrepriseForm.get('password')!.touched && !entrepriseForm.get('password')!.valid}">
@@ -65,7 +65,7 @@
       </div>
       <br>
       <div class="col-6">
-        <label for="fname">Adresse</label>
+        <label for="fname">Adresse (*) :</label>
         <input type="adresse" class="form-control" name="adresse"  
         formControlName="adresse"
        [ngClass]="{'is-invalid':entrepriseForm.get('adresse')!.touched && !entrepriseForm.get('adresse')!.valid}">
