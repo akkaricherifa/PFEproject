@@ -1,6 +1,6 @@
 export interface Formation {
     id:number;
-    nomformation:string;
+    title:string;
     date_debut:string;
     date_fin:string;
     duree:string;

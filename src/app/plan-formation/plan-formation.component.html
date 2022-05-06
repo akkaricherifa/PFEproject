@@ -8,19 +8,12 @@
     <div class="modal-body">
       <form [formGroup]="formationForm">
         <div class="mb-6">
-          <label for="nomformation">Nom de Formation :</label>
+          <label for="title">Nom de Formation :</label>
           <div class="input-group">
-            <input id="nomformation" class="form-control" placeholder="Entrez nom Formation" formControlName="nomformation"   >
+            <input id="title" class="form-control" placeholder="Entrez nom Formation" formControlName="title"   >
            
           </div>
         </div>
-        <!-- <div class="mb-6">
-            <label for="date_debut">Date_début :</label>
-            <div class="input-group">
-              <input type="date" class="form-control" placeholder="" formControlName="date_debut">
-            
-            </div>
-          </div> -->
           <div class="mb-6">
             <label for="date_fin">Date_fin :</label>
             <div class="input-group">
@@ -45,14 +38,12 @@
             <label for="prix">Prix :</label>
             <div class="input-group">
               <input id="prix" class="form-control" placeholder="" formControlName="prix">
-              <!-- <button class="btn btn-outline-secondary calendar" type="button"></button> -->
             </div>
           </div>
           <div class="mb-6">
             <label for="prix">Lieu :</label>
             <div class="input-group">
               <input id="lieu" class="form-control" placeholder="" formControlName="lieu">
-              <!-- <button class="btn btn-outline-secondary calendar" type="button"></button> -->
             </div>
           </div>
       </form>

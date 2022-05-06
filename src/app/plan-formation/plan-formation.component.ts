@@ -27,9 +27,6 @@ export class PlanFormationComponent implements OnInit {
    month :any;
    year :any;
    day:any
-
-  //  h:String='2022-05-06'
-  //  t:any;
    r:any
    t:any=[]
   event:any=[]
@@ -62,7 +59,7 @@ export class PlanFormationComponent implements OnInit {
             // events:this.event.map((item:any)=>item.nomformation),
             
             events:this.event.array.forEach((element:any) => {
-              [{title:element.nomformation,date:element.date_debut}]
+              [{title:element.title,date:element.date_debut}]
               
             })
 
@@ -72,13 +69,7 @@ export class PlanFormationComponent implements OnInit {
               // {title:this.a[1], date:'2022-05-03' }]
               // {title:"java", date:Date.now()}]
               //  {title:this.a[4], date:this.b[4]},{title:this.a[3], date:this.b[3]}]
-              
-             
-            
-             
-           
-            
-            
+
             
           // events: [
           //   { title: 'event 5000000', date: '2022-04-25',formateur:"bedis",formateur2:"aziz",dateFin:'2022/02/10' },
@@ -125,17 +116,6 @@ export class PlanFormationComponent implements OnInit {
 
         //  this.y=new Date(diff)
 
-
-        
-
-
-        
-        
-
-        
-       
-        
-
       })
 
       // this.a=this.event
@@ -144,7 +124,7 @@ export class PlanFormationComponent implements OnInit {
 
       this.formationForm= this.fb.group(
         {
-          nomformation:['',[Validators.required,Validators.minLength(3)]],
+          title:['',[Validators.required,Validators.minLength(3)]],
           
           date_fin:['',Validators.required],
           duree:['',Validators.required],
@@ -157,11 +137,6 @@ export class PlanFormationComponent implements OnInit {
     }
     
 
-
-      
-
-
-  
   
   handleDateClick(arg:any) {
     console.log(arg);
@@ -177,6 +152,7 @@ export class PlanFormationComponent implements OnInit {
     console.log(model.event._def.extendedProps.formateur2);
     console.log(model.event._def.extendedProps.dateFin);
     }
+    
     open(content:any) {
       this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
         this.closeResult = `Closed with: ${result}`;
@@ -195,26 +171,19 @@ export class PlanFormationComponent implements OnInit {
       }
     }
   
- 
-  
-  
+
   createFormation() {
-    // console.log(this.formationForm.value);
-    let nomformation=this.formationForm.controls.nomformation.value;
+    let title=this.formationForm.controls.title.value;
     let date_fin=this.formationForm.controls.date_fin.value;
     let duree=this.formationForm.controls.duree.value;
     let formateur=this.formationForm.controls.formateur.value;
     let prix=this.formationForm.controls.prix.value;
     let lieu=this.formationForm.controls.lieu.value;
     let date_debut=this.dateDebut
-    let form ={nomformation, date_debut,date_fin,duree,formateur,prix,lieu}
-
-    
-    
-
+    let form ={title, date_debut,date_fin,duree,formateur,prix,lieu}
     this.formationServ.createFormation(form).subscribe((res) => {
       this.router.navigate(['/plan-formation']);
-      this.toastr.success('formation ajoutée avec succès');
+      this.toastr.success('formation ajoutée avec Succès');
     });
     console.log();
   }
