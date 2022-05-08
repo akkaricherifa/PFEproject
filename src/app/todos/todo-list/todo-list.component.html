@@ -1,10 +1,9 @@
-  
   <app-navbar-supp></app-navbar-supp>
   <app-sidebar-admin></app-sidebar-admin> 
   <ng-template #content let-modal>
     <div class="modal-header" style="background-color: #25857e;">
       <h4 class="modal-title" id="modal-basic-title" style="margin-left: 180px;">Add a Task</h4>
-      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      <button  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
       <form [formGroup]="todoForm" (ngSubmit)="createTodo()">
@@ -29,7 +28,7 @@
     <!--- ------------------------------------------------------------------------------------ ------------------>
 
 
-   <h3><i class="fa fa-angle-right" style="margin-left: 250px;"></i> Todo List : </h3>
+    <h3><i style="margin-left: 270px;"></i> To do List</h3>
 
   <div _ngcontent-roy-c3="" >
         

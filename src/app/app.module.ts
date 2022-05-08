@@ -72,6 +72,8 @@ import {  MatToolbarModule } from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { TodoService } from './shared/todo.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BoiteSuggestionComponent } from './boite-suggestion/boite-suggestion.component';
+import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.component';
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -122,6 +124,8 @@ FullCalendarModule.registerPlugins([
     ListeMembreProfComponent,
     AllCompetenceComponent,
     TodoListComponent,
+    BoiteSuggestionComponent,
+    ListeEntrepriseComponent,
 
 
 

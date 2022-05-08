@@ -38,6 +38,8 @@ import { SuggestionsComponent } from './suggestions/suggestions.component';
 
 import { UpdateAdherentComponent } from './update-adherent/update-adherent.component';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
+import { BoiteSuggestionComponent } from './boite-suggestion/boite-suggestion.component';
+import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.component';
 
  
 
@@ -87,7 +89,8 @@ const routes: Routes = [
   { path: 'profil/:id',component:ListeMembreProfComponent},
   { path: 'all-competence',component:AllCompetenceComponent},
   { path: 'todo-list',component:TodoListComponent},
-
+  { path: 'boite-suggestion',component:BoiteSuggestionComponent},
+  { path:'liste-entreprise',component:ListeEntrepriseComponent}
 
 ];
 

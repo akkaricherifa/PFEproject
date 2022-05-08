@@ -32,8 +32,10 @@ export class PlanFormationComponent implements OnInit {
    CalendarOptions!:any;
     closeResult = '';
    
-  constructor(private router:Router , private modalService: NgbModal,
-    private formationServ: FormationService,  private toastr: ToastrService, 
+  constructor(private router:Router ,
+    private modalService: NgbModal,
+    private formationServ: FormationService,
+    private toastr: ToastrService, 
     private fb: FormBuilder,) { }
 
     ngOnInit(): void {
@@ -47,6 +49,16 @@ export class PlanFormationComponent implements OnInit {
           this.b.push(new Date(element.date_debut))
           
         });
+        this.formationForm= this.fb.group ( 
+          {
+            title:['',Validators.required],
+            date_fin:['',Validators.required],
+            duree:['',Validators.required],
+            formateur:['',Validators.required],
+            prix:['',Validators.required],
+            lieu:['',Validators.required],
+          }
+        )
 
         this.CalendarOptions = {
             initialView: 'dayGridMonth',
@@ -117,18 +129,6 @@ export class PlanFormationComponent implements OnInit {
       // this.a=this.event
       console.log("helloooo",this.a);
       console.log("hel",this.a[3]);
-
-      this.formationForm= this.fb.group(
-        {
-          title:['',[Validators.required,Validators.minLength(3)]], 
-          date_fin:['',Validators.required],
-          duree:['',Validators.required],
-          formateur:['',Validators.required],
-          prix:['',Validators.required],
-          lieu:['',Validators.required],
-        }
-  
-      )
     }
     
 

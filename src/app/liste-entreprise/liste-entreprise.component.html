@@ -1,0 +1,49 @@
+<app-navbar-supp></app-navbar-supp>
+<app-sidebar-admin></app-sidebar-admin>
+
+
+<h3><i class="fa fa-angle-double-right" style="margin-left: 280px;"></i> List Des Entreprises</h3>
+<div _ngcontent-roy-c3="" class="card-body bg-light">
+   
+   
+    <table class="table table-striped" style="margin-top: 5%;">
+  
+      <thead class="thead-inverse">
+      <tr>
+        <th>Nom</th>
+        <th>Nom du Responsable</th>
+        <th>E-mail</th>
+        <th>Adresse</th>
+        <th>N° Téléphone</th>
+      </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let entreprise of Entreprise | paginate: {itemsPerPage: 4, currentPage: p}" >
+              <td>{{entreprise.nomEnt}}</td>
+              <td>{{entreprise.nomResp}}</td>
+              <td>{{entreprise.emailEnt}}</td>
+              <td>{{entreprise.adresse}}</td>
+              <td>{{entreprise.telEnt}}</td>
+         
+          </tr>
+      </tbody>
+      
+    </table>
+    <div class="pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+  </div>
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+

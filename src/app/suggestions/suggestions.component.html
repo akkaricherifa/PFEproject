@@ -1,24 +1,24 @@
-<app-navbar-supp></app-navbar-supp>
-<app-sidebar></app-sidebar>
-<ng-template #content let-modal>
-    <div class="modal-header" style="background-color: #25857e;">
-      <h4 class="modal-title"  style="margin-left: 160px;">Suggestion d'une formation</h4>
-      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  <app-navbar-supp></app-navbar-supp>
+  <app-sidebar></app-sidebar>
+  <ng-template #content let-modal>
+    <div class="modal-header" style="background-color: #25857e; height: 50px;">
+      <h4 class="modal-title" id="modal-basic-title" style="margin-left: 150px;">Suggestion d'une Formation</h4>
+      <a class="btn-close" style="margin-left:100px" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
     </div>
     <div class="modal-body">
       <form [formGroup]="suggestionForm" (ngSubmit)="createSuggestion()">
-        <div class="mb-6">
-          <label for="title" style="font-size: 16px; font-family: bold;">Titre de Formation:</label>
-          <div class="input-group">
-            <input class="form-control" placeholder="" formControlName="titre"  
+        <div class="col-lg-11" style="margin-left:20px" >
+          <label for="title" style="font-size: 16px; font-family: bold; margin-top: 20px;">Titre de Formation:</label>
+          <div class="input-group" >
+            <input  class="form-control" placeholder="" formControlName="titre"  
             [ngClass]="{'is-invalid':suggestionForm.get('titre')!.touched && !suggestionForm.get('titre')!.valid}" >
            
           </div>
         </div>
-        <div class="mb-6">
-            <label for="title" style="font-size: 14px; font-family: bold;">Contenu :</label>
+        <div class="col-lg-11" style="margin-left:20px">
+            <label for="title" style="font-size: 14px; font-family: bold; margin-top: 22px;">Détails:</label>
             <div class="input-group">
-              <textarea id="content" class="form-control" placeholder="" formControlName="content"  
+              <textarea  class="form-control" placeholder="" formControlName="content"  
               [ngClass]="{'is-invalid':suggestionForm.get('content')!.touched && !suggestionForm.get('content')!.valid}" >
               </textarea>
             </div>
@@ -26,12 +26,12 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-light" style="margin-right: 230px; width: 50px;"  [disabled]=!suggestionForm.valid   (click)="createSuggestion();modal.close('Save click')">Save</button>
+      <button type="button" class="btn btn-secondary" style="margin-right: 220px; width: 70px; margin-top: 10px;"  [disabled]=!suggestionForm.valid   (click)="createSuggestion();modal.close('Save click')">Save</button>
     </div>
   </ng-template>
 
 <!-- //////////////////////////////////////////////////////////////////////////////// -->
-<h3><i   style="margin-left: 240px;"></i> Liste des Suggestions :</h3>
+<h3><i  class="fa fa-angle-double-right" style="margin-left: 240px;"></i> Liste des Suggestions :</h3>
     <div _ngcontent-roy-c3="" >
         
         <br _ngcontent-roy-c3="">
@@ -45,7 +45,7 @@
             <thead class="thead-inverse">
             <tr>
               <th>Nom de Formation</th>
-              <th>Description</th>
+              <th>Détails</th>
               <th>Action</th>
             </tr>
             </thead>

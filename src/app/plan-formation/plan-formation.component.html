@@ -1,55 +1,60 @@
 <app-navbar-supp></app-navbar-supp>
 <app-sidebar-admin></app-sidebar-admin>
 <ng-template #content let-modal>
-    <div class="modal-header" style="background-color: darkgray;">
-      <h4 class="modal-title" id="modal-basic-title" style="margin-left: 180px;">Ajouter Event</h4>
-      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    <div class="modal-header"  style="background-color: #25857e;">
+      <h4 class="modal-title" id="modal-basic-title" style="margin-left: 160px;">Ajouter Une Formation</h4>
+      <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
     </div>
     <div class="modal-body">
       <form [formGroup]="formationForm">
         <div class="mb-6">
-          <label for="title">Nom de Formation :</label>
+          <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;">Nom de Formation :</label>
           <div class="input-group">
-            <input id="title" class="form-control" placeholder="Entrez nom Formation" formControlName="title"   >
-           
+            <input id="title" class="form-control" placeholder="Entrez nom Formation" formControlName="title" style="font-size:15px"
+            [ngClass]="{'is-invalid':formationForm.get('title')!.touched && !formationForm.get('title')!.valid}">
           </div>
         </div>
           <div class="mb-6">
-            <label for="date_fin">Date_fin :</label>
+            <label for="date_fin" style="font-size: 14px; font-family: bold; margin-top: 15px;">Date_fin :</label>
             <div class="input-group">
-              <input type="date" class="form-control" placeholder="" formControlName="date_fin">
+              <input type="date" class="form-control" placeholder="" formControlName="date_fin" style="font-size:15px"
+              [ngClass]="{'is-invalid':formationForm.get('date_fin')!.touched && !formationForm.get('date_fin')!.valid}">
          
             </div>
           </div>
           <div class="mb-6">
-            <label for="duree">Durée :</label>
+            <label for="duree" style="font-size: 14px; font-family: bold; margin-top: 15px;">Durée :</label>
             <div class="input-group">
-              <input id="duree" class="form-control" placeholder="" formControlName="duree">
+              <input id="duree" class="form-control" placeholder="" formControlName="duree" style="font-size:15px"
+              [ngClass]="{'is-invalid':formationForm.get('duree')!.touched && !formationForm.get('duree')!.valid}">
              
             </div>
           </div>
           <div class="mb-6">
-            <label for="formateur">Formateur :</label>
+            <label for="formateur" style="font-size: 14px; font-family: bold; margin-top: 15px;">Formateur :</label>
             <div class="input-group">
-              <input id="formateur" class="form-control" placeholder="" formControlName="formateur">
+              <input id="formateur" class="form-control" placeholder="" formControlName="formateur"  style="font-size:15px"
+              [ngClass]="{'is-invalid':formationForm.get('formateur')!.touched && !formationForm.get('formateur')!.valid}">
             </div>
           </div>
           <div class="mb-6">
-            <label for="prix">Prix :</label>
+            <label for="prix" style="font-size: 14px; font-family: bold; margin-top: 15px;">Prix :</label>
             <div class="input-group">
-              <input id="prix" class="form-control" placeholder="" formControlName="prix">
+              <input id="prix" class="form-control" placeholder="" formControlName="prix" style="font-size:15px"
+              [ngClass]="{'is-invalid':formationForm.get('prix')!.touched && !formationForm.get('prix')!.valid}">
             </div>
           </div>
           <div class="mb-6">
-            <label for="prix">Lieu :</label>
-            <div class="input-group">
-              <input id="lieu" class="form-control" placeholder="" formControlName="lieu">
+            <label for="prix" style="font-size: 14px; font-family: bold; margin-top: 15px;">Lieu :</label>
+            <div class="input-group" >
+              <input id="lieu" class="form-control" placeholder="" formControlName="lieu" style="font-size:15px"
+              [ngClass]="{'is-invalid':formationForm.get('lieu')!.touched && !formationForm.get('lieu')!.valid}">
             </div>
           </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" style="margin-right: 210px; width: 60px;" (click)="createFormation();modal.close('Save click')">Save</button>
+      <button type="button" class="btn btn-secondary" style="margin-right: 200px; width: 80px; font-size: 14px;" [disabled]=!formationForm.valid    (click)="createFormation();modal.close('Save click')">Enregistrer</button>
     </div>
   </ng-template>
   
