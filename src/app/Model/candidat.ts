@@ -1,10 +1,9 @@
 export interface Candidat {
-    prenom:String;
-    nom:string;
+    prenomCan:String;
+    nomCan:string;
     dateOfBirth:Date;
-    phone:number;
-    email:string;
-    adresse:string;
+    phoneCan:number;
+    emailCan:string;
     ville:string;
     pathCv:string;
     pathMotivationLetter:string;

@@ -1,1 +1,76 @@
-<p>suggestions works!</p>
+<app-navbar-supp></app-navbar-supp>
+<app-sidebar></app-sidebar>
+<ng-template #content let-modal>
+    <div class="modal-header" style="background-color: #25857e;">
+      <h4 class="modal-title"  style="margin-left: 160px;">Suggestion d'une formation</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="suggestionForm" (ngSubmit)="createSuggestion()">
+        <div class="mb-6">
+          <label for="title" style="font-size: 16px; font-family: bold;">Titre de Formation:</label>
+          <div class="input-group">
+            <input class="form-control" placeholder="" formControlName="titre"  
+            [ngClass]="{'is-invalid':suggestionForm.get('titre')!.touched && !suggestionForm.get('titre')!.valid}" >
+           
+          </div>
+        </div>
+        <div class="mb-6">
+            <label for="title" style="font-size: 14px; font-family: bold;">Contenu :</label>
+            <div class="input-group">
+              <textarea id="content" class="form-control" placeholder="" formControlName="content"  
+              [ngClass]="{'is-invalid':suggestionForm.get('content')!.touched && !suggestionForm.get('content')!.valid}" >
+              </textarea>
+            </div>
+          </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" style="margin-right: 230px; width: 50px;"  [disabled]=!suggestionForm.valid   (click)="createSuggestion();modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
+
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+<h3><i   style="margin-left: 240px;"></i> Liste des Suggestions :</h3>
+    <div _ngcontent-roy-c3="" >
+        
+        <br _ngcontent-roy-c3="">
+        
+        <button _ngcontent-roy-c3="" class="btnnote" type="submit" (click)=" open(content)" >Add a Suggestion </button>
+        <br><br><br>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+        <table class="table table-striped card-body text" style="margin-left: 150px;">
+        
+            <thead class="thead-inverse">
+            <tr>
+              <th>Nom de Formation</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let suggestion of suggestions | paginate: {itemsPerPage: 2, currentPage: p}" >
+                  <td><p class="content" [innerHTML]="suggestion.titre"></p></td>
+                  <!-- <td>{{suggestion.titre}}</td> -->
+                    <td><p class="content" [innerHTML]="suggestion.content"></p></td>
+                    
+                    <td>
+                        <div class="pull-right hidden-phone" >
+                        <button mat-raised-button class="action-button btn-light" ><mat-icon>edit</mat-icon></button> 
+                        <button mat-raised-button class="action-button btn-light" ><mat-icon>delete_outline</mat-icon></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+          <div class="pagination">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+          </div>
+        </div>
+</div>
+
+
+
+

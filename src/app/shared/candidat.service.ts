@@ -10,10 +10,7 @@ import { ProfilCandidatComponent } from '../profil-candidat/profil-candidat.comp
 export class CandidatService {
   path="http://localhost:3000/candidat";
   
-constructor(private http: HttpClient,
-  private readonly msb: MatSnackBar,
-  private readonly zone: NgZone,
-  private snackbar: MatSnackBar) { }
+constructor(private http: HttpClient) { }
 
 
 createCandidat(data:any,) {
@@ -32,6 +29,7 @@ deleteCandidat(id:any) {
 getCandidat(id: number) {
   return this.http.get(this.path+"/"+ id);
 }
+
 getAllCandidat(){
   return this.http.get(this.path+"/");
 }
