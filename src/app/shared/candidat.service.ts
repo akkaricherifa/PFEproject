@@ -25,7 +25,6 @@ createCandidat(data:any,) {
 deleteCandidat(id:any) {
   return this.http.delete(this.path+"/"+ id);
 }
-
 getCandidat(id: number) {
   return this.http.get(this.path+"/"+ id);
 }

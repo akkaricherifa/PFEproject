@@ -2,9 +2,73 @@
              
          <app-navbar-supp></app-navbar-supp>
  <app-sidebar-admin></app-sidebar-admin>     
+ <ng-template #content let-modal>
+  <div class="modal-header" style="background-color: #25857e;">
+    <h4 class="modal-title"  style="margin-left: 160px;">Modifier Adhérent</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form >
+      <div class="mb-6">
+        <label for="nom" style="font-size: 16px; font-family: bold;">Nom:</label>
+        <div class="input-group">
+          <input type="text" name="nom" class="form-control" 
+                           [(ngModel)] ="Adherent.nom">
+         
+        </div>
+      </div>
+      <div class="mb-6">
+        <label for="prenom" style="font-size: 16px; font-family: bold;">Prénom:</label>
+        <div class="input-group">
+          <input type="text" name="prenom" class="form-control" 
+                           [(ngModel)] ="Adherent.prenom">
+         
+        </div>
+      </div>
+      <div class="mb-6">
+        <label for="nom" style="font-size: 16px; font-family: bold;">N° Télèphone:</label>
+        <div class="input-group">
+          <input type="text" name="telephone" class="form-control"  
+                           [(ngModel)] ="Adherent.telephone">
+         
+        </div>
+      </div>
+      <div class="mb-4">
+        <label for="nom" style="font-size: 16px; font-family: bold;">Situation Professionnelle:</label>
+        <div class="input-group">
+          <input type="text" name="profession" class="form-control" 
+                           [(ngModel)] ="Adherent.profession">
+         
+        </div>
+      </div>
+      <div class="mb-6">
+        <label for="etablissement" style="font-size: 16px; font-family: bold;">Etablissement</label>
+        <div class="input-group">
+          <input type="text" name="etablissement" class="form-control" 
+                           [(ngModel)] ="Adherent.etablissement">
+         
+        </div>
+      </div>
+      <div class="mb-6">
+        <label for="cycle" style="font-size: 16px; font-family: bold;">Cycle:</label>
+        <div class="input-group">
+          <input type="text" name="cycle" class="form-control"
+                           [(ngModel)] ="Adherent.cycle" >
+         
+        </div>
+      </div>
+   
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" style="margin-right: 230px; width: 50px;"   (click)="update(id);modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
 
 
- <!--Tableauuuuuuuu des adhérents-->
+
+
+ <!------------------------------------------------Tableauuuuuuuu des adhérents-------------------------------------------->
      
 <h3><i class="fa fa-angle-right" style="margin-left: 280px; margin-top: -2px;"></i> Liste des Adhérents</h3>
 <div _ngcontent-roy-c3="" class="card-body bg-light">
@@ -39,7 +103,7 @@
                 
                               </button>
                              
-                              <button mat-raised-button class="action-button btn-secondary" [routerLink]="['/update-adherent',Adherent.id]"> <span class="fa fa-line-chart"></span></button> 
+                              <button mat-raised-button class="action-button btn-secondary" (click)=" open(content)"> <span class="fa fa-edit"></span></button> 
                       <button  mat-raised-button  mwlConfirmationPopover
                       [popoverTitle]="popoverTitle"
                       [popoverMessage]="popoverMessage"
@@ -50,8 +114,7 @@
                     </button>
                             </div>
                             
-                            </td>
-                
+                            </td> 
                            
                         </tr>
                     </tbody>

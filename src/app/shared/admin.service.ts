@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Adhérent } from '../Model/adhérent';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,5 +21,7 @@ export class AdminService {
     return this.http.post(this.path+"/denymail",data) 
   
   }
-
+  updateAdherent(id:number,adherent: Adhérent){
+    return this.http.put("http://localhost:3000/adherent"+id,adherent);
+  }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Suggestion } from '../Model/suggestion';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,10 +25,9 @@ export class SuggestionService {
     return this.http.delete(this.path+"/"+ id);
   }
   
-
-
- 
- 
+  updateSuggestion(id:number,suggestion: Suggestion){
+    return this.http.put(this.path+"/"+id,suggestion);
+  }
   
 }
 

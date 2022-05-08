@@ -22,8 +22,9 @@ export class PieComponent implements OnInit {
        
       },
       title: {
-        text: "Number of Members by gender  "
+        text: "Nombre des Adhérents par Civilité  "
       },
+      
       tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
       },

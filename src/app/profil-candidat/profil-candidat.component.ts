@@ -13,7 +13,6 @@ export class ProfilCandidatComponent implements OnInit {
   candidate!: any;
   id:any;
   email:any;
-  Color:any;
   constructor(private candidatServ: CandidatService,
     private route: ActivatedRoute,
     private adminServ: AdminService,
@@ -23,12 +22,10 @@ export class ProfilCandidatComponent implements OnInit {
 ) { }
 
 ngOnInit(): void {
-      
-      
   this.id=this.route.snapshot.params['id'];
    
  this.candidatServ.getCandidat(this.id).subscribe( data => {
-  
+   console.log(data);  
    this.candidate = data;
  })
  }

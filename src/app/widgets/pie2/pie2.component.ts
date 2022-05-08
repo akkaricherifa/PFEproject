@@ -23,7 +23,7 @@ export class Pie2Component implements OnInit {
          
         },
         title: {
-          text: "Number of members by  University"
+          text: "Nombre des Adhérents par Université"
         },
         tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

@@ -46,13 +46,6 @@ export class UpdateAdherentComponent implements OnInit {
   }
 
 
-  // updateAdherent(id:any) {
-  //   this.adhServ.updateAdherent(this.id,this.adherent).subscribe(data => {
-  //     this.router.navigate(['/info-adherent']);
-  //     this.toastr.success('Adhérent modifié avec succès');
-  //   });
-
-  // }
   logout(){
     this.authServ.logout()
   }

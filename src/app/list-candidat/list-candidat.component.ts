@@ -16,6 +16,7 @@ export class ListCandidatComponent implements OnInit {
   public popoverMessage:string='Voulez Vous vraiment Supprimer ce Candidat ?';
   public confirmClicked:boolean=false;
   public cancelClicked:boolean=false;
+
   constructor( private candidatServ: CandidatService,
     private toastr: ToastrService,) { }
 
