@@ -32,7 +32,7 @@
               </td>
               <td>
                 <div class="container">
-                <button mat-raised-button class="action-button btn-success" [routerLink]="['/profil-candidat',candidate.id]">
+                <button mat-raised-button class="action-button btn-success" [routerLink]="['/profil-candidat',candidate._id]">
                     <span class="fa fa-eye"></span>
     
                   </button>
@@ -41,7 +41,7 @@
           [popoverTitle]="popoverTitle"
           [popoverMessage]="popoverMessage"
           placement="left"
-          (confirm)="delete(candidate.id)"
+          (confirm)="delete(candidate._id)"
           (cancel)="cancelClicked = true" class="action-button btn-danger" > 
           <span class="fa fa-trash"></span>
         </button>

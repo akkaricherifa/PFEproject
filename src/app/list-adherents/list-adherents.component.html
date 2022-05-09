@@ -1,11 +1,10 @@
+<app-navbar-supp></app-navbar-supp>
+ <app-sidebar-admin></app-sidebar-admin> 
 
-             
-         <app-navbar-supp></app-navbar-supp>
- <app-sidebar-admin></app-sidebar-admin>     
  <ng-template #content let-modal>
-  <div class="modal-header" style="background-color: #25857e;">
-    <h4 class="modal-title"  style="margin-left: 160px;">Modifier Adhérent</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  <div class="modal-header" style="background-color: #25857e;  height: 50px;">
+    <h4 class="modal-title"  style="margin-left: 190px;">Modifier Adhérent</h4>
+    <a type="button" style="margin-right: 14px" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
   </div>
   <div class="modal-body">
     <form >
@@ -17,7 +16,7 @@
          
         </div>
       </div>
-      <div class="mb-6">
+      <div div class="col-lg-11" style="margin-left:20px">
         <label for="prenom" style="font-size: 16px; font-family: bold;">Prénom:</label>
         <div class="input-group">
           <input type="text" name="prenom" class="form-control" 
@@ -25,7 +24,7 @@
          
         </div>
       </div>
-      <div class="mb-6">
+      <div div class="col-lg-11" style="margin-left:20px">
         <label for="nom" style="font-size: 16px; font-family: bold;">N° Télèphone:</label>
         <div class="input-group">
           <input type="text" name="telephone" class="form-control"  
@@ -33,7 +32,7 @@
          
         </div>
       </div>
-      <div class="mb-4">
+      <div div class="col-lg-11" style="margin-left:20px">
         <label for="nom" style="font-size: 16px; font-family: bold;">Situation Professionnelle:</label>
         <div class="input-group">
           <input type="text" name="profession" class="form-control" 
@@ -41,19 +40,27 @@
          
         </div>
       </div>
-      <div class="mb-6">
-        <label for="etablissement" style="font-size: 16px; font-family: bold;">Etablissement</label>
+      <div class="col-lg-11" style="margin-left:20px">
+        <label style="font-size: 16px; font-family: bold;">Etablissement</label>
         <div class="input-group">
           <input type="text" name="etablissement" class="form-control" 
                            [(ngModel)] ="Adherent.etablissement">
          
         </div>
       </div>
-      <div class="mb-6">
-        <label for="cycle" style="font-size: 16px; font-family: bold;">Cycle:</label>
+      <div class="col-lg-11" style="margin-left:20px">
+        <label style="font-size: 16px; font-family: bold;">Cycle:</label>
         <div class="input-group">
           <input type="text" name="cycle" class="form-control"
                            [(ngModel)] ="Adherent.cycle" >
+         
+        </div>
+      </div>
+      <div class="col-lg-11" style="margin-left:20px">
+        <label style="font-size: 16px; font-family: bold;">Niveau:</label>
+        <div class="input-group">
+          <input type="text" name="niveau" class="form-control"
+                           [(ngModel)] ="Adherent.niveau" >
          
         </div>
       </div>
@@ -61,7 +68,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" style="margin-right: 230px; width: 50px;"   (click)="update(id);modal.close('Save click')">Save</button>
+    <button  class="btn btn-secondary" style="margin-right: 205px; width: 80px;"   (click)="update(id);modal.close('Save click')">Enregistrer </button>
   </div>
 </ng-template>
 

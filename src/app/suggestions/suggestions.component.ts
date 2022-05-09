@@ -76,7 +76,7 @@ export class SuggestionsComponent implements OnInit {
     this.suggestionServ.deleteSuggestion(id).subscribe( (res) => {    
     this.affiche()
     this.router.navigate(['/suggestion']);  
-     this.toastr.success("Sugg supprimé avec succes")
+     this.toastr.success("Suggestion supprimé avec succes")
  
     },
     )

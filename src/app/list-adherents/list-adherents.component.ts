@@ -59,7 +59,7 @@ export class ListAdherentsComponent implements OnInit {
   affiche(){
     this.adhServ.getAllAdherent().subscribe(
       (res:any)=>{
-      //lena a7na res feha kol chay m5alta donc star hedha ya3mel filtration bel role 
+      //lena 5ater res feha kol chay m5alta ( adherent/ rh/ ...) donc star hedha ya3mel filtration bel role adherent
       this.Adherent=res.filter((item:any) => item.role=="Adherent")
 
       console.log(this.filterAdherent);
@@ -79,9 +79,9 @@ export class ListAdherentsComponent implements OnInit {
   }
 
   update(id:any){
-      
+     
     this.adhServ.updateAdherent(this.id,this.Adherent).subscribe( data => {
-      
+      this.affiche()
       this.toastr.success("Adhérent modifié avec succès")
      this.router.navigate(['/list-adherent']);
     },(error)=>{
