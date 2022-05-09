@@ -5,6 +5,7 @@ import { CompetenceService } from '../shared/competence.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AdherentService } from '../shared/adherent.service';
 @Component({
   selector: 'app-add-competence',
   templateUrl: './add-competence.component.html',
@@ -16,15 +17,22 @@ export class AddCompetenceComponent implements OnInit {
   newDynamic:any;
   index:any;
   competenceForm!: FormGroup
+  result: any;
+  groupe:any;
+  // name :any;
+  niveau: any;
+  competence: any;
 
   constructor( private competenceServ: CompetenceService,
     private router: Router,
     private fb: FormBuilder,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private adhServ: AdherentService) { }
   addRow() {
-    this.dynamicArray.push({ nomCompetence: '', Niveau: '' });
+    this.dynamicArray.push({ nom: '', niveau: '' });
     console.log('New row added successfully', 'New Row');
   }
+
   deleteRow(index:any) {
     this.dynamicArray.splice(index, 1);
   }
@@ -36,14 +44,22 @@ export class AddCompetenceComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // createCompetence() {
-    //   this.competenceServ.createCompetence(this.competenceForm.value).subscribe((res) => {
-    //     this.router.navigate(['/reponse-candidat']);
-    //     this.toastr.success('Candidat ajouté avec succès');
-    //   });
-    //   console.log(this.competenceForm.value);
-    // }
-   
-  }
+    this.competenceForm= this.fb.group ( 
+      {
+        nom:['',Validators.required],
+        niveau:['',Validators.required],
 
+      }
+
+    )
+  }
+      createCompetence() {
+      this.competenceServ.createCompetence(this.competenceForm.value).subscribe((res) => {
+        this.router.navigate(['/chart']);
+        this.toastr.success('Competence ajouté avec succès');
+      });
+      console.log(this.competenceForm.value);
+    }
+
+    
 }

@@ -3,7 +3,7 @@
   <ng-template #content let-modal>
     <div class="modal-header" style="background-color: #25857e;">
       <h4 class="modal-title" id="modal-basic-title" style="margin-left: 180px;">Add a Task</h4>
-      <button  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
     </div>
     <div class="modal-body">
       <form [formGroup]="todoForm" (ngSubmit)="createTodo()">
@@ -15,10 +15,26 @@
            
           </div>
         </div>
+        <div class="mb-6">
+          <label for="day" style="font-size: 14px; font-family: bold;">Day :</label>
+          <div class="input-group">
+            <input type="date" class="form-control" placeholder="" formControlName="day"  
+            [ngClass]="{'is-invalid':todoForm.get('day')!.touched && !todoForm.get('day')!.valid}" >
+           
+          </div>
+        </div>
+        <div class="mb-6">
+          <label for="time" style="font-size: 14px; font-family: bold;">Time :</label>
+          <div class="input-group">
+            <input type="time" class="form-control" placeholder="" formControlName="time"  
+            [ngClass]="{'is-invalid':todoForm.get('time')!.touched && !todoForm.get('time')!.valid}" >
+           
+          </div>
+        </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-light" style="margin-right: 210px; width: 50px;" [disabled]=!todoForm.valid (click)="createTodo();modal.close('Save click')">Save</button>
+      <button type="button" class="btn btn-secondary" style="margin-right: 220px; width: 50px;" [disabled]=!todoForm.valid (click)="createTodo();modal.close('Save click')">Save</button>
     </div>
   </ng-template>
 
@@ -30,13 +46,13 @@
 
     <h3><i style="margin-left: 270px;"></i> To do List</h3>
 
-  <div _ngcontent-roy-c3="" >
+  <div _ngcontent-roy-c3=""  >
         
     <br _ngcontent-roy-c3="">
     
     <button 
             class="btn-tache"
-            style="margin-left: 40%; width: 25%;"
+            style="margin-left: 45%; width: 15%;"
              type="submit"
             (click)=" open(content)">Add a task</button>
     <br><br><br>
@@ -50,13 +66,21 @@
                       <i class="material-icons toggle-completed-checkbox"></i> 
                     </a> 
                     <span class="todo-title">
-                       {{todo.title}}
+                       {{todo.title}}                
                     </span>
-                    
+                    <i class="fa fa-calendar-o" aria-hidden="true"  style="margin-left: 50px"></i>
+                   <span class="todo-title">
+                    {{todo.day}}             
+                 </span>
+                    <i class="fa fa-clock-o" aria-hidden="true"  style="margin-left: 50px"></i>
+                    <span class="todo-title">
+                      {{todo.time}}                 
+                   </span>
+                   
                     <span class="todo-actions pull-right">
-                        <!-- <a >
+                        <a >
                           <i class="material-icons edit">edit</i>
-                        </a> -->
+                        </a>
                         <button (click)="delete(todo.id)">
                           <i class="fa fa-times" aria-hidden="true"></i>
                         </button>

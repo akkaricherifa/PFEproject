@@ -14,6 +14,10 @@ export class SuggestionsComponent implements OnInit {
   closeResult = '';
   suggestions:any;
   suggestionForm!: FormGroup
+  public popoverTitle:string=' Alert De Confirmation';
+  public popoverMessage:string='Voulez Vous vraiment Supprimer cet Adhérent ?';
+  public confirmClicked:boolean=false;
+  public cancelClicked:boolean=false;
   constructor(
     private router:Router,
     private fb: FormBuilder,
@@ -61,13 +65,22 @@ export class SuggestionsComponent implements OnInit {
   }
   createSuggestion() {
     this.suggestionServ.createSuggestion(this.suggestionForm.value).subscribe((res) => {
+      this.affiche()
       this.router.navigate(['/suggestion']);
       this.toastr.success('suggestion Ajouté avec succès');
     });
     console.log(this.suggestionForm.value);
   }
 
-
+  delete(id:any){
+    this.suggestionServ.deleteSuggestion(id).subscribe( (res) => {    
+    this.affiche()
+    this.router.navigate(['/suggestion']);  
+     this.toastr.success("Sugg supprimé avec succes")
+ 
+    },
+    )
+  }
 
 
 }

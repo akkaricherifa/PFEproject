@@ -38,6 +38,8 @@ export class TodoListComponent implements OnInit {
     this.todoForm= this.fb.group ( 
       {
         title:['',Validators.required],
+        time:['',Validators.required],
+        day:['',Validators.required],
      
    
       }
@@ -63,9 +65,11 @@ export class TodoListComponent implements OnInit {
     }
   }
   createTodo() {
-    this.todoService.createTodo(this.todoForm.value).subscribe((res) => {
-      this.router.navigate(['/list-todo']);
+    this.todoService.createTodo(this.todoForm.value).subscribe(res => {
+      this.affiche()
       this.toastr.success('Task Ajouté avec succès');
+      this.router.navigate(['/list-todo']);
+    
     });
     console.log(this.todoForm.value);
   }

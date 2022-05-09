@@ -2,8 +2,8 @@
 
 <app-sidebar></app-sidebar>
 
-<button type="button" class="btn btn-success" style="margin-left: 1230px; margin-top: -9px;" >Ajouter </button>
-<form [formGroup]="competenceForm" >
+<button type="button" class="btn btn-success" style="margin-left: 1230px; margin-top: -9px;" (click)="createCompetence()" >Ajouter </button>
+<form [formGroup]="competenceForm" (ngSubmit)="createCompetence()">
 <table class="table table-striped"  >
     <thead class="thead-inverse">
     <tr>
@@ -20,7 +20,7 @@
         
       </td>
       <td>
-        <select  style="width:180px"  name="{{dynamic.nomCompetence}}" [(ngModel)]="dynamic.nomCompetence"  type="text" 
+        <select  style="width:180px"  formControlName="nom"
         
         >
             <option value="Angular">Angular</option>
@@ -42,12 +42,12 @@
         </select>
       </td>
       <td>
-        <select style="width:180px" name="{{dynamic.Niveau}}" [(ngModel)]="dynamic.Niveau"  type="text"
+        <select style="width:180px"  formControlName="niveau"
         >
-            <option value="Angular">Notions</option>
-            <option value="React">Intermédiare</option>
-            <option value="Spring-Boot">Avancé</option>
-            <option value="Laravel">Expert</option>
+            <option value="notions">Notions</option>
+            <option value="Intermediare">Intermédiare</option>
+            <option value="avance">Avancé</option>
+            <option value="expert">Expert</option>
            
            
 
