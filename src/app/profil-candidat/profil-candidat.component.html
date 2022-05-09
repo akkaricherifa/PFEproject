@@ -5,7 +5,7 @@
  
     <div class="left" style="margin-top: -30px;">
         <img src="assets/img/candidat.png" alt="user"  class="img-circle">
-        <h5>{{candidate.nomCan}} {{candidate.nomCan}} </h5>
+        <h5>{{candidate.nomCan}} {{candidate.prenomCan}} </h5>
   
     </div>
     <div class="right">
@@ -77,9 +77,12 @@
                 <div class="data">
                     <h4>Cover letter
                     </h4>
-                    <p>{{candidate.pathMotivationLetter}}
+                   
+                    <p>{{candidate.pathMotivationLetter}} 
                         <a href="http://localhost:3000/downloadFile/{{candidate.pathMotivationLetter}}"
-                class="cv"><i class="fa fa-download"></i></a>
+                class="cv" > <i class="fa fa-download"></i> 
+                
+            </a>
                 
                     </p>
                     

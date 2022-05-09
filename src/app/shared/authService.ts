@@ -30,6 +30,8 @@ export class AuthService {
     return of ({succes: this.isLogin, role: this.roleAs});
   }
 
+
+
 logout() {
   this.isLogin= false;
   this.roleAs='';

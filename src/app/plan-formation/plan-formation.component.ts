@@ -19,6 +19,8 @@ import { isExpressionFactoryMetadata } from '@angular/compiler/src/render3/r3_fa
 export class PlanFormationComponent implements OnInit {
   @ViewChild ('content') content:any
   formationForm!: FormGroup;
+  dateObj = new Date();
+  yearMonth=this.dateObj.getUTCFullYear() + '-' + (this.dateObj.getUTCMonth() + 1);
   dateDebut:any;
    a:any=[]
    b:any=[]
@@ -31,6 +33,16 @@ export class PlanFormationComponent implements OnInit {
   event:any=[]
    CalendarOptions!:any;
     closeResult = '';
+    
+  c = [
+    '#378103',
+    '#378050',
+    '#378006',
+    '#208006',
+    '#008006',
+    '#968006',
+    '#32000',
+  ];
    
   constructor(private router:Router ,
     private modalService: NgbModal,
@@ -41,14 +53,7 @@ export class PlanFormationComponent implements OnInit {
     ngOnInit(): void {
       this.formationServ.getAllFormation().subscribe((res:any)=>{
         this.event=res
-        this.event.forEach((element:any) => {
-          this.a.push(element.title)
-          
-        });
-        this.event.forEach((element:any) => {
-          this.b.push(new Date(element.date_debut))
-          
-        });
+      
         this.formationForm= this.fb.group ( 
           {
             title:['',Validators.required],
@@ -59,12 +64,15 @@ export class PlanFormationComponent implements OnInit {
             lieu:['',Validators.required],
           }
         )
-
+        console.log(this.event);
         this.CalendarOptions = {
+          
             initialView: 'dayGridMonth',
            dateClick: this.handleDateClick.bind(this), 
           eventClick: this.eeventClick.bind(this), 
-            // events:this.event.map((item:any)=>item.title),
+            // events:this.x,
+            eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
+
        ///////////////////////////// star hedha ki n5alih tetna7a el Modal 61 w 62//////////////////////////////////////////////////     
             // events:this.event.array.forEach((element:any) => {
             //   [{title:element.title,date:element.date_debut}]
@@ -89,14 +97,14 @@ export class PlanFormationComponent implements OnInit {
 
         // console.log("helloooo",this.event);
         // this.a=(this.event.map((item:any)=>item.nomformation));
-        this.event.forEach((element:any) => {
-          this.a.push(element.nomformation)
+        // this.event.forEach((element:any) => {
+        //   this.a.push(element.nomformation)
           
-        });
-        this.event.forEach((element:any) => {
-          this.b.push(new Date(element.date_debut))
+        // });
+        // this.event.forEach((element:any) => {
+        //   this.b.push(new Date(element.date_debut))
           
-        });
+        // });
         // console.log("goaal",this.b[3]);
         // console.log("bbbbbb",this.b[3]);
         
