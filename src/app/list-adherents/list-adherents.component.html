@@ -7,7 +7,7 @@
     <a type="button" style="margin-right: 14px" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
   </div>
   <div class="modal-body">
-    <form >
+    <form>
       <div class="col-lg-11" style="margin-left:20px">
         <label for="nom" style="font-size: 16px; font-family: bold;">Nom:</label>
         <div class="input-group">
@@ -19,7 +19,7 @@
       <div div class="col-lg-11" style="margin-left:20px">
         <label for="prenom" style="font-size: 16px; font-family: bold;">Prénom:</label>
         <div class="input-group">
-          <input type="text" name="prenom" class="form-control" 
+          <input type="text" name="prenom" class="form-control"  
                            [(ngModel)] ="Adherent.prenom">
          
         </div>
@@ -27,7 +27,7 @@
       <div div class="col-lg-11" style="margin-left:20px">
         <label for="nom" style="font-size: 16px; font-family: bold;">N° Télèphone:</label>
         <div class="input-group">
-          <input type="text" name="telephone" class="form-control"  
+          <input type="text" name="telephone" class="form-control" 
                            [(ngModel)] ="Adherent.telephone">
          
         </div>
@@ -35,7 +35,7 @@
       <div div class="col-lg-11" style="margin-left:20px">
         <label for="nom" style="font-size: 16px; font-family: bold;">Situation Professionnelle:</label>
         <div class="input-group">
-          <input type="text" name="profession" class="form-control" 
+          <input type="text" name="profession" class="form-control"
                            [(ngModel)] ="Adherent.profession">
          
         </div>
@@ -51,7 +51,7 @@
       <div class="col-lg-11" style="margin-left:20px">
         <label style="font-size: 16px; font-family: bold;">Cycle:</label>
         <div class="input-group">
-          <input type="text" name="cycle" class="form-control"
+          <input type="text" name="cycle" class="form-control" formControlName="cycle"
                            [(ngModel)] ="Adherent.cycle" >
          
         </div>
@@ -59,7 +59,7 @@
       <div class="col-lg-11" style="margin-left:20px">
         <label style="font-size: 16px; font-family: bold;">Niveau:</label>
         <div class="input-group">
-          <input type="text" name="niveau" class="form-control"
+          <input type="text" name="niveau" class="form-control" 
                            [(ngModel)] ="Adherent.niveau" >
          
         </div>

@@ -26,6 +26,7 @@ export class PlanFormationComponent implements OnInit {
    b:any=[]
    d:any
    month :any;
+   formation:any
    year :any;
    day:any
    r:any
@@ -43,6 +44,8 @@ export class PlanFormationComponent implements OnInit {
     '#968006',
     '#32000',
   ];
+
+
    
   constructor(private router:Router ,
     private modalService: NgbModal,
@@ -54,6 +57,7 @@ export class PlanFormationComponent implements OnInit {
       this.formationServ.getAllFormation().subscribe((res:any)=>{
         this.event=res
       
+      this.affiche()
         this.formationForm= this.fb.group ( 
           {
             title:['',Validators.required],
@@ -64,80 +68,21 @@ export class PlanFormationComponent implements OnInit {
             lieu:['',Validators.required],
           }
         )
-        console.log(this.event);
+        console.log("bonjour",this.event);
         this.CalendarOptions = {
           
             initialView: 'dayGridMonth',
            dateClick: this.handleDateClick.bind(this), 
           eventClick: this.eeventClick.bind(this), 
-            // events:this.x,
+            events:this.event,
             eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
 
-       ///////////////////////////// star hedha ki n5alih tetna7a el Modal 61 w 62//////////////////////////////////////////////////     
-            // events:this.event.array.forEach((element:any) => {
-            //   [{title:element.title,date:element.date_debut}]
-              
-            // })
+     
 
-              
-              // [
-                
-              // {title:this.a[1], date:'2022-05-03' }]
-              // {title:"java", date:Date.now()}]
-              //  {title:this.a[4], date:this.b[4]},{title:this.a[3], date:this.b[3]}]
+      }}
 
-            
-          // events: [
-          //   { title: 'event 5000000', date: '2022-04-25',formateur:"bedis",formateur2:"aziz",dateFin:'2022/02/10' },
-          //   { title: 'event 500005', date: '2022-04-01',formateur:"bedis",formateur2:"aziz",dateFin:'2022/02/10' },
-          //   { title: 'event 200', date: '2022-04-25',formateur:"bedis",formateur2:"aziz",dateFin:'2022/02/10' },
-          //   { title: 'event 2', date: '2022-04-20' }
-          // ]
-        };
-
-        // console.log("helloooo",this.event);
-        // this.a=(this.event.map((item:any)=>item.nomformation));
-        // this.event.forEach((element:any) => {
-        //   this.a.push(element.nomformation)
-          
-        // });
-        // this.event.forEach((element:any) => {
-        //   this.b.push(new Date(element.date_debut))
-          
-        // });
-        // console.log("goaal",this.b[3]);
-        // console.log("bbbbbb",this.b[3]);
-        
-        
-        // this.d=(this.b[3])
-        // console.log("hhhhhhhh",new Date(this.b[3]).getMonth()+1);
-        // console.log("hhhhhhhh",new Date(this.b[3]).getFullYear())
-        // console.log("hhhhhhhh",new Date(this.b[3]). getDate())
-        // this.d=this.b[3]
-        
-        // this.year=(this.d.getFullYear());
-        // this.month=(this.d.getMonth()+1);
-        // this.day=(this.d.getDate())
-        // this.d=new Date(this.b[3].getFullYear(),this.b[3].getMonth()+1,this.b[3].getDate())
-        // console.log("bonjour",this.year);
-        // console.log("bonjour",this.month);
-        // console.log("bonjour",this.day);
-        
-        //  this.r=new Date().getTime()
-        //  let test = this.r.getTime()-this.t
-
-        //  console.log("test",this.r,this.t.getTime());
-
-        //  let diff=this.r -this.t.getTime()
-
-        //  this.y=new Date(diff)
-
-      })
-
-      // this.a=this.event
-      console.log("helloooo",this.a);
-      console.log("hel",this.a[3]);
-    }
+    
+    )}
     
 
   
@@ -176,20 +121,31 @@ export class PlanFormationComponent implements OnInit {
   
 
   createFormation() {
+    
     let title=this.formationForm.controls.title.value;
     let date_fin=this.formationForm.controls.date_fin.value;
     let duree=this.formationForm.controls.duree.value;
     let formateur=this.formationForm.controls.formateur.value;
     let prix=this.formationForm.controls.prix.value;
     let lieu=this.formationForm.controls.lieu.value;
-    let date_debut=this.dateDebut
-    let form ={title, date_debut,date_fin,duree,formateur,prix,lieu}
+    let date=this.dateDebut
+    let form ={title, date,date_fin,duree,formateur,prix,lieu}
     this.formationServ.createFormation(form).subscribe((res) => {
+      this.affiche()
       this.router.navigate(['/plan-formation']);
       this.toastr.success('formation ajoutée avec Succès');
     });
     console.log();
   }
+
+  affiche(){
+    this.formationServ.getAllFormation().subscribe(
+      res=>{
+        this.event=res
+      },
+    )
+  }
+
 }
   
 

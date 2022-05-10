@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AdherentService } from '../shared/adherent.service';
 import { AuthService } from '../shared/authService';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 interface Adhérent {
   id:number;
   nom:string;
@@ -31,6 +32,7 @@ export class ListAdherentsComponent implements OnInit {
   Adherent!: any;
   Admin!: any;
   closeResult = '';
+  updateform!: FormGroup
   public popoverTitle:string=' Alert De Confirmation';
   public popoverMessage:string='Voulez Vous vraiment Supprimer cet Adhérent ?';
   public confirmClicked:boolean=false;
@@ -40,7 +42,8 @@ export class ListAdherentsComponent implements OnInit {
     private authServ: AuthService,
     private toastr: ToastrService,
     private http: HttpClient,
-    private modalService: NgbModal,) 
+    private modalService: NgbModal,
+    private fb: FormBuilder,) 
     { }
 
   ngOnInit(): void {
@@ -54,6 +57,7 @@ export class ListAdherentsComponent implements OnInit {
       console.log(data);
       this.Admin = data;
     })  
+
   }
  
   affiche(){
@@ -79,7 +83,6 @@ export class ListAdherentsComponent implements OnInit {
   }
 
   update(id:any){
-     
     this.adhServ.updateAdherent(this.id,this.Adherent).subscribe( data => {
       this.affiche()
       this.toastr.success("Adhérent modifié avec succès")
