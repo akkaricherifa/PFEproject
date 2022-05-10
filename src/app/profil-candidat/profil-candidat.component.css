@@ -179,7 +179,7 @@ h5{
   margin-left: 10px;
 }
 ::ng-deep .custom-style{
-  background-color:black;
+  background-color:rgb(51, 47, 47);
   color:rgb(255, 255, 255);
   font-size: 14px;
   margin: 0 !important;

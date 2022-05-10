@@ -64,6 +64,7 @@ export class PieComponent implements OnInit {
          ]
       }]
     };
+    
 
     HC_exporting(Highcharts);
 
