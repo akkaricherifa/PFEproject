@@ -51,6 +51,7 @@ export class ListAdherentsComponent implements OnInit {
     .subscribe((data: Adhérent[]) => {
       this.Adherent = data;
     });
+    
     this.affiche();
     this. id =(localStorage.getItem('CurrentUser') || '');
     this.adhServ.getAdherent(this.id).subscribe( data => {
@@ -96,8 +97,6 @@ export class ListAdherentsComponent implements OnInit {
   logout(){
     this.authServ.logout()
   }
-
-
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;

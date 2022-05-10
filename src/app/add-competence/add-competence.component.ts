@@ -29,8 +29,9 @@ export class AddCompetenceComponent implements OnInit {
     private toastr: ToastrService,
     private adhServ: AdherentService) { }
   addRow() {
-    this.dynamicArray.push({ nom: '', niveau: '' });
-    console.log('New row added successfully', 'New Row');
+    this.dynamicArray.push({ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau });
+    console.log('New row added successfully',this.dynamicArray);
+    
   }
 
   deleteRow(index:any) {

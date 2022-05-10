@@ -27,15 +27,14 @@
             <label class="col-md-6 control-label " style="margin-top: 12px;"  >Mot de Passe (*) :</label>
             <div class="col-md-20">
           
-               <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" [type]="showPasswordOnPress ? 'text' : 'password'">
+               <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" [type]="showPasswordOnPress ? 'text' : 'password'" >
               <div (mousedown)="showPasswordOnPress = !showPasswordOnPress"
               (mouseup)="showPasswordOnPress = !showPasswordOnPress" >
-             
-  
-              <i alt="show" class="fa fa-eye eye-show"
-           [class.hide]="showPasswordOnPress"></i> 
-         <i alt="hide" class="fa fa-eye-slash eye-hide"
-           [class.hide]="!showPasswordOnPress"></i> 
+
+              <i alt="show" class="fa fa-eye eye-show" style="margin-top: -50px; margin-left: 320px;"
+           [class.hide]="showPasswordOnPress"> </i> 
+         <i alt="hide" class="fa fa-eye-slash eye-hide" style="margin-top: -5px; margin-left: 320px;"
+           [class.hide]="!showPasswordOnPress"> </i> 
               </div>
               <div *ngIf="password!.touched && password!.invalid">
                 <!-- // kol ngif lehya b type d'erreur f niveau mta3 formcontrol ili 3malneh fel .ts w selon type d'erreur n'affichiw message  -->
@@ -57,7 +56,7 @@
         </div>
         </div>
         <div>
-            <button class="btn btn-theme btn-block" [disabled]=!loginForm.valid  (click)="login()" type="button">
+            <button class="btn btn-theme btn-block" [disabled]=!loginForm.valid  (click)="login()" type="button" style="filter: 200px;">
                 <i class="fa fa-lock"></i> Se Connecter
               </button>
 

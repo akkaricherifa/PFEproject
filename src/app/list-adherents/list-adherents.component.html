@@ -35,40 +35,58 @@
       <div div class="col-lg-11" style="margin-left:20px">
         <label for="nom" style="font-size: 16px; font-family: bold;">Situation Professionnelle:</label>
         <div class="input-group">
-          <input type="text" name="profession" class="form-control"
-                           [(ngModel)] ="Adherent.profession">
-         
-        </div>
+        <select  [(ngModel)] ="Adherent.profession" name="profession" id="profession" class="form-control col-md-12" style="height: 35px;font-size:16px"
+        >
+               <option value="Etudiant">Etudiant</option>
+               <option value="Ingenieur">Ingenieur</option>
+</select>
+</div>
       </div>
       <div class="col-lg-11" style="margin-left:20px">
         <label style="font-size: 16px; font-family: bold;">Etablissement</label>
         <div class="input-group">
-          <input type="text" name="etablissement" class="form-control" 
-                           [(ngModel)] ="Adherent.etablissement">
-         
+          <select  [(ngModel)] ="Adherent.etablissement" name="etablissement" class="form-control" id="etablissement" style="height: 35px; font-size:16px">
+                         
+            <option value="ISITCOM">IsitCom</option>
+            <option value="ISSAT">Issat</option>
+            <option value="ENISO">Eniso</option>
+            <option value="ISET">Iset</option>
+            <option value="ESSTHS">Essths</option>
+            <option value="EPI">Epi</option>
+            <option value="POLYTECHNIQUE">Polytechnique</option>
+        </select>
         </div>
       </div>
       <div class="col-lg-11" style="margin-left:20px">
         <label style="font-size: 16px; font-family: bold;">Cycle:</label>
         <div class="input-group">
-          <input type="text" name="cycle" class="form-control" formControlName="cycle"
-                           [(ngModel)] ="Adherent.cycle" >
-         
+          <select  [(ngModel)] ="Adherent.cycle" name="cycle" class="form-control"  id="cycle" style="height: 35px; font-size:16px">
+                           
+            <option value="Licence">Licence</option>
+            <option value="Mastére">Mastére</option>
+            <option value="Ingénierie">Ingénierie</option>
+            <option value="Préparatoire">Préparatoire</option>
+        </select>
         </div>
       </div>
       <div class="col-lg-11" style="margin-left:20px">
         <label style="font-size: 16px; font-family: bold;">Niveau:</label>
         <div class="input-group">
-          <input type="text" name="niveau" class="form-control" 
-                           [(ngModel)] ="Adherent.niveau" >
-         
+          <select type="text" name="niveau" class="form-control"  id="niveau" style="height: 35px; font-size:16px"
+          [(ngModel)] ="Adherent.niveau">
+          <option value="1ere Année ">1ére Année</option>
+          <option value="2éme Année">2éme Année</option>
+          <option value="3éme Année">3éme Année</option>
+          <option value="4éme Année">4éme Année</option>
+          <option value="5éme Année">5éme Année</option>
+      </select>
         </div>
       </div>
    
     </form>
   </div>
   <div class="modal-footer">
-    <button  class="btn btn-secondary" style="margin-right: 205px; width: 80px;"   (click)="update(id);modal.close('Save click')">Enregistrer </button>
+    <button  class="btn btn-secondary" style="margin-right: 205px; width: 80px;"   (click)="update(Adherent._id);modal.close('Save click')">Enregistrer </button>
   </div>
 </ng-template>
 

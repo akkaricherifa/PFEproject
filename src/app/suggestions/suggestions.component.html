@@ -10,7 +10,7 @@
         <div class="col-lg-11" style="margin-left:20px" >
           <label for="title" style="font-size: 16px; font-family: bold; margin-top: 20px;">Titre de Formation:</label>
           <div class="input-group" >
-            <input  class="form-control" placeholder="" formControlName="titre"  
+            <input  class="form-control" placeholder="" formControlName="titre"  style="font-size:15px"
             [ngClass]="{'is-invalid':suggestionForm.get('titre')!.touched && !suggestionForm.get('titre')!.valid}" >
            
           </div>
@@ -18,7 +18,7 @@
         <div class="col-lg-11" style="margin-left:20px">
             <label for="title" style="font-size: 14px; font-family: bold; margin-top: 22px;">Détails:</label>
             <div class="input-group">
-              <textarea  class="form-control" placeholder="" formControlName="content"  
+              <textarea  class="form-control" placeholder="" formControlName="content"   style="font-size:15px"
               [ngClass]="{'is-invalid':suggestionForm.get('content')!.touched && !suggestionForm.get('content')!.valid}" >
               </textarea>
             </div>

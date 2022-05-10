@@ -44,10 +44,8 @@ export class PlanFormationComponent implements OnInit {
     '#968006',
     '#32000',
   ];
-
-
-   
-  constructor(private router:Router ,
+  $ref: any;
+   constructor(private router:Router ,
     private modalService: NgbModal,
     private formationServ: FormationService,
     private toastr: ToastrService, 
@@ -56,11 +54,13 @@ export class PlanFormationComponent implements OnInit {
     ngOnInit(): void {
       this.formationServ.getAllFormation().subscribe((res:any)=>{
         this.event=res
+
       
       this.affiche()
         this.formationForm= this.fb.group ( 
           {
             title:['',Validators.required],
+            heure:['',Validators.required],
             date_fin:['',Validators.required],
             duree:['',Validators.required],
             formateur:['',Validators.required],
@@ -68,6 +68,7 @@ export class PlanFormationComponent implements OnInit {
             lieu:['',Validators.required],
           }
         )
+      
         console.log("bonjour",this.event);
         this.CalendarOptions = {
           
@@ -76,16 +77,10 @@ export class PlanFormationComponent implements OnInit {
           eventClick: this.eeventClick.bind(this), 
             events:this.event,
             eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
-
-     
-
+            editable: true,
+            
       }}
-
-    
     )}
-    
-
-  
   handleDateClick(arg:any) {
     console.log(arg);
     this.dateDebut=arg.dateStr;
@@ -96,9 +91,13 @@ export class PlanFormationComponent implements OnInit {
   }
   eeventClick(model:any){
     console.log(model.event._def.title);
+    console.log(model.event._def.extendedProps.heure);
+    console.log(model.event._def.extendedProps.date_fin);
+    console.log(model.event._def.extendedProps.duree);
     console.log(model.event._def.extendedProps.formateur);
-    console.log(model.event._def.extendedProps.formateur2);
-    console.log(model.event._def.extendedProps.dateFin);
+    console.log(model.event._def.extendedProps.prix);
+    console.log(model.event._def.extendedProps.lieu);
+    
     }
     
     open(content:any) {
@@ -123,17 +122,21 @@ export class PlanFormationComponent implements OnInit {
   createFormation() {
     
     let title=this.formationForm.controls.title.value;
+    let heure=this.formationForm.controls.heure.value;
     let date_fin=this.formationForm.controls.date_fin.value;
     let duree=this.formationForm.controls.duree.value;
     let formateur=this.formationForm.controls.formateur.value;
     let prix=this.formationForm.controls.prix.value;
     let lieu=this.formationForm.controls.lieu.value;
     let date=this.dateDebut
-    let form ={title, date,date_fin,duree,formateur,prix,lieu}
+    let form ={title,heure, date,date_fin,duree,formateur,prix,lieu}
     this.formationServ.createFormation(form).subscribe((res) => {
       this.affiche()
       this.router.navigate(['/plan-formation']);
-      this.toastr.success('formation ajoutée avec Succès');
+      this.toastr.success('Formation ajoutée avec Succès');
+      let calendarApi = this.$ref.fullCalendar.getApi()
+      calendarApi.refetchEvents()
+      
     });
     console.log();
   }
@@ -142,10 +145,18 @@ export class PlanFormationComponent implements OnInit {
     this.formationServ.getAllFormation().subscribe(
       res=>{
         this.event=res
+
+        console.log("welcome",this.event);
+        
       },
     )
   }
 
+
 }
   
+
+function jQuery(arg0: string) {
+  throw new Error('Function not implemented.');
+}
 
