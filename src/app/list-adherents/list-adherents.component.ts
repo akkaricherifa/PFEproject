@@ -94,10 +94,15 @@ export class ListAdherentsComponent implements OnInit {
  }
 
 
+ 
+
   logout(){
     this.authServ.logout()
   }
+
+
   open(content:any) {
+    this.affiche()
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {

@@ -17,7 +17,8 @@ export class ProfilAdherentComponent implements OnInit {
   id:any;
 
   constructor( private route : ActivatedRoute,
-    private adhServ: AdherentService ) { }
+    private adhServ: AdherentService ,
+    private toastr :ToastrService) { }
 
   ngOnInit(): void {
    this.id=this.route.snapshot.params['id'];
@@ -27,14 +28,16 @@ export class ProfilAdherentComponent implements OnInit {
     this.Adherent = data;
   })
   }
-  // generateReport(){
-  //   this.adhServ.generateReport(this.id).subscribe(
-  //     (adherent) => {
-  //       this.adhServ.toastMessage("Informations are successfully exported")
-  //       },(error) => {
-  //         this.adhServ.toastMessage("Informations are successfully exported")
-  //       }
-  //   );
-  // }
+
+
+  generateReport(){
+    this.adhServ.generateReport(this.id).subscribe(
+      (adherent) => {
+        this.toastr.success("Informations are successfully exported")
+        },(error) => {
+          this.toastr.warning("Informations are Not  exported")
+        }
+    );
+  }
 
 }

@@ -7,11 +7,11 @@
     <a type="button" style="margin-right: 14px" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
   </div>
   <div class="modal-body">
-    <form>
+    <form (ngSubmit)="update(Adherent.id)" [formGroup]="updateform" >
       <div class="col-lg-11" style="margin-left:20px">
         <label for="nom" style="font-size: 16px; font-family: bold;">Nom:</label>
         <div class="input-group">
-          <input type="text" name="nom" class="form-control" 
+          <input type="text" name="nom" class="form-control"
                            [(ngModel)] ="Adherent.nom">
          
         </div>
@@ -20,7 +20,7 @@
         <label for="prenom" style="font-size: 16px; font-family: bold;">Prénom:</label>
         <div class="input-group">
           <input type="text" name="prenom" class="form-control"  
-                           [(ngModel)] ="Adherent.prenom">
+          [(ngModel)] ="Adherent.prenom">
          
         </div>
       </div>
@@ -28,7 +28,7 @@
         <label for="nom" style="font-size: 16px; font-family: bold;">N° Télèphone:</label>
         <div class="input-group">
           <input type="text" name="telephone" class="form-control" 
-                           [(ngModel)] ="Adherent.telephone">
+         [(ngModel)] ="Adherent.telephone">
          
         </div>
       </div>
@@ -37,8 +37,8 @@
         <div class="input-group">
         <select  [(ngModel)] ="Adherent.profession" name="profession" id="profession" class="form-control col-md-12" style="height: 35px;font-size:16px"
         >
-               <option value="Etudiant">Etudiant</option>
-               <option value="Ingenieur">Ingenieur</option>
+     <option value="Etudiant">Etudiant</option>
+       <option value="Ingenieur">Ingenieur</option>
 </select>
 </div>
       </div>
@@ -86,7 +86,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button  class="btn btn-secondary" style="margin-right: 205px; width: 80px;"   (click)="update(Adherent._id);modal.close('Save click')">Enregistrer </button>
+    <button  class="btn btn-secondary" style="margin-right: 205px; width: 80px;"   (click)="update(Adherent.id);modal.close('Save click')">Enregistrer </button>
   </div>
 </ng-template>
 
@@ -106,9 +106,11 @@
                     <thead class="thead-inverse">
                     <tr>
                       <th>Photo</th>
-                      <th>Nom</th>
+                      <th><i class="fa fa-user" aria-hidden="true"></i>  Nom</th>
                       <th>Prénom</th>
-                      <th>email</th>
+                      <th><i class="fa fa-envelope" aria-hidden="true"></i>  email
+                  
+                      </th>
                       <th>Action</th>
                       </tr>
                     </thead>
@@ -129,6 +131,7 @@
                               </button>
                              
                               <button mat-raised-button class="action-button btn-secondary" (click)=" open(content)"> <span class="fa fa-edit"></span></button> 
+
                       <button  mat-raised-button  mwlConfirmationPopover
                       [popoverTitle]="popoverTitle"
                       [popoverMessage]="popoverMessage"
@@ -145,6 +148,8 @@
                     </tbody>
                     
                   </table>
+
+
                   <div class="pagination">
                   <pagination-controls (pageChange)="p = $event"></pagination-controls>
                 </div>
