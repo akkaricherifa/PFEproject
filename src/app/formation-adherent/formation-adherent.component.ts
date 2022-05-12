@@ -19,17 +19,13 @@ export class FormationAdherentComponent implements OnInit {
   ];
   
   event:any=[]
+  CalendarOptions!:any;
+  Formation!:any;
   constructor(private router:Router,
     private formationServ: FormationService) { }
 
-  calendarOptions: CalendarOptions = {
-    events:this.event,
-    eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
-    editable: true,
-    initialView: 'dayGridMonth',
-    eventClick: this.eeventClick.bind(this), 
   
-  };
+
   handleDateClick(arg:any) {
     console.log(arg);
   }
@@ -46,12 +42,44 @@ export class FormationAdherentComponent implements OnInit {
 
     }
 
-    ngOnInit(): void {
-      this.formationServ.getAllFormation().subscribe((res:any)=>{
-        this.event=res
+    
+      ngOnInit(): void {
+        this.formationServ.getAllFormation().subscribe((res:any)=>{
+          this.event=res
+  
+        
+        this.affiche()
+          
+        
+          console.log("bonjour",this.event);
+          this.CalendarOptions = {
+            
+              initialView: 'dayGridMonth',
+             dateClick: this.handleDateClick.bind(this), 
+            eventClick: this.eeventClick.bind(this), 
+              events:this.event,
+              eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
+              editable: true,
+                         
+        }}
+      
+      )}
+     
+
+
+      affiche(){
+        this.formationServ.getAllFormation().subscribe(
+          res=>{
+            this.event=res
+    
+            console.log("welcome",this.event);
+            
+          },
+        )
       }
-    )}
+    }
+
+  
     
-  }
-    
+
 

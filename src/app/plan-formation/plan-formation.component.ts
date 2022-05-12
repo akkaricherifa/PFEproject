@@ -19,6 +19,7 @@ import { isExpressionFactoryMetadata } from '@angular/compiler/src/render3/r3_fa
 export class PlanFormationComponent implements OnInit {
   @ViewChild ('content') content:any
   formationForm!: FormGroup;
+  Formation!:any;
   dateObj = new Date();
   yearMonth=this.dateObj.getUTCFullYear() + '-' + (this.dateObj.getUTCMonth() + 1);
   dateDebut:any;
@@ -78,9 +79,12 @@ export class PlanFormationComponent implements OnInit {
             events:this.event,
             eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
             editable: true,
-            
+                       
       }}
+    
     )}
+
+
   handleDateClick(arg:any) {
     console.log(arg);
     this.dateDebut=arg.dateStr;
@@ -100,6 +104,7 @@ export class PlanFormationComponent implements OnInit {
     
     }
     
+    
     open(content:any) {
       this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
         this.closeResult = `Closed with: ${result}`;
@@ -117,7 +122,10 @@ export class PlanFormationComponent implements OnInit {
         return `with: ${reason}`;
       }
     }
+   
   
+
+
 
   createFormation() {
     
@@ -136,7 +144,6 @@ export class PlanFormationComponent implements OnInit {
       this.toastr.success('Formation ajoutée avec Succès');
       let calendarApi = this.$ref.fullCalendar.getApi()
       calendarApi.refetchEvents()
-      
     });
     console.log();
   }

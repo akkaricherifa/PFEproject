@@ -1,6 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { CompetenceService } from '../shared/competence.service';
+interface competence {
+  id:number;
+  nom:string;
+  niveau:string;
+
+}
 @Component({
   selector: 'app-all-competence',
   templateUrl: './all-competence.component.html',
@@ -12,7 +19,10 @@ export class AllCompetenceComponent implements OnInit {
   population: any;
   competence: any;
   niveau: any;
-  constructor(private competenceServ: CompetenceService) {}
+  term!: string;
+  searchTerm!: string;
+  constructor(private competenceServ: CompetenceService,
+    private http: HttpClient,) {}
 
   ngOnInit(): void {
     this.competenceServ.getAllCompetence().subscribe(
@@ -20,6 +30,11 @@ export class AllCompetenceComponent implements OnInit {
       this.result =res
       this.name = this.result.map((item: any) => item.nom);
     this.name.forEach((element:any) => {  
+    });
+
+    this.http.get<competence[]>('./assets/data/countries.json')
+    .subscribe((data: competence[]) => {
+      this.competence = data;
     });
   
     this.niveau = this.result.map((item: any) => item.niveau);

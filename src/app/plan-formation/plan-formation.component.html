@@ -64,7 +64,88 @@
       <button type="button" class="btn btn-secondary" style="margin-right: 200px; width: 80px; font-size: 14px;" [disabled]=!formationForm.valid    (click)="createFormation();modal.close('Save click')">Enregistrer</button>
     </div>
   </ng-template>
+<!-- ---------------------------------------------------- -Modal d'ajout ---------------------------------------------------------- -->
+<ng-template #content let-modal>
+  <div class="modal-header"  style="background-color: #25857e;">
+    <h4 class="modal-title" id="modal-basic-title" style="margin-left: 160px;">détails de Formation</h4>
+    <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="formationForm">
+      <div class="mb-6">
+        <!-- <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;">Nom de Formation :</label> -->
+        <div class="input-group">
+          <div class="data">
+            <h4>title</h4>
+            <p> {{event.title}}</p>
+        </div>
+        </div>
+      </div>
+      <div class="mb-6">
+        <!-- <label for="heure" style="font-size: 14px; font-family: bold; margin-top: 15px;"> Start Time:</label> -->
+        <div class="input-group">
+          <div class="data">
+            <h4>heure</h4>
+            <p> {{event.heure}}</p>
+        </div>
+        </div>
+      </div>
+        <div class="mb-6">
+          <!-- <label for="date_fin" style="font-size: 14px; font-family: bold; margin-top: 15px;">Date_fin :</label> -->
+          <div class="input-group">
+            <div class="data">
+              <h4>date_fin</h4>
+              <p> {{event.date_fin}}</p>
+          </div>
+          </div>
+        </div>
+        <div class="mb-6">
+          <!-- <label for="duree" style="font-size: 14px; font-family: bold; margin-top: 15px;">Durée :</label> -->
+          <div class="input-group">
+            <div class="data">
+              <h4>duree</h4>
+              <p> {{event.duree}}</p>
+          </div>
+           
+          </div>
+        </div>
+        <div class="mb-6">
+          <!-- <label for="formateur" style="font-size: 14px; font-family: bold; margin-top: 15px;">Formateur :</label> -->
+          <div class="input-group">
+            <div class="data">
+              <h4>formateur</h4>
+              <p> {{event.formateur}}</p>
+          </div>
+          </div>
+        </div>
+        <div class="mb-6">
+          <!-- <label for="prix" style="font-size: 14px; font-family: bold; margin-top: 15px;">Prix :</label> -->
+          <div class="input-group">
+            <div class="data">
+              <h4>prix</h4>
+              <p> {{event.prix}}</p>
+          </div>
+          </div>
+        </div>
+        <div class="mb-6">
+          <!-- <label for="lieu" style="font-size: 14px; font-family: bold; margin-top: 15px;">Lieu :</label> -->
+          <div class="input-group" >
+            <div class="data">
+              <h4>lieu</h4>
+              <p> {{event.lieu}}</p>
+          </div>
+          </div>
+        </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" style="margin-right: 200px; width: 80px; font-size: 14px;"   (click)="modal.close('Save click')">Fermer</button>
+  </div>
+</ng-template>
 
+
+
+<!-- /////////////////////////////////////////////Modal détails ///////////////////////////////////// -->
 <full-calendar style="width: 1100px; margin-left: 230px; "
 [options]="CalendarOptions" ref="fullCalendar">
 
