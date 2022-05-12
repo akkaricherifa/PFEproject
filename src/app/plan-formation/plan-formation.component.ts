@@ -21,6 +21,7 @@ export class PlanFormationComponent implements OnInit {
   @ViewChild ('content') content:any
   @ViewChild ('content2') content2:any
   formationForm!: FormGroup;
+  lieu:any
   Formation!:any;
   dateObj = new Date();
   yearMonth=this.dateObj.getUTCFullYear() + '-' + (this.dateObj.getUTCMonth() + 1);
@@ -28,6 +29,7 @@ export class PlanFormationComponent implements OnInit {
    a:any=[]
    b:any=[]
    d:any
+   form:any
    id:any;
    month :any;
    formation:any
@@ -38,15 +40,17 @@ export class PlanFormationComponent implements OnInit {
    duree:any
    formateur:any
    prix:any
-   lieu:any
+  //  lieu:any
    day:any
    r:any
    t:any=[]
+   _id:any
   event:any=[]
    CalendarOptions!:any;
     closeResult = '';
 
     refresh: Subject<any> = new Subject();
+    
 
   c = [
     '#378103',
@@ -91,16 +95,21 @@ export class PlanFormationComponent implements OnInit {
             events:this.event,
             eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
             editable: true,
+                 
+
                        
       }}
+      
     
-    )}
+    )
+    this.refresh.next();
+  }
 
 
   handleDateClick(arg:any) {
     console.log(arg);
     this.dateDebut=arg.dateStr;
-     this.open(this.content)
+      this.open(this.content)
     // this.eeventClick(arg)
     
    
@@ -108,6 +117,8 @@ export class PlanFormationComponent implements OnInit {
 
   eeventClick(model:any){
     this.open(this.content2)
+
+    this._id=model.event._def.extendedProps._id;
     console.log(model.event._def.title);
     this.title=model.event._def.title
 
@@ -178,6 +189,7 @@ export class PlanFormationComponent implements OnInit {
     this.formationServ.getAllFormation().subscribe(
       res=>{
         this.event=res
+        this.refresh.next()
 
         console.log("welcome",this.event);
         
@@ -187,13 +199,41 @@ export class PlanFormationComponent implements OnInit {
  
   
   delete(id:any){
-    this.formationServ.deleteFormation(id).subscribe( data => {    
+    this.formationServ.deleteFormation(this._id).subscribe( data => {    
     this.affiche()
      this.toastr.success("formation supprimé avec succes")
     this.router.navigate(['/plan-formation']);  
     },
     )
   }
+
+
+
+  update(){
+    console.log(this._id);
+
+    console.log("update ",this.lieu);
+
+    let title=this.title;
+    let heure=this.heure;
+    let date_fin=this.formationForm.controls.date_fin.value;
+    let duree=this.duree;
+    let formateur=this.formateur;
+    let prix=this.prix;
+    let lieu=this.lieu;
+    let date=this.date
+    this.form ={title,heure, date,date_fin,duree,formateur,prix,lieu}
+    
+    
+      
+    this.formationServ.updateFormation(this._id,this.form).subscribe( data => {
+      // this.affiche()
+      this.toastr.success("formation modifiée avec succès")
+     this.router.navigate(['/plan-formation']);
+    },(error)=>{
+      console.log(error);
+    });
+ }
 
 
 }

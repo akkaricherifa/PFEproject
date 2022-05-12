@@ -84,9 +84,10 @@ export class ListAdherentsComponent implements OnInit {
   }
 
   update(id:any){
+      
     this.adhServ.updateAdherent(this.id,this.Adherent).subscribe( data => {
       this.affiche()
-      this.toastr.success("Adhérent modifié avec succès")
+      this.toastr.success(" modifiée avec succès")
      this.router.navigate(['/list-adherent']);
     },(error)=>{
       console.log(error);

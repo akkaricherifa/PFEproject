@@ -139,11 +139,11 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button mat-raised-button class="action-button btn-danger" (click)="delete(event._id)">
+    <button class="action-button btn-danger" (click)="delete(id)">
       <span class="fa fa-trash"></span>
 
     </button>
-    <button mat-raised-button class="action-button btn-secondary">
+    <button mat-raised-button class="action-button btn-secondary" (click)="open(content3);modal.close('Save click');">
       <span class="fa fa-edit"></span>
 
     </button>
@@ -153,7 +153,76 @@
 
 
 <!-- /////////////////////////////////////////////Modal détails ///////////////////////////////////////////////// -->
-<full-calendar style="width: 1100px; margin-left: 230px; "
+<ng-template #content3 let-modal>
+  <div class="modal-header"  style="background-color: #25857e;">
+    <h4 class="modal-title" id="modal-basic-title" style="margin-left: 160px;">Modifier Une Formation</h4>
+    <a  class="btn-close" aria-label="Close" 
+    ></a>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-6">
+        <label style="font-size: 14px; font-family: bold; margin-top: 15px;">Nom de Formation :</label>
+        <div class="input-group">
+          <input  class="form-control" style="font-size:15px" name="title"
+        [(ngModel)] ="title" >
+        </div>
+      </div>
+      <div class="mb-6">
+        <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;"> Start Time:</label>
+        <div class="input-group">
+          <input type="time"  class="form-control"  style="font-size:15px" name="heure"
+          [(ngModel)] ="heure" >
+        </div>
+      </div>
+        <div class="mb-6">
+          <label for="date_fin" style="font-size: 14px; font-family: bold; margin-top: 15px;">Date_fin :</label>
+          <div class="input-group">
+            <input type="date" class="form-control"  style="font-size:15px" name="date"
+            [(ngModel)] ="date" >
+       
+          </div>
+        </div>
+        <div class="mb-6">
+          <label for="duree" style="font-size: 14px; font-family: bold; margin-top: 15px;">Durée :</label>
+          <div class="input-group">
+            <input  class="form-control"  style="font-size:15px" name="duree"
+            [(ngModel)] ="duree" >
+           
+          </div>
+        </div>
+        <div class="mb-6">
+          <label for="formateur" style="font-size: 14px; font-family: bold; margin-top: 15px;">Formateur :</label>
+          <div class="input-group">
+            <input  class="form-control"  style="font-size:15px" name="formateur"
+            [(ngModel)] ="formateur">
+          </div>
+        </div>
+        <div class="mb-6">
+          <label for="prix" style="font-size: 14px; font-family: bold; margin-top: 15px;">Prix :</label>
+          <div class="input-group">
+            <input class="form-control"  style="font-size:15px" name="prix"
+            [(ngModel)] ="prix">
+          </div>
+        </div>
+        <div class="mb-6">
+          <label for="prix" style="font-size: 14px; font-family: bold; margin-top: 15px;">Lieu :</label>
+          <div class="input-group" >
+            <input  class="form-control"  style="font-size:15px" name="lieu"
+            [(ngModel)] ="lieu" >
+          </div>
+        </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" style="margin-right: 200px; width: 80px; font-size: 14px;"   (click)="update();modal.close('Save click');">Modifier</button>
+  </div>
+</ng-template>
+
+
+<!-- ///////////////////////////////////// update modal -----********************************------------------------------------------------------------------------------ -->
+
+<full-calendar #calendar style="width: 1100px; margin-left: 230px; "
 [options]="CalendarOptions" ref="fullCalendar">
 
 </full-calendar>

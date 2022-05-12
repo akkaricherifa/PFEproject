@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Formation } from '../Model/formation';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,4 +25,7 @@ export class FormationService {
     return this.http.get(this.path+"/"+ id);
   }
 
+  updateFormation(id:number,formation: Formation){
+    return this.http.put(this.path+"/"+id,formation);
+  }
 }
