@@ -65,19 +65,19 @@
     </div>
   </ng-template>
 <!-- ---------------------------------------------------- -Modal d'ajout ---------------------------------------------------------- -->
-<ng-template #content let-modal>
+<ng-template #content2 let-modal>
   <div class="modal-header"  style="background-color: #25857e;">
     <h4 class="modal-title" id="modal-basic-title" style="margin-left: 160px;">détails de Formation</h4>
     <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
   </div>
   <div class="modal-body">
-    <form [formGroup]="formationForm">
+    <form >
       <div class="mb-6">
         <!-- <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;">Nom de Formation :</label> -->
         <div class="input-group">
           <div class="data">
             <h4>title</h4>
-            <p> {{event.title}}</p>
+            <p> {{event._def.title}}</p>
         </div>
         </div>
       </div>
@@ -86,7 +86,7 @@
         <div class="input-group">
           <div class="data">
             <h4>heure</h4>
-            <p> {{event.heure}}</p>
+            <p> {{event._def.title}}</p>
         </div>
         </div>
       </div>
@@ -95,7 +95,7 @@
           <div class="input-group">
             <div class="data">
               <h4>date_fin</h4>
-              <p> {{event.date_fin}}</p>
+              <p> {{event._def.title}}</p>
           </div>
           </div>
         </div>
@@ -104,7 +104,7 @@
           <div class="input-group">
             <div class="data">
               <h4>duree</h4>
-              <p> {{event.duree}}</p>
+              <p> {{event._def.title}}</p>
           </div>
            
           </div>
@@ -114,7 +114,7 @@
           <div class="input-group">
             <div class="data">
               <h4>formateur</h4>
-              <p> {{event.formateur}}</p>
+              <p> {{Formation.title}}</p>
           </div>
           </div>
         </div>
@@ -123,7 +123,7 @@
           <div class="input-group">
             <div class="data">
               <h4>prix</h4>
-              <p> {{event.prix}}</p>
+              <p> {{event.title}}</p>
           </div>
           </div>
         </div>
@@ -132,14 +132,21 @@
           <div class="input-group" >
             <div class="data">
               <h4>lieu</h4>
-              <p> {{event.lieu}}</p>
+              <p> {{event.title}}</p>
           </div>
           </div>
         </div>
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" style="margin-right: 200px; width: 80px; font-size: 14px;"   (click)="modal.close('Save click')">Fermer</button>
+    <button mat-raised-button class="action-button btn-danger" (click)="delete(event._id)">
+      <span class="fa fa-trash"></span>
+
+    </button>
+    <button mat-raised-button class="action-button btn-secondary">
+      <span class="fa fa-edit"></span>
+
+    </button>
   </div>
 </ng-template>
 

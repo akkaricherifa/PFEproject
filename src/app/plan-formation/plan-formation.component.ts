@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FormationService } from '../shared/formation.service';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { isExpressionFactoryMetadata } from '@angular/compiler/src/render3/r3_factory';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-plan-formation',
@@ -18,6 +19,7 @@ import { isExpressionFactoryMetadata } from '@angular/compiler/src/render3/r3_fa
 })
 export class PlanFormationComponent implements OnInit {
   @ViewChild ('content') content:any
+  @ViewChild ('content2') content2:any
   formationForm!: FormGroup;
   Formation!:any;
   dateObj = new Date();
@@ -26,6 +28,7 @@ export class PlanFormationComponent implements OnInit {
    a:any=[]
    b:any=[]
    d:any
+   id:any;
    month :any;
    formation:any
    year :any;
@@ -35,15 +38,12 @@ export class PlanFormationComponent implements OnInit {
   event:any=[]
    CalendarOptions!:any;
     closeResult = '';
-    
+
+    refresh: Subject<any> = new Subject();
+
   c = [
     '#378103',
-    '#378050',
-    '#378006',
-    '#208006',
-    '#008006',
-    '#968006',
-    '#32000',
+    
   ];
   $ref: any;
    constructor(private router:Router ,
@@ -53,6 +53,11 @@ export class PlanFormationComponent implements OnInit {
     private fb: FormBuilder,) { }
 
     ngOnInit(): void {
+      this.formationServ.getFormation(this.id).subscribe( data => {
+        console.log(data);
+        this.event._def = data;
+      }) 
+      
       this.formationServ.getAllFormation().subscribe((res:any)=>{
         this.event=res
 
@@ -89,11 +94,13 @@ export class PlanFormationComponent implements OnInit {
     console.log(arg);
     this.dateDebut=arg.dateStr;
      this.open(this.content)
-    this.eeventClick(arg)
+    // this.eeventClick(arg)
     
    
   }
+
   eeventClick(model:any){
+    this.open(this.content2)
     console.log(model.event._def.title);
     console.log(model.event._def.extendedProps.heure);
     console.log(model.event._def.extendedProps.date_fin);
@@ -113,6 +120,7 @@ export class PlanFormationComponent implements OnInit {
       });
     }
   
+  
     private getDismissReason(reason: any): string {
       if (reason === ModalDismissReasons.ESC) {
         return 'by pressing ESC';
@@ -123,10 +131,6 @@ export class PlanFormationComponent implements OnInit {
       }
     }
    
-  
-
-
-
   createFormation() {
     
     let title=this.formationForm.controls.title.value;
@@ -148,6 +152,7 @@ export class PlanFormationComponent implements OnInit {
     console.log();
   }
 
+
   affiche(){
     this.formationServ.getAllFormation().subscribe(
       res=>{
@@ -158,12 +163,22 @@ export class PlanFormationComponent implements OnInit {
       },
     )
   }
+ 
+  
+  delete(id:any){
+    this.formationServ.deleteFormation(id).subscribe( data => {    
+    this.affiche()
+     this.toastr.success("formation supprimé avec succes")
+    this.router.navigate(['/plan-formation']);  
+    },
+    )
+  }
 
 
 }
   
 
-function jQuery(arg0: string) {
-  throw new Error('Function not implemented.');
-}
+// function jQuery(arg0: string) {
+//   throw new Error('Function not implemented.');
+// }
 
