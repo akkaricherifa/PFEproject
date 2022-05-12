@@ -32,6 +32,13 @@ export class PlanFormationComponent implements OnInit {
    month :any;
    formation:any
    year :any;
+   title:any
+   date:any
+   heure:any
+   duree:any
+   formateur:any
+   prix:any
+   lieu:any
    day:any
    r:any
    t:any=[]
@@ -45,6 +52,7 @@ export class PlanFormationComponent implements OnInit {
     '#378103',
     
   ];
+
   $ref: any;
    constructor(private router:Router ,
     private modalService: NgbModal,
@@ -53,9 +61,8 @@ export class PlanFormationComponent implements OnInit {
     private fb: FormBuilder,) { }
 
     ngOnInit(): void {
-      this.formationServ.getFormation(this.id).subscribe( data => {
-        console.log(data);
-        this.event._def = data;
+      this.formationServ.getFormation(this.id).subscribe((data:any)=>{
+        this.event = data;
       }) 
       
       this.formationServ.getAllFormation().subscribe((res:any)=>{
@@ -102,12 +109,26 @@ export class PlanFormationComponent implements OnInit {
   eeventClick(model:any){
     this.open(this.content2)
     console.log(model.event._def.title);
-    console.log(model.event._def.extendedProps.heure);
+    this.title=model.event._def.title
+
+    console.log("heure",model.event._def.extendedProps.heure);
+    this.heure=model.event._def.extendedProps.heure
+
     console.log(model.event._def.extendedProps.date_fin);
+    this.date=model.event._def.extendedProps.date_fin
+
     console.log(model.event._def.extendedProps.duree);
+    this.duree=model.event._def.extendedProps.duree
+
     console.log(model.event._def.extendedProps.formateur);
+    this.formateur=model.event._def.extendedProps.formateur
+
     console.log(model.event._def.extendedProps.prix);
+    this.prix=model.event._def.extendedProps.prix
+
     console.log(model.event._def.extendedProps.lieu);
+    this.lieu=model.event._def.extendedProps.lieu
+
     
     }
     

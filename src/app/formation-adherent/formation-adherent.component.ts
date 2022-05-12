@@ -1,28 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import {  CalendarOptions } from '@fullcalendar/angular';
 import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
 import { FormationService } from '../shared/formation.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-formation-adherent',
   templateUrl: './formation-adherent.component.html',
   styleUrls: ['./formation-adherent.component.css']
 })
 export class FormationAdherentComponent implements OnInit {
+  @ViewChild ('content2') content2:any
   c = [
     '#378103',
-    '#378050',
-    '#378006',
-    '#208006',
-    '#008006',
-    '#968006',
-    '#32000',
+ 
   ];
-  
+  id:any
+  title:any
+   date:any
+   heure:any
+   duree:any
+   formateur:any
+   prix:any
+   lieu:any
+  closeResult = '';
   event:any=[]
   CalendarOptions!:any;
   Formation!:any;
   constructor(private router:Router,
-    private formationServ: FormationService) { }
+    private formationServ: FormationService, private modalService: NgbModal,) { }
 
   
 
@@ -33,17 +38,36 @@ export class FormationAdherentComponent implements OnInit {
 
 
   eeventClick(model:any){
+    this.open(this.content2)
     console.log(model.event._def.title);
-    console.log(model.event._def.extendedProps.heure);
-    console.log(model.event._def.extendedProps.dateFin);
-    console.log(model.event._def.extendedProps.duree);
-    console.log(model.event._def.extendedProps.lieu);
-    console.log(model.event._def.extendedProps.prix);
+    this.title=model.event._def.title
 
+    console.log("heure",model.event._def.extendedProps.heure);
+    this.heure=model.event._def.extendedProps.heure
+
+    console.log(model.event._def.extendedProps.date_fin);
+    this.date=model.event._def.extendedProps.date_fin
+
+    console.log(model.event._def.extendedProps.duree);
+    this.duree=model.event._def.extendedProps.duree
+
+    console.log(model.event._def.extendedProps.formateur);
+    this.formateur=model.event._def.extendedProps.formateur
+
+    console.log(model.event._def.extendedProps.prix);
+    this.prix=model.event._def.extendedProps.prix
+
+    console.log(model.event._def.extendedProps.lieu);
+    this.lieu=model.event._def.extendedProps.lieu
+
+    
     }
 
     
       ngOnInit(): void {
+        this.formationServ.getFormation(this.id).subscribe((data:any)=>{
+          this.event = data;
+        }) 
         this.formationServ.getAllFormation().subscribe((res:any)=>{
           this.event=res
   
@@ -76,6 +100,25 @@ export class FormationAdherentComponent implements OnInit {
             
           },
         )
+      }
+
+      open(content:any) {
+        this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+          this.closeResult = `Closed with: ${result}`;
+        }, (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        });
+      }
+    
+    
+      private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+          return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+          return 'by clicking on a backdrop';
+        } else {
+          return `with: ${reason}`;
+        }
       }
     }
 
