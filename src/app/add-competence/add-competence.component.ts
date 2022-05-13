@@ -57,7 +57,7 @@ export class AddCompetenceComponent implements OnInit {
       createCompetence() {
       this.competenceServ.createCompetence(this.competenceForm.value).subscribe((res) => {
         this.router.navigate(['/chart']);
-        this.toastr.success('Competence ajouté avec succès');
+        this.toastr.success('Compétence ajouté avec Succès');
       });
       console.log(this.competenceForm.value);
     }
