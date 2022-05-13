@@ -14,10 +14,7 @@ export class SidebarAdminComponent implements OnInit {
   @ViewChild ('content') content:any
   id:any;
   Admin!: any;
-  public popoverTitle:string=' Alert De Confirmation';
-  public popoverMessage:string='Voulez Vous vraiment Se Déconnecter ?';
-  public confirmClicked:boolean=false;
-  public cancelClicked:boolean=false;
+
   closeResult = '';
   constructor( private modalService: NgbModal,
     private router:Router, 
