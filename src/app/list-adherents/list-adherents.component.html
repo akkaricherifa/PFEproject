@@ -60,7 +60,7 @@
       <div class="col-lg-11" style="margin-left:20px">
         <label style="font-size: 16px; font-family: bold;">Cycle:</label>
         <div class="input-group">
-          <select  [(ngModel)] ="Adherent.cycle" name="cycle" class="form-control"  id="cycle" style="height: 35px; font-size:16px">
+          <select  [(ngModel)] ="Adherent.cycle" name="cycle" class="form-control"  style="height: 35px; font-size:16px">
                            
             <option value="Licence">Licence</option>
             <option value="Mastére">Mastére</option>
@@ -72,7 +72,7 @@
       <div class="col-lg-11" style="margin-left:20px">
         <label style="font-size: 16px; font-family: bold;">Niveau:</label>
         <div class="input-group">
-          <select type="text" name="niveau" class="form-control"  id="niveau" style="height: 35px; font-size:16px"
+          <select type="text" name="niveau" class="form-control" style="height: 35px; font-size:16px" formControlName="niveau"
           [(ngModel)] ="Adherent.niveau">
           <option value="1ere Année ">1ére Année</option>
           <option value="2éme Année">2éme Année</option>
@@ -86,7 +86,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button  class="btn btn-secondary" style="margin-right: 205px; width: 80px;"   (click)="update(Adherent.id);modal.close('Save click')">Enregistrer </button>
+    <button  class="btn btn-secondary" style="margin-right: 205px; width: 80px;"   (click)="update(id);modal.close('Save click')">Enregistrer </button>
   </div>
 </ng-template>
 

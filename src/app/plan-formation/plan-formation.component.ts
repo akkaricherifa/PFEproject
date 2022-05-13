@@ -128,7 +128,7 @@ export class PlanFormationComponent implements OnInit {
     console.log(model.event._def.title);
     this.title=model.event._def.title
 
-    console.log("heure",model.event._def.extendedProps.heure);
+    console.log(model.event._def.extendedProps.heure);
     this.heure=model.event._def.extendedProps.heure
 
     console.log(model.event._def.extendedProps.date_fin);

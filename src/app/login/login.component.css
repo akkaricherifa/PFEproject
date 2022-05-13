@@ -65,3 +65,16 @@ label{
          flex-direction:column-reverse;
      }
   } */
+
+  .p-viewer, .p-viewer2{
+    float: right;
+    margin-top: -23px;
+    position: relative;
+    margin-left: -150px;
+    z-index: 1;
+
+  }
+  
+  .fa-eye {
+    color: #000;
+  }
