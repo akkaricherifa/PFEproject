@@ -10,38 +10,38 @@
     </div>
     <div class="right">
         <div class="info">
-            <h3>Civility</h3>
+            <h3>Civilité</h3>
             <div class="info_data">
                 <div class="data">
-                    <h4>Email</h4>
+                    <h4>Adresse E-mail</h4>
                     <p>{{candidate.emailCan}}</p>
                 </div>
                 <div class="data">
-                    <h4 style="margin-left: 50px;">Phone</h4>
-                    <p style="margin-left: 50px;">{{candidate.phoneCan}}</p>
+                    <h4 style="margin-left: 50px;">N° Téléphone</h4>
+                    <p style="margin-left: 60px;">{{candidate.phoneCan}}</p>
                 </div>
                 <div class="data">
-                    <h4>Date of birth</h4>
-                    <p>{{candidate.dateOfBirth}}</p>
+                    <h4>Date de Naissance</h4>
+                    <p style="margin-left: 30px;">{{candidate.dateOfBirth}}</p>
                 </div>
 
             </div>
         </div>
 
         <div class="projects">
-            <h3>Study level</h3>
+            <h3>Niveau d'étude</h3>
             <div class="projects_data">
                 <div class="data">
-                    <h4>Level</h4>
+                    <h4>Niveau</h4>
                     <p>{{candidate.niveauEtud}}</p>
                 </div>
                 <div class="data">
-                    <h4 style="margin-left: 30px;">Diploma title</h4>
-                    <p style="margin-left: 30px;">{{candidate.titreDiplome}}</p>
+                    <h4 style="margin-left: -10px;">Titre du Diplome</h4>
+                    <p style="margin-left: 20px;">{{candidate.titreDiplome}}</p>
                 </div>
                 <div class="data">
-                    <h4>Engineering school</h4>
-                    <p>{{candidate.university}}</p>
+                    <h4>Université</h4>
+                    <p style="margin-left: 30px;">{{candidate.university}}</p>
                 </div>
                 
             </div>
@@ -50,9 +50,9 @@
             <h3>Experience</h3>
             <div class="exp_data">
                 <div class="data">
-                    <h4>level of experience
+                    <h4>Niveau d'experience
                     </h4>
-                    <p>{{candidate.niveauExp}}</p>
+                    <p style="margin-left: 50px;">{{candidate.niveauExp}}</p>
                 </div>
                 <div class="data">
                     <h4>Experiences</h4>
@@ -64,18 +64,18 @@
         </div>
 
         <div class="exp">
-            <h3>Attached documents
+            <h3>Documents Joints
             </h3>
             <div class="exp_data">
                 <div class="data">
-                    <h4>CV</h4>
+                    <h4>Curriculum vitæ</h4>
                     <p>{{candidate.pathCv}}
                         <a href="http://localhost:3000/downloadFile/{{candidate.pathCv}}"
                 class="cv"><i class="fa fa-download"></i></a>
                     </p>
                 </div>
                 <div class="data">
-                    <h4>Cover letter
+                    <h4>lettre de Motivation
                     </h4>
                    
                     <p>{{candidate.pathMotivationLetter}} 
