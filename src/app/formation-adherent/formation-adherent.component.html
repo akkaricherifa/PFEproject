@@ -3,55 +3,61 @@
 
 
 <ng-template #content2 let-modal>
-    <div class="modal-header"  style="background-color: #25857e;">
-      <h4 class="modal-title" id="modal-basic-title" style="margin-left: 160px;">Détails de Formation</h4>
-      <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
-    </div>
-    <div class="modal-body">
+  <div class="modal-header"  style="background-color: #25857e;" >
+    <a href="" class="logo" style="font-size: 1px;" style="margin-top: 0px;">
+     
+      <img style="width: 140px;;margin-top: 1px; margin-left: 5px;" class="logo"
+      src="https://arsii.org/theme_assets/img/arsii-white.png" alt="logo"
+       >
+</a>
+    <h4 class="modal-title" id="modal-basic-title" style="margin-left: 20px;">Détails du Formation</h4>
+    <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
+  </div>
+  <div class="modal-body">
       <form >
         <div class="mb-6">
-    
+          <!-- <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;">Nom de Formation  </label> -->
           <div class="input-group">
             <div class="data">
-              <h4>title</h4>
-              <p> {{title}}</p>
+              <h4>Nom de Formation : {{title}}</h4>
+              <!-- <p> {{title}}</p> -->
           </div>
           </div>
         </div>
         <div class="mb-6">
-    
+     
           <div class="input-group">
             <div class="data">
-              <h4>heure</h4>
-              <p> {{heure}}</p>
+              <h4>Heure : {{heure}} </h4>
+              <!-- <p> {{heure}}</p> -->
           </div>
           </div>
         </div>
           <div class="mb-6">
-           
+    
             <div class="input-group">
               <div class="data">
-                <h4>date_fin</h4>
-                <p> {{date}}</p>
+                <h4>Date de Fin : {{date}}</h4>
+                <!-- <p> {{date}}</p> -->
             </div>
             </div>
           </div>
           <div class="mb-6">
-         
+      
             <div class="input-group">
               <div class="data">
-                <h4>duree</h4>
-                <p> {{duree}}</p>
+                <h4>Durée :  {{duree}}</h4>
+                <!-- <p> {{duree}}</p> -->
             </div>
              
             </div>
           </div>
           <div class="mb-6">
-       
+    
             <div class="input-group">
               <div class="data">
-                <h4>formateur</h4>
-                <p> {{formateur}}</p>
+                <h4> Nom du Formateur : {{formateur}}</h4>
+                <!-- <p> {{formateur}}</p> -->
             </div>
             </div>
           </div>
@@ -59,17 +65,17 @@
     
             <div class="input-group">
               <div class="data">
-                <h4>prix</h4>
-                <p> {{prix}}</p>
+                <h4>Prix  : {{prix}} </h4>
+                <!-- <p> {{prix}}</p> -->
             </div>
             </div>
           </div>
           <div class="mb-6">
-       
+      
             <div class="input-group" >
               <div class="data">
-                <h4>lieu</h4>
-                <p> {{lieu}}</p>
+                <h4>Lieu  : {{lieu}}</h4>
+                <!-- <p> {{lieu}}</p> -->
             </div>
             </div>
           </div>

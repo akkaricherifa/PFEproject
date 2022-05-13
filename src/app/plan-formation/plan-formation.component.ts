@@ -55,11 +55,12 @@ export class PlanFormationComponent implements OnInit {
 
     refresh: Subject<any> = new Subject();
     
-
-  c = [
-    '#378103',
-    
-  ];
+    c = [
+      '#03816e',
+      '#25857e',
+      '#038181',
+   
+    ];
 
   $ref: any;
    constructor(private router:Router ,

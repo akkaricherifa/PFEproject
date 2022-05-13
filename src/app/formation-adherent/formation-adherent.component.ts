@@ -11,7 +11,9 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class FormationAdherentComponent implements OnInit {
   @ViewChild ('content2') content2:any
   c = [
-    '#378103',
+    '#03816e',
+    '#25857e',
+    '#038181',
  
   ];
   id:any
