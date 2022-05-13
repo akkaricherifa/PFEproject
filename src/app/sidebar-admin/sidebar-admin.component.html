@@ -96,35 +96,18 @@
           </li> 
         
           <li class="sub-menu dcjq-parent-li">
-            <a  (click)="logout()" >
+            <a  (click)="open(content)" >
                 <i class="fa fa-arrow-left"></i>
-                
-                      
-                    
+
                 <span class="title">Déconnexion</span></a>
       
           </li> 
-        
-      
-  
-        
-        
+
         <mat-accordion class="sidebar" routerLinkActive = "active"  >
-        
-           
-   
-        </mat-accordion>
-  
-  
+              </mat-accordion>
         <mat-accordion class="sidebar" routerLinkActive = "active"  >
-        
          
         </mat-accordion>
-  
-        
-  
-       
-      
   
         <mat-accordion class="sidebar" routerLinkActive = "active"  >
           
@@ -150,5 +133,40 @@
   
   </div>
   
-  
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <ng-template #content let-modal >
+    <div class="modal-header"  style="background-color: #25857e; height: 40px;" >
+     
+      <h4 class="modal-title" id="modal-basic-title" style="margin-left: 150px;">Alerte de Confirmation</h4>
+      <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
+    </div>
+    <div class="modal-body">
+      <form >
+        <div class="mb-6">
+          <!-- <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;">Nom de Formation  </label> -->
+          <div class="input-group">
+            <div class="data">
+              <h4 style="margin-left:120px;">Voulez Vraiment Se Déconnecter ? </h4>
+
+          </div>
+          </div>
+        </div>
+    
+      </form>
+    </div>
+
+    
+    <div class="">
+      <!-- <button type="button" class="btn btn-secondary" style="margin-left: 130px;" (click)="logout();modal.close('Save click')" >
+       
+       Déconnexion</button> -->
+       <button type="button" class="btn btn-secondary"  style="margin-left: 160px; margin-top: 20px;" (click)="modal.close('Save click')" >
+       
+        Cancel</button>
+        <button type="button" class="btn btn-secondary"  style="margin-left: 30px; margin-top: 20px;" (click)="logout();modal.close('Save click')" >
+       
+          Déconnexion</button>
+        </div> 
+    
+  </ng-template>
   

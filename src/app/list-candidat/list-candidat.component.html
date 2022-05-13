@@ -13,7 +13,9 @@
         <th>Nom</th>
         <th>Prénom</th>
         <th>E-mail</th>
-        <th>CV</th>
+        <th>CV    
+          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+        </th>
         <th>action</th>
       </tr>
       </thead>
@@ -22,7 +24,7 @@
               <td>{{candidate.nomCan}}</td>
               <td>{{candidate.prenomCan}}</td>
               <td>{{candidate.emailCan}}</td>
-              <td>{{candidate.pathCv}}
+              <td >{{candidate.pathCv}}
             
                 <button type="submit"  class="btn"  (click)="getfile()">
                   <span class="fa fa-download"></span>

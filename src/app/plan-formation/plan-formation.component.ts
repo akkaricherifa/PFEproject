@@ -48,6 +48,10 @@ export class PlanFormationComponent implements OnInit {
   event:any=[]
    CalendarOptions!:any;
     closeResult = '';
+    public popoverTitle:string=' Alert De Confirmation';
+    public popoverMessage:string='Voulez Vous Vraiment Supprimer cette Formation ?';
+    public confirmClicked:boolean=false;
+    public cancelClicked:boolean=false;
 
     refresh: Subject<any> = new Subject();
     
@@ -95,6 +99,7 @@ export class PlanFormationComponent implements OnInit {
             events:this.event,
             eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
             editable: true,
+          
                  
 
                        

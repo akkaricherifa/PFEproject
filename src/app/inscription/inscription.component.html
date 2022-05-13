@@ -155,8 +155,8 @@ data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css
 
                                 <div class="form-group">
                                     <label for="password-confirm" class="control-label">Confirmer le mot de passe (*): </label>
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" 
-                                    >
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" formControlName="password"
+                                    [ngClass]="{'is-invalid':adherentForm.get('password')!.touched && !adherentForm.get('password')!.valid}">
 
                                 </div>
 

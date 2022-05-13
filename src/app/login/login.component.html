@@ -13,7 +13,7 @@
       >
       <div class="login-wrap">
         <div>
-            <label class="col-md-4 control-label">E-mail (*) :</label>
+            <label class="col-md-4 control-label" style="font-family:'Times New Roman', Times, serif; font-size: 14px;">E-mail (*) :</label>
             <div class="col-md-20">
               <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp">
               <div *ngIf="email!.touched && email!.invalid">
@@ -24,7 +24,7 @@
         </div>
         <br>
         <div>
-            <label class="col-md-6 control-label " style="margin-top: 12px;"  >Mot de Passe (*) :</label>
+            <label class="col-md-6 control-label " style="margin-top: 12px; font-family: 'Times New Roman', Times, serif; font-size: 14px;"  >Mot de Passe (*) :</label>
             <div class="col-md-20">
           
                <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" [type]="showPasswordOnPress ? 'text' : 'password'" >
@@ -50,7 +50,7 @@
         <div>
         <div>
         <label class="checkbox">
-          <input type="checkbox" value="remember-me"><h3> Remember me</h3>
+          <input type="checkbox" value="remember-me"><h3 style="font-family: 'Times New Roman', Times, serif;"> Remember me</h3>
           
           </label>
         </div>
