@@ -15,7 +15,7 @@ export class SuggestionsComponent implements OnInit {
   suggestions:any;
   suggestionForm!: FormGroup
   public popoverTitle:string=' Alert De Confirmation';
-  public popoverMessage:string='Voulez Vous vraiment Supprimer cet Adhérent ?';
+  public popoverMessage:string='Voulez Vous vraiment Supprimer cette Suggestion ?';
   public confirmClicked:boolean=false;
   public cancelClicked:boolean=false;
   constructor(

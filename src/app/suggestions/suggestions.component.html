@@ -39,45 +39,53 @@
         <button _ngcontent-roy-c3="" class="btnnote" type="submit" (click)=" open(content)" >Add a Suggestion </button>
         <br><br><br>
         <div class="row justify-content-center">
-            <div class="col-md-10">
-        <table class="table table-striped card-body text" style="margin-left: 150px;">
-        
-            <thead class="thead-inverse">
-            <tr>
-              <th>Nom de Formation</th>
-              <th>Détails</th>
-              <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let suggestion of suggestions | paginate: {itemsPerPage: 2, currentPage: p}" >
-                  <td><p class="content" [innerHTML]="suggestion.titre"></p></td>
-                  <!-- <td>{{suggestion.titre}}</td> -->
-                    <td><p class="content" [innerHTML]="suggestion.content"></p></td>
-                    
-                    <td>
-                        <div class="pull-right hidden-phone" >
-                        <button mat-raised-button class="action-button btn-light"><mat-icon>edit</mat-icon></button> 
-                        <button  mat-raised-button  mwlConfirmationPopover
-                        [popoverTitle]="popoverTitle"
-                        [popoverMessage]="popoverMessage"
-                        placement="left"
-                        (confirm)="delete(suggestion._id)"
-                        (cancel)="cancelClicked = true" class="action-button btn-secondary" > 
-                        <span class="fa fa-trash"></span>
-                      </button>
+            <div class="col-md-8">
+              <table class="table table-striped" style="margin-top: 2%;" >
+                
+                <thead class="thead-inverse">
+                <tr>
+                
+                  <th> Nom de Formation</th>
+                  <th> Détails</th>
+                  
+                  <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let suggestion of suggestions | paginate : {itemsPerPage: 2, currentPage: p}" >
+                      
+                        <td>{{suggestion.titre }} </td>
+                        <td>{{suggestion.content}}</td>
+               
+                        <td>
+                          <div class="container">
+                          
+                         
+                          <button mat-raised-button class="action-button btn-secondary" (click)=" open(content)"> <span class="fa fa-edit"></span></button> 
+
+                  <button  mat-raised-button  mwlConfirmationPopover
+                  [popoverTitle]="popoverTitle"
+                  [popoverMessage]="popoverMessage"
+                  placement="left"
+                  (confirm)="delete(suggestion._id)"
+                  (cancel)="cancelClicked = true" class="action-button btn-danger" > 
+                  <span class="fa fa-trash"></span>
+                </button>
                         </div>
-                    </td>
-                </tr>
-            </tbody>
-          </table>
-          <div class="pagination">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-          </div>
+                        
+                        </td> 
+                       
+                    </tr>
+                </tbody>
+                
+              </table>
+
+
+              <div class="pagination">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
           </div>
         </div>
 </div>
-
-
 
 
