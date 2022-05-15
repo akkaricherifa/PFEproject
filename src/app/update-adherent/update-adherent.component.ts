@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Adhérent } from '../Model/adhérent';
 import { AdherentService } from '../shared/adherent.service';
 import { AuthService } from '../shared/authService';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-update-adherent',
   templateUrl: './update-adherent.component.html',
@@ -53,11 +53,19 @@ export class UpdateAdherentComponent implements OnInit {
   update(id:any){
       
     this.adhServ.updateAdherent(this.id,this.Adherent).subscribe( data => {
-      this.toastr.success("Adhérent Modifié avec succès")
+      // this.toastr.success("Adhérent Modifié avec succès")
      this.router.navigate(['/info-adherent']);
     },(error)=>{
       console.log(error);
     });
  }
-
+ opensweetalert() {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Adhérent Modifiée avec Succès',
+    showConfirmButton: false,
+    timer: 3000
+  })
+ }
 }

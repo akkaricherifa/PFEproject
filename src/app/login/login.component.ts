@@ -6,6 +6,7 @@ import { AuthService } from '../shared/authService';
 import { EntrepriseService } from '../shared/entreprise.service';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-login',
@@ -120,7 +121,6 @@ opensweetalert() {
     icon: 'error',
     title: 'Oops...',
     text: 'Invalid Email or Password !',
-
   })
  }
 }

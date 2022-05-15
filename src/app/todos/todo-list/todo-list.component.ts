@@ -120,7 +120,7 @@ export class TodoListComponent implements OnInit {
       icon: 'success',
       title: 'Task Supprimée avec Succès',
       showConfirmButton: false,
-      timer: 3500
+      timer: 3000
     })
    }
 }

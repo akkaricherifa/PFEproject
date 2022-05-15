@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdherentService } from '../shared/adherent.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-add-competence',
   templateUrl: './add-competence.component.html',
@@ -57,10 +58,19 @@ export class AddCompetenceComponent implements OnInit {
       createCompetence() {
       this.competenceServ.createCompetence(this.competenceForm.value).subscribe((res) => {
         this.router.navigate(['/chart']);
-        this.toastr.success('Compétence ajouté avec Succès');
+        // this.toastr.success('Compétence ajouté avec Succès');
       });
       console.log(this.competenceForm.value);
     }
-
+    opensweetalert2() {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Compétence Ajoutée avec Succès',
+        showConfirmButton: false,
+        timer: 3000
+      })
+     }
+     
     
 }

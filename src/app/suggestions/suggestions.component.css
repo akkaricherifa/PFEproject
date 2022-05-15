@@ -27,7 +27,7 @@ th{
 
 
 td{
-    font-family: Poppins-Regular;
+    /* font-family: 'Poppins-Regular'; */
     padding: 30px 20px;
     text-align: center;
     font-size: 16px;
@@ -35,7 +35,7 @@ td{
    }
 
    p {
-    font-family: Poppins-Regular;
+    /* font-family: Poppins-Regular; */
     text-align: start;
     font-size: 14px;
     line-height: 1.7;
@@ -56,14 +56,14 @@ td{
 .content{
  text-align: center;
  font-size: 16.5px;
- font-family: 'Montserrat', sans-serif;
+ /* font-family: 'bold'; */
  color: black;
 }
 th{
  background-color: #25857e;
  color: #fafafa;
- font-family: 'Open Sans',Sans-serif;
- font-weight: 200;
+ font-family:'bold';
+ font-weight: 250;
  text-transform: uppercase;
  width: 100px;
 
@@ -71,7 +71,7 @@ th{
 tr{
  width: 100%;
  background-color: #fafafa;
- font-family: 'Montserrat', sans-serif;
+ /* font-family: 'bold'; */
 }
 tr:nth-child(even){
  background-color: #eeeeee;

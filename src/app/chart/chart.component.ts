@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { AdherentService } from '../shared/adherent.service';
+
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
@@ -99,8 +100,7 @@ export class ChartComponent implements OnInit {
   }
       
   
-      
-   
+
     
 
 }

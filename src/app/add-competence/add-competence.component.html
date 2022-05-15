@@ -2,7 +2,7 @@
 
 <app-sidebar></app-sidebar>
 
-<button type="button" class="btn btn-success" style="margin-left: 1230px; margin-top: -9px;" (click)="createCompetence()" >Ajouter </button>
+<button type="button" class="btn btn-success" style="margin-left: 1230px; margin-top: -9px;" (click)="createCompetence();opensweetalert2()" >Ajouter </button>
 <form [formGroup]="competenceForm" (ngSubmit)="createCompetence()">
 <table class="table table-striped"  >
     <thead class="thead-inverse">
