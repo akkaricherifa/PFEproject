@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdherentService } from '../shared/adherent.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
@@ -13,9 +14,7 @@ export class InscriptionComponent implements OnInit {
   constructor(  private router: Router,
     private fb: FormBuilder,
     private toastr: ToastrService,
-    private adhServ: AdherentService,
-    ) { }
-
+    private adhServ: AdherentService) { }
   ngOnInit(): void {
     this.adherentForm= this.fb.group ( 
       {
@@ -40,8 +39,20 @@ export class InscriptionComponent implements OnInit {
   createAdherent() {
     this.adhServ.createAdherent(this.adherentForm.value).subscribe((res) => {
       this.router.navigate(['/acceuil']);
-      this.toastr.success('Adhérent Ajouté avec succès');
+      // this.toastr.success('Adhérent Ajouté avec succès');
+     
     });
     console.log(this.adherentForm.value);
   }
+  
+
+   opensweetalert() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your Registration has been saved',
+      showConfirmButton: false,
+      timer: 3500
+    })
+   }
 }

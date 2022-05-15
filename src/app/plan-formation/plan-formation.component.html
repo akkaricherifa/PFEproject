@@ -61,7 +61,7 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" style="margin-right: 200px; width: 80px; font-size: 14px;" [disabled]=!formationForm.valid    (click)="createFormation();modal.close('Save click')">Enregistrer</button>
+      <button type="button" class="btn btn-secondary" style="margin-right: 200px; width: 80px; font-size: 14px;" [disabled]=!formationForm.valid    (click)="createFormation();modal.close('Save click');opensweetalert()">Enregistrer</button>
     </div>
   </ng-template>
 <!-- ---------------------------------------------------- -Modal d'ajout ---------------------------------------------------------- -->
@@ -100,7 +100,16 @@
   
           <div class="input-group">
             <div class="data">
-              <h4>Date de Fin : {{date}}</h4>
+              <h4>Date de Fin : {{date_fin}}</h4>
+              <!-- <p> {{date}}</p> -->
+          </div>
+          </div>
+        </div>
+        <div class="mb-6">
+  
+          <div class="input-group">
+            <div class="data">
+              <h4>Date de début : {{date}}</h4>
               <!-- <p> {{date}}</p> -->
           </div>
           </div>
@@ -149,7 +158,7 @@
     [popoverTitle]="popoverTitle"
     [popoverMessage]="popoverMessage"
     placement="left"
-    (confirm)="delete(id)"
+    (confirm)="delete(id);modal.close('Save click')"
     (cancel)="cancelClicked = true" class="action-button btn-danger" > 
     <span class="fa fa-trash"></span>
   </button>
@@ -166,7 +175,7 @@
 <ng-template #content3 let-modal>
   <div class="modal-header"  style="background-color: #25857e;">
     <h4 class="modal-title" id="modal-basic-title" style="margin-left: 160px;">Modifier Une Formation</h4>
-    <a  class="btn-close" aria-label="Close" 
+    <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"
     ></a>
   </div>
   <div class="modal-body">
@@ -179,7 +188,14 @@
         </div>
       </div>
       <div class="mb-6">
-        <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;"> Start Time:</label>
+        <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;"> Date début:</label>
+        <div class="input-group">
+          <input class="form-control"  style="font-size:15px" name="date"
+          [(ngModel)] ="date" >
+        </div>
+      </div>
+      <div class="mb-6">
+        <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;"> Heure de début:</label>
         <div class="input-group">
           <input type="time"  class="form-control"  style="font-size:15px" name="heure"
           [(ngModel)] ="heure" >
@@ -188,8 +204,8 @@
         <div class="mb-6">
           <label for="date_fin" style="font-size: 14px; font-family: bold; margin-top: 15px;">Date_fin :</label>
           <div class="input-group">
-            <input type="date" class="form-control"  style="font-size:15px" name="date"
-            [(ngModel)] ="date" >
+            <input type="date_fin" class="form-control"  style="font-size:15px" name="date"
+            [(ngModel)] ="date_fin" >
        
           </div>
         </div>
@@ -225,7 +241,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" style="margin-right: 200px; width: 80px; font-size: 14px;"   (click)="update();modal.close('Save click');">Modifier</button>
+    <button type="button" class="btn btn-secondary" style="margin-right: 200px; width: 80px; font-size: 14px;"   (click)="update();modal.close('Save click');opensweetalert2()">Valider</button>
   </div>
 </ng-template>
 

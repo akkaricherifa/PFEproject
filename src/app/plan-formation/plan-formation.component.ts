@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
 import {  CalendarOptions } from '@fullcalendar/angular';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import Swal from 'sweetalert2';
 
 import dayGridView from '@fullcalendar/daygrid';
 import interactionPlugin from "@fullcalendar/interaction";
@@ -63,6 +64,7 @@ export class PlanFormationComponent implements OnInit {
     ];
 
   $ref: any;
+  date_fin: any;
    constructor(private router:Router ,
     private modalService: NgbModal,
     private formationServ: FormationService,
@@ -131,8 +133,11 @@ export class PlanFormationComponent implements OnInit {
     console.log(model.event._def.extendedProps.heure);
     this.heure=model.event._def.extendedProps.heure
 
+    console.log(model.event._def.extendedProps.date);
+    this.date=model.event._def.extendedProps.date
+      
     console.log(model.event._def.extendedProps.date_fin);
-    this.date=model.event._def.extendedProps.date_fin
+    this.date_fin=model.event._def.extendedProps.date_fin
 
     console.log(model.event._def.extendedProps.duree);
     this.duree=model.event._def.extendedProps.duree
@@ -178,12 +183,12 @@ export class PlanFormationComponent implements OnInit {
     let formateur=this.formationForm.controls.formateur.value;
     let prix=this.formationForm.controls.prix.value;
     let lieu=this.formationForm.controls.lieu.value;
-    let date=this.dateDebut
-    let form ={title,heure, date,date_fin,duree,formateur,prix,lieu}
+    let date=this.date
+    let form ={title,heure,date,date_fin,duree,formateur,prix,lieu}
     this.formationServ.createFormation(form).subscribe((res) => {
       this.affiche()
       this.router.navigate(['/plan-formation']);
-      this.toastr.success('Formation ajoutée avec Succès');
+      // this.toastr.success('Formation ajoutée avec Succès');
       let calendarApi = this.$ref.fullCalendar.getApi()
       calendarApi.refetchEvents()
     });
@@ -222,7 +227,7 @@ export class PlanFormationComponent implements OnInit {
 
     let title=this.title;
     let heure=this.heure;
-    let date_fin=this.formationForm.controls.date_fin.value;
+    let date_fin=this.date_fin;
     let duree=this.duree;
     let formateur=this.formateur;
     let prix=this.prix;
@@ -234,15 +239,33 @@ export class PlanFormationComponent implements OnInit {
       
     this.formationServ.updateFormation(this._id,this.form).subscribe( data => {
       // this.affiche()
-      this.toastr.success("formation modifiée avec succès")
+      // this.toastr.success("formation modifiée avec succès")
      this.router.navigate(['/plan-formation']);
     },(error)=>{
       console.log(error);
     });
  }
 
-
+ opensweetalert() {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Formation Ajoutée avec Succès',
+    showConfirmButton: false,
+    timer: 3500
+  })
+ }
+ opensweetalert2() {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Formation Modifée avec Succès',
+    showConfirmButton: false,
+    timer: 3500
+  })
+ }
 }
+
   
 
 // function jQuery(arg0: string) {

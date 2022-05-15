@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CandidatService } from '../shared/candidat.service';
 import { EntrepriseService } from '../shared/entreprise.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-entreprise-area',
   templateUrl: './entreprise-area.component.html',
@@ -46,11 +46,20 @@ export class EntrepriseAreaComponent implements OnInit {
   }
   createEntreprise() {
     this.entrepriseServ.createEntreprise(this.entrepriseForm.value).subscribe((res) => {
-      this.toastr.success('Entreprise ajouté avec succès');
+      // this.toastr.success('Entreprise ajouté avec succès');
       this.router.navigate(['/acceuil']);
    
     });
     console.log(this.entrepriseForm.value)
   }
  
+  opensweetalert() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your Registration has been saved',
+      showConfirmButton: false,
+      timer: 3500
+    })
+   }
 }
