@@ -5,7 +5,7 @@ import { AdminService } from '../shared/admin.service';
 import { AuthService } from '../shared/authService';
 import { EntrepriseService } from '../shared/entreprise.service';
 import { ToastrService } from 'ngx-toastr';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   token:any;
   
-  loginResponse = '';
+  loginResponse :any;
   
   public showPassword!: boolean;
   public showPasswordOnPress!: boolean;
@@ -109,9 +109,18 @@ login() {
     //localStorage.setItem('CurrentUser', res.admin._id)
   }, err=> {
     console.log("Invalid password or Email");
-    this.loginResponse="*Invalid Password or Email";
-  })
-  
-}
+    this.loginResponse=this.opensweetalert();
 
+  })
+ 
+}
+ 
+opensweetalert() {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Invalid Email or Password !',
+
+  })
+ }
 }

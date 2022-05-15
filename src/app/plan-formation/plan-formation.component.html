@@ -158,7 +158,7 @@
     [popoverTitle]="popoverTitle"
     [popoverMessage]="popoverMessage"
     placement="left"
-    (confirm)="delete(id);modal.close('Save click')"
+    (confirm)="delete(id);modal.close('Save click');opensweetalert3()"
     (cancel)="cancelClicked = true" class="action-button btn-danger" > 
     <span class="fa fa-trash"></span>
   </button>

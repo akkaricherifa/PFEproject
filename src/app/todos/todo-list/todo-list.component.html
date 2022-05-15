@@ -34,7 +34,7 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" style="margin-right: 220px; width: 50px;" [disabled]=!todoForm.valid (click)="createTodo();modal.close('Save click')">Save</button>
+      <button type="button" class="btn btn-secondary" style="margin-right: 220px; width: 50px;" [disabled]=!todoForm.valid (click)="createTodo();modal.close('Save click');opensweetalert()">Save</button>
     </div>
   </ng-template>
 
@@ -78,10 +78,10 @@
                    </span>
                    
                     <span class="todo-actions pull-right">
-                        <a >
+                        <!-- <a >
                           <i class="material-icons edit">edit</i>
-                        </a>
-                        <button (click)="delete(todo._id)">
+                        </a> -->
+                        <button (click)="delete(todo._id);opensweetalert2()">
                           <i class="fa fa-times" aria-hidden="true"></i>
                         </button>
            

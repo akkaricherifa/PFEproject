@@ -8,6 +8,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import {    MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -67,7 +68,7 @@ export class TodoListComponent implements OnInit {
   createTodo() {
     this.todoService.createTodo(this.todoForm.value).subscribe(res => {
       this.affiche()
-      this.toastr.success('Task Ajouté avec succès');
+      // this.toastr.success('Task Ajouté avec succès');
       this.router.navigate(['/list-todo']);
     
     });
@@ -86,7 +87,7 @@ export class TodoListComponent implements OnInit {
   delete(id:any){
     this.todoService.deleteTodo(id).subscribe( data => {    
     this.affiche()
-     this.toastr.success("Task supprimé avec succes")
+    //  this.toastr.success("Task supprimé avec succes")
     this.router.navigate(['/todo-list']);  
     },
     )
@@ -102,7 +103,26 @@ export class TodoListComponent implements OnInit {
     this.todoService.comletedTodo(id);
     
   }
+  opensweetalert() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Task Ajoutée avec Succès',
+      showConfirmButton: false,
+      timer: 3500
+    })
+   }
 
+
+   opensweetalert2() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Task Supprimée avec Succès',
+      showConfirmButton: false,
+      timer: 3500
+    })
+   }
 }
   
 

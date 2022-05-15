@@ -212,7 +212,7 @@ export class PlanFormationComponent implements OnInit {
   delete(id:any){
     this.formationServ.deleteFormation(this._id).subscribe( data => {    
     this.affiche()
-     this.toastr.success("formation supprimé avec succes")
+    //  this.toastr.success("formation supprimé avec succes")
     this.router.navigate(['/plan-formation']);  
     },
     )
@@ -260,6 +260,15 @@ export class PlanFormationComponent implements OnInit {
     position: 'top-end',
     icon: 'success',
     title: 'Formation Modifée avec Succès',
+    showConfirmButton: false,
+    timer: 3500
+  })
+ }
+ opensweetalert3() {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Formation Supprimée avec Succès',
     showConfirmButton: false,
     timer: 3500
   })
