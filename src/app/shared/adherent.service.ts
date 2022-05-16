@@ -43,6 +43,10 @@ export class AdherentService {
     return this.http.get("http://localhost:3000/competence");
   }
  
+  participer(ida:any,data:any) {
+    return this.http.post(this.path+"/a/"+ida,"6281672aaf1943907b1d49c2") 
+  
+  }
 }
 
 

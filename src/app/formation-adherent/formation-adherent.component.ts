@@ -3,6 +3,7 @@ import {  CalendarOptions } from '@fullcalendar/angular';
 import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
 import { FormationService } from '../shared/formation.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { AdherentService } from '../shared/adherent.service';
 @Component({
   selector: 'app-formation-adherent',
   templateUrl: './formation-adherent.component.html',
@@ -17,19 +18,23 @@ export class FormationAdherentComponent implements OnInit {
  
   ];
   id:any
+  Adherent:any;
   title:any
    date:any
    heure:any
    duree:any
    formateur:any
    prix:any
+   _id:any
+   aid:any
    lieu:any
   closeResult = '';
   event:any=[]
   CalendarOptions!:any;
   Formation!:any;
   constructor(private router:Router,
-    private formationServ: FormationService, private modalService: NgbModal,) { }
+    private formationServ: FormationService, private modalService: NgbModal,
+    private adhServ: AdherentService,) { }
 
   
 
@@ -41,6 +46,10 @@ export class FormationAdherentComponent implements OnInit {
 
   eeventClick(model:any){
     this.open(this.content2)
+    console.log("hhhhhhhhhhhh",model);
+    
+     this._id=model.event._def.extendedProps._id;
+    console.log("hhhhhhhhhhhhhhh",this._id);
     console.log(model.event._def.title);
     this.title=model.event._def.title
 
@@ -67,6 +76,10 @@ export class FormationAdherentComponent implements OnInit {
 
     
       ngOnInit(): void {
+        this.aid =(localStorage.getItem('CurrentUser') || '');
+
+
+
         this.formationServ.getFormation(this.id).subscribe((data:any)=>{
           this.event = data;
         }) 
@@ -122,7 +135,21 @@ export class FormationAdherentComponent implements OnInit {
           return `with: ${reason}`;
         }
       }
-    }
+
+      participer() {
+        
+        this.adhServ.participer(this.aid,this._id).subscribe((res) => {
+          // this.router.navigate(['/reponse-candidat']);
+console.log("goalllllll",this._id);
+          
+          // this.toastr.success('Candidat ajouté avec succès');
+        });
+        console.log();
+      }
+        
+
+      }
+    
 
   
     

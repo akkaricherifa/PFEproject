@@ -50,7 +50,7 @@ export class UpdateAdherentComponent implements OnInit {
     this.authServ.logout()
   }
   
-  update(id:any){
+  update(){
       
     this.adhServ.updateAdherent(this.id,this.Adherent).subscribe( data => {
       // this.toastr.success("Adhérent Modifié avec succès")

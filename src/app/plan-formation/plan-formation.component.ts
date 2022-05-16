@@ -12,7 +12,6 @@ import { FormationService } from '../shared/formation.service';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { isExpressionFactoryMetadata } from '@angular/compiler/src/render3/r3_factory';
 import { Subject } from 'rxjs';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-plan-formation',
@@ -42,6 +41,7 @@ export class PlanFormationComponent implements OnInit {
    duree:any
    formateur:any
    prix:any
+   start:any
   //  lieu:any
    day:any
    r:any
@@ -72,7 +72,7 @@ export class PlanFormationComponent implements OnInit {
     private formationServ: FormationService,
     private toastr: ToastrService, 
     private fb: FormBuilder,
-    private datePipe : DatePipe ) { }
+ ) { }
 
     ngOnInit(): void {
       this.formationServ.getFormation(this.id).subscribe((data:any)=>{
@@ -119,7 +119,10 @@ export class PlanFormationComponent implements OnInit {
 
   handleDateClick(arg:any) {
     console.log(arg);
-    this.dateDebut=arg.dateStr;
+     this.dateDebut=arg.dateStr;
+    this.start=arg.dateStr;
+    // console.log("hhhhhhh",this.dateDebut);
+    
       this.open(this.content)
     // this.eeventClick(arg)
     
@@ -128,6 +131,10 @@ export class PlanFormationComponent implements OnInit {
 
   eeventClick(model:any){
     this.open(this.content2)
+
+  this.start=new Date(model.event._instance.range.start).toISOString().substring(0,10);
+
+  
 
     this._id=model.event._def.extendedProps._id;
     console.log(model.event._def.title);
@@ -187,6 +194,8 @@ export class PlanFormationComponent implements OnInit {
     let prix=this.formationForm.controls.prix.value;
     let lieu=this.formationForm.controls.lieu.value;
     let date=this.date
+if(date<date_fin) {
+
     let form ={title,heure,date,date_fin,duree,formateur,prix,lieu}
    
     this.formationServ.createFormation(form).subscribe((res) => {
@@ -199,6 +208,12 @@ export class PlanFormationComponent implements OnInit {
  
     console.log();
   }
+else {
+  console.log("thabete date");
+  
+}
+}
+
 
 
   affiche(){
@@ -237,8 +252,16 @@ export class PlanFormationComponent implements OnInit {
     let formateur=this.formateur;
     let prix=this.prix;
     let lieu=this.lieu;
-    let date=this.date
+    let date=this.start;
+    //console.log("hhhhhhhhhhhhhh",start);
+
+    if(date<date_fin)
+    {
+    
     this.form ={title,heure, date,date_fin,duree,formateur,prix,lieu}
+
+    console.log("hhhhhhhhhhhhhhh",this.form);
+    
     
     
       
@@ -250,6 +273,12 @@ export class PlanFormationComponent implements OnInit {
       console.log(error);
     });
  }
+ else{
+  console.log("raka7 date ");
+  
+}
+}
+
 
  opensweetalert() {
   Swal.fire({
