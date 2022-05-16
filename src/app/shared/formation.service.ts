@@ -28,4 +28,5 @@ export class FormationService {
   updateFormation(id:number,formation: Formation){
     return this.http.put(this.path+"/"+id,formation);
   }
+
 }

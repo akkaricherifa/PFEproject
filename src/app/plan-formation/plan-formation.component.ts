@@ -12,6 +12,7 @@ import { FormationService } from '../shared/formation.service';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { isExpressionFactoryMetadata } from '@angular/compiler/src/render3/r3_factory';
 import { Subject } from 'rxjs';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-plan-formation',
@@ -49,6 +50,7 @@ export class PlanFormationComponent implements OnInit {
   event:any=[]
    CalendarOptions!:any;
     closeResult = '';
+    errorName!: string;
     public popoverTitle:string=' Alert De Confirmation';
     public popoverMessage:string='Voulez Vous Vraiment Supprimer cette Formation ?';
     public confirmClicked:boolean=false;
@@ -69,7 +71,8 @@ export class PlanFormationComponent implements OnInit {
     private modalService: NgbModal,
     private formationServ: FormationService,
     private toastr: ToastrService, 
-    private fb: FormBuilder,) { }
+    private fb: FormBuilder,
+    private datePipe : DatePipe ) { }
 
     ngOnInit(): void {
       this.formationServ.getFormation(this.id).subscribe((data:any)=>{
@@ -185,6 +188,7 @@ export class PlanFormationComponent implements OnInit {
     let lieu=this.formationForm.controls.lieu.value;
     let date=this.date
     let form ={title,heure,date,date_fin,duree,formateur,prix,lieu}
+   
     this.formationServ.createFormation(form).subscribe((res) => {
       this.affiche()
       this.router.navigate(['/plan-formation']);
@@ -192,6 +196,7 @@ export class PlanFormationComponent implements OnInit {
       let calendarApi = this.$ref.fullCalendar.getApi()
       calendarApi.refetchEvents()
     });
+ 
     console.log();
   }
 

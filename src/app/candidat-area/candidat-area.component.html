@@ -3,7 +3,7 @@
     <div class="col-lg-6 col-md-6 col-sm-12" >
       <div class="showback">
         <h4><i class="fa fa-angle-right"></i> Civilité</h4>
-        <form [formGroup]="candidatForm" (ngSubmit)="createCandidat()" class="form-horizontal style-form" style="margin-top: 5px;">
+        <form [formGroup]="candidatForm" (ngSubmit)="createCandidat()" class="form-horizontal style-form" style="margin-top: 5px;" action="/api/upload" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label class="col-sm-2 col-sm-2 control-label">Nom :
             </label>
@@ -73,7 +73,7 @@
             <div class="col-sm-10">
                 
                     <div style="margin-top:3px">
-                   <input type="file" id="customFile" class="form-control" style="height:100%"
+                   <input type="file" id="customFile"  class="custom-file-input" class="form-control" style="height:100%"
                    formControlName="pathCv"
                    [ngClass]="{'is-invalid':candidatForm.get('pathCv')!.touched && !candidatForm.get('pathCv')!.valid}">
                     </div>
