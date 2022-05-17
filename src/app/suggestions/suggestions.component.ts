@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { SuggestionService } from '../shared/suggestion.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-suggestions',
   templateUrl: './suggestions.component.html',
@@ -13,7 +14,9 @@ export class SuggestionsComponent implements OnInit {
   p : number=1;
   closeResult = '';
   suggestions:any;
+  id:any;
   suggestionForm!: FormGroup
+  Suggestion:any;
   public popoverTitle:string=' Alert De Confirmation';
   public popoverMessage:string='Voulez Vous vraiment Supprimer cette Suggestion ?';
   public confirmClicked:boolean=false;
@@ -67,20 +70,53 @@ export class SuggestionsComponent implements OnInit {
     this.suggestionServ.createSuggestion(this.suggestionForm.value).subscribe((res) => {
       this.affiche()
       this.router.navigate(['/suggestion']);
-      this.toastr.success('suggestion Ajouté avec succès');
+      // this.toastr.success('suggestion Ajouté avec succès');
     });
     console.log(this.suggestionForm.value);
   }
+  update(){
+      
+    this.suggestionServ.updateSuggestion(this.id,this.Suggestion).subscribe( data => {
+     this.router.navigate(['/suggestions']);
+    },(error)=>{
+      console.log(error);
+    });
+ }
 
   delete(id:any){
     this.suggestionServ.deleteSuggestion(id).subscribe( (res) => {    
     this.affiche()
     this.router.navigate(['/suggestion']);  
-     this.toastr.success("Suggestion supprimé avec succes")
+    //  this.toastr.success("Suggestion supprimé avec succes")
  
     },
     )
   }
-
-
+  opensweetalert(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Suggestion Ajoutée avec Succès',
+      showConfirmButton: false,
+      timer: 2000
+    })
+  }
+  opensweetalert2(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Suggestion Supprimée avec Succès',
+      showConfirmButton: false,
+      timer: 2000
+    })
+  }
+  opensweetalert3(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Suggestion Modifée avec Succès',
+      showConfirmButton: false,
+      timer: 2000
+    })
+  }
 }

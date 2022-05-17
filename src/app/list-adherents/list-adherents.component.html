@@ -136,7 +136,7 @@
                       [popoverTitle]="popoverTitle"
                       [popoverMessage]="popoverMessage"
                       placement="left"
-                      (confirm)="delete(Adherents.id)"
+                      (confirm)="delete(Adherents.id);opensweetalert2()"
                       (cancel)="cancelClicked = true" class="action-button btn-danger" > 
                       <span class="fa fa-trash"></span>
                     </button>

@@ -26,11 +26,11 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" style="margin-right: 220px; width: 70px; margin-top: 10px;"  [disabled]=!suggestionForm.valid   (click)="createSuggestion();modal.close('Save click')">Save</button>
+      <button type="button" class="btn btn-secondary" style="margin-right: 220px; width: 70px; margin-top: 10px;"  [disabled]=!suggestionForm.valid   (click)="createSuggestion();modal.close('Save click');opensweetalert()">Save</button>
     </div>
   </ng-template>
 
-<!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 <h3><i  class="fa fa-angle-double-right" style="margin-left: 240px;"></i> Liste des Suggestions </h3>
     <div _ngcontent-roy-c3="" >
         
@@ -44,10 +44,8 @@
                 
                 <thead class="thead-inverse">
                 <tr>
-                
                   <th> Nom de Formation</th>
                   <th> Détails</th>
-                  
                   <th>Action</th>
                   </tr>
                 </thead>
@@ -61,13 +59,13 @@
                           <div class="container">
                           
                          
-                          <button mat-raised-button class="action-button btn-secondary" (click)=" open(content)"> <span class="fa fa-edit"></span></button> 
+                          <button mat-raised-button class="action-button btn-secondary" (click)=" open(content2)"> <span class="fa fa-edit"></span></button> 
 
                   <button  mat-raised-button  mwlConfirmationPopover
                   [popoverTitle]="popoverTitle"
                   [popoverMessage]="popoverMessage"
                   placement="left"
-                  (confirm)="delete(suggestion._id)"
+                  (confirm)="delete(suggestion._id);opensweetalert2()"
                   (cancel)="cancelClicked = true" class="action-button btn-danger" > 
                   <span class="fa fa-trash"></span>
                 </button>
@@ -89,3 +87,35 @@
 </div>
 
 
+<!-- ********************************************************************* -->
+<ng-template #content2 let-modal>
+  <div class="modal-header" style="background-color: #25857e; height: 50px;">
+    <h4 class="modal-title" id="modal-basic-title" style="margin-left: 150px;">Modifier Suggestion</h4>
+    <a class="btn-close" style="margin-left:100px" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="col-lg-11" style="margin-left:20px" >
+        <label for="title" style="font-size: 16px; font-family: bold; margin-top: 20px;">Titre de Formation:</label>
+        <div class="input-group" >
+          <input  class="form-control"  name="titre"  style="font-size:15px"
+          [(ngModel)] ="Suggestion.titre" >
+         
+        </div>
+      </div>
+      <div class="col-lg-11" style="margin-left:20px">
+          <label for="title" style="font-size: 14px; font-family: bold; margin-top: 22px;">Détails:</label>
+          <div class="input-group">
+            <textarea  class="form-control"  formControlName="content"   style="font-size:15px" 
+            [(ngModel)] ="Suggestion.content" >
+            </textarea>
+          </div>
+        </div>
+        
+    </form>
+   
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" style="margin-right: 220px; width: 70px; margin-top: 10px;"  [disabled]=!suggestionForm.valid   (click)="createSuggestion();modal.close('Save click');opensweetalert3()">Save</button>
+  </div>
+</ng-template>

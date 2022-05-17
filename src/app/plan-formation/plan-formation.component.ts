@@ -39,6 +39,9 @@ export class PlanFormationComponent implements OnInit {
    date:any
    heure:any
    duree:any
+   loginResponse :any;
+   loginResponse2:any
+   loginResponse4:any;
    formateur:any
    prix:any
    start:any
@@ -115,7 +118,7 @@ export class PlanFormationComponent implements OnInit {
     )
     this.refresh.next();
   }
-
+// ************************************ empty space when i click to add event******************************************
 
   handleDateClick(arg:any) {
     console.log(arg);
@@ -128,7 +131,7 @@ export class PlanFormationComponent implements OnInit {
     
    
   }
-
+// ********************************* get event details***************************************************
   eeventClick(model:any){
     this.open(this.content2)
 
@@ -183,7 +186,7 @@ export class PlanFormationComponent implements OnInit {
         return `with: ${reason}`;
       }
     }
-   
+  //  **************************************** ajout event *******************************************************
   createFormation() {
     
     let title=this.formationForm.controls.title.value;
@@ -210,6 +213,7 @@ if(date<date_fin) {
   }
 else {
   console.log("thabete date");
+
   
 }
 }
@@ -239,7 +243,7 @@ else {
   }
 
 
-
+// ***************************************** update formation ******************************************
   update(){
     console.log(this._id);
 
@@ -254,27 +258,21 @@ else {
     let lieu=this.lieu;
     let date=this.start;
     //console.log("hhhhhhhhhhhhhh",start);
-
     if(date<date_fin)
     {
-    
     this.form ={title,heure, date,date_fin,duree,formateur,prix,lieu}
-
     console.log("hhhhhhhhhhhhhhh",this.form);
-    
-    
-    
-      
     this.formationServ.updateFormation(this._id,this.form).subscribe( data => {
-      // this.affiche()
-      // this.toastr.success("formation modifiée avec succès")
      this.router.navigate(['/plan-formation']);
     },(error)=>{
       console.log(error);
+      this.loginResponse4=this.opensweetalert2();
     });
- }
+ } 
+
  else{
   console.log("raka7 date ");
+  this.loginResponse=this.opensweetalert4();
   
 }
 }
@@ -305,6 +303,14 @@ else {
     title: 'Formation Supprimée avec Succès',
     showConfirmButton: false,
     timer: 3500
+  })
+ }
+ opensweetalert4(){
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Champ date nest pas correcte!',
+    footer: 'Vérifier les Dates de formation'
   })
  }
 }

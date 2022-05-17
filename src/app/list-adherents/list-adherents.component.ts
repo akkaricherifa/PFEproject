@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AdherentService } from '../shared/adherent.service';
 import { AuthService } from '../shared/authService';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 interface Adhérent {
   id:number;
@@ -77,7 +78,7 @@ export class ListAdherentsComponent implements OnInit {
   delete(id:any){
     this.adhServ.deleteAdherent(id).subscribe( data => {    
     this.affiche()
-     this.toastr.success("Adhérent supprimé avec succes")
+    //  this.toastr.success("Adhérent supprimé avec succes")
     this.router.navigate(['/list-adherent']);  
     },
     )
@@ -120,6 +121,15 @@ export class ListAdherentsComponent implements OnInit {
       return `with: ${reason}`;
     }
    
+  }
+  opensweetalert2(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Adhérent Supprimé avec Succès',
+      showConfirmButton: false,
+      timer: 2000
+    })
   }
   }
   

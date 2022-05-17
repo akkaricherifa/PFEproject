@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
 import { FormationService } from '../shared/formation.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { AdherentService } from '../shared/adherent.service';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-formation-adherent',
   templateUrl: './formation-adherent.component.html',
@@ -147,6 +148,15 @@ console.log("goalllllll",this._id);
         console.log();
       }
         
+      opensweetalert(){
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Your participation has been saved',
+          showConfirmButton: false,
+          timer: 2000
+        })
+      }
 
       }
     

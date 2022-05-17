@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 #ui{
-    background-color:  #25857e;
+    background-color: #3f4246;
     padding: 20px;
     margin-top: 10px;
     box-shadow: 0 2px 10px rgba(64,64,64,.7);
@@ -52,3 +52,7 @@ strong{
     font-size: 13px;
 }
 
+.btn{
+    background-color: #33363b;
+    color: white;
+  }
