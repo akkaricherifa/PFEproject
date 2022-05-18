@@ -47,7 +47,7 @@ export class ListCandidatComponent implements OnInit {
   }
 
 
-  getfile(){
+  downloadfile(){
     this.candidatServ.getFile().subscribe(data=>{
     let downloadURL = window.URL.createObjectURL(data);
     saveAs(downloadURL);

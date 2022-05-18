@@ -14,10 +14,6 @@ constructor(private http: HttpClient) { }
 
 
 createCandidat(data:any,) {
-//  const data:FormData= new FormData();
-//     data.append('candidate',JSON.stringify(candidate));
-//     data.append('cv_file',fileCV);
-//     data.append('motiv_letter_file',fileLettre);
   return this.http.post(this.path+"/",data) 
 
 }
@@ -46,4 +42,8 @@ sendDenyMail(){
   return this.http.get("http://localhost:3000/admin/sendDenyMail/");
 }
 
+uploadFile(data:any) {
+   return this.http.post(this.path+"/upload",data) 
+  
+  }
 }

@@ -24,14 +24,14 @@
               <td>{{candidate.nomCan}}</td>
               <td>{{candidate.prenomCan}}</td>
               <td>{{candidate.emailCan}}</td>
-              <td >{{candidate.pathCv}}
+              <td >{{candidate.pathCv}} 
             
-                <button type="submit"  class="btn"  (click)="getfile()">
+                <button type="submit"  class="btn"  (click)="downloadfile()">
                   <span class="fa fa-download"></span>
                 </button>
-              
-
               </td>
+
+             
               <td>
                 <div class="container">
                 <button mat-raised-button class="action-button btn-success" [routerLink]="['/profil-candidat',candidate._id]">

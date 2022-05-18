@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from '../shared/admin.service';
 import { ToastrService } from 'ngx-toastr';
 import { MatSnackBar} from '@angular/material/snack-bar';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-profil-candidat',
   templateUrl: './profil-candidat.component.html',
@@ -58,9 +59,18 @@ ngOnInit(): void {
     panelClass:'custom-style',
     
   });
+ 
 
-}
+  }
 
 
-  
+  opensweetalert3() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Email Envoyé avec Succès',
+      showConfirmButton: false,
+      timer: 3000
+    })
+   }
     }

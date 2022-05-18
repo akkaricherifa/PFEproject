@@ -13,6 +13,7 @@ import { CandidatService } from '../shared/candidat.service';
 export class CandidatAreaComponent implements OnInit {
 
 candidatForm!: FormGroup;
+event:any;
 
 
 
@@ -34,8 +35,8 @@ candidatForm!: FormGroup;
         phoneCan:['',Validators.required],
         emailCan:['',Validators.required],
         ville:['',Validators.required],
-        pathCv:['',Validators.required],
-        pathMotivationLetter:['',Validators.required],
+        // pathCv:['',Validators.required],
+        // pathMotivationLetter:['',Validators.required],
         niveauEtud:['',Validators.required],
         titreDiplome:['',Validators.required],
         university:['',Validators.required],
@@ -48,10 +49,25 @@ candidatForm!: FormGroup;
     )
   }
 
+  onUpload(event:any){
+let file: File
+let fd = new FormData()
+file = <File> event.target.files[0];
+fd.append('file', file, file.name)
+this.candidatServ.uploadFile(fd).subscribe((res: any) => {
+  console.log(res);
+  
+  }, (err)=>{
+    console.log(err);
+    
+  })
+
+  }
+
   createCandidat() {
     this.candidatServ.createCandidat(this.candidatForm.value).subscribe((res) => {
       this.router.navigate(['/reponse-candidat']);
-      this.toastr.success('Candidat ajouté avec succès');
+      // this.toastr.success('Candidat ajouté avec succès');
     });
     console.log(this.candidatForm.value);
   }

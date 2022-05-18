@@ -73,9 +73,9 @@
             <div class="col-sm-10">
                 
                     <div style="margin-top:3px">
-                   <input type="file" id="customFile"  class="custom-file-input" class="form-control" style="height:100%"
-                   formControlName="pathCv"
-                   [ngClass]="{'is-invalid':candidatForm.get('pathCv')!.touched && !candidatForm.get('pathCv')!.valid}">
+                   <input type="file"  class="custom-file-input" class="form-control" style="height:100%"
+                   formControlName="pathCv"  (change)="onUpload($event)" >
+                  
                     </div>
             
             </div>
@@ -85,9 +85,8 @@
             <label class="col-sm-2 col-sm-2 control-label">Lettre de Motivation</label>
             <div class="col-sm-10">
                 <div style="margin-top:3px">
-                    <input type="file" class="form-control" id="customFile"  style="height:100%" 
-                    formControlName="pathMotivationLetter" action="/upload" method="POST" enctype="multipart/form-data"
-                    [ngClass]="{'is-invalid':candidatForm.get('pathMotivationLetter')!.touched && !candidatForm.get('pathMotivationLetter')!.valid}">
+                    <input type="file" class="custom-file-input"  class="form-control"   style="height:100%" 
+                    formControlName="pathMotivationLetter" (change)="onUpload($event)">
                      </div>
                    
             </div>
