@@ -46,7 +46,6 @@ export class EntrepriseAreaComponent implements OnInit {
   }
   createEntreprise() {
     this.entrepriseServ.createEntreprise(this.entrepriseForm.value).subscribe((res) => {
-      // this.toastr.success('Entreprise ajouté avec succès');
       this.router.navigate(['/acceuil']);
    
     });
