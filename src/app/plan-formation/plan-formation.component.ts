@@ -19,6 +19,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./plan-formation.component.css']
 })
 export class PlanFormationComponent implements OnInit {
+  
   @ViewChild ('content') content:any
   @ViewChild ('content2') content2:any
   formationForm!: FormGroup;
@@ -33,6 +34,7 @@ export class PlanFormationComponent implements OnInit {
    form:any
    id:any;
    month :any;
+  //  refresh=true;
    formation:any
    year :any;
    title:any
@@ -108,13 +110,13 @@ export class PlanFormationComponent implements OnInit {
             events:this.event,
             eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
             editable: true,
-          
-                 
-
-                       
+            // locale: 'de',
+            // nowIndicator: true,
+            // themeSystem: 'bootstrap',
+            // refetchResourcesOnNavigate: true,
+            // lazyFetching: true,
+         
       }}
-      
-    
     )
     this.refresh.next();
   }
@@ -131,6 +133,7 @@ export class PlanFormationComponent implements OnInit {
     
    
   }
+
 // ********************************* get event details***************************************************
   eeventClick(model:any){
     this.open(this.content2)
@@ -196,29 +199,29 @@ export class PlanFormationComponent implements OnInit {
     let formateur=this.formationForm.controls.formateur.value;
     let prix=this.formationForm.controls.prix.value;
     let lieu=this.formationForm.controls.lieu.value;
-    let date=this.date
-if(date<date_fin) {
+    let date=this.start
+if(date<date_fin) 
+{
 
     let form ={title,heure,date,date_fin,duree,formateur,prix,lieu}
    
     this.formationServ.createFormation(form).subscribe((res) => {
       this.affiche()
       this.router.navigate(['/plan-formation']);
-      // this.toastr.success('Formation ajoutée avec Succès');
-      let calendarApi = this.$ref.fullCalendar.getApi()
-      calendarApi.refetchEvents()
+      // let calendar = this.$ref.fullCalendar.getApi()
+      // calendar.refresh(this.event)
+      // this.event.push(res);
+
     });
  
     console.log();
+    this.loginResponse=this.opensweetalert();
   }
 else {
   console.log("thabete date");
-
-  
+  this.loginResponse=this.opensweetalert4();
 }
 }
-
-
 
   affiche(){
     this.formationServ.getAllFormation().subscribe(
@@ -246,9 +249,7 @@ else {
 // ***************************************** update formation ******************************************
   update(){
     console.log(this._id);
-
     console.log("update ",this.lieu);
-
     let title=this.title;
     let heure=this.heure;
     let date_fin=this.date_fin;
@@ -257,27 +258,20 @@ else {
     let prix=this.prix;
     let lieu=this.lieu;
     let date=this.start;
-    //console.log("hhhhhhhhhhhhhh",start);
-    if(date<date_fin)
-    {
+    if(date<date_fin){
     this.form ={title,heure, date,date_fin,duree,formateur,prix,lieu}
-    console.log("hhhhhhhhhhhhhhh",this.form);
+    this.affiche()
     this.formationServ.updateFormation(this._id,this.form).subscribe( data => {
-     this.router.navigate(['/plan-formation']);
-    },(error)=>{
-      console.log(error);
-      this.loginResponse4=this.opensweetalert2();
+      console.log();
+      this.loginResponse=this.opensweetalert2();
     });
  } 
 
  else{
   console.log("raka7 date ");
   this.loginResponse=this.opensweetalert4();
-  
 }
 }
-
-
  opensweetalert() {
   Swal.fire({
     position: 'top-end',
@@ -321,3 +315,6 @@ else {
 //   throw new Error('Function not implemented.');
 // }
 
+      // let calendarApi = this.$ref.fullCalendar.getApi()
+      // calendarApi.refresh()
+    //  this.router.navigate(['/plan-formation']);

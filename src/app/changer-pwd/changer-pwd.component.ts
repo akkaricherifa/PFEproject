@@ -48,5 +48,21 @@ export class ChangerPwdComponent implements OnInit {
    this.authServ.logout()
  }
  
+
+ onUpload(event:any){
+  let file: File
+  let fd = new FormData()
+  file = <File> event.target.files[0];
+  fd.append('file', file, file.name)
+  this.adhServ.uploadFile(fd).subscribe((res: any) => {
+    console.log(res);
+    
+    }, (err)=>{
+      console.log(err);
+      
+    })
+  
+    }
+  
  }
  

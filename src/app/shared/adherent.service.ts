@@ -47,6 +47,10 @@ export class AdherentService {
     return this.http.post(this.path+"/a/"+ida,"6281672aaf1943907b1d49c2") 
   
   }
+  uploadFile(data:any) {
+    return this.http.post(this.path+"/upload",data) 
+   
+   }
 }
 
 
