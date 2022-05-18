@@ -42,7 +42,7 @@
   <h3><i class="fa fa-angle-double-right" style="margin-left: 280px; margin-top: -2px;"></i> Liste Des Entreprises</h3>
   <div _ngcontent-roy-c3="" class="card-body bg-light">
            <div >
-                <input type="text" class="form-control"   placeholder="Search"  style="height: 30px; width: 400px; margin-left: 280px; margin-top: 5px;" > 
+                <input type="text" class="form-control" [(ngModel)]="term"   placeholder="Search"  style="height: 30px; width: 400px; margin-left: 280px; margin-top: 5px;" > 
                   </div>
                         
              <table class="table table-striped" style="margin-top: 8%;" >
@@ -64,7 +64,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                          <tr *ngFor="let entreprise of Entreprise | paginate : {itemsPerPage: 4, currentPage: p}" >
+                          <tr *ngFor="let entreprise of Entreprise | paginate : {itemsPerPage: 6, currentPage: p} | filter:term" >
                            
                               <td>{{entreprise.nomEnt }} </td>
                               <td>{{entreprise.nomResp}}</td>
@@ -78,7 +78,7 @@
                     </table>
   
   
-                    <div class="pagination">
+                    <div class="pagination" style="margin-top: 410px;">
                     <pagination-controls (pageChange)="p = $event"></pagination-controls>
                   </div>
                   </div>

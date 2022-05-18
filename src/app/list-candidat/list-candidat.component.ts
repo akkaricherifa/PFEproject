@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CandidatService } from '../shared/candidat.service';
 import { ToastrService } from 'ngx-toastr';
 import { saveAs } from 'file-saver';
+import { HttpClient } from '@angular/common/http';
+interface candidat {
+  id:number;
+  nomCan:string;
+  prenomCan:string;
+  emailCan:string;
+
+}
 @Component({
   selector: 'app-list-candidat',
   templateUrl: './list-candidat.component.html',
@@ -11,6 +19,8 @@ export class ListCandidatComponent implements OnInit {
   p : number=1;
   router: any;
   id:any;
+  term!: string;
+  searchTerm!: string;
   Candidat!:any;
   public popoverTitle:string=' Alert De Confirmation';
   public popoverMessage:string='Voulez Vous vraiment Supprimer ce Candidat ?';
@@ -18,9 +28,14 @@ export class ListCandidatComponent implements OnInit {
   public cancelClicked:boolean=false;
 
   constructor( private candidatServ: CandidatService,
-    private toastr: ToastrService,) { }
+    private toastr: ToastrService,
+    private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get<candidat[]>('./assets/data/countries.json')
+    .subscribe((data: candidat[]) => {
+      this.Candidat = data;
+    });
     this.affiche();
     this.candidatServ.getCandidat(this.id).subscribe( data => {
       console.log(data);
