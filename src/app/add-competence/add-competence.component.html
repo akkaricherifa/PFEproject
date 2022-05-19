@@ -2,6 +2,8 @@
 
 <app-sidebar></app-sidebar>
 
+
+
 <button type="button" class="btn btn-success" style="margin-left: 1230px; margin-top: -9px;" (click)="createCompetence();opensweetalert2()" >Ajouter </button>
 <form [formGroup]="competenceForm" (ngSubmit)="createCompetence()">
 <table class="table table-striped"  >
@@ -47,26 +49,17 @@
             <option value="Django">Django</option>
             <option value="C# / C / C++">C# / C / C++</option>
             <option value="UML">UML</option>
-          
-            
-           
-           
-            
-            
-            
-        
-            
 
         </select>
       </td>
       <td>
         <select style="width:180px"  formControlName="niveau"
         >
-            <option value="1000">Débutant</option>
-            <option value="40000">Notions</option>
-            <option value="60000">Intermédiare</option>
-            <option value="80000">Avancé</option>
-            <option value="100000">Expert</option>
+            <option value="0">Débutant</option>
+            <option value="25">Notions</option>
+            <option value="50">Intermédiare</option>
+            <option value="75">Avancé</option>
+            <option value="100">Expert</option>
            
            
 
@@ -85,7 +78,7 @@
     </tr>
     </tbody>
     </table>
-
+ 
    
     <!-- <div>{{dynamicArray | json}}</div> -->
 </form>

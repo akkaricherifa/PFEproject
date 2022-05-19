@@ -56,7 +56,6 @@ export class ChangerPwdComponent implements OnInit {
   fd.append('file', file, file.name)
   this.adhServ.uploadFile(fd).subscribe((res: any) => {
     console.log(res);
-    window.location.reload();
     }, (err)=>{
       console.log(err);
       

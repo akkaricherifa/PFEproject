@@ -38,11 +38,10 @@ export class InscriptionComponent implements OnInit {
 
   createAdherent() {
     this.adhServ.createAdherent(this.adherentForm.value).subscribe((res) => {
-      this.router.navigate(['/acceuil']);
-      // this.toastr.success('Adhérent Ajouté avec succès');
-     
+      this.router.navigate(['/acceuil']);   
     });
     console.log(this.adherentForm.value);
+
   }
   
 
@@ -50,7 +49,7 @@ export class InscriptionComponent implements OnInit {
     Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: 'Your Registration has been saved',
+      title: 'Your Registration has been Saved',
       showConfirmButton: false,
       timer: 3500
     })

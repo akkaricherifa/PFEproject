@@ -63,7 +63,7 @@ export class UpdateAdherentComponent implements OnInit {
   Swal.fire({
     position: 'top-end',
     icon: 'success',
-    title: 'Adhérent Modifiée avec Succès',
+    title: 'Adhérent Modifié avec Succès',
     showConfirmButton: false,
     timer: 3000
   })

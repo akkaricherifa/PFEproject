@@ -15,6 +15,7 @@ export class ChartComponent implements OnInit {
   Adherent:any;
   niveau: any;
   competence: any;
+  pointFormat: any;
   constructor(private adhServ: AdherentService) {}
 
   ngOnInit(): void {
@@ -31,7 +32,7 @@ export class ChartComponent implements OnInit {
       });
     
       this.niveau = this.result.map((item: any) => item.niveau);
-
+      
       this.chart()
 
         },
@@ -39,18 +40,26 @@ export class ChartComponent implements OnInit {
       }
 
       chart(){
-   
+
     const ctxx = 'myChart2';
     const myChart1 = new Chart(ctxx, {
       type: 'bar',
 
+      
+ 
+    
+       
+
       data: {
         labels: this.name,
+  
         datasets: [
           {
-            label: 'Courbe de mes Compétences',
+            label: 'Courbe de mes Compétences %',
 
             data: this.niveau,
+          
+           
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',

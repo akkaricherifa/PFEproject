@@ -116,7 +116,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let Adherents of Adherent | paginate : {itemsPerPage: 4, currentPage: p} | filter:term" >
-                          <img src="http://localhost:3000/public/files{{Adherents.photo}}" alt="user" width="70" class="img-circle">
+                          <img src="http://localhost:3000/public/files/{{Adherents.file}}" alt="user" width="70" class="img-circle">
                             <td>{{Adherents.nom }} </td>
                             <td>{{Adherents.prenom}}</td>
                             
