@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 import dayGridView from '@fullcalendar/daygrid';
 import interactionPlugin from "@fullcalendar/interaction";
-import { Formation } from '../Model/formation';
+
 import { ToastrService } from 'ngx-toastr';
 import { FormationService } from '../shared/formation.service';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
@@ -303,18 +303,16 @@ else {
   Swal.fire({
     icon: 'error',
     title: 'Oops...',
-    text: 'Champ date nest pas correcte!',
+    text: 'Champ date n"est pas correcte !',
     footer: 'Vérifier les Dates de formation'
   })
  }
+
+
 }
 
-  
-
-// function jQuery(arg0: string) {
-//   throw new Error('Function not implemented.');
-// }
 
       // let calendarApi = this.$ref.fullCalendar.getApi()
       // calendarApi.refresh()
     //  this.router.navigate(['/plan-formation']);
+    

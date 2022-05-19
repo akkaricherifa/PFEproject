@@ -35,8 +35,8 @@ event:any;
         phoneCan:['',Validators.required],
         emailCan:['',Validators.required],
         ville:['',Validators.required],
-        // pathCv:['',Validators.required],
-        // pathMotivationLetter:['',Validators.required],
+        file:['',Validators.required],
+        pathMotivationLetter:[''],
         niveauEtud:['',Validators.required],
         titreDiplome:['',Validators.required],
         university:['',Validators.required],
@@ -58,16 +58,13 @@ this.candidatServ.uploadFile(fd).subscribe((res: any) => {
   console.log(res);
   
   }, (err)=>{
-    console.log(err);
-    
+    console.log(err); 
   })
-
   }
 
   createCandidat() {
     this.candidatServ.createCandidat(this.candidatForm.value).subscribe((res) => {
       this.router.navigate(['/reponse-candidat']);
-      // this.toastr.success('Candidat ajouté avec succès');
     });
     console.log(this.candidatForm.value);
   }
