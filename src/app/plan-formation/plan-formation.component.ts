@@ -206,7 +206,9 @@ if(date<date_fin)
     let form ={title,heure,date,date_fin,duree,formateur,prix,lieu}
    
     this.formationServ.createFormation(form).subscribe((res) => {
+      window.location.reload();
       this.affiche()
+
       this.router.navigate(['/plan-formation']);
       // let calendar = this.$ref.fullCalendar.getApi()
       // calendar.refresh(this.event)
@@ -238,6 +240,7 @@ else {
   
   delete(id:any){
     this.formationServ.deleteFormation(this._id).subscribe( data => {    
+      window.location.reload();
     this.affiche()
     //  this.toastr.success("formation supprimé avec succes")
     this.router.navigate(['/plan-formation']);  
@@ -263,7 +266,9 @@ else {
     this.affiche()
     this.formationServ.updateFormation(this._id,this.form).subscribe( data => {
       console.log();
+
       this.loginResponse=this.opensweetalert2();
+      window.location.reload();
     });
  } 
 

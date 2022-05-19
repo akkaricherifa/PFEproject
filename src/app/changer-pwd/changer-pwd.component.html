@@ -12,17 +12,17 @@
                 
                       <form >
                       <h3><i class="fa fa-angle-right"></i> Modifier votre photo de profil</h3>
-                      <img src="{{Adherent.photo}}" alt="user" width="150" class="img-circle">
+                      <img src="http://localhost:3000/public/files{{Adherent.file}}" alt="user" width="150" class="img-circle">
                       
                         
                         <br>
                         <input type="file"  class="custom-file-input" class="form-control" style="height:100%"
-                        formControlName="photo"  (change)="onUpload($event)" >
+                          (change)="onUpload($event)" >
                     
                         <br>
                         <br>
                        
-                        <button type="submit" value="save" class="btn-photo" > Enregistrer </button>
+                        <button type="submit" value="save" class="btn-photo"  > Enregistrer </button>
                     </form>
                 
                     </div>
@@ -46,7 +46,7 @@
                         
                             <br>
                             <br>
-                            <button type="submit" value="save" class="btn btn-secondary" (click)="onUpload" > Modifier </button>
+                            <button type="submit" value="save" class="btn btn-secondary" > Modifier </button>
                 
                         </form>
                         </div>

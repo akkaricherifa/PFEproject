@@ -60,6 +60,18 @@ export class ListCandidatComponent implements OnInit {
     },
     )
   }
+  onUpload(event:any){
+    let file: File
+    let fd = new FormData()
+    file = <File> event.target.files[0];
+    fd.append('file', file, file.name)
+    this.candidatServ.uploadFile(fd).subscribe((res: any) => {
+      console.log(res);
+      
+      }, (err)=>{
+        console.log(err); 
+      })
+      }
 
 
   downloadfile(){

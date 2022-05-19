@@ -14,6 +14,7 @@ export class CandidatAreaComponent implements OnInit {
 
 candidatForm!: FormGroup;
 event:any;
+  file: any;
 
 
 
@@ -36,7 +37,7 @@ event:any;
         emailCan:['',Validators.required],
         ville:['',Validators.required],
         file:['',Validators.required],
-        pathMotivationLetter:[''],
+        pathMotivationLetter:['',Validators.required],
         niveauEtud:['',Validators.required],
         titreDiplome:['',Validators.required],
         university:['',Validators.required],
@@ -61,6 +62,8 @@ this.candidatServ.uploadFile(fd).subscribe((res: any) => {
     console.log(err); 
   })
   }
+ 
+
 
   createCandidat() {
     this.candidatServ.createCandidat(this.candidatForm.value).subscribe((res) => {
