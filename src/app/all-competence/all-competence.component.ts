@@ -47,7 +47,7 @@ export class AllCompetenceComponent implements OnInit {
     chart(){
     const ctx = 'myChart';
     const myChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'radar',
 
       data: {
         labels: this.name,

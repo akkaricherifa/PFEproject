@@ -13,6 +13,7 @@ export interface Adhérent {
      telephone:string;
      specialite:String;
      cv:string;
+     file:string;
 
 
 }

@@ -18,7 +18,7 @@ export class ChangerPwdComponent implements OnInit {
   // email : String ;
   newPassword: any;
   oldPassword:any;
-
+  path="http://localhost:3000/";
 
    constructor(private router:Router, 
      private fb: FormBuilder,
@@ -31,6 +31,8 @@ export class ChangerPwdComponent implements OnInit {
      this.adhServ.getAdherent(this.id).subscribe( data => {
        console.log(data);
        this.Adherent = data;
+       console.log(data);
+       
      })
    }
   //  updatePassword(){

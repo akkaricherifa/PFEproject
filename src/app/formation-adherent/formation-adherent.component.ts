@@ -27,6 +27,7 @@ export class FormationAdherentComponent implements OnInit {
    formateur:any
    prix:any
    _id:any
+   idEvent:any
    aid:any
    lieu:any
   closeResult = '';
@@ -49,8 +50,8 @@ export class FormationAdherentComponent implements OnInit {
     this.open(this.content2)
     console.log("hhhhhhhhhhhh",model);
     
-     this._id=model.event._def.extendedProps._id;
-    console.log("hhhhhhhhhhhhhhh",this._id);
+     this.idEvent=model.event._def.extendedProps._id;
+    console.log("a7la bedis",this._id);
     console.log(model.event._def.title);
     this.title=model.event._def.title
 
@@ -138,10 +139,10 @@ export class FormationAdherentComponent implements OnInit {
       }
 
       participer() {
-        
-        this.adhServ.participer(this.aid,this._id).subscribe((res) => {
+        let e={event:this.idEvent}
+        this.adhServ.participer(this.aid,e).subscribe((res) => {
           // this.router.navigate(['/reponse-candidat']);
-console.log("goalllllll",this._id);
+console.log("goalllllll",this.idEvent);
           
           // this.toastr.success('Candidat ajouté avec succès');
         });

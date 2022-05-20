@@ -66,7 +66,7 @@ export class PlanFormationComponent implements OnInit {
     c = [
       '#03816e',
       '#25857e',
-      '#038181',
+      // '#038181',
    
     ];
 
