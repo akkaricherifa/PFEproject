@@ -1,15 +1,14 @@
 <app-navbar-supp></app-navbar-supp>
 <app-sidebar-admin></app-sidebar-admin>
 <div >
-    <h3 style="margin-top: 10px; margin-left:250px; color: black;">Chercher une Compétence </h3>
-    <input type="text" class="form-control"  [(ngModel)]="term"   placeholder="Search"  style="height: 30px; width: 400px; margin-left: 250px; margin-top: 5px;" > 
-      </div>
-     
-<div>
-    <h1 style="margin-top: 10px; margin-left:500px; color: black;">Tous Les Compétences par %</h1>
-</div>
+  <h3><i class="fa fa-angle-double-right" style="margin-left: 280px; margin-top: -12px;"></i> Courbe des Compétences </h3>
+  <div _ngcontent-roy-c3="" class="card-body bg-light">
+           <div >
+                <input type="text" class="form-control"  [(ngModel)]="term"   placeholder="Search"  style="height: 30px; width: 400px; margin-left: 280px; margin-top: 5px;" > 
+                  </div>
 
-<div class="container" style="width: 550px" >
+
+<div class="container" style="width: 550px; margin-top: 50px;" >
     <canvas id="myChart" width="2" height="1"></canvas>
   </div>
 

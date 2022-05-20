@@ -1,0 +1,26 @@
+   
+    h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+        font-size: 24px;
+    }
+    .form-control {
+        display: block;
+        width: 30%;
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        margin-top: 3%;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; 
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;}

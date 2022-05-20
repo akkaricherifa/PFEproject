@@ -17,7 +17,7 @@ export class AllCompetenceComponent implements OnInit {
   result: any;
   name = [];
   population: any;
-  competence: any;
+  Competence: any;
   niveau: any;
   term!: string;
   searchTerm!: string;
@@ -34,7 +34,7 @@ export class AllCompetenceComponent implements OnInit {
 
     this.http.get<competence[]>('./assets/data/countries.json')
     .subscribe((data: competence[]) => {
-      this.competence = data;
+      this.Competence = data;
     });
   
     this.niveau = this.result.map((item: any) => item.niveau);
