@@ -34,6 +34,10 @@ export class AdherentService {
     return this.http.get(this.path+"/"+ id);
   }
 
+  getAdherentByFormation(id:number){
+return this.http.get(this.path+"/get/"+id);
+  }
+
   generateReport(id: number){
     return this.http.get(this.path+"/"+ id);
   }

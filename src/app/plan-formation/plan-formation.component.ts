@@ -12,6 +12,7 @@ import { FormationService } from '../shared/formation.service';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { isExpressionFactoryMetadata } from '@angular/compiler/src/render3/r3_factory';
 import { Subject } from 'rxjs';
+import { AdherentService } from '../shared/adherent.service';
 
 @Component({
   selector: 'app-plan-formation',
@@ -28,6 +29,7 @@ export class PlanFormationComponent implements OnInit {
   dateObj = new Date();
   yearMonth=this.dateObj.getUTCFullYear() + '-' + (this.dateObj.getUTCMonth() + 1);
   dateDebut:any;
+  Adherent:any
    a:any=[]
    b:any=[]
    d:any
@@ -39,6 +41,7 @@ export class PlanFormationComponent implements OnInit {
    year :any;
    title:any
    date:any
+   idEvent:any
    heure:any
    duree:any
    loginResponse :any;
@@ -77,6 +80,7 @@ export class PlanFormationComponent implements OnInit {
     private formationServ: FormationService,
     private toastr: ToastrService, 
     private fb: FormBuilder,
+    private adhServ: AdherentService
  ) { }
 
     ngOnInit(): void {
@@ -142,7 +146,12 @@ export class PlanFormationComponent implements OnInit {
 
   
 
-    this._id=model.event._def.extendedProps._id;
+  this._id=model.event._def.extendedProps._id;
+  this.idEvent=model.event._def.extendedProps._id;
+  
+  
+  console.log('fffffffffffffffffff',this._id)
+
     console.log(model.event._def.title);
     this.title=model.event._def.title
 
@@ -312,12 +321,17 @@ else {
     footer: 'Vérifier les Dates de formation'
   })
  }
+//  ****************************list participation*******************************************
+getList(id:number){
+  this.adhServ.getAdherentByFormation(this.idEvent).subscribe((data:any)=>{
+    this.Adherent = data;
+    console.log("adherent BY FORMATION",this.Adherent);
+    
+  }) 
+}
+
+
 
 
 }
 
-
-      // let calendarApi = this.$ref.fullCalendar.getApi()
-      // calendarApi.refresh()
-    //  this.router.navigate(['/plan-formation']);
-    
