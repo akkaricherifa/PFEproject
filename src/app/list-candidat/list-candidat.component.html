@@ -22,11 +22,11 @@
       </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let candidate of Candidat | paginate: {itemsPerPage: 5, currentPage: p} | filter:term" >
+          <tr *ngFor="let candidate of Candidat | paginate: {itemsPerPage: 4, currentPage: p} | filter:term" >
               <td>{{candidate.nomCan}}</td>
               <td>{{candidate.prenomCan}}</td>
               <td>{{candidate.emailCan}}</td>
-              <td >{{candidate.file}}
+              <td > {{candidate.file}}
             
                 <button type="submit"  class="btn"  (click)="downloadfile()">
                   <span class="fa fa-download"></span>
@@ -45,7 +45,7 @@
           [popoverTitle]="popoverTitle"
           [popoverMessage]="popoverMessage"
           placement="left"
-          (confirm)="delete(candidate._id)"
+          (confirm)="delete(candidate._id); opensweetalert3()"
           (cancel)="cancelClicked = true" class="action-button btn-danger" > 
           <span class="fa fa-trash"></span>
         </button>

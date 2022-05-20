@@ -36,7 +36,7 @@ event:any;
         phoneCan:['',Validators.required],
         emailCan:['',Validators.required],
         ville:['',Validators.required],
-        file:['',Validators.required],
+        file:[''],
         pathMotivationLetter:['',Validators.required],
         niveauEtud:['',Validators.required],
         titreDiplome:['',Validators.required],

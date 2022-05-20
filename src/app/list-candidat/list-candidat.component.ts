@@ -3,6 +3,7 @@ import { CandidatService } from '../shared/candidat.service';
 import { ToastrService } from 'ngx-toastr';
 import { saveAs } from 'file-saver';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2'
 interface candidat {
   id:number;
   nomCan:string;
@@ -21,6 +22,7 @@ export class ListCandidatComponent implements OnInit {
   id:any;
   term!: string;
   searchTerm!: string;
+  path="http://localhost:3000/";
   Candidat!:any;
   public popoverTitle:string=' Alert De Confirmation';
   public popoverMessage:string='Voulez Vous vraiment Supprimer ce Candidat ?';
@@ -55,11 +57,20 @@ export class ListCandidatComponent implements OnInit {
   delete(id:any){
     this.candidatServ.deleteCandidat(id).subscribe( data => {    
     this.affiche()
-     this.toastr.success("candidat supprimé avec succes")
     this.router.navigate(['/list-candidat']);  
     },
     )
+ 
   }
+  opensweetalert3() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Candidat Supprimé avec Succès',
+      showConfirmButton: false,
+      timer: 3000
+    })
+   }
   onUpload(event:any){
     let file: File
     let fd = new FormData()

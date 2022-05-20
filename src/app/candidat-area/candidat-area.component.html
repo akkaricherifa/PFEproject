@@ -73,9 +73,8 @@
             <div class="col-sm-10">
                 
                     <div style="margin-top:3px">
-                   <input type="file"  class="custom-file-input" class="form-control" style="height:100%"
-                   formControlName="file" (change)="onUpload($event)" 
-                   [ngClass]="{'is-invalid':candidatForm.get('file')!.touched && !candidatForm.get('file')!.valid}">
+                   <input type="file" name="file" class="custom-file-input" class="form-control" style="height:100%" formControlName="file"
+                    (change)="onUpload($event)" >
                   
                     </div>
             

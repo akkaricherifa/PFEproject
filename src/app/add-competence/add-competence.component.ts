@@ -56,12 +56,14 @@ export class AddCompetenceComponent implements OnInit {
     )
   }
       createCompetence() {
+        let form={ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau,adherent:localStorage.getItem('CurrentUser') || ''}
       this.competenceServ.createCompetence(this.competenceForm.value).subscribe((res) => {
         this.router.navigate(['/chart']);
-        // this.toastr.success('Compétence ajouté avec Succès');
       });
       console.log(this.competenceForm.value);
     }
+
+    
     opensweetalert2() {
       Swal.fire({
         position: 'top-end',
