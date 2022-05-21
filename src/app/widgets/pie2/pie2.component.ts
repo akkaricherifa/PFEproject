@@ -50,7 +50,7 @@ export class Pie2Component implements OnInit {
           type: 'pie',
           name: '%',
            data: [
-              ['Isitcom',   10.0],
+              ['Isitcom',   10.50],
              {
                 name:'Epi',
                 y:10.10,
@@ -63,10 +63,10 @@ export class Pie2Component implements OnInit {
                 y: 10.85
             },  {
                 name: 'Iset',
-                y: 4.18
+                y: 7.18
             },   {
                 name: 'Polytechnique',
-                y: 2.61
+                y: 9.61
               }]
             }]
         };

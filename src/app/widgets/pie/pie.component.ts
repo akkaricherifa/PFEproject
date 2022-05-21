@@ -51,10 +51,10 @@ export class PieComponent implements OnInit {
         type: 'pie',
         name: '%',
          data: [
-            ['Women',   35.0],
+            ['Femme',   35.0],
            
             {
-               name: 'Man',
+               name: 'Homme',
                y: 45.0,
                
                sliced: true,

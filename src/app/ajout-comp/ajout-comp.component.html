@@ -16,12 +16,12 @@
         </select>
       </div>
     
-    <button type="submit" class="btn btn-light" (click)="ajoutComp();opensweetalert()" style="margin-left: 70px;">Ajouter</button>
+    <button type="submit" class="btn btn-light" (click)="ajoutComp();opensweetalert()" style="margin-left: 70px ;margin-top: 20px; width: 70px; font-size: 14px;">Ajouter</button>
 
   </form>
 
-  <!-- **************************************************** -->
-  <table class="table" style="margin-left: 800px; width:500px; margin-top: -150px;">
+  <!-- *************************************ajout*************** -->
+  <table class="table" style="margin-left: 800px; width:500px; margin-top: -190px;">
     <thead>
       <tr>
         <th style="font-size: 14px;" class="table-active">Nom Competence</th>
@@ -31,7 +31,7 @@
       <tr *ngFor="let competences of competence | paginate : {itemsPerPage: 6, currentPage: p}" >
                       
         <td style="font-size: 14px;" >{{competences.nom}} </td>
-        <!-- <td>{{competences.niveau}}</td> -->
+
         <td>
             <div class="container">
 
