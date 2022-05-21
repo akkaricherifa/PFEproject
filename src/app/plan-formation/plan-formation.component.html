@@ -153,20 +153,21 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button  mat-raised-button  mwlConfirmationPopover
+    <button mat-raised-button class="action-button btn" (click)="open(content3);modal.close('Save click');" style="font-size:14px; margin-left: 100px;">
+      <i class="fa fa-edit" style="font-size: 20px;"></i>
+
+    </button>
+    <button  mat-raised-button  mwlConfirmationPopover style="margin-right: 10px;"
     [popoverTitle]="popoverTitle"
     [popoverMessage]="popoverMessage"
     placement="left"
     (confirm)="delete(id);modal.close('Save click');opensweetalert3()"
-    (cancel)="cancelClicked = true" class="action-button btn-danger" > 
-    <span  class="fa fa-trash-o"></span>
+    (cancel)="cancelClicked = true" class="action-button btn" > 
+    <span  class="fa fa-trash-o" style="font-size: 20px;"></span>
   </button>
-    <button mat-raised-button class="action-button btn-secondary" (click)="open(content3);modal.close('Save click');">
-      <span class="fa fa-edit"></span>
 
-    </button>
-    <button mat-raised-button class="action-button btn-secondary" (click)="open(content4);modal.close('Save click');getList(id)">
-      <span class="fa fa-list"></span>
+    <button mat-raised-button class="action-button btn" (click)="open(content4);modal.close('Save click');getList(id)" style="font-size:14px;">
+      <span class="fa fa-list" style="font-size: 20px;"></span>
 
     </button>
   </div>
@@ -274,9 +275,9 @@
       <div class="mb-6">
  
         <div class="input-group" *ngFor="let item of Adherent ; let i=index">
-          <div class="data">
-            <h4><i class="fa fa-angle-double-right" aria-hidden="true" style="color:#25857e"></i>
-              {{Adherent[i].nom}} {{Adherent[i].prenom}}  </h4>
+          <div class="data" style="margin-left: 162px;">
+            <h3><i class="fa fa-check-square-o" aria-hidden="true" style="color:#25857e"></i>
+              {{Adherent[i].nom}} {{Adherent[i].prenom}} <br> </h3>
               <h5> </h5>
 
         </div>
