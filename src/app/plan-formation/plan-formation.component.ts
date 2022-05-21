@@ -112,14 +112,15 @@ export class PlanFormationComponent implements OnInit {
            dateClick: this.handleDateClick.bind(this), 
           eventClick: this.eeventClick.bind(this), 
             events:this.event,
-            eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
+            eventColor: "#1a9991",
             editable: true,
+
+
             // locale: 'de',
             // nowIndicator: true,
             // themeSystem: 'bootstrap',
             // refetchResourcesOnNavigate: true,
             // lazyFetching: true,
-         
       }}
     )
     this.refresh.next();
@@ -144,7 +145,7 @@ export class PlanFormationComponent implements OnInit {
 
   this.start=new Date(model.event._instance.range.start).toISOString().substring(0,10);
 
-  
+
 
   this._id=model.event._def.extendedProps._id;
   this.idEvent=model.event._def.extendedProps._id;
@@ -209,24 +210,22 @@ export class PlanFormationComponent implements OnInit {
     let prix=this.formationForm.controls.prix.value;
     let lieu=this.formationForm.controls.lieu.value;
     let date=this.start
-if(date<date_fin) 
+if(date<=date_fin) 
 {
 
     let form ={title,heure,date,date_fin,duree,formateur,prix,lieu}
    
     this.formationServ.createFormation(form).subscribe((res) => {
-      window.location.reload();
+      // window.location.reload();
       this.affiche()
 
       this.router.navigate(['/plan-formation']);
-      // let calendar = this.$ref.fullCalendar.getApi()
-      // calendar.refresh(this.event)
-      // this.event.push(res);
 
     });
  
     console.log();
     this.loginResponse=this.opensweetalert();
+    window.setTimeout(function(){location.reload()},2000)
   }
 else {
   console.log("thabete date");
@@ -249,7 +248,7 @@ else {
   
   delete(id:any){
     this.formationServ.deleteFormation(this._id).subscribe( data => {    
-      window.location.reload();
+      window.setTimeout(function(){location.reload()},2000)
     this.affiche()
     //  this.toastr.success("formation supprimé avec succes")
     this.router.navigate(['/plan-formation']);  
@@ -270,14 +269,16 @@ else {
     let prix=this.prix;
     let lieu=this.lieu;
     let date=this.start;
-    if(date<date_fin){
+    if(date<=date_fin){
     this.form ={title,heure, date,date_fin,duree,formateur,prix,lieu}
     this.affiche()
     this.formationServ.updateFormation(this._id,this.form).subscribe( data => {
+
       console.log();
 
-      this.loginResponse=this.opensweetalert2();
-      window.location.reload();
+      this.loginResponse=this.opensweetalert2(); 
+      window.setTimeout(function(){location.reload()},2000)
+
     });
  } 
 
@@ -292,7 +293,7 @@ else {
     icon: 'success',
     title: 'Formation Ajoutée avec Succès',
     showConfirmButton: false,
-    timer: 3500
+    timer: 2000
   })
  }
  opensweetalert2() {
@@ -301,7 +302,7 @@ else {
     icon: 'success',
     title: 'Formation Modifée avec Succès',
     showConfirmButton: false,
-    timer: 3500
+    timer: 2000
   })
  }
  opensweetalert3() {
@@ -310,7 +311,7 @@ else {
     icon: 'success',
     title: 'Formation Supprimée avec Succès',
     showConfirmButton: false,
-    timer: 3500
+    timer: 2000
   })
  }
  opensweetalert4(){

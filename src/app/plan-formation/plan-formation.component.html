@@ -257,8 +257,8 @@
 [options]="CalendarOptions" ref="fullCalendar">
 
 </full-calendar>
-<!-- /////////////////////////////////////////// list participation -->
-<ng-template #content4 let-modal>
+<!-- /////////////////////////////////////////// liste participation ***********************************************-->
+<ng-template #content4 let-modal  >
   <div class="modal-header"  style="background-color: #25857e;" >
     <a href="" class="logo" style="font-size: 1px;" style="margin-top: 0px;">
      
@@ -266,42 +266,28 @@
       src="https://arsii.org/theme_assets/img/arsii-white.png" alt="logo"
        >
 </a>
-    <h4 class="modal-title" id="modal-basic-title" style="margin-left: 20px;">list des participants</h4>
+    <h4 class="modal-title" id="modal-basic-title" style="margin-left: 20px;">Liste des Participants</h4>
     <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
   </div>
-  <div class="modal-body">
+  <div class="modal-body" style="width: 1900px;">
     <form >
       <div class="mb-6">
-        <!-- <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;">Nom de Formation  </label> -->
+ 
         <div class="input-group" *ngFor="let item of Adherent ; let i=index">
           <div class="data">
             <h4><i class="fa fa-angle-double-right" aria-hidden="true" style="color:#25857e"></i>
-              {{Adherent[i].nom}} {{Adherent[i].prenom}}</h4>
-            <!-- <h4>{{Adherent[i].prenom}}</h4> -->
+              {{Adherent[i].nom}} {{Adherent[i].prenom}}  </h4>
+              <h5> </h5>
+
         </div>
         </div>
       </div>
     
     </form>
   </div>
-  <div class="modal-footer">
-    <button  mat-raised-button  mwlConfirmationPopover
-    [popoverTitle]="popoverTitle"
-    [popoverMessage]="popoverMessage"
-    placement="left"
-    (confirm)="delete(id);modal.close('Save click');opensweetalert3()"
-    (cancel)="cancelClicked = true" class="action-button btn-danger" > 
-    <span  class="fa fa-trash-o"></span>
-  </button>
-    <button mat-raised-button class="action-button btn-secondary" (click)="open(content3);modal.close('Save click');">
-      <span class="fa fa-edit"></span>
 
-    </button>
-    <button mat-raised-button class="action-button btn-secondary" (click)="open(content4);modal.close('Save click');">
-      <span class="fa fa-list"></span>
+ 
 
-    </button>
-  </div>
 </ng-template>
 
 

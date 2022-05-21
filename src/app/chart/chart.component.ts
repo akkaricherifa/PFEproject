@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { AdherentService } from '../shared/adherent.service';
@@ -39,76 +40,67 @@ export class ChartComponent implements OnInit {
       )
       }
 
-      chart(){
+      chart(){     
 
     const ctxx = 'myChart2';
     const myChart1 = new Chart(ctxx, {
-      type: 'bar',
+      type: 'radar',
 
-      
- 
-    
-       
 
       data: {
         labels: this.name,
   
         datasets: [
           {
-            label: 'Courbe de mes Compétences %',
+            label: 'Courbe de Mes Compétences %',
 
             data: this.niveau,
           
-           
+
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
+              '#86E3CE',
+              '#7FACD6',
+              '#BFB8DA',
+              '#AE6378',
+              '#43978D',
+              '#264D59',
+              '#FD8F52',
+              '#522157',
+              'red',
+              '#DCB665',
+              '#CD7672',
+              '#DE5B6D',
+              '#CBE54E',
+              '#88CDF6',
+              '#264D59',
+              '#F9E07F',
+              '#C6A477',
+              '#86E3CE',
+              
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)',
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)',
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
+              '#86E3CE',
+              '#7FACD6',
+              '#BFB8DA',
+              '#AE6378',
+              '#43978D',
+              '#264D59',
+              '#FD8F52',
+              '#522157',
+              'red',
+              '#DCB665',
+              '#CD7672',
+              '#DE5B6D',
+              '#CBE54E',
+              '#88CDF6',
+              '#264D59',
+              '#F9E07F',
+              '#C6A477',
+              '#86E3CE',
+              
             ],
-            borderWidth: 1,
+            borderWidth: 4,
+            borderAlign:'inner',
           },
         ],
       },

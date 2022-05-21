@@ -99,8 +99,9 @@ export class FormationAdherentComponent implements OnInit {
              dateClick: this.handleDateClick.bind(this), 
             eventClick: this.eeventClick.bind(this), 
               events:this.event,
-              eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
+              // eventColor: this.c[Math.floor(Math.random() * this.c.length) + 1],
               editable: true,
+              eventColor: "#1a9991",
                          
         }}
       
