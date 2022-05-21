@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdherentService } from '../shared/adherent.service';
 import Swal from 'sweetalert2';
+import { AdminService } from '../shared/admin.service';
 @Component({
   selector: 'app-add-competence',
   templateUrl: './add-competence.component.html',
@@ -28,33 +29,27 @@ export class AddCompetenceComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private toastr: ToastrService,
-    private adhServ: AdherentService) { }
+    private adhServ: AdherentService,
+    private adminServ : AdminService) { }
   addRow() {
     this.dynamicArray.push({ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau });
     console.log('New row added successfully',this.dynamicArray);
-    
   }
-
   deleteRow(index:any) {
     this.dynamicArray.splice(index, 1);
   }
-  // getValues() {
-  //   console.log(this.dynamicArray);
-  // }
-  
- 
-
-
   ngOnInit(): void {
+    this.get()
     this.competenceForm= this.fb.group ( 
       {
         nom:['',Validators.required],
         niveau:['',Validators.required],
 
       }
-
     )
+    
   }
+
     //   createCompetence() {
     //     let form={ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau,adherent:localStorage.getItem('CurrentUser') || ''}
     //   this.competenceServ.createCompetence(this.competenceForm.value).subscribe((res) => {
@@ -63,15 +58,22 @@ export class AddCompetenceComponent implements OnInit {
     //   console.log(this.competenceForm.value);
     // }
 
-    // ajoutCompetence2(){
+    // ajoutCompetence2(id:number){
     //   let form={ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau,adherent:localStorage.getItem('CurrentUser') || ''}
-    //   this.adhServ.ajoutCompetence2(this.id,form).subscribe((res) =>{
+    //   this.adhServ.ajoutCompetence2(this.id).subscribe((res) =>{
     //     this.router.navigate(['/chart']);
 
     //   });
     //   console.log(this.competenceForm.value)
     // }
     
+     get(){
+      this.adminServ.getAllCompetence().subscribe(
+        res=>{
+          this.competence=res
+        },
+      )
+     }
     opensweetalert2() {
       Swal.fire({
         position: 'top-end',

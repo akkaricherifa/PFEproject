@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import { AdminService } from '../shared/admin.service';
 import { CompetenceService } from '../shared/competence.service';
 interface competence {
   id:number;
@@ -22,10 +23,11 @@ export class AllCompetenceComponent implements OnInit {
   term!: string;
   searchTerm!: string;
   constructor(private competenceServ: CompetenceService,
-    private http: HttpClient,) {}
+    private http: HttpClient,
+  private adminServ : AdminService) {}
 
   ngOnInit(): void {
-    this.competenceServ.getAllCompetence().subscribe(
+    this.adminServ.getAllCompetence().subscribe(
       (res:any)=>{
       this.result =res
       this.name = this.result.map((item: any) => item.nom);

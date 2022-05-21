@@ -4,7 +4,7 @@
 
 
 
-<button type="button" class="btn btn-success" style="margin-left: 1230px; margin-top: -9px;" (click)="opensweetalert2()" >Ajouter </button>
+<button type="button" class="btn btn-success" style="margin-left: 1230px; margin-top: -9px;" >Ajouter </button>
 <form [formGroup]="competenceForm">
 <table class="table table-striped"  >
     <thead class="thead-inverse">
@@ -25,30 +25,10 @@
         <select  style="width:180px"  formControlName="nom"
         
         >
-            <option value="Angular">Angular</option>
-            <option value="React">React</option>
-            <option value="Spring-Boot">Spring-Boot</option>
-            <option value="Node-JS">Node-JS</option>
-            <option value="Java-Script">Java-Script</option>
-            <option value="Java">Java</option>
-            <option value="Symphony">Symphony</option>
-            <option value="PHP">PHP</option>
-            <option value="Laravel">Laravel</option>
-            <option value=".Net">.Net</option>
-            <option value="HTML/HTML5">HTML/HTML5</option>
-            <option value="CSS/CSS3">CSS/CSS3</option>
-            <option value="Flutter">Flutter</option>
-            <option value="Android Native">Android Native</option>
-            <option value="UI-UX Design">UI-UX Design</option>
-            <option value="Docker">Docker</option>
-            <option value="SQL/NoSql">SQL/NoSql</option>
-            <option value="DevOps">DevOps</option>
-            <option value="Git-Gitlab">Git/Gitlab</option>
-            <option value="Intelligence Artificielle">Intelligence Artificielle</option>
-            <option value="Big Data">Big Data</option>
-            <option value="Django">Django</option>
-            <option value="C# / C / C++">C# / C / C++</option>
-            <option value="UML">UML</option>
+            <option  *ngFor ="let item of competence" value="item.id">{{item.nom}}</option>
+          
+          
+           
 
         </select>
       </td>
