@@ -74,6 +74,7 @@ import { TodoService } from './shared/todo.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BoiteSuggestionComponent } from './boite-suggestion/boite-suggestion.component';
 import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.component';
+import { AjoutCompComponent } from './ajout-comp/ajout-comp.component';
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -126,6 +127,7 @@ FullCalendarModule.registerPlugins([
     TodoListComponent,
     BoiteSuggestionComponent,
     ListeEntrepriseComponent,
+    AjoutCompComponent,
 
 
 

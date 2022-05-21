@@ -55,14 +55,22 @@ export class AddCompetenceComponent implements OnInit {
 
     )
   }
-      createCompetence() {
-        let form={ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau,adherent:localStorage.getItem('CurrentUser') || ''}
-      this.competenceServ.createCompetence(this.competenceForm.value).subscribe((res) => {
-        this.router.navigate(['/chart']);
-      });
-      console.log(this.competenceForm.value);
-    }
+    //   createCompetence() {
+    //     let form={ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau,adherent:localStorage.getItem('CurrentUser') || ''}
+    //   this.competenceServ.createCompetence(this.competenceForm.value).subscribe((res) => {
+    //     this.router.navigate(['/chart']);
+    //   });
+    //   console.log(this.competenceForm.value);
+    // }
 
+    // ajoutCompetence2(){
+    //   let form={ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau,adherent:localStorage.getItem('CurrentUser') || ''}
+    //   this.adhServ.ajoutCompetence2(this.id,form).subscribe((res) =>{
+    //     this.router.navigate(['/chart']);
+
+    //   });
+    //   console.log(this.competenceForm.value)
+    // }
     
     opensweetalert2() {
       Swal.fire({

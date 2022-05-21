@@ -1,0 +1,56 @@
+<app-navbar-supp></app-navbar-supp>
+<app-sidebar-admin></app-sidebar-admin>
+<form [formGroup]="ajoutForm"  style="margin-left: 300px; width:400px" >
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nom Competence</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      formControlName="nom" 
+      >
+    
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Niveau</label>
+        <select class="form-control" id="exampleFormControlSelect1" formControlName="niveau">
+          <option>0</option>
+        </select>
+      </div>
+    
+    <button type="submit" class="btn btn-primary" (click)="ajoutComp();opensweetalert()">Ajouter</button>
+  </form>
+  <!-- **************************************************** -->
+  <table class="table" style="margin-left: 800px; width:500px; margin-top: -150px;">
+    <thead>
+      <tr>
+        <th scope="col">Nom Competence</th>
+        <th scope="col">Action</th>
+
+      </tr>
+      <tr *ngFor="let competences of competence | paginate : {itemsPerPage: 6, currentPage: p}" >
+                      
+        <td>{{competences.nom}} </td>
+        <!-- <td>{{competences.niveau}}</td> -->
+        <td>
+            <div class="container">
+
+    <button  mat-raised-button  mwlConfirmationPopover
+    [popoverTitle]="popoverTitle"
+    [popoverMessage]="popoverMessage"
+    placement="left"
+    (confirm)="delete(competences._id);opensweetalert2()"
+    (cancel)="cancelClicked = true" class="action-button btn-danger" > 
+    <span class="fa fa-trash"></span>
+  </button>
+          </div>
+          
+          </td> 
+       
+    </tr>
+    </thead>
+    <tbody>
+        <div class="pagination">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+ 
+  
+    </tbody>
+  </table>

@@ -55,6 +55,9 @@ return this.http.get(this.path+"/get/"+id);
     return this.http.post(this.path+"/upload",data) 
    
    }
+   ajoutCompetence2(id:number,data:any){
+     return this.http.post(this.path+"/ajout/"+id,data)
+   }
 }
 
 

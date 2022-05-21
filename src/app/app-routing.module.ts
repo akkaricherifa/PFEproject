@@ -40,6 +40,7 @@ import { UpdateAdherentComponent } from './update-adherent/update-adherent.compo
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import { BoiteSuggestionComponent } from './boite-suggestion/boite-suggestion.component';
 import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.component';
+import { AjoutCompComponent } from './ajout-comp/ajout-comp.component';
 
  
 
@@ -90,7 +91,8 @@ const routes: Routes = [
   { path: 'all-competence',component:AllCompetenceComponent},
   { path: 'todo-list',component:TodoListComponent},
   { path: 'boite-suggestion',component:BoiteSuggestionComponent},
-  { path:'liste-entreprise',component:ListeEntrepriseComponent}
+  { path:'liste-entreprise',component:ListeEntrepriseComponent},
+  { path:'ajoutCompAdmin',component:AjoutCompComponent}
 
 ];
 

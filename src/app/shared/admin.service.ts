@@ -24,4 +24,20 @@ export class AdminService {
   updateAdherent(id:number,adherent: Adhérent){
     return this.http.put("http://localhost:3000/adherent"+id,adherent);
   }
+
+  ajouterCompetence(data:any) {
+    return this.http.post(this.path+"/",data) 
+  }
+
+  getAllCompetence(){
+    return this.http.get(this.path+"/");
+  }
+
+  deleteCompetence(id:any) {
+    return this.http.delete(this.path+"/"+ id);
+  }
+  
+  getCompetence(id: number) {
+    return this.http.get(this.path+"/"+ id);
+  }
 }
