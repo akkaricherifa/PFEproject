@@ -21,6 +21,7 @@ export class AddCompetenceComponent implements OnInit {
   competenceForm!: FormGroup
   result: any;
   groupe:any;
+  id:any;
   // name :any;
   niveau: any;
   competence: any;
@@ -49,23 +50,16 @@ export class AddCompetenceComponent implements OnInit {
     )
     
   }
+    ajoutCompetence2(id:number){
+      let form={ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau,adherent:localStorage.getItem('CurrentUser') || ''}
+      // this.adhServ.ajoutCompetence2(this.id,form).subscribe((res) =>{
+      //   console.log(this.competenceForm.value.nom)
+      //   this.router.navigate(['/chart']);
 
-    //   createCompetence() {
-    //     let form={ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau,adherent:localStorage.getItem('CurrentUser') || ''}
-    //   this.competenceServ.createCompetence(this.competenceForm.value).subscribe((res) => {
-    //     this.router.navigate(['/chart']);
-    //   });
-    //   console.log(this.competenceForm.value);
-    // }
-
-    // ajoutCompetence2(id:number){
-    //   let form={ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau,adherent:localStorage.getItem('CurrentUser') || ''}
-    //   this.adhServ.ajoutCompetence2(this.id).subscribe((res) =>{
-    //     this.router.navigate(['/chart']);
-
-    //   });
-    //   console.log(this.competenceForm.value)
-    // }
+      // });
+       console.log("llllllllllllllllllllllllllllllll",this.competenceForm.value.nom)
+     
+    }
     
      get(){
       this.adminServ.getAllCompetence().subscribe(
