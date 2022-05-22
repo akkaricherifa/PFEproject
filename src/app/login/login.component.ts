@@ -118,9 +118,11 @@ login() {
  
 opensweetalert() {
   Swal.fire({
-    icon: 'error',
+    position: 'top',
+    icon: 'warning',
     title: 'Oops...',
     text: 'Invalid Email or Password !',
+    showConfirmButton: false,
   })
  }
 }

@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class InscriptionComponent implements OnInit {
   adherentForm!: FormGroup
+  loginResponse:any
   constructor(  private router: Router,
     private fb: FormBuilder,
     private toastr: ToastrService,
@@ -37,10 +38,19 @@ export class InscriptionComponent implements OnInit {
 
 
   createAdherent() {
-    this.adhServ.createAdherent(this.adherentForm.value).subscribe((res) => {
-      this.router.navigate(['/acceuil']);   
-    });
-    console.log(this.adherentForm.value);
+  this.adhServ.createAdherent(this.adherentForm.value).subscribe((res) => {
+    this.loginResponse=this.opensweetalert();
+    this.router.navigate(['/acceuil']);   
+  },
+  error => {
+    this.loginResponse=this.opensweetalert2();
+  });
+
+
+    
+ 
+
+    
 
   }
   
@@ -50,6 +60,16 @@ export class InscriptionComponent implements OnInit {
       position: 'top-end',
       icon: 'success',
       title: 'Your Registration has been Saved',
+      showConfirmButton: false,
+      timer: 3500
+    })
+   }
+   
+   opensweetalert2() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'warning',
+      title: 'Email already Exists',
       showConfirmButton: false,
       timer: 3500
     })
