@@ -64,7 +64,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                          <tr *ngFor="let entreprise of Entreprise | paginate : {itemsPerPage: 6, currentPage: p} | filter:term" >
+                          <tr *ngFor="let entreprise of Entreprise | paginate : {itemsPerPage: 4, currentPage: p} | filter:term" >
                            
                               <td>{{entreprise.nomEnt }} </td>
                               <td>{{entreprise.nomResp}}</td>
