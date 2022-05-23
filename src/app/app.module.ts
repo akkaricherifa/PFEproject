@@ -75,6 +75,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BoiteSuggestionComponent } from './boite-suggestion/boite-suggestion.component';
 import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.component';
 import { AjoutCompComponent } from './ajout-comp/ajout-comp.component';
+import { FicheCompetenceComponent } from './fiche-competence/fiche-competence.component';
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -128,6 +129,7 @@ FullCalendarModule.registerPlugins([
     BoiteSuggestionComponent,
     ListeEntrepriseComponent,
     AjoutCompComponent,
+    FicheCompetenceComponent,
 
 
 

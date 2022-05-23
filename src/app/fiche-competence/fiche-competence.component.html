@@ -1,8 +1,7 @@
 <app-navbar-supp></app-navbar-supp>
-
 <app-sidebar-admin></app-sidebar-admin>
 
-<div class="wrapper">
+<div class="wrapper" style="margin-top: -120px;">
     <div class="left"> 
       <img src="assets/img/ui-sam.jpg" alt="user" width="150" class="img-circle" >
       <!-- <img src="http://localhost:8080/avatar/{{Adherent.id}}" alt="user" width="150" class="img-circle" > -->
@@ -54,57 +53,12 @@
       </div>
     </div>
             
-    <div class="projects">
   
-        <h3> Informations Professionnels</h3>
-        <div class="info_data">
-          <div class="data">
-            <h4>Situation Professionelle</h4>
-            <p> {{Adherent.profession}}</p>
-          </div>
-          <div class="data">
-            <h4>Université </h4>
-            <p> {{Adherent.etablissement}}</p>
-          </div>
-          <div class="data">
-            <h4>Cycle</h4>
-            <p> {{Adherent.cycle}}</p>
-          </div>
-          
-  
-        </div> 
-          
-         <div class="info_data">
-          <div class="data">
-            <h4>Niveau </h4>
-            <p> {{Adherent.niveau}}</p>
-          </div>
-          <div class="data">
-            <h4>Spécialité</h4>
-            <p> {{Adherent.specialite}}</p>
-          </div>
-          <div class="data">
-            
-          </div>
-  
-        </div>
-          
-      </div>
-      <button class="btn btn-secondary" style="margin-left:60px" >Export informations to PDF</button>
-     <button class="btn btn-secondary" style="margin-left: 80px; margin-top: -1px;" [routerLink]="['/fiche-competence',Adherent.id]" >Voir ses Compétences </button>
     </div>
   
-    
+
      
       
   
   </div>
        
-          
-             
-    
-  
-              
-  
-          
-  

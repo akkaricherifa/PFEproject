@@ -41,6 +41,7 @@ import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import { BoiteSuggestionComponent } from './boite-suggestion/boite-suggestion.component';
 import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.component';
 import { AjoutCompComponent } from './ajout-comp/ajout-comp.component';
+import { FicheCompetenceComponent } from './fiche-competence/fiche-competence.component';
 
  
 
@@ -92,7 +93,8 @@ const routes: Routes = [
   { path: 'todo-list',component:TodoListComponent},
   { path: 'boite-suggestion',component:BoiteSuggestionComponent},
   { path:'liste-entreprise',component:ListeEntrepriseComponent},
-  { path:'ajoutCompAdmin',component:AjoutCompComponent}
+  { path:'ajoutCompAdmin',component:AjoutCompComponent},
+  { path:'fiche-competence/:id',component:FicheCompetenceComponent}
 
 ];
 
