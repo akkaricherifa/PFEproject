@@ -11,12 +11,14 @@ import { AdherentService } from '../shared/adherent.service';
 export class ChartComponent implements OnInit {
   result: any;
   groupe:any;
-  name :any;
+  name :any=[];
   id:any;
   Adherent:any;
   niveauUser: any;
   competence: any;
   pointFormat: any;
+  test:any=[];
+  arr: any = [];
   constructor(private adhServ: AdherentService) {}
 
   ngOnInit(): void {
@@ -24,15 +26,40 @@ export class ChartComponent implements OnInit {
 
     this. id =(localStorage.getItem('CurrentUser') || '');
     this.adhServ.getAdherent(this.id).subscribe( data => {
-      console.log(data);
+      // console.log(data);
       this.Adherent = data;
     })
       this.adhServ.getCompetenceById(this.id).subscribe(
         (res:any)=>{
         this.result =res
-        this.name = this.result.map((item: any) => item.nom);
-      this.name.forEach((element:any) => {  
+console.log("hello result",res);
+
+
+
+
+       
+      this.result.forEach((element:any) => {  
+        this.name.push(element.competence)
+        
       });
+
+     
+
+
+     for (var i = 1; i < this.name.length; i++) {
+    this.arr.push(this.name[i].nom)
+     
+      
+  }
+  
+  
+ 
+
+
+      
+      
+      
+      
     
       this.niveauUser = this.result.map((item: any) => item.niveauUser);
       
@@ -50,7 +77,7 @@ export class ChartComponent implements OnInit {
 
 
       data: {
-        labels: this.name,
+        labels: this.arr,
   
         datasets: [
           {
