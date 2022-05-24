@@ -64,6 +64,10 @@ return this.http.get(this.path+"/get/"+id);
    ajoutCompetenceByUser(data:any){
     return this.http.post(this.path+"/ajouter",data)
   }
+  getCompetenceById(id: number){
+    return this.http.get(this.path+"/comp/"+ id);
+  }
+
    
 }
 

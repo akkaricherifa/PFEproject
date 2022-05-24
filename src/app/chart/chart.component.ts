@@ -14,7 +14,7 @@ export class ChartComponent implements OnInit {
   name :any;
   id:any;
   Adherent:any;
-  niveau: any;
+  niveauUser: any;
   competence: any;
   pointFormat: any;
   constructor(private adhServ: AdherentService) {}
@@ -27,14 +27,14 @@ export class ChartComponent implements OnInit {
       console.log(data);
       this.Adherent = data;
     })
-      this.adhServ.get().subscribe(
+      this.adhServ.getCompetenceById(this.id).subscribe(
         (res:any)=>{
         this.result =res
         this.name = this.result.map((item: any) => item.nom);
       this.name.forEach((element:any) => {  
       });
     
-      this.niveau = this.result.map((item: any) => item.niveau);
+      this.niveauUser = this.result.map((item: any) => item.niveauUser);
       
       this.chart()
 
@@ -56,7 +56,7 @@ export class ChartComponent implements OnInit {
           {
             label: 'Courbe de Mes Compétences %',
 
-            data: this.niveau,
+            data: this.niveauUser,
           
 
             backgroundColor: [

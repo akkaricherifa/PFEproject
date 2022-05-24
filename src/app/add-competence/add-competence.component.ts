@@ -57,15 +57,13 @@ export class AddCompetenceComponent implements OnInit {
        console.log(form);
        
       this.adhServ.ajoutCompetenceByUser(form).subscribe((res) =>{
-        // this.router.navigate(['/chart']);
+        this.router.navigate(['/chart']);
 
       },(err)=>{
         console.log(err);
         
       }
       );
-      
-     
     }
     
      get(){
