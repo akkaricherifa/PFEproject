@@ -73,7 +73,7 @@ console.log("hello result",res);
 
     const ctxx = 'myChart2';
     const myChart1 = new Chart(ctxx, {
-      type: 'radar',
+      type: 'bar',
 
 
       data: {
