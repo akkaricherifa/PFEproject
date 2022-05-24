@@ -10,14 +10,23 @@
                 <div class="col-lg-5" >
                     <div id="ui">
                 
-                      <form >
+                      <form  [formGroup]="imageForm" >
                       <h3><i class="fa fa-angle-right"></i> Modifier votre photo de profil</h3>
                       <img src="localhost:3000/public/files//ieee.jpg" alt="user" width="150" class="img-circle">
                       
                         
                         <br>
-                        <input type="file" name="file"  class="custom-file-input" class="form-control" style="height:100%"
-                          (change)="onUpload($event)" >
+                        <!-- <input type="file" name="file"  class="custom-file-input" class="form-control" style="height:100%"
+                          (change)="uploadImage($event)" > -->
+                          <!-- <div class="form-group-file form-field">
+                            <label for="File1" style="margin-bottom: 0px">Fichier</label>
+                            <input
+                              style="margin-top: 0px"
+                              class="form-control"
+                              type="file"
+                              (change)="uploadFichier($event)"
+                            />
+                          </div> -->
                     
                         <br>
                         <br>

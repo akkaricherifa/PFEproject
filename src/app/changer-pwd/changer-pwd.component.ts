@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Adhérent } from '../Model/adhérent';
 import { AdherentService } from '../shared/adherent.service';
@@ -13,12 +13,14 @@ import { AuthService } from '../shared/authService';
 export class ChangerPwdComponent implements OnInit {
   adherent!: Adhérent;
   Adherent!: any;
+  imageForm!: FormGroup;
   id:any;
   // password: String;
   // email : String ;
   newPassword: any;
   oldPassword:any;
   path="http://localhost:3000/";
+  preview!: string;
 
    constructor(private router:Router, 
      private fb: FormBuilder,
@@ -64,6 +66,26 @@ export class ChangerPwdComponent implements OnInit {
     })
   
     }
+
+    // uploadFichier(event: any) {
+    //   const file = (event.target as HTMLInputElement).files[0];
+    //   if (this.imageForm) {
+    //     this.imageForm.patchValue({
+    //       image: file,
+    //     });
+    //     this.imageForm.get("image").updateValueAndValidity();
+    //   } else if (this.imageForm) {
+    //     this.imageForm.patchValue({
+    //       image: file,
+    //     });
+    //     this.imageForm.get("image").updateValueAndValidity();
+    //   }
+    //   const reader = new FileReader();
+    //   reader.onload = () => {
+    //     this.preview = reader.result as string;
+    //   };
+    //   reader.readAsDataURL(file);
+    // }
   
  }
  

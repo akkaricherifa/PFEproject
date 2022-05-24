@@ -15,6 +15,7 @@ export class CandidatAreaComponent implements OnInit {
 candidatForm!: FormGroup;
 event:any;
   file: any;
+  url: any;
 
 
 
@@ -54,7 +55,7 @@ event:any;
 let file: File
 let fd = new FormData()
 file = <File> event.target.files[0];
-fd.append('file', file, file.name)
+fd.append('file',file,file.name)
 this.candidatServ.uploadFile(fd).subscribe((res: any) => {
   console.log(res);
   
@@ -63,7 +64,17 @@ this.candidatServ.uploadFile(fd).subscribe((res: any) => {
   })
   }
  
+  onSelectFile(event:any) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
 
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event:any) => { // called once readAsDataURL is completed
+        this.url = event.target.result;
+      }
+    }
+  }
 
   createCandidat() {
     this.candidatServ.createCandidat(this.candidatForm.value).subscribe((res) => {

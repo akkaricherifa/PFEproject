@@ -20,6 +20,8 @@ export class ChartComponent implements OnInit {
   constructor(private adhServ: AdherentService) {}
 
   ngOnInit(): void {
+
+
     this. id =(localStorage.getItem('CurrentUser') || '');
     this.adhServ.getAdherent(this.id).subscribe( data => {
       console.log(data);

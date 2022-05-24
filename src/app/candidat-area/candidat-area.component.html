@@ -60,7 +60,7 @@
           <div class="form-group">
             <label class="col-sm-2 col-sm-2 control-label">Ville :</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="ville" placeholder="Entrez votre Numéro"
+              <input type="text" class="form-control" name="ville" placeholder="Entrez votre adresse"
               formControlName="ville"
                          [ngClass]="{'is-invalid':candidatForm.get('ville')!.touched && !candidatForm.get('ville')!.valid}"
               >
@@ -74,7 +74,8 @@
                 
                     <div style="margin-top:3px">
                    <input type="file" name="file" class="custom-file-input" class="form-control" style="height:100%" formControlName="file"
-                    (change)="onUpload($event)" >
+                    (change)="onSelectFile($event)" >
+               
                   
                     </div>
             
@@ -86,7 +87,7 @@
             <div class="col-sm-10">
                 <div style="margin-top:3px">
                     <input type="file" class="custom-file-input"  class="form-control"   style="height:100%" 
-                    formControlName="pathMotivationLetter" (change)="onUpload($event)">
+                    formControlName="pathMotivationLetter" (change)="onSelectFile($event)">
                      </div>
                    
             </div>

@@ -76,6 +76,7 @@ import { BoiteSuggestionComponent } from './boite-suggestion/boite-suggestion.co
 import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.component';
 import { AjoutCompComponent } from './ajout-comp/ajout-comp.component';
 import { FicheCompetenceComponent } from './fiche-competence/fiche-competence.component';
+import {FilePickerModule} from 'ngx-awesome-uploader';
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -152,6 +153,7 @@ FullCalendarModule.registerPlugins([
     MatInputModule,
     MatSnackBarModule,
     MatDividerModule,
+    FilePickerModule,
     
     MatCardModule,
     MatIconModule, 
