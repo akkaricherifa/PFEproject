@@ -52,10 +52,12 @@ export class AddCompetenceComponent implements OnInit {
   }
     ajoutCompetence2(id:number){
       this.id=localStorage.getItem('CurrentUser') || ''
-      let form={ nom: this.competenceForm.value.nom, niveau: this.competenceForm.value.niveau,adherent:localStorage.getItem('CurrentUser') || ''}
-      this.adhServ.ajoutCompetence2(this.id,form).subscribe((res) =>{
-        console.log(this.competenceForm.value.nom)
-        this.router.navigate(['/chart']);
+      let form={ "competence": this.competenceForm.value.nom,
+       "niveauUser": this.competenceForm.value.niveau,"adherent":localStorage.getItem('CurrentUser') || ''}
+       console.log(form);
+       
+      this.adhServ.ajoutCompetenceByUser(form).subscribe((res) =>{
+        // this.router.navigate(['/chart']);
 
       },(err)=>{
         console.log(err);
