@@ -37,7 +37,7 @@ event:any;
         phoneCan:['',Validators.required],
         emailCan:['',Validators.required],
         ville:['',Validators.required],
-        file:[''],
+        file:['',Validators.required],
         pathMotivationLetter:['',Validators.required],
         niveauEtud:['',Validators.required],
         titreDiplome:['',Validators.required],
@@ -64,17 +64,17 @@ this.candidatServ.uploadFile(fd).subscribe((res: any) => {
   })
   }
  
-  onSelectFile(event:any) {
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
+  // onSelectFile(event:any) {
+  //   if (event.target.files && event.target.files[0]) {
+  //     var reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
+  //     reader.readAsDataURL(event.target.files[0]); // read file as data url
 
-      reader.onload = (event:any) => { // called once readAsDataURL is completed
-        this.url = event.target.result;
-      }
-    }
-  }
+  //     reader.onload = (event:any) => { // called once readAsDataURL is completed
+  //       this.url = event.target.result;
+  //     }
+  //   }
+  // }
 
   createCandidat() {
     this.candidatServ.createCandidat(this.candidatForm.value).subscribe((res) => {

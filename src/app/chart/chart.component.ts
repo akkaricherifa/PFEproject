@@ -26,41 +26,21 @@ export class ChartComponent implements OnInit {
 
     this. id =(localStorage.getItem('CurrentUser') || '');
     this.adhServ.getAdherent(this.id).subscribe( data => {
-      // console.log(data);
       this.Adherent = data;
     })
       this.adhServ.getCompetenceById(this.id).subscribe(
         (res:any)=>{
         this.result =res
 console.log("hello result",res);
-
-
-
-
-       
+  
       this.result.forEach((element:any) => {  
         this.name.push(element.competence)
         
       });
 
-     
-
-
-     for (var i = 1; i < this.name.length; i++) {
-    this.arr.push(this.name[i].nom)
-     
-      
+     for (var i = 0; i < this.name.length; i++) {
+    this.arr.push(this.name[i].nom)  
   }
-  
-  
- 
-
-
-      
-      
-      
-      
-    
       this.niveauUser = this.result.map((item: any) => item.niveauUser);
       
       this.chart()
@@ -135,9 +115,5 @@ console.log("hello result",res);
       },
     });
   }
-      
-  
-
-    
 
 }
