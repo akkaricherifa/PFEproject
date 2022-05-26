@@ -17,6 +17,7 @@ candidatForm!: FormGroup;
 event:any;
   file: any;
   url: any;
+  data:any;
 
 
 
@@ -64,21 +65,22 @@ this.candidatServ.uploadFile(fd).subscribe((res: any) => {
   })
   }
  
-  // onSelectFile(event:any) {
-  //   if (event.target.files && event.target.files[0]) {
-  //     var reader = new FileReader();
+// onUpload(event:any) {
+//     if (event.target.files && event.target.files[0].file.name) {
+//       var reader = new FileReader();
 
-  //     reader.readAsDataURL(event.target.files[0]); // read file as data url
+//       reader.readAsDataURL(event.target.files[0]); // read file as data url
 
-  //     reader.onload = (event:any) => { // called once readAsDataURL is completed
-  //       this.url = event.target.result;
-  //     }
-  //   }
-  // }
+//       reader.onload = (event:any) => { // called once readAsDataURL is completed
+//         this.url = event.target.result;
+//       }
+//     }
+//   }
 
   createCandidat() {
     this.candidatServ.createCandidat(this.candidatForm.value).subscribe((res) => {
       this.router.navigate(['/reponse-candidat']);
+    
     });
     console.log(this.candidatForm.value);
   }
