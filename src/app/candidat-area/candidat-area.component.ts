@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UploadFile } from 'ngx-awesome-uploader/lib/file-drop';
 import { ToastrService } from 'ngx-toastr';
 import { CandidatService } from '../shared/candidat.service';
 
@@ -58,7 +59,6 @@ file = <File> event.target.files[0];
 fd.append('file',file,file.name)
 this.candidatServ.uploadFile(fd).subscribe((res: any) => {
   console.log(res);
-  
   }, (err)=>{
     console.log(err); 
   })

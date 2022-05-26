@@ -50,6 +50,7 @@ export class ListCandidatComponent implements OnInit {
     this.candidatServ.getAllCandidat().subscribe(
       res=>{
         this.Candidat=res
+  
       },
     )
   }
