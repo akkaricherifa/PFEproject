@@ -22,7 +22,7 @@ export class AjoutCompComponent implements OnInit {
     private fb: FormBuilder,) { }
  
   ngOnInit(): void {
-    this.affiche();
+    this.affiche()
     this.ajoutForm= this.fb.group ( 
       {
         nom:['',Validators.required],

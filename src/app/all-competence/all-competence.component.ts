@@ -28,7 +28,6 @@ export class AllCompetenceComponent implements OnInit {
   private adminServ : AdminService) {}
 
   ngOnInit(): void {
-    this.affiche()
     this.adminServ.getAllCompetence().subscribe(
 
       (res:any)=>{
@@ -48,13 +47,6 @@ export class AllCompetenceComponent implements OnInit {
 
       },
     )
-    }
-    affiche(){
-      this.adminServ.getAllCompetence().subscribe(
-        res=>{
-          this.competence=res
-        },
-      )
     }
     chart(){
     const ctx = 'myChart';
@@ -115,5 +107,11 @@ export class AllCompetenceComponent implements OnInit {
       },
     });
   }
-
+  affiche(){
+    this.adminServ.getAllCompetence().subscribe(
+      res=>{
+        this.competence=res
+      },
+    )
+  }
 }
