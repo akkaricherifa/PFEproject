@@ -42,6 +42,7 @@ import { BoiteSuggestionComponent } from './boite-suggestion/boite-suggestion.co
 import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.component';
 import { AjoutCompComponent } from './ajout-comp/ajout-comp.component';
 import { FicheCompetenceComponent } from './fiche-competence/fiche-competence.component';
+import { FicheComponent } from './fiche/fiche.component';
 
  
 
@@ -94,7 +95,8 @@ const routes: Routes = [
   { path: 'boite-suggestion',component:BoiteSuggestionComponent},
   { path:'liste-entreprise',component:ListeEntrepriseComponent},
   { path:'ajoutCompAdmin',component:AjoutCompComponent},
-  { path:'fiche-competence/:id',component:FicheCompetenceComponent}
+  { path:'fiche-competence/:id',component:FicheCompetenceComponent},
+  { path:'ficheCompetence/:id',component:FicheComponent}
 
 ];
 

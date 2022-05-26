@@ -77,6 +77,7 @@ import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.co
 import { AjoutCompComponent } from './ajout-comp/ajout-comp.component';
 import { FicheCompetenceComponent } from './fiche-competence/fiche-competence.component';
 import {FilePickerModule} from 'ngx-awesome-uploader';
+import { FicheComponent } from './fiche/fiche.component';
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -131,6 +132,7 @@ FullCalendarModule.registerPlugins([
     ListeEntrepriseComponent,
     AjoutCompComponent,
     FicheCompetenceComponent,
+    FicheComponent,
 
 
 
