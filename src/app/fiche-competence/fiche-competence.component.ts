@@ -16,7 +16,6 @@ export class FicheCompetenceComponent implements OnInit {
   result: any;
   groupe:any;
   name :any=[];
-
   niveauUser: any;
   competence: any;
   pointFormat: any;
@@ -39,11 +38,19 @@ export class FicheCompetenceComponent implements OnInit {
         (res:any)=>{
           this.result =res
   console.log(res);
+  this.result.forEach((element:any) => {  
+    this.name.push(element.competence)
     
-        // this.result.forEach((element:any) => {  
-        //   this.name.push(element.competence)
+  });
+
+ for (var i = 0; i < this.name.length; i++) {
+this.arr.push(this.name[i].nom)  
+}
+    
+        this.result.forEach((element:any) => {  
+          this.name.push(element.competence)
           
-        // });
+        });
       this.niveauUser = this.result.map((item: any) => item.niveauUser);
       
       this.chart()
@@ -88,6 +95,15 @@ export class FicheCompetenceComponent implements OnInit {
               '#F9E07F',
               '#C6A477',
               '#86E3CE',
+              '#DCB665',
+              '#CD7672',
+              '#DE5B6D',
+              '#CBE54E',
+              '#88CDF6',
+              '#264D59',
+              '#F9E07F',
+              '#C6A477',
+              '#86E3CE',
               
             ],
             borderColor: [
@@ -100,6 +116,15 @@ export class FicheCompetenceComponent implements OnInit {
               '#FD8F52',
               '#522157',
               'red',
+              '#DCB665',
+              '#CD7672',
+              '#DE5B6D',
+              '#CBE54E',
+              '#88CDF6',
+              '#264D59',
+              '#F9E07F',
+              '#C6A477',
+              '#86E3CE',
               '#DCB665',
               '#CD7672',
               '#DE5B6D',
