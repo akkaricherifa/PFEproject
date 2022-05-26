@@ -40,4 +40,9 @@ export class AdminService {
   getCompetence(id: number) {
     return this.http.get(this.path+"/"+ id);
   }
+  
+  getCompetenceByAdherent(id: number) {
+    return this.http.get(this.path+"/comp/"+ id);
+  }
+
 }
