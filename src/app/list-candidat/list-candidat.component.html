@@ -27,8 +27,8 @@
               <td>{{candidate.prenomCan}}</td>
               <td>{{candidate.emailCan}}</td>
               <td> 
-                <a href="http://localhost:3000/{{candidate.file}}">
-                {{candidate.file}}
+                <a href="http://localhost:3000/{{candidate.file.substring(12)}}">
+                {{candidate.file.substring(12)}}
                 <button type="submit" class="btn" >
                   <span class="fa fa-download"></span>
                 </button>
