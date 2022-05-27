@@ -31,6 +31,7 @@ export class InscriptionComponent implements OnInit {
         etablissement:['',Validators.required],
         telephone:['',Validators.required],
         specialite:['',Validators.required],
+        file:['',Validators.required],
       }
 
     )
@@ -46,13 +47,18 @@ export class InscriptionComponent implements OnInit {
     this.loginResponse=this.opensweetalert2();
   });
 
-
-    
- 
-
-    
-
   }
+  onUpload(event:any){
+    let file: File
+    let fd = new FormData()
+    file = <File> event.target.files[0];
+    fd.append('file',file,file.name)
+    this.adhServ.uploadFile(fd).subscribe((res: any) => {
+      console.log(res);
+      }, (err)=>{
+        console.log(err); 
+      })
+      }
   
 
    opensweetalert() {

@@ -13,6 +13,7 @@ export class AjoutCompComponent implements OnInit {
   ajoutForm!: FormGroup
   p : number=1;
   competence:any;
+  loginResponse:any
   public popoverTitle:string=' Alert De Confirmation';
   public popoverMessage:string='Voulez Vous vraiment Supprimer cette Suggestion ?';
   public confirmClicked:boolean=false;
@@ -43,19 +44,18 @@ export class AjoutCompComponent implements OnInit {
   ajoutComp() {
     this.adminServ.ajouterCompetence(this.ajoutForm.value).subscribe((res) => {
       this.affiche()
+      this.loginResponse=this.opensweetalert();
       this.router.navigate(['/ajoutCompAdmin']);
-
-
+    },
+    error => {
+      this.loginResponse=this.opensweetalert3();
     });
-    console.log(this.ajoutForm.value);
   }
 
   delete(id:any){
     this.adminServ.deleteCompetence(id).subscribe( (res) => {    
     this.affiche()
-    this.router.navigate(['/ajoutCompAdmin']);  
-
- 
+    this.router.navigate(['/ajoutCompAdmin']); 
     },
     )
   }
@@ -77,4 +77,15 @@ export class AjoutCompComponent implements OnInit {
       timer: 2000
     })
   }
+
+  opensweetalert3() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'warning',
+      title: 'Competence already Exists',
+      showConfirmButton: false,
+      timer: 3500
+    })
+   }
+
 }

@@ -69,8 +69,8 @@
             <div class="exp_data">
                 <div class="data">
                     <h4>Curriculum vitæ</h4>
-                    <p>{{candidate.file}}
-                        <a href="http://localhost:3000/{{candidate.file}}"
+                    <p>{{candidate.file.substring(12)}}
+                        <a href="http://localhost:3000/{{candidate.file.substring(12)}}"
                 class="cv"><i class="fa fa-download"></i></a>
                     </p>
                 </div>
@@ -78,8 +78,8 @@
                     <h4>lettre de Motivation
                     </h4>
                    
-                    <p>{{candidate.pathMotivationLetter}} 
-                        <a href="http://localhost:3000/{{candidate.pathMotivationLetter}}"
+                    <p>{{candidate.pathMotivationLetter.substring(12)}} 
+                        <a href="http://localhost:3000/{{candidate.pathMotivationLetter.substring(12)}}"
                 class="cv" > <i class="fa fa-download" aria-hidden="true"></i>
                 
             </a>
