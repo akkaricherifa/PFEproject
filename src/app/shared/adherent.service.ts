@@ -27,16 +27,24 @@ export class AdherentService {
   updateAdherent(id:number,adherent: Adhérent){
     return this.http.put(this.path+"/"+id,adherent);
   }
+
+  updatePhoto(id:number,adherent: Adhérent){
+    return this.http.put(this.path+"/photo/"+id,adherent);
+  }
+
   getAllAdherent(){
     return this.http.get(this.path+"/");
   }
+
   getAdherent(id: number) {
     return this.http.get(this.path+"/"+ id);
   }
 
   getAdherentByFormation(id:number){
 return this.http.get(this.path+"/get/"+id);
+
   }
+
 
   generateReport(id: number){
     return this.http.get(this.path+"/"+ id);

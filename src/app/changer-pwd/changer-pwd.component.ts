@@ -51,7 +51,14 @@ export class ChangerPwdComponent implements OnInit {
  logout(){
    this.authServ.logout()
  }
- 
+ update(){
+      
+  this.adhServ.updatePhoto(this.id,this.Adherent).subscribe( data => {
+   this.router.navigate(['/info-adherent']);
+  },(error)=>{
+    console.log(error);
+  });
+}
 
  onUpload(event:any){
   let file: File

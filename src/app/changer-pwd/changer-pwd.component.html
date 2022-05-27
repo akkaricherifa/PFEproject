@@ -12,26 +12,20 @@
                 
                       <form  [formGroup]="imageForm" >
                       <h3><i class="fa fa-angle-right"></i> Modifier votre photo de profil</h3>
-                      <img src="http://localhost:3000/{{Adherent.file.substring(12)}}" alt="user" style="margin-left:110px ;" width="100" class="img-circle">
+                      <img src="http://localhost:3000/{{Adherent.file.substring(12)}}" alt="user" style="margin-left:110px ;" width="100" class="img-circle"  [(ngModel)] ="Adherent.file">
                       
                       
                         <br>
                         <input type="file" name="file"  class="custom-file-input" class="form-control" style="height:100%" formControlName="file"
                           (change)="onUpload($event)" > 
                         <div class="form-group-file form-field">
-                            <!-- <label for="File1" style="margin-bottom: 0px">Fichier</label>
-                             <input
-                              style="margin-top: 0px"
-                              class="form-control"
-                              type="file"
-                              (change)="onUpload($event)"
-                            />  -->
+                      
                           </div>
                     
                         <br>
                         <br>
                        
-                        <button type="submit" value="save" class="btn-photo" (click)="onUpload($event)" > Enregistrer </button>
+                        <button type="submit" value="save" class="btn-photo" (click)="update()" > Enregistrer </button>
                     </form>
                 
                     </div>
