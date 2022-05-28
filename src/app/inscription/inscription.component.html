@@ -251,6 +251,12 @@ data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css
                                         <option value="ESSTHS">Essths</option>
                                         <option value="EPI">EPI</option>
                                         <option value="POLYTECHNIQUE">Polytechnique</option>
+                                        <!-- <option value="ESPRIT">Esprit</option>
+                                        <option value="ISIM">Isim</option>
+                                        <option value="ISIMA">Isima</option>
+                                        <option value="ESSTHS">Essths</option>
+                                        <option value="EPI">EPI</option>
+                                        <option value="POLYTECHNIQUE">Polytechnique</option> -->
                                         
                                     </select>
                                         
@@ -262,11 +268,11 @@ data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css
 
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Photo (*) :</label>
+                            <label class="control-label">Photo :</label>
 
                             <input type="file" name="file" id="file" class="form-control col-md-12" style="height: 35px;" 
                             formControlName="file" placeholder="Entrez Votre Photo" (change)="onUpload($event)"
-                            [ngClass]="{'is-invalid':adherentForm.get('file')!.touched && !adherentForm.get('file')!.valid}">
+                            >
                             
                             
                         

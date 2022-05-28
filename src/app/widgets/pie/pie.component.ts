@@ -22,7 +22,7 @@ export class PieComponent implements OnInit {
        
       },
       title: {
-        text: "Nombre des Adhérents par Civilité  "
+        text: "Nombre des Adhérents par Statut professionnel  "
       },
       
       tooltip: {
@@ -51,10 +51,10 @@ export class PieComponent implements OnInit {
         type: 'pie',
         name: '%',
          data: [
-            ['Femme',   35.0],
+            ['Ingénieur',   35.0],
            
             {
-               name: 'Homme',
+               name: 'Etudiant',
                y: 45.0,
                
                sliced: true,

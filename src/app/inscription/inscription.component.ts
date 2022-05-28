@@ -31,7 +31,7 @@ export class InscriptionComponent implements OnInit {
         etablissement:['',Validators.required],
         telephone:['',Validators.required],
         specialite:['',Validators.required],
-        file:['',Validators.required],
+        // file:['',Validators.required],
       }
 
     )

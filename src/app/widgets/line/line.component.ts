@@ -55,7 +55,7 @@ credits:{
 series: [
   {
      name:"Nombre des Adhérents",
-     data: [30, 70, 110, 150,200]
+     data: [30, 50, 80, 100,120]
   }]
 
 
