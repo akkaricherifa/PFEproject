@@ -25,7 +25,7 @@ export class AddCompetenceComponent implements OnInit {
   // name :any;
   niveau: any;
   competence: any;
-
+  Adherent:any;
   constructor( private competenceServ: CompetenceService,
     private router: Router,
     private fb: FormBuilder,
@@ -40,6 +40,11 @@ export class AddCompetenceComponent implements OnInit {
     this.dynamicArray.splice(index, 1);
   }
   ngOnInit(): void {
+    this. id =(localStorage.getItem('CurrentUser') || '');
+    this.adhServ.getAdherent(this.id).subscribe( data => {
+      console.log(data);
+      this.Adherent = data;
+    })
     this.get()
     this.competenceForm= this.fb.group ( 
       {

@@ -13,10 +13,10 @@ p {
   table{
    position: absolute;
    z-index: 2;
-   left: 58%;
+   left: 48%;
    top: 55%;
    transform: translate(-50%,-50%);
-   width: 55%; 
+   width: 65%; 
    border-collapse: collapse;
    border-spacing: 0;
    box-shadow: 0 2px 10px rgba(64,64,64,.7);

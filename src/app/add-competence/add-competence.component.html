@@ -1,13 +1,25 @@
+<link href="https://arsii.org/adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://arsii.org/adminlte/css/custom.css" rel="stylesheet">
+
+
+
+
 <app-navbar-supp></app-navbar-supp>
-
 <app-sidebar></app-sidebar>
-<div style="margin-left: 1100px;">
-  <img src="assets/img/comp.png" style="width: 150px;">
+
+<div class="row" style="width: 1150px;">
+  <div class="col-md-12" style="margin-top: 7px; margin-left: 220px; width: 1200px;" >
+      <div class="panel panel-default">
+          <div class="panel-heading">Bienvenue,  <strong>{{Adherent.nom}} {{Adherent.prenom}} </strong> dans votre espace interne.</div>
+
+              <div class="panel-body">
+                <h4><i  class="fa fa-angle-double-right" style="margin-left: 20px; margin-top: 20px;"></i> Ajouter Vos Compétences </h4>
+                <div>
+         <img style="width:180px ; margin-left:950px; margin-top:-30px" src="assets/img/m.png">
+        </div>
+<div>
+<button type="button" class="btn btn-light-active" style="margin-left: 780px; margin-top: 119px; color:black;" (click)="ajoutCompetence2(id)" >Ajouter </button>
 </div>
-
-
-
-<button type="button" class="btn btn-success" style="margin-left: 1230px; margin-top: 99px;" (click)="ajoutCompetence2(id)" >Ajouter </button>
 <form [formGroup]="competenceForm">
 <table class="table table-striped"  >
     <thead class="thead-inverse">
