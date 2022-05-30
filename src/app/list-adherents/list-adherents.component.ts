@@ -6,6 +6,7 @@ import { AuthService } from '../shared/authService';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 interface Adhérent {
   id:number;
   nom:string;
@@ -28,6 +29,7 @@ export class ListAdherentsComponent implements OnInit {
   filterAdherent:any;
   p : number=1;
   term!: string;
+  adherent: any;
   searchTerm!: string;
   // Adherent!: Adhérent[];
   Adherent!: any;
@@ -44,7 +46,8 @@ export class ListAdherentsComponent implements OnInit {
     private toastr: ToastrService,
     private http: HttpClient,
     private modalService: NgbModal,
-    private fb: FormBuilder,) 
+    private fb: FormBuilder,
+    private route: Router) 
     { }
 
   ngOnInit(): void {
@@ -54,10 +57,9 @@ export class ListAdherentsComponent implements OnInit {
     });
     
     this.affiche();
-    this. id =(localStorage.getItem('CurrentUser') || '');
     this.adhServ.getAdherent(this.id).subscribe( data => {
       console.log(data);
-      this.Admin = data;
+      this.Adherent = data;
     })  
 
   }
@@ -84,10 +86,10 @@ export class ListAdherentsComponent implements OnInit {
     )
   }
 
-  update(id:any){
+  update(){
       
     this.adhServ.updateAdherent(this.id,this.Adherent).subscribe( data => {
-      this.affiche()
+      // this.affiche()
       this.toastr.success(" modifiée avec succès")
      this.router.navigate(['/list-adherent']);
     },(error)=>{

@@ -7,7 +7,7 @@
     <a type="button" style="margin-right: 14px" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
   </div>
   <div class="modal-body">
-    <form (ngSubmit)="update(Adherent.id)" [formGroup]="updateform" >
+    <form>
       <div class="col-lg-11" style="margin-left:20px">
         <label for="nom" style="font-size: 16px; font-family: bold;">Nom:</label>
         <div class="input-group">
@@ -72,7 +72,7 @@
       <div class="col-lg-11" style="margin-left:20px">
         <label style="font-size: 16px; font-family: bold;">Niveau:</label>
         <div class="input-group">
-          <select type="text" name="niveau" class="form-control" style="height: 35px; font-size:16px" formControlName="niveau"
+          <select type="text" name="niveau" class="form-control" style="height: 35px; font-size:16px"
           [(ngModel)] ="Adherent.niveau">
           <option value="1ere Année ">1ére Année</option>
           <option value="2éme Année">2éme Année</option>
@@ -86,7 +86,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button  class="btn btn-secondary" style="margin-right: 205px; width: 80px;"   (click)="update(id);modal.close('Save click')">Enregistrer </button>
+    <button  class="btn btn-secondary" style="margin-right: 205px; width: 80px;" type="submit"  (click)="update();modal.close('Save click')">Enregistrer </button>
   </div>
 </ng-template>
 
@@ -130,7 +130,7 @@
                 
                               </button>
                              
-                              <button mat-raised-button class="action-button btn-secondary" (click)=" open(content)"> <span class="fa fa-edit"></span></button> 
+                              <button mat-raised-button class="action-button btn-secondary" (click)="open(content)"> <span class="fa fa-edit"></span></button> 
 
                       <button  mat-raised-button  mwlConfirmationPopover
                       [popoverTitle]="popoverTitle"
