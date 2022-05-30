@@ -13,6 +13,7 @@ import { AdminService } from '../shared/admin.service';
 export class FicheCompetenceComponent implements OnInit {
   Adherent!: any;
   id:any;
+  Admin:any;
   result: any;
   groupe:any;
   name :any=[];
@@ -28,6 +29,12 @@ export class FicheCompetenceComponent implements OnInit {
     private adminServ : AdminService) { }
 
   ngOnInit(): void {
+
+    this. id =(localStorage.getItem('CurrentUser') || '');
+    this.adhServ.getAdherent(this.id).subscribe( data => {
+      console.log(data);
+      this.Admin = data;
+    }),
    this.id=this.route.snapshot.params['id'];  
   this.adhServ.getAdherent(this.id).subscribe( data => {
     console.log(data);  
@@ -64,10 +71,13 @@ this.arr.push(this.name[i].nom)
     const ctxx = 'myChart2';
     const myChart1 = new Chart(ctxx, {
       type: 'bar',
+      
+      
 
 
       data: {
         labels: this.arr,
+        
   
         datasets: [
           {
@@ -138,6 +148,7 @@ this.arr.push(this.name[i].nom)
             ],
             borderWidth: 4,
             borderAlign:'inner',
+            
           },
         ],
       },
