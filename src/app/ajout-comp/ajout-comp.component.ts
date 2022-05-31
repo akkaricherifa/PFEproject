@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from '../shared/admin.service';
 import Swal from 'sweetalert2';
+import { AdherentService } from '../shared/adherent.service';
 
 @Component({
   selector: 'app-ajout-comp',
@@ -12,6 +13,8 @@ import Swal from 'sweetalert2';
 export class AjoutCompComponent implements OnInit {
   ajoutForm!: FormGroup
   p : number=1;
+  id:any;
+  Admin!: any;
   competence:any;
   loginResponse:any
   public popoverTitle:string=' Alert De Confirmation';
@@ -20,9 +23,15 @@ export class AjoutCompComponent implements OnInit {
   public cancelClicked:boolean=false;
   constructor( private adminServ: AdminService,
     private router:Router,
-    private fb: FormBuilder,) { }
+    private fb: FormBuilder,private adhServ: AdherentService
+    ) { }
  
   ngOnInit(): void {
+    this. id =(localStorage.getItem('CurrentUser') || '');
+    this.adhServ.getAdherent(this.id).subscribe( data => {
+      console.log(data);
+      this.Admin = data;
+    })
     this.affiche()
     this.ajoutForm= this.fb.group ( 
       {

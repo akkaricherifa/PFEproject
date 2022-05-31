@@ -1,5 +1,6 @@
   <app-navbar-supp></app-navbar-supp>
   <app-sidebar-admin></app-sidebar-admin> 
+
   <ng-template #content let-modal>
     <div class="modal-header" style="background-color: #25857e;">
       <h4 class="modal-title" id="modal-basic-title" style="margin-left: 180px;"><i class="fa fa-tasks" aria-hidden="true"></i>   Add a Task</h4>
@@ -43,9 +44,9 @@
 
     <!--- ------------------------------------------------------------------ ------------------>
 
-
-    <h3><i style="margin-left: 270px;"></i>To do List</h3>
-
+    
+    <h3><i style="margin-left: 270px; margin-top: 1px;"></i></h3>
+   
   <div _ngcontent-roy-c3=""  >
         
     <br _ngcontent-roy-c3="">
@@ -62,7 +63,7 @@
             
             <li class="list-group-item" *ngFor="let todo of todos" [class.completed]="todo.completed === true" >
                 <div class="todo-row" *ngIf="!editing || editingTodo.id != todo.id">
-                    <a class="todo-completed"(click)="toggleCompleted(todo)" >
+                    <a class="todo-completed"(click)="toggleCompleted(todo);delete(todo._id);opensweetalert2()" >
                       <i class="material-icons toggle-completed-checkbox"></i> 
                     </a> 
                     <span class="todo-title">
@@ -100,6 +101,8 @@
     
 </div>
 
-
+<div style="margin-left:200px; margin-top: -335px;"> 
+  <img  style="width: 150px;" src="assets/img/task.png">
+</div>
    
        

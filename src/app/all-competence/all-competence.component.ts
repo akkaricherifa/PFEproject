@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Chart } from 'chart.js';
 import { AdminService } from '../shared/admin.service';
 import { CompetenceService } from '../shared/competence.service';
@@ -19,15 +20,35 @@ export class AllCompetenceComponent implements OnInit {
   name = [];
   population: any;
   Competence: any;
+  Adherent:any;
   niveau: any;
   term!: string;
+  id:any;
+  rechercheForm!: FormGroup
+  competenceForm!: FormGroup
   searchTerm!: string;
   competence: any;
   constructor(private competenceServ: CompetenceService,
     private http: HttpClient,
+    private fb: FormBuilder,
   private adminServ : AdminService) {}
 
   ngOnInit(): void {
+    this.get()
+    this.competenceForm= this.fb.group ( 
+      {
+        nom:['',Validators.required],
+        niveau:['',Validators.required],
+
+      }
+    )
+
+    this.rechercheForm= this.fb.group ( 
+      {
+        nom:['',Validators.required],
+
+      }
+    )
     this.adminServ.getAllCompetence().subscribe(
 
       (res:any)=>{
@@ -132,4 +153,25 @@ export class AllCompetenceComponent implements OnInit {
       },
     )
   }
+
+
+  get(){
+    this.adminServ.getAllCompetence().subscribe(
+      res=>{
+        this.competence=res
+      },
+    )
+   }
+
+recherche(){
+  let a:any
+   console.log("hhhhhhhhhhhhhhhhhhhhh",this.rechercheForm.controls.nom.value);
+  
+  this.adminServ.getAdherentByCompetence(this.rechercheForm.controls.nom.value).subscribe((data) => {
+      this.Adherent = data;
+      console.log("hello",this.Adherent);
+      
+    });
+}
+
 }

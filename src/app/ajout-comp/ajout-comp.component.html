@@ -1,7 +1,36 @@
+
+<link href="https://arsii.org/adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://arsii.org/adminlte/css/AdminLTE.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+
 <app-navbar-supp></app-navbar-supp>
 <app-sidebar-admin></app-sidebar-admin>
+<div class="content-wrapper" style="min-height: 575px;">
+  <section class="content">
+      
+      <div class="row">
+          <div class="col-md-12">
 
-<form [formGroup]="ajoutForm"   style="margin-left: 300px; width:400px; margin-top: 30px;"  >
+                                  
+                  <div class="row">
+  <div class="col-md-10" style="margin-top: -16px; margin-left: -20px; width: 1700px; height: 1px;">
+      <div class="panel panel-default">
+          <div class="panel-heading">Bienvenue, <strong>{{Admin.prenom}} {{Admin.nom}} </strong> dans votre espace interne 'Admin'.</div>
+
+          <div class="panel-body">
+<!-- <div >
+<img style="width: 80px; margin-left:950px;" src="assets/img/med.png">
+</div> -->
+
+
+            <h4 style="color: darkcyan ; font-size: 16px;"><i style="margin-left: 20px; margin-top: 10px; color: darkcyan;" class="fa fa-angle-double-right"></i> <strong> Ajouter des Nouvelles Compétences</strong></h4>
+<form [formGroup]="ajoutForm"   style="margin-left: 20px; width:400px; margin-top: 30px;"  >
     <div class="form-group">
       <label for="exampleInputEmail1" style="font-size: 16px; color: darkcyan;">Nom Competence</label>
       <input type="text" class="form-control" id="exampleInputEmail1" style="width: 200px; font-size: 14px;" 
@@ -17,16 +46,17 @@
         </select>
       </div>
     
-    <button type="submit" class="btn btn-light" (click)="ajoutComp()" style="margin-left: 70px ;margin-top: 20px; width: 70px; font-size: 14px;">Ajouter</button>
+    <button type="submit" class="btn btn-light" (click)="ajoutComp()" style="margin-left: 70px ;margin-top: 20px; width: 70px; font-size: 14px;">  <strong>Ajouter</strong>  </button>
 
   </form>
 
   <!-- *************************************ajout*************** -->
-  <table class="table" style="margin-left: 800px; width:500px; margin-top: -190px;">
-    <thead>
+
+   <table class="table1" style="margin-left: 800px; margin-top: -220px; width: 1200px;">
+    <thead >
       <tr>
-        <th style="font-size: 14px;" class="table-active">Nom Competence</th>
-        <th style="font-size: 14px;" class="table-active">Action</th>
+        <th style="font-size: 14px; width: 100px;" class="table-active1" >Nom Competence</th>
+        <th style="font-size: 14px;" class="table-active1">Action</th>
 
       </tr>
       <tr *ngFor="let competences of competence | paginate : {itemsPerPage: 6, currentPage: p}" >
@@ -41,7 +71,7 @@
     [popoverMessage]="popoverMessage"
     placement="left"
     (confirm)="delete(competences._id);opensweetalert2()"
-    (cancel)="cancelClicked = true" class="action-button btn-danger" > 
+    (cancel)="cancelClicked = true" class="action-button btn" > 
     <span class="fa fa-trash"></span>
   </button>
           </div>
@@ -57,5 +87,5 @@
  
   
     </tbody>
-  </table>
-  <!-- <app-all-competence></app-all-competence> -->
+  </table> 
+
