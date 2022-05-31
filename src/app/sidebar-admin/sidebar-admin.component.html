@@ -86,18 +86,19 @@
                 <span> Boite des Suggestions</span>
             </a>
         </li>
+         
           <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
             <a href="javascript:;">
-              <i class="fa fa-user"></i>
-              <span routerLink ="/profil-admin">Gérer le Profil
+              <i class="fa fa-pie-chart"></i>
+              <span routerLink ="/ajoutCompAdmin">Gérer Competence
               </span>
               <span class="title"></span></a>
       
           </li> 
           <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
             <a href="javascript:;">
-              <i class="fa fa-pie-chart"></i>
-              <span routerLink ="/ajoutCompAdmin">Gérer Competence
+              <i class="fa fa-user"></i>
+              <span routerLink ="/profil-admin">Mon Profil
               </span>
               <span class="title"></span></a>
       
@@ -143,7 +144,7 @@
   
   <!-- /////////////////////////////////////////////////////////////////////////////// -->
   <ng-template #content let-modal >
-    <div class="modal-header"  style="background-color: #25857e; height: 40px; margin-top: 18px;" >
+    <div class="modal-header"  style="background-color: #25857e; height: 40px; margin-top: -3px;" >
      <h4 style="color: #ffffff; margin-left: 120px; margin-top: 5px;"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></h4>
       <h4 class="modal-title" id="modal-basic-title" style="margin-left: 20px;">     Alerte de Confirmation  </h4>
       <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
@@ -159,10 +160,10 @@
           </div>
           </div>
         </div>
-        <button type="button" class="btn btn-danger"  style="margin-left: 160px; margin-top: 30px;" (click)="modal.close('Save click')" >
+        <button type="button" class="btn btn-danger"  style="margin-left: 160px; margin-top: 30px; font-size: 14px;" (click)="modal.close('Save click')" >
        
           Cancel</button>
-          <button type="button" class="btn btn-success"  style="margin-left: 30px; margin-top: 30px;" (click)="logout();modal.close('Save click')" >
+          <button type="button" class="btn btn-success"  style="margin-left: 30px; margin-top: 30px; font-size: 14px; " (click)="logout();modal.close('Save click')" >
          
             Déconnexion</button>
     
