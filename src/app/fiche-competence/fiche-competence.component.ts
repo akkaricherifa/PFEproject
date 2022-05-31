@@ -71,8 +71,7 @@ this.arr.push(this.name[i].nom)
     const ctxx = 'myChart2';
     const myChart1 = new Chart(ctxx, {
       type: 'bar',
-      
-      
+ 
 
 
       data: {
