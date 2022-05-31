@@ -5,6 +5,7 @@ import { Adhérent } from '../Model/adhérent';
 import { AdherentService } from '../shared/adherent.service';
 import { AdminService } from '../shared/admin.service';
 import { AuthService } from '../shared/authService';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-changer-pwd',
   templateUrl: './changer-pwd.component.html',
@@ -37,29 +38,29 @@ export class ChangerPwdComponent implements OnInit {
        
      })
    }
-  //  updatePassword(){
-  //   this.adhServ.updatePassword(this.email,this.oldPassword,this.newPassword).subscribe( 
-  //      data => {
-  //     this.adhServ.toastMessage('Password changed successfully');
-  //   }
-  //   ,(error)=>{
-  //     this.adhServ.toastMessage('Failed action')
-  //    } ); 
-    
-  //   }
+
 
  logout(){
    this.authServ.logout()
  }
  update(){
       
-  this.adhServ.updatePhoto(this.id,this.Adherent).subscribe( data => {
+  this.adhServ.updateAdherent(this.id,this.Adherent).subscribe( data => {
    this.router.navigate(['/info-adherent']);
   },(error)=>{
     console.log(error);
   });
 }
 
+opensweetalert() {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Mot de passe Modifié avec Succès',
+    showConfirmButton: false,
+    timer: 3000
+  })
+ }
  onUpload(event:any){
   let file: File
   let fd = new FormData()
@@ -74,25 +75,5 @@ export class ChangerPwdComponent implements OnInit {
   
     }
 
-    // uploadFichier(event: any) {
-    //   const file = (event.target as HTMLInputElement).files[0];
-    //   if (this.imageForm) {
-    //     this.imageForm.patchValue({
-    //       image: file,
-    //     });
-    //     this.imageForm.get("image").updateValueAndValidity();
-    //   } else if (this.imageForm) {
-    //     this.imageForm.patchValue({
-    //       image: file,
-    //     });
-    //     this.imageForm.get("image").updateValueAndValidity();
-    //   }
-    //   const reader = new FileReader();
-    //   reader.onload = () => {
-    //     this.preview = reader.result as string;
-    //   };
-    //   reader.readAsDataURL(file);
-    // }
-  
  }
  

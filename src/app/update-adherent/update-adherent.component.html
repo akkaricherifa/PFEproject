@@ -92,7 +92,7 @@
                     </div>
                     <div class="row">
                     <div class="col-lg-6">
-                        <label for="fname">Niveau :</label>
+                        <label for="fname">Niveau </label>
                         <select type="text" name="niveau" class="form-control"  id="niveau" style="height: 35px; font-size:16px"
                         [(ngModel)] ="Adherent.niveau">
                         <option value="1ere Année ">1ére Année</option>
@@ -108,7 +108,21 @@
                         <input type="text" name="specialite" class="form-control" id="specialite" 
                         [(ngModel)] ="Adherent.specialite" >
                     </div>
+<br>
+<br>
+<br>
+                    <div class="col-lg-12">
+                        <label class="control-label">Photo </label>
+                        <img src="http://localhost:3000/{{Adherent.file.substring(12)}}" alt="user" style="margin-left:50px ;" width="70" class="img-circle"  [(ngModel)] ="Adherent.file">
+                        <input   class="form-control"  type="file" name="file" id="file" class="form-control col-md-12" style="height: 35px;" 
+                        
+                        
+                        [(ngModel)] ="Adherent.file">
+                        
                     </div>
+                
+                    </div>
+                    
   <br>
   <button (click)="update();opensweetalert()" class = "btn" type ="button" style="height:35px ; margin-top: 5px;" >Enregistrer</button>
   

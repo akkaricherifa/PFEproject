@@ -15,7 +15,7 @@
     <ul class="sidebar-menu" id="nav-accordion">
       <p class="centered"><a><img src="http://localhost:3000/{{Adherent.file.substring(12)}}"     class="img-circle" width="80" routerLink ="/profil"></a>
         <a><img src="" class="img-circle" width="80" routerLink ="/profil" ></a></p>
-      <h5 class="centered"><h3>{{Adherent.nom}} {{Adherent.prenom}} </h3></h5>
+      <h5 class="centered"><h4>{{Adherent.nom}} {{Adherent.prenom}} </h4></h5>
 
        <li class="mt">
         <a routerLink ="/acceuil" >
@@ -156,10 +156,10 @@
         </div>
         </div>
       </div>
-      <button type="button" class="btn btn-danger"  style="margin-left: 160px; margin-top: 30px;" (click)="modal.close('Save click')" >
+      <button type="button" class="btn btn-danger"  style="margin-left: 160px; margin-top: 30px;  font-size: 14px;" (click)="modal.close('Save click')" >
      
         Cancel</button>
-        <button type="button" class="btn btn-success"  style="margin-left: 30px; margin-top: 30px;" (click)="logout();modal.close('Save click')" >
+        <button type="button" class="btn btn-success"  style="margin-left: 30px; margin-top: 30px;  font-size: 14px;" (click)="logout();modal.close('Save click')" >
        
           Déconnexion</button>
   

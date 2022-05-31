@@ -7,17 +7,20 @@
             <div class="panel-heading">Bienvenue,  <strong>{{Adherent.nom}} {{Adherent.prenom}} </strong> dans votre espace interne.</div>
 
             <div class="panel-body">
-                <div class="col-lg-5" >
+                <!-- <div class="col-lg-5" >
                     <div id="ui">
                 
-                      <form  [formGroup]="imageForm" >
+                      <form>
                       <h3><i class="fa fa-angle-right"></i> Modifier votre photo de profil</h3>
-                      <img src="http://localhost:3000/{{Adherent.file.substring(12)}}" alt="user" style="margin-left:110px ;" width="100" class="img-circle"  [(ngModel)] ="Adherent.file">
+                      <img src="http://localhost:3000/{{Adherent.file.substring(12)}}" alt="user" style="margin-left:110px ;" width="100" class="img-circle" [(ngModel)] ="Adherent.file" 
+                     >
                       
                       
                         <br>
-                        <input type="file" name="file"  class="custom-file-input" class="form-control" style="height:100%" formControlName="file"
-                          (change)="onUpload($event)" > 
+                        <input   class="form-control"  type="file" name="file" id="file" class="form-control col-md-12" style="height: 35px;" 
+                        
+                        
+                        [(ngModel)] ="Adherent.file">
                         <div class="form-group-file form-field">
                       
                           </div>
@@ -29,18 +32,18 @@
                     </form>
                 
                     </div>
-                  </div>
-                     <div class="col-lg-7">
+                  </div> -->
+                     <div class="col-lg-8" style="margin-left: 200px;">
                         <div id="ui1">
                             <form >
-                            <h3><i class="fa fa-angle-right"></i> Changer votre mot de passe
+                            <h3><i class="fa fa-key"></i> Changer votre mot de passe
                             </h3>
                             <br>
                      
-                            <label for="fname">Votre Mot de passe</label>
+                            <label for="fname">Mot de passe :</label>
                           <input type="password" name="oldPassword" class="form-control">
                 
-                            <label for="fname">Nouveau Mot de passe</label>
+                            <label for="fname">Nouveau Mot de passe :</label>
                           <input type="password" name="newPassword" class="form-control" >
                                     
                                   
@@ -49,7 +52,7 @@
                         
                             <br>
                             <br>
-                            <button type="submit" value="save" class="btn btn-secondary" > Modifier </button>
+                            <button type="submit" value="save" class="btn btn-secondary" (click)="opensweetalert()">   <strong>Modifier</strong>  </button>
                 
                         </form>
                         </div>
