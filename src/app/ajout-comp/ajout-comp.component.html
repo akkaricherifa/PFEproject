@@ -1,25 +1,18 @@
 
 <link href="https://arsii.org/adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://arsii.org/adminlte/css/AdminLTE.min.css" rel="stylesheet">
-
-
-
-
-
-
-
+<!-- <link href="https://arsii.org/adminlte/css/AdminLTE.min.css" rel="stylesheet"> -->
 
 <app-navbar-supp></app-navbar-supp>
 <app-sidebar-admin></app-sidebar-admin>
-<div class="content-wrapper" style="min-height: 575px;">
+<div class="content-wrapper" style="width: 1320px;" >
   <section class="content">
       
       <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-10">
 
                                   
                   <div class="row">
-  <div class="col-md-10" style="margin-top: -16px; margin-left: -20px; width: 1700px; height: 1px;">
+  <div class="col-md-6" style="margin-top: 5px; margin-left: 215px; width: 1500px; height: 1px;">
       <div class="panel panel-default">
           <div class="panel-heading">Bienvenue, <strong>{{Admin.prenom}} {{Admin.nom}} </strong> dans votre espace interne 'Admin'.</div>
 
@@ -50,42 +43,41 @@
 
   </form>
 
-  <!-- *************************************ajout*************** -->
 
-   <table class="table1" style="margin-left: 800px; margin-top: -220px; width: 1200px;">
-    <thead >
+<br>
+  <table class="table table-striped" style="margin-top: -250px; margin-left:550px; width: 500px;" >
+    <thead>
       <tr>
-        <th style="font-size: 14px; width: 100px;" class="table-active1" >Nom Competence</th>
-        <th style="font-size: 14px;" class="table-active1">Action</th>
-
+        <th  style="background-color: #25857e;">Nom Compétence</th>
+        <th style="background-color:#25857e;">Action</th>
+      
       </tr>
-      <tr *ngFor="let competences of competence | paginate : {itemsPerPage: 6, currentPage: p}" >
-                      
-        <td style="font-size: 14px;" >{{competences.nom}} </td>
-
-        <td>
-            <div class="container">
-
-    <button  mat-raised-button  mwlConfirmationPopover
-    [popoverTitle]="popoverTitle"
-    [popoverMessage]="popoverMessage"
-    placement="left"
-    (confirm)="delete(competences._id);opensweetalert2()"
-    (cancel)="cancelClicked = true" class="action-button btn" > 
-    <span class="fa fa-trash"></span>
-  </button>
-          </div>
-          
-          </td> 
-       
-    </tr>
     </thead>
     <tbody>
-        <div class="pagination">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-          </div>
- 
-  
+      <tr *ngFor="let competences of competence | paginate : {itemsPerPage: 6, currentPage: p}" >
+        <td style="font-size: 14px;" >{{competences.nom}} </td>
+        <td>
+    
+
+  <button  mat-raised-button  mwlConfirmationPopover
+  [popoverTitle]="popoverTitle"
+  [popoverMessage]="popoverMessage"
+  placement="left"
+  (confirm)="delete(competences._id);opensweetalert2()"
+  (cancel)="cancelClicked = true" class="action-button btn-light" > 
+  <span class="fa fa-trash"></span>
+</button>
+     
+        
+        </td>
+
+      </tr>
+      <div class="pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
     </tbody>
-  </table> 
+    
+   
+
+  </table>
 

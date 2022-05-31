@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Chart } from 'chart.js';
+import { AdherentService } from '../shared/adherent.service';
 import { AdminService } from '../shared/admin.service';
 import { CompetenceService } from '../shared/competence.service';
 interface competence {
@@ -18,12 +19,16 @@ interface competence {
 export class AllCompetenceComponent implements OnInit {
   result: any;
   name = [];
+  Admin!: any;
+  p : number=1;
   population: any;
   Competence: any;
   Adherent:any;
   niveau: any;
   term!: string;
   id:any;
+  arr: any = [];
+  i:any;
   rechercheForm!: FormGroup
   competenceForm!: FormGroup
   searchTerm!: string;
@@ -31,9 +36,15 @@ export class AllCompetenceComponent implements OnInit {
   constructor(private competenceServ: CompetenceService,
     private http: HttpClient,
     private fb: FormBuilder,
-  private adminServ : AdminService) {}
+  private adminServ : AdminService, 
+  private adhServ: AdherentService) {}
 
   ngOnInit(): void {
+    this. id =(localStorage.getItem('CurrentUser') || '');
+    this.adhServ.getAdherent(this.id).subscribe( data => {
+      console.log(data);
+      this.Admin = data;
+    })
     this.get()
     this.competenceForm= this.fb.group ( 
       {
@@ -42,6 +53,9 @@ export class AllCompetenceComponent implements OnInit {
 
       }
     )
+    // for (var i = 0; i < this.Adherent.length; i++) {
+    //   this.arr.push(this.Adherent[i].nom)  
+    // }
 
     this.rechercheForm= this.fb.group ( 
       {
@@ -57,11 +71,7 @@ export class AllCompetenceComponent implements OnInit {
     this.name.forEach((element:any) => {  
     });
 
-    this.http.get<competence[]>('./assets/data/countries.json')
-    .subscribe((data: competence[]) => {
-      this.Competence = data;
-    });
-  
+   
     this.niveau = this.result.map((item: any) => item.niveau);
 
     this.chart()
@@ -166,7 +176,6 @@ export class AllCompetenceComponent implements OnInit {
 recherche(){
   let a:any
    console.log("hhhhhhhhhhhhhhhhhhhhh",this.rechercheForm.controls.nom.value);
-  
   this.adminServ.getAdherentByCompetence(this.rechercheForm.controls.nom.value).subscribe((data) => {
       this.Adherent = data;
       console.log("hello",this.Adherent);

@@ -1,26 +1,77 @@
+<link href="https://arsii.org/adminlte/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://arsii.org/adminlte/css/AdminLTE.min.css" rel="stylesheet">
+<link href="https://arsii.org/adminlte/css/custom.css" rel="stylesheet">
+<link href="https://arsii.org/adminlte/css/skins/skin-green.min.css" rel="stylesheet">
+
+
+<link href="https://arsii.org/adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+
 <app-navbar-supp></app-navbar-supp>
 <app-sidebar-admin></app-sidebar-admin>
+<div class="content-wrapper" style="min-height: 575px;">
+  <section class="content">
+      
+      <div class="row">
+          <div class="col-md-12">
 
-  <h3><i class="fa fa-angle-double-right" style="margin-left: 240px; margin-top: -40px;"></i> Courbe des Compétences </h3>
+                                  
+                  <div class="row">
+  <div class="col-md-12" style="margin-top: -15px; margin-left: -20px;">
+      <div class="panel panel-default">
+          <div class="panel-heading">Bienvenue, <strong>{{Admin.prenom}} {{Admin.nom}} </strong> dans votre espace interne 'Admin'.</div>
+
+          <div class="panel-body">
+              
+
+  <h3><i class="fa fa-angle-double-right" style="margin-left: 20px; margin-top: -40px;"></i> Chercher des profils Compétents </h3>
   <div _ngcontent-roy-c3="" class="card-body">
            <div >
              <form [formGroup]="rechercheForm">
-                <select  class="form-control"   placeholder="Chercher des profils Compétents"  style="height: 30px; width: 400px; margin-left: 230px; margin-top: 5px;"  
+                <select  class="form-control"   placeholder="Chercher des profils Compétents"  style="height: 30px; width: 400px; margin-left: 30px; margin-top: 5px;"  
               formControlName="nom">
-        
-                
                     <option  *ngFor ="let item of competence"   [ngValue]="item._id"> {{item.nom}} </option>
-                  
-                  
-                   
-        
                 </select>
-                <button type="button" class="btn btn-primary" style="margin-left:300px; margin-top: 50px;" (click)="recherche()">Primary</button>
+                <button type="button" class="btn btn-light" style="margin-left:185px; margin-top: 20px; width:85px" (click)="recherche()">  <strong> Rechercher </strong>   </button>
               </form>
               </div>
-         
-       <div class="container" style="width: 550px; margin-top: -90px; margin-right: -10px;" >
-    <canvas id="myChart" width="2" height="1"></canvas>
-  </div> 
+         <div>
+
+               <table class="table table-striped" style="margin-top: 5%; margin-left: -500px;" >
+                <thead class="thead-inverse">
+                <tr>
+                  <th><i class="fa fa-user" aria-hidden="true"></i>  Nom</th>
+                  <th><i class="fa fa-user" aria-hidden="true"></i>  Prénom</th>
+                  <th><i class="fa fa-envelope" aria-hidden="true"></i>  Email</th>
+                  </tr>
+                  <tr *ngFor="let item of Adherent  | paginate : {itemsPerPage: 4, currentPage: p}" let i="index" >
+                    <td> {{item.nom}} </td>
+                    <td>{{item[i].prenom}} </td>
+                    <td>{{item.email}} </td>
+                </tr>
+                </thead>
+                <tbody>
+                   
+                
+                </tbody>
+
+               
+              </table>
+            
+               <div class="pagination" style="margin-top: 400px;" >
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+
+            </div>
 </div>
+          </div>
+
+
+
+
+
+        <!-- <div class="container" style="width: 550px; margin-top: -250px; margin-right: -10px;" >
+    <canvas id="myChart" width="2" height="1"></canvas>
+  </div>   -->
+
 
