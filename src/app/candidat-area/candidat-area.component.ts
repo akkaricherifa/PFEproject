@@ -38,6 +38,7 @@ event:any;
         dateOfBirth:['',Validators.required],
         phoneCan:['',Validators.required],
         emailCan:['',Validators.required],
+        password:['',Validators.required],
         ville:['',Validators.required],
         file:['',Validators.required],
         pathMotivationLetter:['',Validators.required],

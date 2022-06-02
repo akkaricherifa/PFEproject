@@ -5,6 +5,7 @@
 <div class="row">
   <div class="col-md-12" style="margin-top: 10px; margin-left: 230px; width: 1100px; height: 200px;" >
       <div class="panel panel-default">
+       
           <div class="panel-heading" style="height: 36px; "> Bienvenue,  <strong>{{Entreprise.nomEnt}}  </strong> dans votre Espace Interne.</div>
           
          
@@ -16,7 +17,7 @@
       <!-- <img src="assets/img/ui-sam.jpg" alt="user" width="150" class="img-circle" > -->
       <br>
       <br>
-     
+      <a><img src="assets/img/entreprise.png" class="img-circle" width="110" style="margin-left: 80px; margin-top: -55px;" routerLink ="/profil" ></a>
       <h4 style="color: black; font-size: 25px;">{{Entreprise.nomEnt}} </h4>
      
   
@@ -29,11 +30,11 @@
         <div class="info_data">
               <div class="data">
                 <h4>Nom De l'entreprise</h4>
-                <p> {{Entreprise.nomEnt}}</p>
+                <p style="margin-left:50px ;"> {{Entreprise.nomEnt}}</p>
             </div>
             <div class="data">
               <h4>Nom du Responsable</h4>
-              <p> {{Entreprise.nomResp}}</p>
+              <p style="margin-left:50px ;"> {{Entreprise.nomResp}}</p>
           </div>
           <div class="data">
             <h4>Email</h4>
@@ -47,12 +48,12 @@
   
         <div class="data">
           <h4>Adresse</h4>
-          <p> {{Entreprise.adresse}}</p>
+          <p style="margin-left:10px ;"> {{Entreprise.adresse}}</p>
         </div>
         
         <div class="data">
-          <h4>N° Télèphone </h4>
-          <p> {{Entreprise.telEnt}}</p>
+          <h4 style="margin-left:-80px ;">N° Télèphone </h4>
+          <p style="margin-left:-60px ;"> {{Entreprise.telEnt}}</p>
         </div>
       
   

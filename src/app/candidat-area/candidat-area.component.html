@@ -5,7 +5,7 @@
         <h4><i class="fa fa-angle-right"></i> Civilité</h4>
         <form [formGroup]="candidatForm" (ngSubmit)="createCandidat()" class="form-horizontal style-form" style="margin-top: 5px;" action="/api/upload" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label class="col-sm-2 col-sm-2 control-label">Nom :
+            <label class="col-sm-2 col-sm-2 control-label">Nom 
             </label>
             <div class="col-sm-10">
               <input type="text"  class="form-control"  placeholder="Entrez votre nom"
@@ -16,7 +16,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 col-sm-2 control-label">Prénom :
+            <label class="col-sm-2 col-sm-2 control-label">Prénom 
 
             </label>
             <div class="col-sm-10">
@@ -38,11 +38,21 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 col-sm-2 control-label">Email :</label>
+            <label class="col-sm-2 col-sm-2 control-label">Email </label>
             <div class="col-sm-10">
               <input type="text" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,10}$" class="form-control" name="emailCan"  placeholder="Entrez votre Email"
               formControlName="emailCan"
               [ngClass]="{'is-invalid':candidatForm.get('emailCan')!.touched && !candidatForm.get('emailCan')!.valid}">
+              
+            
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password"  class="form-control" name="emailCan"  placeholder="Entrez votre Password"
+              formControlName="password"
+              [ngClass]="{'is-invalid':candidatForm.get('password')!.touched && !candidatForm.get('password')!.valid}">
               
             
             </div>
@@ -58,7 +68,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 col-sm-2 control-label">Ville :</label>
+            <label class="col-sm-2 col-sm-2 control-label">Ville </label>
             <div class="col-sm-10">
               <input type="text" class="form-control" name="ville" placeholder="Entrez votre adresse"
               formControlName="ville"
@@ -69,7 +79,7 @@
           </div>
 
           <div class="form-group" >
-            <label class="col-sm-2 col-sm-2 control-label">CV :</label>
+            <label class="col-sm-2 col-sm-2 control-label">CV </label>
             <div class="col-sm-10">
                 
                     <div style="margin-top:3px">
