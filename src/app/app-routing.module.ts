@@ -43,6 +43,7 @@ import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.co
 import { AjoutCompComponent } from './ajout-comp/ajout-comp.component';
 import { FicheCompetenceComponent } from './fiche-competence/fiche-competence.component';
 import { FicheComponent } from './fiche/fiche.component';
+import { RechercheComponent } from './recherche/recherche.component';
 
  
 
@@ -96,7 +97,8 @@ const routes: Routes = [
   { path:'liste-entreprise',component:ListeEntrepriseComponent},
   { path:'ajoutCompAdmin',component:AjoutCompComponent},
   { path:'fiche-competence/:id',component:FicheCompetenceComponent},
-  { path:'ficheCompetence/:id',component:FicheComponent}
+  { path:'ficheCompetence/:id',component:FicheComponent},
+  { path:'recherche',component:RechercheComponent}
 
 ];
 

@@ -78,7 +78,7 @@
             </li>
                         
                         <li>
-                <a  (click)="logout()" >
+                <a  (click)="open(content)"  >
                     <i class="fa fa-arrow-left"></i>
                     <span class="title">Déconnexion</span>
                 </a>
@@ -121,3 +121,33 @@
 </body>
 </html>
 
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<ng-template #content let-modal >
+    <div class="modal-header"  style="background-color: #25857e; height: 40px;" >
+     <h4 style="color: #ffffff; margin-left: 120px; margin-top: 5px;"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></h4>
+      <h4 class="modal-title" id="modal-basic-title" style="margin-left: 20px;">     Alerte de Confirmation  </h4>
+      <a  class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></a>
+    </div>
+    <div class="modal-body">
+      <form >
+        <div class="mb-6">
+          <!-- <label for="title" style="font-size: 14px; font-family: bold; margin-top: 15px;">Nom de Formation  </label> -->
+          <div class="input-group">
+            <div class="data">
+              <h4 style="margin-left:120px;">Voulez Vraiment Se Déconnecter ? </h4>
+  
+          </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-danger"  style="margin-left: 160px; margin-top: 30px;  font-size: 14px;" (click)="modal.close('Save click')" >
+       
+          Cancel</button>
+          <button type="button" class="btn btn-success"  style="margin-left: 30px; margin-top: 30px;  font-size: 14px;" (click)="logout();modal.close('Save click')" >
+         
+            Déconnexion</button>
+    
+      </form>
+    </div>
+  
+  </ng-template>
+  
