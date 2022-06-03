@@ -23,7 +23,7 @@ export class AllCompetenceComponent implements OnInit {
   p : number=1;
   population: any;
   Competence: any;
-  Adherent:any;
+  Adherent:any=[];
   niveau: any;
   term!: string;
   id:any;
