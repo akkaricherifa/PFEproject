@@ -44,6 +44,7 @@ import { AjoutCompComponent } from './ajout-comp/ajout-comp.component';
 import { FicheCompetenceComponent } from './fiche-competence/fiche-competence.component';
 import { FicheComponent } from './fiche/fiche.component';
 import { RechercheComponent } from './recherche/recherche.component';
+import { UpdateAdhComponent } from './update-adh/update-adh.component';
 
  
 
@@ -98,7 +99,8 @@ const routes: Routes = [
   { path:'ajoutCompAdmin',component:AjoutCompComponent},
   { path:'fiche-competence/:id',component:FicheCompetenceComponent},
   { path:'ficheCompetence/:id',component:FicheComponent},
-  { path:'recherche',component:RechercheComponent}
+  { path:'recherche',component:RechercheComponent},
+  { path:'update/:id',component:UpdateAdhComponent}
 
 ];
 

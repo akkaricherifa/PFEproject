@@ -1,0 +1,139 @@
+<app-navbar-supp></app-navbar-supp>
+<app-sidebar-admin></app-sidebar-admin>
+<div class="row" style="width: 1100px;">
+    <div class="col-md-12" style="margin-top: 7px; margin-left: 220px; width: 1150px;" >
+        <div class="panel panel-default">
+            
+
+                <div class="panel-body">
+             
+
+
+<div class="container" >
+
+
+    
+    <div class="row" style="width: 1000px;">
+  
+        
+        <div class="col-lg-1"></div>
+  
+        <div class="col-lg-10">
+            <div id="ui">
+                <form>
+                <h3><i class="fa fa-angle-right"></i> Informations Personnels de {{Adherent.nom}} {{Adherent.prenom}} </h3>
+                <br>
+  
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="nom">Nom</label>
+                        <input type="text" name="nom" class="form-control"  id="nom" 
+                       [(ngModel)] ="Adherent.nom" >
+                    </div>
+  
+                    <div class="col-lg-6">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" name="prenom" class="form-control" id="prenom" 
+                        [(ngModel)] ="Adherent.prenom" >
+                    </div>
+                </div>
+  
+            
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="fname">Phone</label>
+                        <input type="text" name="telephone" class="form-control"  id="telephone" 
+                        [(ngModel)] ="Adherent.telephone" >
+                    </div>
+  
+                    <div class="col-lg-6">
+                        <label class="control-label">Situation Professionnelle</label>
+                              <select  [(ngModel)] ="Adherent.profession" name="profession" id="profession" class="form-control col-md-12" style="height: 35px;font-size:16px"
+                             >
+                                    <option value="Etudiant">Etudiant</option>
+                                    <option value="Ingenieur">Ingenieur</option>
+                    </select>
+                       
+                    </div>
+                </div>
+  
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="fname">Etablissement</label>
+                        <select  [(ngModel)] ="Adherent.etablissement" name="etablissement" class="form-control" id="etablissement" style="height: 35px; font-size:16px">
+                     
+                            <option value="ISITCOM">IsitCom</option>
+                            <option value="ISSAT">Issat</option>
+                            <option value="ENISO">Eniso</option>
+                            <option value="ISET">Iset</option>
+                            <option value="ESSTHS">Essths</option>
+                            <option value="EPI">Epi</option>
+                            <option value="POLYTECHNIQUE">Polytechnique</option>
+                        </select>
+                    </div>
+  
+                    <div class="col-lg-6">
+                        <label for="fname">Cycle</label>
+                        <select  [(ngModel)] ="Adherent.cycle" name="cycle" class="form-control"  id="cycle" style="height: 35px; font-size:16px">
+                       
+                        <option value="Licence">Licence</option>
+                        <option value="Mastére">Mastére</option>
+                        <option value="Ingénierie">Ingénierie</option>
+                        <option value="Préparatoire">Préparatoire</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-lg-6">
+                    <label for="fname">Niveau </label>
+                    <select type="text" name="niveau" class="form-control"  id="niveau" style="height: 35px; font-size:16px"
+                    [(ngModel)] ="Adherent.niveau">
+                    <option value="1ere Année ">1ére Année</option>
+                    <option value="2éme Année">2éme Année</option>
+                    <option value="3éme Année">3éme Année</option>
+                    <option value="4éme Année">4éme Année</option>
+                    <option value="5éme Année">5éme Année</option>
+                </select>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="specialite">Spécialité</label>
+                    <input type="text" name="specialite" class="form-control" id="specialite" 
+                    [(ngModel)] ="Adherent.specialite" >
+                </div>
+<br>
+<br>
+<br>
+               
+            
+                </div>
+                
+<br>
+<button (click)="update();opensweetalert()" class = "btn" type ="button" style="height:35px ; margin-top: 5px;" >Enregistrer</button>
+
+            </form>
+            </div>
+  
+        
+  
+    </div>
+  
+    <div class="col-lg-1"></div>
+  
+    </div>
+    
+        
+    
+  </div>
+                </div>
+
+                
+            </div>
+
+        </div>
+    </div>
+
+
+
+

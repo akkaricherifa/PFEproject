@@ -79,6 +79,7 @@ import { FicheCompetenceComponent } from './fiche-competence/fiche-competence.co
 import {FilePickerModule} from 'ngx-awesome-uploader';
 import { FicheComponent } from './fiche/fiche.component';
 import { RechercheComponent } from './recherche/recherche.component';
+import { UpdateAdhComponent } from './update-adh/update-adh.component';
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -135,6 +136,7 @@ FullCalendarModule.registerPlugins([
     FicheCompetenceComponent,
     FicheComponent,
     RechercheComponent,
+    UpdateAdhComponent,
 
 
 

@@ -30,6 +30,13 @@ export class ListAdherentsComponent implements OnInit {
   p : number=1;
   term!: string;
   adherent: any;
+  nom:any
+  _id:any
+  prenom:any
+  niveau:any
+  cycle:any
+  form:any
+  etablissement:any
   searchTerm!: string;
   // Adherent!: Adhérent[];
   Adherent!: any;
@@ -55,12 +62,17 @@ export class ListAdherentsComponent implements OnInit {
     .subscribe((data: Adhérent[]) => {
       this.Adherent = data;
     });
-    
-    this.affiche();
+ 
     this.adhServ.getAdherent(this.id).subscribe( data => {
       console.log(data);
       this.Adherent = data;
-    })  
+    })
+    
+    this.affiche();
+    // this.adhServ.getAdherent(this.id).subscribe( data => {
+    //   console.log(data);
+    //   this.Adherent = data;
+    // })  
 
   }
  
@@ -89,16 +101,13 @@ export class ListAdherentsComponent implements OnInit {
   update(){
       
     this.adhServ.updateAdherent(this.id,this.Adherent).subscribe( data => {
-      // this.affiche()
+      this.affiche()
       this.toastr.success(" modifiée avec succès")
      this.router.navigate(['/list-adherent']);
     },(error)=>{
       console.log(error);
     });
  }
-
-
- 
 
   logout(){
     this.authServ.logout()
@@ -133,6 +142,10 @@ export class ListAdherentsComponent implements OnInit {
       timer: 2000
     })
   }
+ 
+
+
+
   }
   
 
