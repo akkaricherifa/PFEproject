@@ -7,6 +7,7 @@ import { AdminService } from '../shared/admin.service';
 import { CompetenceService } from '../shared/competence.service';
 import { EntrepriseService } from '../shared/entreprise.service';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-recherche',
   templateUrl: './recherche.component.html',
@@ -16,6 +17,7 @@ export class RechercheComponent implements OnInit {
   result: any;
   name = [];
   Admin!: any;
+  loginResponse:any
   p : number=1;
   population: any;
   Competence: any;
@@ -179,7 +181,18 @@ recherche(){
       this.Adherent = data;
       console.log("hello",this.Adherent);
       
+    },
+    err => {
+      this.loginResponse=this.opensweetalert2();
     });
 }
-
+opensweetalert2() {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'warning',
+    title: 'pas de Profils Compétents',
+    showConfirmButton: false,
+    timer: 3500
+  })
+ }
 }

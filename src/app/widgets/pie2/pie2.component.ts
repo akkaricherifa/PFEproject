@@ -60,10 +60,10 @@ export class Pie2Component implements OnInit {
                 y: 11.84
             }, {
                 name: 'Essths',
-                y: 10.85
+                y: 5.85
             },  {
                 name: 'Iset',
-                y: 7.18
+                y: 2.18
             },   {
                 name: 'Polytechnique',
                 y: 9.61

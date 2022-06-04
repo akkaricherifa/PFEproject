@@ -57,14 +57,21 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li>
+                    <li class="active">
                         <a  href="liste">
                             <i class="fa fa-list"></i>
                             <span>Liste des Adhérents</span>
                         </a>
                     </li>
+                    <li class="active">
+                        <a  href="recherche">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                            <span class="title"> Profils Compétents</span>
+                        </a>
+                    </li>
+                        
                  
-                    <li class="sub-menu dcjq-parent-li" routerLinkActive = "active" >
+                    <li  routerLinkActive = "active" class="active">
                         <a href="javascript:;">
                           <i class="fa fa-user"></i>
                           <span [routerLink]="['/profil-entreprise',id]">Gérer le Profil
