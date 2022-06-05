@@ -12,7 +12,6 @@ interface Adhérent {
   nom:string;
   prenom:string;
   email:string;
-
 }
 
 
@@ -24,7 +23,7 @@ interface Adhérent {
 export class ListAdherentsComponent implements OnInit {
   router: any;
   id:any;
-  Adhérent!: any;
+  // Adhérent!: any;
   // Adherent:any;
   filterAdherent:any;
   p : number=1;
@@ -69,10 +68,7 @@ export class ListAdherentsComponent implements OnInit {
     })
     
     this.affiche();
-    // this.adhServ.getAdherent(this.id).subscribe( data => {
-    //   console.log(data);
-    //   this.Adherent = data;
-    // })  
+
 
   }
  

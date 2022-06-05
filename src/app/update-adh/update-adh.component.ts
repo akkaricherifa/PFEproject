@@ -36,7 +36,7 @@ export class UpdateAdhComponent implements OnInit {
           console.log(err);
         }
       )
-      this. id =(localStorage.getItem('CurrentUser') || '');
+      // this. id =(localStorage.getItem('CurrentUser') || '');
       this.adhServ.getAdherent(this.id).subscribe( data => {
         console.log(data);
         this.adherent = data;
@@ -44,7 +44,7 @@ export class UpdateAdhComponent implements OnInit {
     }
     update(){
       
-      this.adhServ.updateAdherent(this.id,this.Adherent).subscribe( data => {
+      this.adhServ.updateAdherent(this.id,this.adherent).subscribe( data => {
 
        this.router.navigate(['/list-adherent']);
       },(error)=>{
@@ -52,13 +52,13 @@ export class UpdateAdhComponent implements OnInit {
       });
    }
    opensweetalert() {
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Adhérent Modifié avec Succès',
-      showConfirmButton: false,
-      timer: 3000
-    })
-   }
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Adhérent Modifié avec Succès',
+    showConfirmButton: false,
+    timer: 3000
+  })
+ }
 
 }
