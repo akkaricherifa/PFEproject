@@ -27,6 +27,7 @@ export class AllCompetenceComponent implements OnInit {
   niveau: any;
   term!: string;
   id:any;
+  adherent:any;
   arr: any = [];
   i:any;
   rechercheForm!: FormGroup

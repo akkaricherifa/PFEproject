@@ -47,9 +47,9 @@
                   <th><i class="fa fa-envelope" aria-hidden="true"></i>  niveau</th> 
                   </tr>
                   <tr *ngFor="let item of Adherent  | paginate : {itemsPerPage: 4, currentPage: p};let i=index" >
-                    <td> {{item.adherent[i].nom}} </td>
-                    <td> {{item.adherent[i].prenom}} </td>
-                    <td> {{item.adherent[i].email}} </td>
+                    <td> {{item.adherent[0].nom}} </td>
+                    <td> {{item.adherent[0].prenom}} </td>
+                    <td> {{item.adherent[0].email}} </td>
                     <td> {{item.niveauUser}} % </td>
                 </tr>
                 </thead>
