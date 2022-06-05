@@ -38,19 +38,21 @@
               </div>
          <div>
 
-               <table class="table table-striped" style="margin-top: 20%; margin-left: -500px;" >
+               <table class="table table-striped"  style="margin-top: 20%; margin-left: -400px;" >
                 <thead class="thead-inverse">
                 <tr>
-                  <th><i class="fa fa-user" aria-hidden="true"></i>  Nom</th>
-                  <th><i class="fa fa-user" aria-hidden="true"></i>  Prénom</th>
-                  <th><i class="fa fa-envelope" aria-hidden="true"></i>  Email</th> 
-                  <th><i class="fa fa-envelope" aria-hidden="true"></i>  niveau</th> 
+                  <th> Photo</th>
+                  <th>  Nom</th>
+                  <th>  Prénom</th>
+                  <th>  Email</th> 
+                  <th> niveau</th> 
                   </tr>
                   <tr *ngFor="let item of Adherent  | paginate : {itemsPerPage: 4, currentPage: p};let i=index" >
+                    <img src="http://localhost:3000/{{item.adherent[0].file.substring(12)}}" alt="user" width="60" class="rounded-circle" > 
                     <td> {{item.adherent[0].nom}} </td>
                     <td> {{item.adherent[0].prenom}} </td>
                     <td> {{item.adherent[0].email}} </td>
-                    <td> {{item.niveauUser}} % </td>
+                    <td> {{item.niveauUser}} % </td> 
                 </tr>
                 </thead>
                 <tbody>
